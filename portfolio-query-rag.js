@@ -19,7 +19,7 @@
         lede:"I turn messy workflows into working products and automation — from process design to AI agents, APIs and code.",
         meta:["Problem → prototype","Process → system","AI → automation"]
       },
-      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Agents"] },
+      field: { title:"Capability field", buttons:["AI","Automation","Product","Agents"] },
       query: {
         title:"Portfolio Query",
         intro:"Ask about Timur’s experience, projects, AI/automation work or technical decisions.",
@@ -70,7 +70,7 @@
         lede:"Превращаю сложные процессы в работающие продукты и автоматизации — от проектирования процессов до AI-агентов, API и кода.",
         meta:["Задача → прототип","Процесс → система","AI → автоматизация"]
       },
-      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
+      field: { title:"Карта компетенций", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
       query: {
         title:"Portfolio Query",
         intro:"Спроси про опыт Тимура, проекты, AI/автоматизацию или технические решения.",
@@ -93,7 +93,7 @@
         tube:{kind:"Браузерный продукт",desc:"Chrome-расширение без токенов, которое определяет фильмы на YouTube и показывает рейтинги прямо в контексте просмотра.",details:[["Проблема","Проверка рейтинга прерывает просмотр и требует отдельного поиска."],["Что сделал","MV3-расширение, детерминированный матчинг, Wikidata, кеширование и SPA-навигация."],["Проверка","Typecheck, тесты, production build checks и Chromium browser smoke."]],ask:"Спросить подробнее о TubeScore →"},
         critic:{kind:"AI-система",desc:"Система критики, которая ищет существенные ошибки и противоречия по проверяемым данным, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и эксперимент с desktop bridge с privacy-gates."],["Статус","Early-stage: реализованные части и security-проверки отделены от проверки на реальном host."]],ask:"Спросить подробнее об AI Critic →"},
         gac:{kind:"Инфраструктура агентов",desc:"Протокол на базе GitHub, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
-        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся handoff'ов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и operations control plane."],["Граница","Публикация отделена от генерации и требует отдельного review/credentials."]],ask:"Спросить подробнее о pipeline →"},
+        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся ручных переходов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и отдельная панель контроля."],["Граница","Публикация отделена от генерации и требует отдельного review и credentials."]],ask:"Спросить подробнее о pipeline →"},
         feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с узким XML-парсером и ограничением объёма контента."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
         hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Создание, удаление и переключение профилей, auth-state, изоляция данных и runtime guards."],["Проверка","PR #84 принят upstream; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
       },
@@ -494,7 +494,7 @@
     setHTML(".hero h1",t.hero.title);
     setText(".hero-lede",t.hero.lede);
     document.querySelectorAll(".hero-meta span").forEach((el,i)=>{if(t.hero.meta[i])el.textContent=t.hero.meta[i];});
-    const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;if(fh[1])fh[1].textContent=t.field.hint;
+    const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;
     document.querySelectorAll(".field-fallback button").forEach((el,i)=>{if(t.field.buttons[i])el.textContent=t.field.buttons[i];});
 
     const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;
