@@ -140,8 +140,8 @@
       strengths:"The strongest differentiator is the combination of process/product work and hands-on implementation. He can move between metrics, user workflow, API behavior, code and verification without treating any one of them as the whole product.",
       weakness:"The portfolio does not infer personality weaknesses. The visible trade-off is that Timur's profile is broader than a narrow specialist engineering track: it is strongest where product/process understanding and implementation need to meet.",
       fit:"The clearest fit is Product Builder, AI/Automation, Project/Process or technical-product work where the role needs both workflow understanding and the ability to prototype or implement.",
-      projectsOverview:"Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, an AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution. Other public experiments include Book Translator, MindRail and PM 0.1.",
-      broad:"Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on product building and AI automation. His work spans team and process leadership, B2B product delivery, measurable operational improvements, AI-agent systems, browser tooling and automation. Selected public work includes TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution.",
+      projectsOverview:"Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, an AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution. Other public experiments include Book Translator, MindRail and PM 0.1.",
+      broad:"Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on product building and AI automation. His work spans team and process leadership, B2B product delivery, measurable operational improvements, AI-agent systems, browser tooling and automation. Selected public work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution.",
       projects: {
         tube:{
           overview:"TubeScore is a zero-token Chrome/Chromium MV3 extension that identifies movies or TV series on YouTube and shows ratings in the viewing context.",
@@ -160,6 +160,12 @@
           architecture:"It uses GitHub Issues, immutable generation claim refs, separate work branches, leases, checkpoints and takeover rules so durable state lives outside any one chat session.",
           hard:"The difficult part is concurrency and recovery: exactly one current owner, safe takeover after expiry, and stale-writer isolation without a separate database or daemon.",
           testing:"Its adversarial live subset completed 5 PASS, 0 FAIL and 0 NOT EXECUTED, including claim serialization, takeover and stale-writer isolation."
+        },
+        market:{
+          overview:"HH Market Scanner is a labor-market data product that combines a resumable Chrome MV3 collector with validated snapshots and a Next.js web application.",
+          architecture:"The collector exports canonical versioned market snapshot/batch contracts into a file-backed repository boundary; the web app reads only validated data and keeps freshness tied to collection provenance.",
+          hard:"The key data-quality problem is distinguishing a real zero from selector failure, blocking, wrong-page or navigation failure. Unknown observations are not silently converted to zero.",
+          testing:"Repository verification covers deterministic collector fixtures plus lint, tests and a production Next.js build; live hh.ru behavior remains a separate operational smoke check."
         },
         shorts:{
           overview:"AI Video Pipeline is a local-first n8n workflow for producing Shorts/Reels from scripting through rendering and review.",
@@ -242,6 +248,12 @@
           hard:"Сложная часть — concurrency и recovery: один текущий owner, безопасный takeover после expiry и stale-writer isolation без отдельной базы или daemon.",
           testing:"Adversarial live subset завершился с 5 PASS, 0 FAIL и 0 NOT EXECUTED, включая claim serialization, takeover и stale-writer isolation."
         },
+        market:{
+          overview:"HH Market Scanner — продукт данных о рынке труда: возобновляемый Chrome MV3 collector, валидируемые snapshots и Next.js web-приложение.",
+          architecture:"Collector приводит данные к versioned snapshot/batch contracts и сохраняет их через file-backed repository boundary; UI читает только валидированные данные, а freshness определяется временем сбора, а не деплоя.",
+          hard:"Ключевая задача качества данных — отличить настоящий ноль от selector failure, блокировки, неверной страницы или navigation failure. Неизвестное наблюдение не превращается в ноль.",
+          testing:"Проверка репозитория включает детерминированные fixtures collector'а, lint, tests и production Next.js build; живое поведение hh.ru остаётся отдельным operational smoke."
+        },
         shorts:{
           overview:"AI Video Pipeline — local-first n8n workflow для производства Shorts/Reels от сценария до рендера и review.",
           architecture:"Проверенная локальная база использует n8n Community Edition, Ollama, FFmpeg и Windows System.Speech; отдельный localhost control plane собирает health и explicit actions.",
@@ -297,14 +309,14 @@
     tube:["tubescore","tube score"],
     critic:["ai critic"],
     gac:["github agent continuity","gac"],
-    shorts:["ai video pipeline","video pipeline","youtube shorts","shorts pipeline"],
+    market:["hh market scanner","market scanner","professions statistics","рынок труда"],\n    shorts:["ai video pipeline","video pipeline","youtube shorts","shorts pipeline"],
     feed:["feedpulse","feed pulse"],
     hh:["hh-applicant-tool","hh applicant"],
     book:["book translator"],
     mindrail:["mindrail"],
     pmo:["pm 0.1","pmo01"]
   };
-  const selectedProjects=new Set(["tube","critic","gac","shorts","feed","hh"]);
+  const selectedProjects=new Set(["tube","critic","gac","market","shorts","feed","hh"]);
 
   function resolveSubject(q){
     for(const [id,terms] of Object.entries(projectTerms)){
