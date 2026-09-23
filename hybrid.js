@@ -205,8 +205,9 @@
   }
   function norm(v){return String(v||"").toLowerCase().replace(/ё/g,"е").replace(/[^a-zа-я0-9\s-]/gi," ").replace(/\s+/g," ").trim();}
   function hasAny(q,arr){return arr.some((x)=>q.includes(x));}
-  function looksLikeGreeting(q){return /^(привет|здравствуй|здравствуйте|добрый день|добрый вечер|hello|hi|hey)\b/.test(q);}
-  function looksLikeThanks(q){return /^(спасибо|благодарю|thanks|thank you)\b/.test(q);}
+  function startsWithPhrase(q, phrases){return phrases.some((p)=>q===p||q.startsWith(p+" "));}
+  function looksLikeGreeting(q){return startsWithPhrase(q,["привет","здравствуй","здравствуйте","добрый день","добрый вечер","hello","hi","hey"]);}
+  function looksLikeThanks(q){return startsWithPhrase(q,["спасибо","благодарю","thanks","thank you"]);}
   function hasTimur(q){return hasAny(q,["тимур","даутов","timur","dautov"]);}
   function hasTube(q){return q.includes("tubescore")||q.includes("tube score");}
   function hasFeed(q){return q.includes("feedpulse")||q.includes("feed pulse");}
