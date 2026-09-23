@@ -347,6 +347,25 @@
       }
     },
     {
+      "id": "portfolio.agents.summary",
+      "topics": [
+        "projects",
+        "ai",
+        "agents"
+      ],
+      "text": {
+        "ru": "В agent-направлении Тимур сделал AI Critic, GitHub Agent Continuity, MindRail, Book Translator, FeedPulse и policy plugins — от контекста и continuity до permissions и bounded execution.",
+        "en": "Timur's agent work includes AI Critic, GitHub Agent Continuity, MindRail, Book Translator, FeedPulse and policy plugins, spanning context, continuity, permissions and bounded execution."
+      },
+      "source": {
+        "label": "Agent projects"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
       "id": "portfolio.experience.summary",
       "topics": [
         "experience",
