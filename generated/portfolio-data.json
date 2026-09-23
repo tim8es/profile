@@ -326,6 +326,27 @@
       }
     },
     {
+      "id": "limitation.profile_breadth",
+      "topics": [
+        "limitations",
+        "weakness",
+        "fit",
+        "roles"
+      ],
+      "text": {
+        "ru": "Профиль Тимура широкий: он не позиционирует себя как узкого senior software engineer. Наиболее сильный fit — задачи, где product/process понимание нужно соединить с AI, автоматизацией, прототипированием и delivery.",
+        "en": "Timur has a broad profile rather than positioning as a narrowly specialized senior software engineer. His strongest fit is work that combines product/process understanding with AI, automation, prototyping and delivery."
+      },
+      "source": {
+        "label": "Portfolio positioning"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "positioning",
+        "positioningGroup": "limitations"
+      }
+    },
+    {
       "id": "portfolio.projects.other",
       "topics": [
         "projects",
@@ -362,6 +383,30 @@
       },
       "source": {
         "label": "Selected work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "portfolio.summary",
+      "topics": [
+        "identity",
+        "experience",
+        "skills",
+        "projects",
+        "strengths",
+        "product",
+        "ai",
+        "automation"
+      ],
+      "text": {
+        "ru": "Тимур сочетает project/process опыт в Skyeng, SPIKS и OpiniQ с hands-on разработкой: AI-агенты, автоматизация, browser tooling и проверяемые продукты. В работе опирается на измеримый эффект, явные ограничения и проверку результата.",
+        "en": "Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on building across AI agents, automation, browser tooling and testable products. His work emphasizes measurable impact, explicit constraints and verification."
+      },
+      "source": {
+        "label": "Portfolio summary"
       },
       "confidence": "verified",
       "context": {
