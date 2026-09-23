@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Command — Timur Dautov</title>
+  <meta name="description" content="Command-style portfolio concept for Timur Dautov." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="portfolio command-page">
+  <div class="demo-bar">
+    <a class="demo-back" href="./">← All directions</a>
+    <nav class="demo-switch" aria-label="Concepts">
+      <a href="./editorial.html">01</a>
+      <a href="./playful.html">02</a>
+      <a href="./command.html" aria-current="page">03</a>
+    </nav>
+  </div>
+
+  <div class="site-shell">
+    <nav class="site-nav">
+      <a class="site-name" href="#top">Timur Dautov</a>
+      <div class="site-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/tim8es" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="command-hero">
+        <p class="eyebrow">product builder / process thinker</p>
+        <h1>Build.<span>Automate.</span>Simplify.</h1>
+        <p>This version behaves more like a small tool than a portfolio brochure. Search by what you actually care about.</p>
+      </section>
+
+      <section class="command-console" id="work">
+        <div class="console-box">
+          <div class="console-top">
+            <span>portfolio.query</span>
+            <span>press / to focus · esc to clear</span>
+          </div>
+          <div class="console-input-wrap">
+            <span class="console-prompt">›</span>
+            <input class="console-input" data-command-input type="search" placeholder="What do you want to see?" aria-label="Filter portfolio projects" />
+            <button class="console-clear" data-command-clear type="button" aria-label="Clear filter">×</button>
+          </div>
+          <div class="query-chips" aria-label="Suggested filters">
+            <button class="query-chip" type="button" data-command-query="AI">AI</button>
+            <button class="query-chip" type="button" data-command-query="automation">automation</button>
+            <button class="query-chip" type="button" data-command-query="browser">browser</button>
+            <button class="query-chip" type="button" data-command-query="open source">open source</button>
+          </div>
+          <div class="console-status" data-command-status aria-live="polite">ready / showing all work</div>
+        </div>
+
+        <div class="command-results">
+          <article class="command-item" data-command-item data-keywords="browser chrome extension javascript youtube movie ratings product">
+            <span class="idx">01</span>
+            <div><h2>TubeScore</h2></div>
+            <div class="tags">browser / javascript / product</div>
+            <a href="https://github.com/tim8es/TubeScore" target="_blank" rel="noreferrer" aria-label="Open TubeScore">↗</a>
+          </article>
+
+          <article class="command-item" data-command-item data-keywords="ai agents node nodejs rss atom content ingestion feed utility">
+            <span class="idx">02</span>
+            <div><h2>FeedPulse</h2></div>
+            <div class="tags">AI / agents / Node.js</div>
+            <a href="https://github.com/tim8es/tim8skills/tree/main/feed-pulse" target="_blank" rel="noreferrer" aria-label="Open FeedPulse">↗</a>
+          </article>
+
+          <article class="command-item" data-command-item data-keywords="ai automation llm n8n api webhooks workflow business process">
+            <span class="idx">03</span>
+            <div><h2>AI workflow</h2></div>
+            <div class="tags">automation / LLM / API</div>
+            <a href="#about" aria-label="Read more about workflow work">↗</a>
+          </article>
+
+          <article class="command-item" data-command-item data-keywords="open source github contribution pull request codebase debugging testing">
+            <span class="idx">04</span>
+            <div><h2>Open-source work</h2></div>
+            <div class="tags">GitHub / code / testing</div>
+            <a href="https://github.com/tim8es" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="command-about" id="about">
+        <p class="section-kicker">About</p>
+        <p>I like software that removes friction instead of adding another system people have to manage.</p>
+      </section>
+    </main>
+
+    <footer class="footer-simple">
+      <span>Timur Dautov © 2026</span>
+      <span>4 projects indexed / zero AI calls required</span>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
