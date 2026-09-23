@@ -40,33 +40,28 @@
       },
       work: {
         title:"Selected work",
-        note:"current shortlist / more projects will be curated later",
-        tube:{
-          kind:"Browser product",
-          desc:"A Chrome extension that places movie ratings directly on YouTube trailers, removing the extra search step.",
-          details:[["Problem","Ratings live outside the viewing context."],["Built","Extension, data layer, caching and SPA handling."],["Proof","Working MVP with automated browser tests."]],
-          ask:"Ask deeper about TubeScore →"
-        },
-        feed:{
-          kind:"Agent utility",
-          desc:"A small ingestion layer for AI agents that normalizes RSS/Atom sources into predictable content.",
-          details:[["Problem","Agents repeatedly need to parse inconsistent feeds."],["Built","Portable Node.js parser with a small dependency footprint."],["Proof","Cross-platform workflow for Windows, macOS and Linux."]],
-          ask:"Ask deeper about FeedPulse →"
-        }
+        note:"",
+        tube:{kind:"Browser product",desc:"A zero-token Chrome extension that identifies movies on YouTube and shows ratings in the viewing context.",details:[["Problem","Checking ratings breaks the viewing flow."],["Built","MV3 extension, deterministic matching, Wikidata provider, caching and SPA handling."],["Proof","Typecheck, tests, production build checks and Chromium browser smoke."]],ask:"Ask deeper about TubeScore →"},
+        critic:{kind:"AI system",desc:"An evidence-backed critic designed to catch material mistakes and contradictions without interrupting on every minor issue.",details:[["Problem","AI assistants can lose context or miss important contradictions."],["Built","Context, critic and verifier workflows plus a privacy-gated desktop bridge experiment."],["Status","Early-stage; implemented slices and security-flow checks are separated from host verification."]],ask:"Ask deeper about AI Critic →"},
+        gac:{kind:"Agent infrastructure",desc:"A GitHub-native protocol that lets autonomous coding agents continue work safely across disposable sessions.",details:[["Problem","Agent sessions disappear, while ownership and unfinished work need to survive."],["Built","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints and takeover rules."],["Proof","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Ask deeper about GAC →"},
+        shorts:{kind:"Automation system",desc:"A local-first pipeline for generating short-form AI video from research and scripting through rendering and review.",details:[["Problem","Content production has many repetitive handoffs and failure points."],["Built","n8n workflows with local LLMs, FFmpeg rendering, TTS, captions and an operations control plane."],["Boundary","Publishing is kept separate from generation and requires explicit review/credentials."]],ask:"Ask deeper about the pipeline →"},
+        feed:{kind:"Agent utility",desc:"A lightweight feed ingestion utility that gives AI agents predictable content from RSS and Atom sources.",details:[["Problem","Agents repeatedly need to normalize inconsistent feed formats."],["Built","Small Node.js utility with a focused XML parser and bounded content handling."],["Proof","Designed to run across Windows, macOS and Linux with a small dependency surface."]],ask:"Ask deeper about FeedPulse →"},
+        hh:{kind:"Open-source contribution",desc:"A merged upstream contribution that exposed existing multi-profile support in the project's desktop UI.",details:[["Problem","The CLI supported isolated profiles, but the UI could not manage or switch them."],["Built","Profile CRUD, auth state, switching, isolated data and safe runtime guards."],["Proof","Merged PR #84; 116 regression tests and Chromium/Playwright UI E2E passed."]],ask:"Ask deeper about the contribution →"}
       },
       about: {
         title:"About",
-        note:"less biography / more operating principle",
-        statement:"I like software that removes friction instead of adding another system people have to manage.",
-        body:[
-          "My background is in project and process management, so I usually start from the workflow, constraint or user problem — not from the technology.",
-          "Now I work hands-on: prototypes, AI agents, APIs, browser tools, automation and small products that can be tested quickly."
-        ]
+        note:"",
+        statement:"I work best where a messy process needs to become a clear product or system.",
+        body:["My background spans project, process and delivery work at Skyeng, SPIKS and OpiniQ — from QA/CX operations and B2B CRM to workflow automation.","Now I work hands-on with AI agents, n8n, APIs, JavaScript/Node.js, Python, SQL, browser tooling and testable prototypes."]
       },
-      footer:["Timur Dautov © 2026","Built as a static page. Query and 3D field run locally in your browser."],
+      footer:["Timur Dautov © 2026",""],
       deep:{
         tube:[["Architecture","How is TubeScore built?"],["Hardest part","What was the hardest part of TubeScore?"],["Testing","How did you test TubeScore?"]],
-        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Why Node.js","Why Node for FeedPulse?"]]
+        critic:[["Architecture","How is AI Critic built?"],["Safety","How does AI Critic handle privacy and permissions?"],["Status","What is actually verified in AI Critic?"]],
+        gac:[["Protocol","How does GitHub Agent Continuity work?"],["Concurrency","How does GAC prevent conflicting agents?"],["Testing","How was GAC tested?"]],
+        shorts:[["Workflow","How is the AI video pipeline built?"],["Local stack","What runs locally in the pipeline?"],["Safety","Why is publishing separated?"]],
+        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Portability","How does FeedPulse stay cross-platform?"]],
+        hh:[["Contribution","What did Timur add to hh-applicant-tool?"],["Architecture","How was multi-account isolation implemented?"],["Testing","How was the contribution verified?"]]
       }
     },
     ru: {
@@ -98,33 +93,28 @@
       },
       work: {
         title:"Избранные работы",
-        note:"текущий список / проекты ещё будем отбирать",
-        tube:{
-          kind:"Браузерный продукт",
-          desc:"Chrome-расширение, которое показывает рейтинги фильмов прямо на YouTube-трейлерах и убирает лишний переход на другой сайт.",
-          details:[["Проблема","Рейтинг находится вне контекста просмотра."],["Что сделал","Расширение, слой данных, кеширование и обработка SPA-навигации."],["Подтверждение","Рабочий MVP с автоматизированными браузерными тестами."]],
-          ask:"Спросить подробнее о TubeScore →"
-        },
-        feed:{
-          kind:"Инструмент для агентов",
-          desc:"Небольшой слой загрузки контента для AI-агентов, который приводит RSS/Atom-источники к предсказуемой структуре.",
-          details:[["Проблема","Агентам снова и снова приходится разбирать несовместимые фиды."],["Что сделал","Переносимый Node.js-парсер с небольшим числом зависимостей."],["Подтверждение","Работает на Windows, macOS и Linux."]],
-          ask:"Спросить подробнее о FeedPulse →"
-        }
+        note:"",
+        tube:{kind:"Браузерный продукт",desc:"Chrome-расширение без токенов, которое определяет фильмы на YouTube и показывает рейтинги прямо в контексте просмотра.",details:[["Проблема","Проверка рейтинга прерывает просмотр и требует отдельного поиска."],["Что сделал","MV3-расширение, детерминированный матчинг, Wikidata, кеширование и SPA-навигация."],["Проверка","Typecheck, тесты, production build checks и Chromium browser smoke."]],ask:"Спросить подробнее о TubeScore →"},
+        critic:{kind:"AI-система",desc:"Evidence-backed критик, который ищет существенные ошибки и противоречия, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и privacy-gated эксперимент с desktop bridge."],["Статус","Early-stage: реализованные части и security-flow проверки отделены от host verification."]],ask:"Спросить подробнее об AI Critic →"},
+        gac:{kind:"Инфраструктура агентов",desc:"GitHub-native протокол, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
+        shorts:{kind:"Система автоматизации",desc:"Local-first pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся handoff'ов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и operations control plane."],["Граница","Публикация отделена от генерации и требует отдельного review/credentials."]],ask:"Спросить подробнее о pipeline →"},
+        feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с focused XML parser и bounded content handling."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
+        hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Profile CRUD, состояние авторизации, переключение, изоляция данных и runtime guards."],["Проверка","PR #84 merged; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
       },
       about: {
         title:"Обо мне",
-        note:"меньше биографии / больше принципов работы",
-        statement:"Мне нравится софт, который убирает трение, а не создаёт ещё одну систему, которой нужно управлять.",
-        body:[
-          "Мой основной бэкграунд — управление проектами и процессами, поэтому я обычно начинаю с рабочего процесса, ограничений и проблемы пользователя, а не с выбора технологии.",
-          "Сейчас я много делаю руками: прототипы, AI-агенты, API, браузерные инструменты, автоматизацию и небольшие продукты, которые можно быстро проверить."
-        ]
+        note:"",
+        statement:"Лучше всего я работаю там, где запутанный процесс нужно превратить в понятный продукт или систему.",
+        body:["Мой бэкграунд — проекты, процессы и delivery в Skyeng, SPIKS и OpiniQ: от QA/CX и B2B CRM до автоматизации workflow.","Сейчас много делаю руками: AI-агенты, n8n, API, JavaScript/Node.js, Python, SQL, браузерные инструменты и проверяемые прототипы."]
       },
-      footer:["Timur Dautov © 2026","Статическая страница: Query и 3D-поле работают локально в браузере."],
+      footer:["Timur Dautov © 2026",""],
       deep:{
         tube:[["Архитектура","Как устроен TubeScore?"],["Самая сложная часть","Что было самым сложным в TubeScore?"],["Тестирование","Как ты тестировал TubeScore?"]],
-        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Почему Node.js","Почему для FeedPulse выбран Node.js?"]]
+        critic:[["Архитектура","Как устроен AI Critic?"],["Безопасность","Как AI Critic работает с privacy и permissions?"],["Статус","Что реально проверено в AI Critic?"]],
+        gac:[["Протокол","Как работает GitHub Agent Continuity?"],["Конкуренция","Как GAC предотвращает конфликты между агентами?"],["Тестирование","Как тестировался GAC?"]],
+        shorts:[["Workflow","Как устроен AI video pipeline?"],["Локальный стек","Что в pipeline работает локально?"],["Безопасность","Почему публикация отделена от генерации?"]],
+        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Переносимость","Как FeedPulse работает на разных ОС?"]],
+        hh:[["Вклад","Что Тимур добавил в hh-applicant-tool?"],["Архитектура","Как реализована изоляция нескольких аккаунтов?"],["Тестирование","Как проверялся этот вклад?"]]
       }
     }
   };
