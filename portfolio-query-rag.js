@@ -7,7 +7,7 @@
     lastSubject: "timur",
     lastIntent: "identity",
     lastProject: null,
-    moreCursor: { timur: 0, skills: 0, tube: 0, feed: 0 }
+    moreCursor: { timur:0, skills:0, tube:0, critic:0, gac:0, shorts:0, feed:0, hh:0 }
   };
 
   const ui = {
@@ -27,12 +27,12 @@
         intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
           ["Who is Timur?","Who is Timur?"],
-          ["What can he do?","What can Timur do?"],
-          ["AI work","Show me AI work"],
+          ["What has he built?","What projects has Timur built?"],
+          ["AI & agents","What has Timur built with AI agents?"],
           ["Background","What's your background?"]
         ],
         placeholder:"Ask the portfolio…",
-        hint:'Runs from a curated knowledge base with conversational context and visible evidence. The local composer works without a model download. Press <kbd>/</kbd> to focus.',
+        hint:'Press <kbd>/</kbd> to focus.',
         rolePortfolio:"portfolio",
         roleYou:"you",
         showProject:"Show related project ↓",
@@ -80,12 +80,12 @@
         intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
           ["Кто такой Тимур?","Кто такой Тимур?"],
-          ["Что он умеет?","Что умеет Тимур?"],
-          ["Работа с ИИ","Покажи работу с ИИ"],
-          ["Опыт","Какой у Тимура опыт?"]
+          ["Что он сделал?","Какие проекты сделал Тимур?"],
+          ["AI и агенты","Что Тимур делал с AI-агентами?"],
+          ["Опыт","Где работал Тимур и что изменил?"]
         ],
         placeholder:"Спроси портфолио…",
-        hint:'Отвечает из модерируемой базы знаний, помнит контекст и показывает использованные факты. Локальный composer работает без скачивания модели. Нажми <kbd>/</kbd>, чтобы перейти к строке.',
+        hint:'Нажми <kbd>/</kbd>, чтобы перейти к вопросу.',
         rolePortfolio:"портфолио",
         roleYou:"вы",
         showProject:"Показать связанный проект ↓",
@@ -416,7 +416,7 @@
 
   function openProjectQuestions(id){
     const lang=state.lang;
-    const name=id==="tube"?"TubeScore":"FeedPulse";
+    const names={tube:"TubeScore",critic:"AI Critic",gac:"GitHub Agent Continuity",shorts:"AI Video Pipeline",feed:"FeedPulse",hh:"hh-applicant-tool"}; const name=names[id]||id;
     state.lastSubject=id;
     state.lastProject=id;
     state.lastIntent="project-overview";
@@ -481,7 +481,7 @@
     if(input)input.placeholder=t.query.placeholder;setHTML(".query-hint",t.query.hint);
 
     const wLabels=document.querySelectorAll("#work > .section-label span");if(wLabels[0])wLabels[0].textContent=t.work.title;if(wLabels[1])wLabels[1].textContent=t.work.note;
-    const pcopy={tube:t.work.tube,feed:t.work.feed};
+    const pcopy={tube:t.work.tube,critic:t.work.critic,gac:t.work.gac,shorts:t.work.shorts,feed:t.work.feed,hh:t.work.hh};
     projects.forEach((item)=>{
       const p=pcopy[item.dataset.project];if(!p)return;
       item.querySelector(".project-main small").textContent=p.kind;
