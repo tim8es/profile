@@ -148,7 +148,7 @@
     product:["продукт","mvp","гипотез","product","prototype"],
     process:["процесс","операц","workflow","process"],
     ai:["ии","ai","llm","нейросет"],
-    agents:["agent","агент"],
+    agents:["agent","агент"],\n    reliability:["качество","плох","ошиб","reliab","quality","bad data","freshness"],
     technical:["стек","технолог","api","javascript","node","sql","technical","stack"],
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
@@ -263,7 +263,7 @@
         broad:"Если собрать главное: ",
         strengths:"Если смотреть на профиль целиком, его отличие в сочетании нескольких вещей: ",
         fit:"По подтверждённым фактам наиболее естественный fit выглядит так: ",
-        weakness:"Портфолио не должно придумывать слабые стороны. Из подтверждённых данных можно осторожно сказать следующее: ",
+        weakness:"По доступным фактам корректнее говорить о trade-off профиля: ",
         default:""
       },
       en:{
@@ -271,7 +271,7 @@
         broad:"The main picture is: ",
         strengths:"Looking across the profile, the differentiator is the combination of several things: ",
         fit:"Based on verified portfolio facts, the clearest fit is: ",
-        weakness:"The portfolio should not invent weaknesses. From the available evidence, the most careful statement is: ",
+        weakness:"A visible trade-off in the profile is: ",
         default:""
       }
     };
