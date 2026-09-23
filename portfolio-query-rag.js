@@ -3,7 +3,7 @@
   let kb = null;
   let kbError = null;
 
-  const kbReady = fetch("./generated/portfolio-data.json", { cache: "no-cache" })
+  const kbReady = fetch("./generated/portfolio-data.json?v=20260923-2", { cache: "no-store" })
     .then(async (response) => {
       if (!response.ok) throw new Error(`portfolio-data.json: HTTP ${response.status}`);
       const data = await response.json();
