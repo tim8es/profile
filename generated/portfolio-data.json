@@ -397,8 +397,8 @@
         "experiments"
       ],
       "text": {
-        "ru": "Среди других публичных проектов — Book Translator, MindRail и PM 0.1; они остаются доступными через Portfolio Query, но не перегружают основной список работ.",
-        "en": "Other public projects include Book Translator, MindRail and PM 0.1; they remain discoverable through Portfolio Query without overloading the main work list."
+        "ru": "Среди других публичных работ — Book Translator, MindRail, PM 0.1, privacy-first Screenpipe UI, policy plugins для AI-агентов и ARC Whitebox research.",
+        "en": "Other public work includes Book Translator, MindRail, PM 0.1, a privacy-first Screenpipe UI, policy plugins for AI agents and ARC Whitebox research."
       },
       "source": {
         "label": "Public GitHub projects"
@@ -419,8 +419,8 @@
         "opensource"
       ],
       "text": {
-        "ru": "В Selected work собраны TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool.",
-        "en": "Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse and a merged upstream contribution to hh-applicant-tool."
+        "ru": "В Selected work собраны TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool.",
+        "en": "Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse and a merged upstream contribution to hh-applicant-tool."
       },
       "source": {
         "label": "Selected work"
@@ -452,6 +452,60 @@
       "confidence": "verified",
       "context": {
         "section": "profile"
+      }
+    },
+    {
+      "id": "project.arc.method",
+      "topics": [
+        "projects",
+        "arc",
+        "research",
+        "testing",
+        "evaluation"
+      ],
+      "text": {
+        "ru": "Рабочее правило проекта — hypothesis → implementation → benchmark → compare → ablate → keep/drop; метод не продвигается только на основании теоретической правдоподобности.",
+        "en": "The project's operating rule is hypothesis → implementation → benchmark → compare → ablate → keep/drop; a method is not promoted on theoretical plausibility alone."
+      },
+      "source": {
+        "label": "ARC Whitebox README",
+        "url": "https://github.com/tim8es/arc-whitebox"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "arc-whitebox",
+        "projectName": "ARC Whitebox Research",
+        "links": {
+          "github": "https://github.com/tim8es/arc-whitebox"
+        }
+      }
+    },
+    {
+      "id": "project.arc.overview",
+      "topics": [
+        "projects",
+        "arc",
+        "research",
+        "ai",
+        "evaluation"
+      ],
+      "text": {
+        "ru": "arc-whitebox — исследовательский проект для ARC White-Box Estimation Challenge 2026 Phase 2 с CPU/FLOP ограничениями и воспроизводимым experiment ledger.",
+        "en": "arc-whitebox is a research project for the ARC White-Box Estimation Challenge 2026 Phase 2 with CPU/FLOP constraints and a reproducible experiment ledger."
+      },
+      "source": {
+        "label": "ARC Whitebox",
+        "url": "https://github.com/tim8es/arc-whitebox"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "arc-whitebox",
+        "projectName": "ARC Whitebox Research",
+        "links": {
+          "github": "https://github.com/tim8es/arc-whitebox"
+        }
       }
     },
     {
@@ -779,6 +833,88 @@
       }
     },
     {
+      "id": "project.market.architecture",
+      "topics": [
+        "projects",
+        "market",
+        "data",
+        "architecture",
+        "nextjs",
+        "testing"
+      ],
+      "text": {
+        "ru": "Данные проходят через versioned market snapshot/batch contracts и FileSnapshotRepository; repository-wide verify включает lint, tests и production Next.js build.",
+        "en": "Data flows through versioned market snapshot/batch contracts and FileSnapshotRepository; repository-wide verification includes lint, tests and a production Next.js build."
+      },
+      "source": {
+        "label": "HH Market Scanner README",
+        "url": "https://github.com/tim8es/professions_statistics"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "hh-market-scanner",
+        "projectName": "HH Market Scanner",
+        "links": {
+          "github": "https://github.com/tim8es/professions_statistics"
+        }
+      }
+    },
+    {
+      "id": "project.market.overview",
+      "topics": [
+        "projects",
+        "market",
+        "data",
+        "browser",
+        "product"
+      ],
+      "text": {
+        "ru": "HH Market Scanner — продукт данных о рынке труда, который объединяет возобновляемый Chrome MV3 collector, валидируемые snapshots и Next.js web-приложение.",
+        "en": "HH Market Scanner is a labor-market data product combining a resumable Chrome MV3 collector, validated snapshots and a Next.js web application."
+      },
+      "source": {
+        "label": "HH Market Scanner",
+        "url": "https://github.com/tim8es/professions_statistics"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "hh-market-scanner",
+        "projectName": "HH Market Scanner",
+        "links": {
+          "github": "https://github.com/tim8es/professions_statistics"
+        }
+      }
+    },
+    {
+      "id": "project.market.quality",
+      "topics": [
+        "projects",
+        "market",
+        "data",
+        "reliability",
+        "testing"
+      ],
+      "text": {
+        "ru": "Collector различает настоящий ноль, selector failure, неверную страницу, блокировку и navigation failure; неизвестные наблюдения не превращаются в ноль.",
+        "en": "The collector distinguishes valid zero, selector failure, wrong-page, blocking and navigation failure; unknown observations are not silently converted to zero."
+      },
+      "source": {
+        "label": "HH Market Scanner README",
+        "url": "https://github.com/tim8es/professions_statistics"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "hh-market-scanner",
+        "projectName": "HH Market Scanner",
+        "links": {
+          "github": "https://github.com/tim8es/professions_statistics"
+        }
+      }
+    },
+    {
       "id": "project.mindrail.overview",
       "topics": [
         "projects",
@@ -828,6 +964,33 @@
         "projectName": "MindRail",
         "links": {
           "github": "https://github.com/tim8es/mindRail"
+        }
+      }
+    },
+    {
+      "id": "project.plugins.overview",
+      "topics": [
+        "projects",
+        "plugins",
+        "agents",
+        "security",
+        "permissions"
+      ],
+      "text": {
+        "ru": "tim8plugins содержит dependency-light policy plugins для agent gateways: human approval для рискованных tool calls и checkpoint guard с ограничением числа попыток.",
+        "en": "tim8plugins contains dependency-light policy plugins for agent gateways: human approval for risky tool calls and a checkpoint guard that bounds tool-call attempts."
+      },
+      "source": {
+        "label": "tim8plugins",
+        "url": "https://github.com/tim8es/tim8plugins"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tim8plugins",
+        "projectName": "Agent policy plugins",
+        "links": {
+          "github": "https://github.com/tim8es/tim8plugins"
         }
       }
     },
@@ -882,6 +1045,33 @@
         "projectName": "PM 0.1",
         "links": {
           "github": "https://github.com/tim8es/pmo01"
+        }
+      }
+    },
+    {
+      "id": "project.screenpipe.overview",
+      "topics": [
+        "projects",
+        "screenpipe",
+        "privacy",
+        "desktop",
+        "product"
+      ],
+      "text": {
+        "ru": "open-screen-pipe — early-stage privacy-first desktop UI для локального Screenpipe с явными границами между local-only действиями и сетевыми, destructive или code-executing операциями.",
+        "en": "open-screen-pipe is an early-stage privacy-first desktop UI for local Screenpipe with explicit boundaries around networked, destructive and code-executing actions."
+      },
+      "source": {
+        "label": "open-screen-pipe",
+        "url": "https://github.com/tim8es/open-screen-pipe"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "open-screen-pipe",
+        "projectName": "open-screen-pipe",
+        "links": {
+          "github": "https://github.com/tim8es/open-screen-pipe"
         }
       }
     },
