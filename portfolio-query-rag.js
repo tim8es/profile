@@ -137,7 +137,7 @@
     experience:["где работал","компан","опыт","career","experience","worked","background"],
     companies:["компан","где работал","employer","company"],
     skills:["умеет","навык","компетенц","skills","can do","capabil"],
-    strengths:["удив","сильн","преимущ","strength","differentiat","unique"],
+    strengths:["удив","сильн","преимущ","strength","differentiat","unique"],\n    impact:["результат","метрик","цифр","эффект","impact","results","metrics"],
     fit:["подойд","работ","роль","fit","role","job","suitable"],
     projects:["проект","делал","создал","built","project","portfolio"],
     product:["продукт","mvp","гипотез","product","prototype"],
