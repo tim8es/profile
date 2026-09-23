@@ -12,7 +12,6 @@
 
   const ui = {
     en: {
-      demo: "04 / Hybrid candidate",
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
         eyebrow:"Product builder / process thinker",
@@ -23,7 +22,6 @@
       field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Agents"] },
       query: {
         title:"Portfolio Query",
-        status:"grounded local composer / curated knowledge base",
         intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
           ["Who is Timur?","Who is Timur?"],
@@ -65,7 +63,6 @@
       }
     },
     ru: {
-      demo: "04 / Гибридный вариант",
       nav: { work:"Работы", query:"Спросить", about:"Обо мне" },
       hero: {
         eyebrow:"Product builder / системное мышление",
@@ -76,7 +73,6 @@
       field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
       query: {
         title:"Portfolio Query",
-        status:"grounded composer / модерируемая база знаний",
         intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
           ["Кто такой Тимур?","Кто такой Тимур?"],
@@ -473,7 +469,6 @@
     langToggle?.setAttribute("aria-label",lang==="en"?"Переключить на русский":"Switch to English");
     const t=ui[lang];
 
-    setText("[data-demo-label]",t.demo);
     setText('.nav-links a[href="#work"]',t.nav.work);
     setText('.nav-links a[href="#query"]',t.nav.query);
     setText('.nav-links a[href="#about"]',t.nav.about);
