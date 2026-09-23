@@ -1,6 +1,24 @@
-(() => {
-  const kb = window.PORTFOLIO_KB;
-  if (!kb) return;
+(async () => {
+  const html = document.documentElement;
+  let kb;
+
+  try {
+    const response = await fetch("./generated/portfolio-data.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error(`portfolio-data.json: HTTP ${response.status}`);
+    kb = await response.json();
+    if (!kb || !Array.isArray(kb.facts)) throw new Error("Invalid portfolio runtime data");
+  } catch (error) {
+    console.error("Portfolio knowledge base failed to load", error);
+    const log = document.querySelector("[data-chat-log]");
+    if (log) {
+      log.innerHTML = "";
+      const row = document.createElement("div");
+      row.className = "chat-message chat-message--bot";
+      row.innerHTML = '<span class="chat-role">portfolio</span><div class="chat-bubble">Knowledge base failed to load.</div>';
+      log.appendChild(row);
+    }
+    return;
+  }
 
   const state = {
     lang: localStorage.getItem("portfolio-lang") || "ru",
