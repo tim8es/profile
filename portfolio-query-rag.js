@@ -151,7 +151,14 @@
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
     tubescore:["tubescore","tube score"],
-    feedpulse:["feedpulse","feed pulse"]
+    critic:["ai critic","critic","критик"],
+    gac:["github agent continuity","gac","continuity"],
+    shorts:["video pipeline","shorts","youtube shorts","n8n","видео"],
+    feedpulse:["feedpulse","feed pulse"],
+    hh:["hh-applicant-tool","hh applicant","multi-account","мультиаккаунт"],
+    booktranslator:["book translator","переводчик книг","перевод книг"],
+    mindrail:["mindrail","control plane","контрольный слой"],
+    pmo:["pm 0.1","pmo01","инженерия исполнения"]
   };
 
   function norm(value){
@@ -404,7 +411,8 @@
     const server=await serverAnswer(text,facts,lang);
     const answer=server||local;
     const project=facts.find(f=>f.context?.projectId)?.context?.projectId;
-    const projectId=project==="tubescore"?"tube":project==="feedpulse"?"feed":null;
+    const projectMap={tubescore:"tube","ai-critic":"critic","github-agent-continuity":"gac","n8n-youtube-shorts-workflow":"shorts",feedpulse:"feed","hh-applicant-tool":"hh"};
+    const projectId=projectMap[project]||null;
 
     state.lastSubject=projectId||"timur";
     state.lastProject=projectId||state.lastProject;
