@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editorial — Timur Dautov</title>
+  <meta name="description" content="Editorial portfolio concept for Timur Dautov." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="portfolio editorial-page">
+  <div class="demo-bar">
+    <a class="demo-back" href="./">← All directions</a>
+    <nav class="demo-switch" aria-label="Concepts">
+      <a href="./editorial.html" aria-current="page">01</a>
+      <a href="./playful.html">02</a>
+      <a href="./command.html">03</a>
+    </nav>
+  </div>
+
+  <div class="site-shell">
+    <nav class="site-nav" aria-label="Portfolio navigation">
+      <a class="site-name" href="#top">Timur Dautov</a>
+      <div class="site-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/tim8es" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="editorial-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI product builder / automation</p>
+          <h1>I make messy processes simpler.</h1>
+          <p class="lead">I turn vague problems into small working products — with AI, automation and code.</p>
+          <div class="micro-row">
+            <span>Based in Saint Petersburg</span>
+            <span>Product → prototype</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="editorial-work" id="work">
+        <div>
+          <p class="section-kicker" style="margin-bottom:20px">Selected work</p>
+          <div class="project-list">
+            <button class="project-row" type="button" data-editorial-project="tube" aria-expanded="false">
+              <div class="project-row-top">
+                <span class="project-index">01</span>
+                <h2 class="project-title">TubeScore</h2>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-sub">Movie ratings appear directly on YouTube trailers — no extra tab, no extra search.</p>
+              <div class="project-extra"><div><div class="project-extra-grid">
+                <div><strong>Role</strong>Product, architecture, implementation</div>
+                <div><strong>Built with</strong>JavaScript, MV3, Wikidata</div>
+                <div><strong>Proof</strong>Working extension + automated tests</div>
+              </div></div></div>
+            </button>
+
+            <button class="project-row" type="button" data-editorial-project="feed" aria-expanded="false">
+              <div class="project-row-top">
+                <span class="project-index">02</span>
+                <h2 class="project-title">FeedPulse</h2>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-sub">A small ingestion layer that gives AI agents clean, normalized feed content.</p>
+              <div class="project-extra"><div><div class="project-extra-grid">
+                <div><strong>Role</strong>Product design + implementation</div>
+                <div><strong>Built with</strong>Node.js, RSS / Atom</div>
+                <div><strong>Focus</strong>Portable, small, low-dependency</div>
+              </div></div></div>
+            </button>
+
+            <button class="project-row" type="button" data-editorial-project="automation" aria-expanded="false">
+              <div class="project-row-top">
+                <span class="project-index">03</span>
+                <h2 class="project-title">AI workflow</h2>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-sub">A repetitive business flow rebuilt as an automated pipeline with tools, validation and clear handoffs.</p>
+              <div class="project-extra"><div><div class="project-extra-grid">
+                <div><strong>Input</strong>Business event / request</div>
+                <div><strong>Flow</strong>LLM → API → validation</div>
+                <div><strong>Outcome</strong>Less manual work and fewer handoffs</div>
+              </div></div></div>
+            </button>
+
+            <button class="project-row" type="button" data-editorial-project="oss" aria-expanded="false">
+              <div class="project-row-top">
+                <span class="project-index">04</span>
+                <h2 class="project-title">Open-source work</h2>
+                <span class="project-arrow">↗</span>
+              </div>
+              <p class="project-sub">Changes inside existing products: reading unfamiliar code, fixing behavior and contributing back.</p>
+              <div class="project-extra"><div><div class="project-extra-grid">
+                <div><strong>Work</strong>Existing codebase</div>
+                <div><strong>Tasks</strong>Feature changes + fixes</div>
+                <div><strong>Proof</strong>GitHub pull requests</div>
+              </div></div></div>
+            </button>
+          </div>
+        </div>
+
+        <aside class="preview-stage" aria-label="Project preview">
+          <div class="preview-frame">
+            <div class="preview-empty" data-preview-empty>
+              <span>Interact with a project.</span>
+              <span class="preview-symbol">↘</span>
+              <span>Only then does the interface reveal more.</span>
+            </div>
+
+            <div class="preview-content" data-preview-panel="tube">
+              <div class="mock-browser">
+                <div class="mock-browser-head"><span></span><span></span><span></span></div>
+                <div class="mock-video"><div class="rating-pill"><span>★ 8.8</span><span>IMDb 8.7</span></div></div>
+              </div>
+            </div>
+
+            <div class="preview-content" data-preview-panel="feed">
+              <div class="feed-terminal">
+                $ feedpulse read<br><br>
+                <span class="ok">✓</span> source discovered<br>
+                <span class="ok">✓</span> feed parsed<br>
+                <span class="ok">✓</span> content normalized<br>
+                <span class="ok">✓</span> 12 items ready<br><br>
+                output → agent
+              </div>
+            </div>
+
+            <div class="preview-content" data-preview-panel="automation">
+              <div class="flow-board">
+                <div class="flow-line">
+                  <span class="flow-node">input</span><span>→</span><span class="flow-node">LLM</span><span>→</span><span class="flow-node">tools</span><span>→</span><span class="flow-node">check</span><span>→</span><span class="flow-node">result</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-content" data-preview-panel="oss">
+              <div class="code-diff">
+                diff --git a/product.py b/product.py<br><br>
+                <span class="plus">+ support_multiple_accounts()</span><br>
+                <span class="plus">+ preserve_existing_session()</span><br>
+                &nbsp;&nbsp;run_tests()<br><br>
+                <span class="plus">+ 12 passing checks</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="editorial-about" id="about">
+        <p class="section-kicker">About</p>
+        <p>Project and process manager turned hands-on builder. I like tools that are small, understandable and useful on day one.</p>
+      </section>
+    </main>
+
+    <footer class="footer-simple" id="contact">
+      <span>Timur Dautov © 2026</span>
+      <span>Minimal by default. Detail on demand.</span>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
