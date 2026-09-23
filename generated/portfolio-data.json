@@ -6,170 +6,7 @@
   },
   "facts": [
     {
-      "id": "experience.opiniq.ai_research",
-      "topics": [
-        "experience",
-        "companies",
-        "ai",
-        "research",
-        "agents"
-      ],
-      "text": {
-        "ru": "В OpiniQ он исследовал 40+ кейсов внедрения AI из практики консалтинговых компаний и сделал PoC агентского Kanban workflow на Skill/Python/JavaScript.",
-        "en": "At OpiniQ, he researched 40+ AI implementation cases from consulting practice and built a proof of concept for an agentic Kanban workflow using Skill/Python/JavaScript."
-      },
-      "source": {
-        "label": "OpiniQ experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "opiniq",
-        "company": "OpiniQ"
-      }
-    },
-    {
-      "id": "experience.opiniq.invoice",
-      "topics": [
-        "experience",
-        "companies",
-        "automation",
-        "n8n",
-        "javascript",
-        "process"
-      ],
-      "text": {
-        "ru": "В OpiniQ Тимур автоматизировал генерацию инвойсов для удалённых сотрудников на n8n/JavaScript; один инвойс формировался менее чем за 15 секунд.",
-        "en": "At OpiniQ, Timur automated invoice generation for remote employees with n8n/JavaScript; one invoice was generated in under 15 seconds."
-      },
-      "source": {
-        "label": "OpiniQ experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "opiniq",
-        "company": "OpiniQ"
-      }
-    },
-    {
-      "id": "experience.opiniq.process",
-      "topics": [
-        "experience",
-        "companies",
-        "process",
-        "jira",
-        "analysis"
-      ],
-      "text": {
-        "ru": "Он также прорабатывал требования к Jira workflow и исследовал требования, риски и стоимость внедрения EPM Jedox.",
-        "en": "He also specified Jira workflow requirements and researched requirements, risks and implementation cost for EPM Jedox."
-      },
-      "source": {
-        "label": "OpiniQ experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "opiniq",
-        "company": "OpiniQ"
-      }
-    },
-    {
-      "id": "experience.skyeng.audit",
-      "topics": [
-        "experience",
-        "companies",
-        "product",
-        "ai",
-        "automation",
-        "qa"
-      ],
-      "text": {
-        "ru": "На проекте автоматизации аудита коммуникаций он выполнял роль Product Manager; решение охватывало более 95% транзакций и повышало эффективность аудита на 44% без расширения штата.",
-        "en": "On a communication-audit automation project, he acted as Product Manager; the solution covered more than 95% of transactions and improved audit efficiency by 44% without expanding headcount."
-      },
-      "source": {
-        "label": "Skyeng experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "skyeng",
-        "company": "Skyeng"
-      }
-    },
-    {
-      "id": "experience.skyeng.bi",
-      "topics": [
-        "experience",
-        "companies",
-        "data",
-        "sql",
-        "datalens",
-        "automation"
-      ],
-      "text": {
-        "ru": "Тимур спроектировал BI-дашборд на SQL + DataLens для 20 продуктов, сократив время на отчётность на 70%.",
-        "en": "Timur designed a SQL + DataLens BI dashboard for 20 products, reducing reporting time by 70%."
-      },
-      "source": {
-        "label": "Skyeng experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "skyeng",
-        "company": "Skyeng"
-      }
-    },
-    {
-      "id": "experience.skyeng.crm",
-      "topics": [
-        "experience",
-        "companies",
-        "crm",
-        "process",
-        "automation"
-      ],
-      "text": {
-        "ru": "Миграция ручных процессов во внутреннюю CRM повысила скорость обработки задач на 20% и дала прозрачный трекинг метрик.",
-        "en": "Moving manual processes into the internal CRM increased task-processing speed by 20% and provided transparent metric tracking."
-      },
-      "source": {
-        "label": "Skyeng experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "skyeng",
-        "company": "Skyeng"
-      }
-    },
-    {
-      "id": "experience.skyeng.incidents",
-      "topics": [
-        "experience",
-        "companies",
-        "process",
-        "operations"
-      ],
-      "text": {
-        "ru": "Перестройка процесса кризисного менеджмента сократила время решения критических инцидентов на 25%.",
-        "en": "Redesigning the crisis-management process reduced critical-incident resolution time by 25%."
-      },
-      "source": {
-        "label": "Skyeng experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "skyeng",
-        "company": "Skyeng"
-      }
-    },
-    {
-      "id": "experience.skyeng.leadership",
+      "id": "experience.skyeng",
       "topics": [
         "experience",
         "companies",
@@ -178,8 +15,8 @@
         "operations"
       ],
       "text": {
-        "ru": "В Skyeng Тимур руководил удалённой командой из 23 асессоров и одного тренера и отвечал за планирование, KPI, найм, онбординг, отчётность и улучшение процессов.",
-        "en": "At Skyeng, Timur led a remote team of 23 assessors and one trainer and handled planning, KPIs, hiring, onboarding, reporting and process improvement."
+        "ru": "В Skyeng он руководил удалённой командой из 23 асессоров и одного тренера и работал с планированием, KPI, наймом, онбордингом, отчётностью и улучшением процессов.",
+        "en": "At Skyeng, he led a remote assessment team of 23 assessors and one trainer and worked with planning, KPIs, hiring, onboarding, reporting and process improvement."
       },
       "source": {
         "label": "Skyeng experience"
@@ -192,42 +29,18 @@
       }
     },
     {
-      "id": "experience.skyeng.processes",
-      "topics": [
-        "experience",
-        "companies",
-        "process",
-        "operations",
-        "lean"
-      ],
-      "text": {
-        "ru": "Он провёл реинжиниринг более 200 процессов сопровождения и работал с держателями процессов над узкими местами и качеством сервиса.",
-        "en": "He re-engineered more than 200 support processes and worked with process owners on bottlenecks and service quality."
-      },
-      "source": {
-        "label": "Skyeng experience"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "experience",
-        "experienceId": "skyeng",
-        "company": "Skyeng"
-      }
-    },
-    {
-      "id": "experience.spiks.product",
+      "id": "experience.spiks",
       "topics": [
         "experience",
         "companies",
         "product",
         "project",
         "crm",
-        "requirements",
-        "delivery"
+        "requirements"
       ],
       "text": {
-        "ru": "В SPIKS Тимур управлял развитием B2B Loyalty CRM: SaaS/on-premise экосистемой из четырёх web- и двух mobile-приложений.",
-        "en": "At SPIKS, Timur managed development of a B2B Loyalty CRM: a SaaS/on-premise ecosystem with four web and two mobile applications."
+        "ru": "В SPIKS он работал с B2B Loyalty CRM: web-приложениями, мобильными приложениями, backend, PostgreSQL и внешними интеграциями, включая требования, backlog, delivery и взаимодействие с разработкой.",
+        "en": "In SPIKS, he worked with a B2B Loyalty CRM product across web applications, mobile applications, backend, PostgreSQL and external integrations, including requirements, backlog, delivery and coordination with development."
       },
       "source": {
         "label": "SPIKS experience"
@@ -240,26 +53,21 @@
       }
     },
     {
-      "id": "experience.spiks.scope",
+      "id": "experience.years",
       "topics": [
         "experience",
-        "companies",
-        "product",
-        "delivery",
-        "management"
+        "background"
       ],
       "text": {
-        "ru": "Бюджет продукта превышал 20 млн ₽; Тимур отвечал за delivery, приоритизацию backlog, планирование, требования и коммуникацию с клиентом и разработкой.",
-        "en": "The product budget exceeded RUB 20M; Timur handled delivery, backlog prioritization, planning, requirements and communication with the client and development team."
+        "ru": "У него более 10 лет профессионального опыта.",
+        "en": "He has more than 10 years of professional experience."
       },
       "source": {
-        "label": "SPIKS experience"
+        "label": "Career history"
       },
       "confidence": "verified",
       "context": {
-        "section": "experience",
-        "experienceId": "spiks",
-        "company": "SPIKS"
+        "section": "profile"
       }
     },
     {
@@ -273,8 +81,8 @@
         "automation"
       ],
       "text": {
-        "ru": "Наиболее подтверждённый fit — Product Builder, AI/Automation, Project/Process или technical product роли, где нужно соединять понимание процесса с быстрым прототипированием и delivery.",
-        "en": "The strongest evidence supports Product Builder, AI/Automation, Project/Process or technical-product roles that combine process understanding with fast prototyping and delivery."
+        "ru": "Его профиль лучше всего подтверждён для задач, где понимание продукта или процесса сочетается с прототипированием, AI или автоматизацией, а не для узкой чисто инженерной специализации.",
+        "en": "His profile is most directly supported for work where product or process understanding is combined with prototyping, AI or automation rather than for a narrowly specialized pure engineering role."
       },
       "source": {
         "label": "Portfolio positioning"
@@ -286,27 +94,7 @@
       }
     },
     {
-      "id": "identity.focus",
-      "topics": [
-        "identity",
-        "ai",
-        "automation",
-        "product"
-      ],
-      "text": {
-        "ru": "Основной текущий фокус — AI-агенты, автоматизация workflow, API-интеграции, браузерные инструменты и небольшие продукты, которые можно быстро проверить.",
-        "en": "His current focus is AI agents, workflow automation, API integrations, browser tooling and small products that can be tested quickly."
-      },
-      "source": {
-        "label": "Portfolio profile"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "identity.product_builder",
+      "id": "identity.product_process_builder",
       "topics": [
         "identity",
         "skills",
@@ -314,8 +102,8 @@
         "positioning"
       ],
       "text": {
-        "ru": "Тимур работает на стыке product, process и hands-on реализации: разбирает проблему, сокращает scope и доводит решение до работающего прототипа или системы.",
-        "en": "Timur works at the intersection of product, process and hands-on implementation: he frames the problem, cuts scope and gets to a working prototype or system."
+        "ru": "Тимур сочетает опыт управления проектами и процессами с всё более hands-on работой над продуктами.",
+        "en": "Timur combines project and process management with increasingly hands-on product building."
       },
       "source": {
         "label": "Portfolio profile"
@@ -323,331 +111,6 @@
       "confidence": "verified",
       "context": {
         "section": "profile"
-      }
-    },
-    {
-      "id": "limitation.profile_breadth",
-      "topics": [
-        "limitations",
-        "weakness",
-        "fit",
-        "roles"
-      ],
-      "text": {
-        "ru": "Профиль Тимура широкий: он не позиционирует себя как узкого senior software engineer. Наиболее сильный fit — задачи, где product/process понимание нужно соединить с AI, автоматизацией, прототипированием и delivery.",
-        "en": "Timur has a broad profile rather than positioning as a narrowly specialized senior software engineer. His strongest fit is work that combines product/process understanding with AI, automation, prototyping and delivery."
-      },
-      "source": {
-        "label": "Portfolio positioning"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "positioning",
-        "positioningGroup": "limitations"
-      }
-    },
-    {
-      "id": "portfolio.agents.summary",
-      "topics": [
-        "projects",
-        "ai",
-        "agents"
-      ],
-      "text": {
-        "ru": "В agent-направлении Тимур сделал AI Critic, GitHub Agent Continuity, MindRail, Book Translator, FeedPulse и policy plugins — от контекста и continuity до permissions и bounded execution.",
-        "en": "Timur's agent work includes AI Critic, GitHub Agent Continuity, MindRail, Book Translator, FeedPulse and policy plugins, spanning context, continuity, permissions and bounded execution."
-      },
-      "source": {
-        "label": "Agent projects"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "portfolio.experience.summary",
-      "topics": [
-        "experience",
-        "companies",
-        "background"
-      ],
-      "text": {
-        "ru": "В Skyeng Тимур руководил командой и улучшал QA/CX-процессы; в SPIKS управлял развитием B2B Loyalty CRM; в OpiniQ работал с автоматизацией процессов, Jira workflow и AI-исследованиями.",
-        "en": "At Skyeng, Timur led a team and improved QA/CX processes; at SPIKS, he managed development of a B2B Loyalty CRM; at OpiniQ, he worked on process automation, Jira workflows and AI research."
-      },
-      "source": {
-        "label": "Career history"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "portfolio.impact.summary",
-      "topics": [
-        "experience",
-        "impact",
-        "metrics",
-        "results",
-        "process",
-        "automation"
-      ],
-      "text": {
-        "ru": "Среди измеримых результатов: −70% времени на отчётность, +44% эффективности аудита при охвате 95%+ транзакций, +20% скорости обработки после миграции процессов в CRM и −25% времени решения критических инцидентов.",
-        "en": "Measured results include 70% less reporting time, 44% higher audit efficiency at 95%+ transaction coverage, 20% faster processing after CRM process migration and 25% lower critical-incident resolution time."
-      },
-      "source": {
-        "label": "Career results"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "portfolio.projects.other",
-      "topics": [
-        "projects",
-        "portfolio",
-        "agents",
-        "product",
-        "experiments"
-      ],
-      "text": {
-        "ru": "Среди других работ — Book Translator, MindRail, PM 0.1, privacy-first Screenpipe UI, policy plugins для AI-агентов и ARC Whitebox research.",
-        "en": "Other work includes Book Translator, MindRail, PM 0.1, a privacy-first Screenpipe UI, policy plugins for AI agents and ARC Whitebox research."
-      },
-      "source": {
-        "label": "Public GitHub projects"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "portfolio.projects.selected",
-      "topics": [
-        "projects",
-        "portfolio",
-        "product",
-        "ai",
-        "automation",
-        "opensource"
-      ],
-      "text": {
-        "ru": "В Selected work собраны TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool.",
-        "en": "Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse and a merged upstream contribution to hh-applicant-tool."
-      },
-      "source": {
-        "label": "Selected work"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "portfolio.summary",
-      "topics": [
-        "identity",
-        "experience",
-        "skills",
-        "projects",
-        "strengths",
-        "product",
-        "ai",
-        "automation"
-      ],
-      "text": {
-        "ru": "Тимур сочетает project/process опыт в Skyeng, SPIKS и OpiniQ с hands-on разработкой: AI-агенты, автоматизация, browser tooling и проверяемые продукты. В работе опирается на измеримый эффект, явные ограничения и проверку результата.",
-        "en": "Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on building across AI agents, automation, browser tooling and testable products. His work emphasizes measurable impact, explicit constraints and verification."
-      },
-      "source": {
-        "label": "Portfolio summary"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "profile"
-      }
-    },
-    {
-      "id": "project.arc.method",
-      "topics": [
-        "projects",
-        "arc",
-        "research",
-        "testing",
-        "evaluation"
-      ],
-      "text": {
-        "ru": "Рабочее правило проекта — hypothesis → implementation → benchmark → compare → ablate → keep/drop; метод не продвигается только на основании теоретической правдоподобности.",
-        "en": "The project's operating rule is hypothesis → implementation → benchmark → compare → ablate → keep/drop; a method is not promoted on theoretical plausibility alone."
-      },
-      "source": {
-        "label": "ARC Whitebox README",
-        "url": "https://github.com/tim8es/arc-whitebox"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "arc-whitebox",
-        "projectName": "ARC Whitebox Research",
-        "links": {
-          "github": "https://github.com/tim8es/arc-whitebox"
-        }
-      }
-    },
-    {
-      "id": "project.arc.overview",
-      "topics": [
-        "projects",
-        "arc",
-        "research",
-        "ai",
-        "evaluation"
-      ],
-      "text": {
-        "ru": "arc-whitebox — исследовательский проект для ARC White-Box Estimation Challenge 2026 Phase 2 с CPU/FLOP ограничениями и воспроизводимым experiment ledger.",
-        "en": "arc-whitebox is a research project for the ARC White-Box Estimation Challenge 2026 Phase 2 with CPU/FLOP constraints and a reproducible experiment ledger."
-      },
-      "source": {
-        "label": "ARC Whitebox",
-        "url": "https://github.com/tim8es/arc-whitebox"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "arc-whitebox",
-        "projectName": "ARC Whitebox Research",
-        "links": {
-          "github": "https://github.com/tim8es/arc-whitebox"
-        }
-      }
-    },
-    {
-      "id": "project.booktranslator.overview",
-      "topics": [
-        "projects",
-        "booktranslator",
-        "agents",
-        "translation",
-        "workflow"
-      ],
-      "text": {
-        "ru": "Book Translator — agent-agnostic workflow для перевода книг с durable progress, terminology/style state, отдельным review и возможностью продолжать работу в новой сессии.",
-        "en": "Book Translator is an agent-agnostic book-translation workflow with durable progress, terminology/style state, separate review and resumability across sessions."
-      },
-      "source": {
-        "label": "Book Translator",
-        "url": "https://github.com/tim8es/book-translator"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "book-translator",
-        "projectName": "Book Translator",
-        "links": {
-          "github": "https://github.com/tim8es/book-translator"
-        }
-      }
-    },
-    {
-      "id": "project.booktranslator.state",
-      "topics": [
-        "projects",
-        "booktranslator",
-        "agents",
-        "state",
-        "reliability"
-      ],
-      "text": {
-        "ru": "Состояние хранится в workspace-файлах по книге — source, extracted units, translations, progress, glossary, style guide и source manifest — а не только в истории чата.",
-        "en": "State is stored in per-book workspace files—source, extracted units, translations, progress, glossary, style guide and source manifest—rather than only in chat history."
-      },
-      "source": {
-        "label": "Book Translator README",
-        "url": "https://github.com/tim8es/book-translator"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "book-translator",
-        "projectName": "Book Translator",
-        "links": {
-          "github": "https://github.com/tim8es/book-translator"
-        }
-      }
-    },
-    {
-      "id": "project.critic.architecture",
-      "topics": [
-        "projects",
-        "critic",
-        "ai",
-        "architecture",
-        "privacy",
-        "security"
-      ],
-      "text": {
-        "ru": "Проект разделяет Context/Critic/Verifier workflow, local-first Ambient architecture и узкий privacy-gated Lite Bridge experiment; автономные действия в сторонних приложениях не входят в scope.",
-        "en": "The project separates Context/Critic/Verifier workflows, a local-first Ambient architecture and a narrow privacy-gated Lite Bridge experiment; autonomous actions in third-party apps are out of scope."
-      },
-      "source": {
-        "label": "AI Critic README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "ai-critic",
-        "projectName": "AI Critic"
-      }
-    },
-    {
-      "id": "project.critic.overview",
-      "topics": [
-        "projects",
-        "critic",
-        "ai",
-        "agents",
-        "reliability"
-      ],
-      "text": {
-        "ru": "AI Critic — evidence-backed система, которая должна помнить релевантный рабочий контекст, находить существенные ошибки или противоречия и вмешиваться только когда польза критики достаточно высока.",
-        "en": "AI Critic is an evidence-backed system intended to remember relevant work context, detect material mistakes or contradictions and intervene only when the expected value of criticism is high."
-      },
-      "source": {
-        "label": "AI Critic"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "ai-critic",
-        "projectName": "AI Critic"
-      }
-    },
-    {
-      "id": "project.critic.status",
-      "topics": [
-        "projects",
-        "critic",
-        "testing",
-        "security"
-      ],
-      "text": {
-        "ru": "В репозитории есть strict TypeScript и targeted security-flow PASS evidence для новых safe-root/Codex модулей; реальная Windows/Codex host verification отделена и ещё требуется до dogfood.",
-        "en": "The repository has strict TypeScript and targeted security-flow PASS evidence for the new safe-root/Codex modules; real Windows/Codex host verification is separate and still required before dogfood."
-      },
-      "source": {
-        "label": "AI Critic README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "ai-critic",
-        "projectName": "AI Critic"
       }
     },
     {
@@ -660,12 +123,12 @@
         "cross-platform"
       ],
       "text": {
-        "ru": "FeedPulse входит в коллекцию tim8skills, использует Node.js и небольшой dependency surface и рассчитан на Windows, macOS и Linux.",
-        "en": "FeedPulse is part of the tim8skills collection, uses Node.js with a small dependency surface and is designed for Windows, macOS and Linux."
+        "ru": "FeedPulse намеренно сохраняет небольшой набор зависимостей и рассчитан на работу в Windows, macOS и Linux.",
+        "en": "FeedPulse deliberately keeps a small dependency surface and is designed to work across Windows, macOS and Linux."
       },
       "source": {
-        "label": "tim8skills",
-        "url": "https://github.com/tim8es/tim8skills"
+        "label": "FeedPulse design",
+        "url": "https://github.com/tim8es/tim8skills/tree/main/feed-pulse"
       },
       "confidence": "verified",
       "context": {
@@ -688,8 +151,8 @@
         "node"
       ],
       "text": {
-        "ru": "FeedPulse — небольшая утилита для AI-агентов, которая читает RSS/Atom feeds, нормализует материалы и отдаёт bounded content для дальнейшей обработки.",
-        "en": "FeedPulse is a small utility for AI agents that reads RSS/Atom feeds, normalizes items and provides bounded content for downstream processing."
+        "ru": "FeedPulse — лёгкая утилита, которая читает и нормализует RSS/Atom-источники в предсказуемый структурированный контент для AI-агентов.",
+        "en": "FeedPulse is a lightweight utility that reads and normalizes RSS/Atom-style sources into predictable structured content for AI agents."
       },
       "source": {
         "label": "FeedPulse",
@@ -706,409 +169,6 @@
       }
     },
     {
-      "id": "project.gac.overview",
-      "topics": [
-        "projects",
-        "gac",
-        "agents",
-        "github",
-        "infrastructure"
-      ],
-      "text": {
-        "ru": "GitHub Agent Continuity позволяет автономным coding-агентам продолжать работу между независимыми или scheduled-сессиями, используя GitHub как durable coordination state.",
-        "en": "GitHub Agent Continuity lets autonomous coding agents continue work across independent or scheduled sessions using GitHub as durable coordination state."
-      },
-      "source": {
-        "label": "GitHub Agent Continuity"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "github-agent-continuity",
-        "projectName": "GitHub Agent Continuity"
-      }
-    },
-    {
-      "id": "project.gac.protocol",
-      "topics": [
-        "projects",
-        "gac",
-        "agents",
-        "architecture",
-        "concurrency"
-      ],
-      "text": {
-        "ru": "Протокол использует Issues, immutable generation claim refs, отдельные work branches, leases, checkpoints и takeover rules для cooperative crash-tolerant coordination.",
-        "en": "The protocol uses Issues, immutable generation claim refs, separate work branches, leases, checkpoints and takeover rules for cooperative crash-tolerant coordination."
-      },
-      "source": {
-        "label": "GAC README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "github-agent-continuity",
-        "projectName": "GitHub Agent Continuity"
-      }
-    },
-    {
-      "id": "project.gac.verification",
-      "topics": [
-        "projects",
-        "gac",
-        "testing",
-        "concurrency"
-      ],
-      "text": {
-        "ru": "Adversarial live subset GAC завершился с 5 PASS, 0 FAIL и 0 NOT EXECUTED, включая claim serialization, takeover и stale-writer isolation.",
-        "en": "GAC's adversarial live subset completed with 5 PASS, 0 FAIL and 0 NOT EXECUTED, including claim serialization, takeover and stale-writer isolation."
-      },
-      "source": {
-        "label": "GAC README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "github-agent-continuity",
-        "projectName": "GitHub Agent Continuity"
-      }
-    },
-    {
-      "id": "project.hh.overview",
-      "topics": [
-        "projects",
-        "hh",
-        "opensource",
-        "python",
-        "ui"
-      ],
-      "text": {
-        "ru": "Тимур добавил в upstream hh-applicant-tool UI для управления несколькими изолированными профилями/аккаунтами, используя уже существующую CLI-модель профилей.",
-        "en": "Timur added UI multi-profile/account management to upstream hh-applicant-tool, exposing the project's existing CLI profile model."
-      },
-      "source": {
-        "label": "Merged PR #84",
-        "url": "https://github.com/s3rgeym/hh-applicant-tool/pull/84"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "hh-applicant-tool",
-        "projectName": "hh-applicant-tool contribution",
-        "links": {
-          "github": "https://github.com/s3rgeym/hh-applicant-tool/pull/84"
-        }
-      }
-    },
-    {
-      "id": "project.hh.verification",
-      "topics": [
-        "projects",
-        "hh",
-        "opensource",
-        "testing",
-        "playwright"
-      ],
-      "text": {
-        "ru": "PR #84 был принят upstream; проверка включала Ruff, compileall, JavaScript syntax, 116 regression tests и Chromium/Playwright UI E2E.",
-        "en": "PR #84 was merged upstream; validation included Ruff, compileall, JavaScript syntax, 116 regression tests and Chromium/Playwright UI E2E."
-      },
-      "source": {
-        "label": "Merged PR #84",
-        "url": "https://github.com/s3rgeym/hh-applicant-tool/pull/84"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "hh-applicant-tool",
-        "projectName": "hh-applicant-tool contribution",
-        "links": {
-          "github": "https://github.com/s3rgeym/hh-applicant-tool/pull/84"
-        }
-      }
-    },
-    {
-      "id": "project.market.architecture",
-      "topics": [
-        "projects",
-        "market",
-        "data",
-        "architecture",
-        "nextjs",
-        "testing"
-      ],
-      "text": {
-        "ru": "Данные проходят через versioned market snapshot/batch contracts и FileSnapshotRepository; repository-wide verify включает lint, tests и production Next.js build.",
-        "en": "Data flows through versioned market snapshot/batch contracts and FileSnapshotRepository; repository-wide verification includes lint, tests and a production Next.js build."
-      },
-      "source": {
-        "label": "HH Market Scanner README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "hh-market-scanner",
-        "projectName": "HH Market Scanner"
-      }
-    },
-    {
-      "id": "project.market.overview",
-      "topics": [
-        "projects",
-        "market",
-        "data",
-        "browser",
-        "product"
-      ],
-      "text": {
-        "ru": "HH Market Scanner — продукт данных о рынке труда, который объединяет возобновляемый Chrome MV3 collector, валидируемые snapshots и Next.js web-приложение.",
-        "en": "HH Market Scanner is a labor-market data product combining a resumable Chrome MV3 collector, validated snapshots and a Next.js web application."
-      },
-      "source": {
-        "label": "HH Market Scanner"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "hh-market-scanner",
-        "projectName": "HH Market Scanner"
-      }
-    },
-    {
-      "id": "project.market.quality",
-      "topics": [
-        "projects",
-        "market",
-        "data",
-        "reliability",
-        "testing"
-      ],
-      "text": {
-        "ru": "Collector различает настоящий ноль, selector failure, неверную страницу, блокировку и navigation failure; неизвестные наблюдения не превращаются в ноль.",
-        "en": "The collector distinguishes valid zero, selector failure, wrong-page, blocking and navigation failure; unknown observations are not silently converted to zero."
-      },
-      "source": {
-        "label": "HH Market Scanner README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "hh-market-scanner",
-        "projectName": "HH Market Scanner"
-      }
-    },
-    {
-      "id": "project.mindrail.overview",
-      "topics": [
-        "projects",
-        "mindrail",
-        "agents",
-        "infrastructure",
-        "control"
-      ],
-      "text": {
-        "ru": "MindRail — early-stage vendor-neutral control plane для автономных AI-агентов, где состояние, policy и coordination вынесены из конкретной chat/session runtime.",
-        "en": "MindRail is an early-stage vendor-neutral control plane for autonomous AI agents, keeping state, policy and coordination outside any one chat/session runtime."
-      },
-      "source": {
-        "label": "MindRail"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "mindrail",
-        "projectName": "MindRail"
-      }
-    },
-    {
-      "id": "project.mindrail.status",
-      "topics": [
-        "projects",
-        "mindrail",
-        "architecture",
-        "testing"
-      ],
-      "text": {
-        "ru": "В проекте реализован и проверен deterministic in-memory vertical slice Goal → Task → Lease → Checkpoint → completion; durable persistence и реальные agent integrations ещё в разработке.",
-        "en": "The project has an implemented and verified deterministic in-memory Goal → Task → Lease → Checkpoint → completion vertical slice; durable persistence and real agent integrations are still in development."
-      },
-      "source": {
-        "label": "MindRail README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "mindrail",
-        "projectName": "MindRail"
-      }
-    },
-    {
-      "id": "project.plugins.overview",
-      "topics": [
-        "projects",
-        "plugins",
-        "agents",
-        "security",
-        "permissions"
-      ],
-      "text": {
-        "ru": "tim8plugins содержит dependency-light policy plugins для agent gateways: human approval для рискованных tool calls и checkpoint guard с ограничением числа попыток.",
-        "en": "tim8plugins contains dependency-light policy plugins for agent gateways: human approval for risky tool calls and a checkpoint guard that bounds tool-call attempts."
-      },
-      "source": {
-        "label": "tim8plugins",
-        "url": "https://github.com/tim8es/tim8plugins"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "tim8plugins",
-        "projectName": "Agent policy plugins",
-        "links": {
-          "github": "https://github.com/tim8es/tim8plugins"
-        }
-      }
-    },
-    {
-      "id": "project.pmo.overview",
-      "topics": [
-        "projects",
-        "pmo",
-        "product",
-        "education",
-        "project-management"
-      ],
-      "text": {
-        "ru": "PM 0.1 — reference prototype практической программы по Project Management, построенной вокруг управления семью потоками проекта, а не вокруг конкретного framework.",
-        "en": "PM 0.1 is a reference prototype for a practical Project Management program organized around seven project flows rather than one framework."
-      },
-      "source": {
-        "label": "PM 0.1"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "pmo01",
-        "projectName": "PM 0.1"
-      }
-    },
-    {
-      "id": "project.pmo.validation",
-      "topics": [
-        "projects",
-        "pmo",
-        "product",
-        "testing",
-        "validation"
-      ],
-      "text": {
-        "ru": "Проект содержит отдельный M01 learning-validation slice с baseline/post-case, decision drills, browser persistence и CI-проверками scoring/state/content contracts.",
-        "en": "The project includes a separate M01 learning-validation slice with baseline/post-case, decision drills, browser persistence and CI checks for scoring/state/content contracts."
-      },
-      "source": {
-        "label": "PM 0.1 README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "pmo01",
-        "projectName": "PM 0.1"
-      }
-    },
-    {
-      "id": "project.screenpipe.overview",
-      "topics": [
-        "projects",
-        "screenpipe",
-        "privacy",
-        "desktop",
-        "product"
-      ],
-      "text": {
-        "ru": "open-screen-pipe — early-stage privacy-first desktop UI для локального Screenpipe с явными границами между local-only действиями и сетевыми, destructive или code-executing операциями.",
-        "en": "open-screen-pipe is an early-stage privacy-first desktop UI for local Screenpipe with explicit boundaries around networked, destructive and code-executing actions."
-      },
-      "source": {
-        "label": "open-screen-pipe"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "open-screen-pipe",
-        "projectName": "open-screen-pipe"
-      }
-    },
-    {
-      "id": "project.shorts.boundary",
-      "topics": [
-        "projects",
-        "shorts",
-        "safety",
-        "automation"
-      ],
-      "text": {
-        "ru": "Публикация намеренно отделена от генерации: workflow останавливается на review-ready состоянии, а OAuth/publishing добавляются отдельно.",
-        "en": "Publishing is intentionally separated from generation: the workflow stops at a review-ready state and OAuth/publishing are added separately."
-      },
-      "source": {
-        "label": "AI Video Pipeline README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "n8n-youtube-shorts-workflow",
-        "projectName": "AI Video Pipeline"
-      }
-    },
-    {
-      "id": "project.shorts.overview",
-      "topics": [
-        "projects",
-        "shorts",
-        "automation",
-        "n8n",
-        "video",
-        "ai"
-      ],
-      "text": {
-        "ru": "AI Video Pipeline — local-first workflow для Shorts/Reels, который связывает сценарий, локальную LLM, рендер, TTS и субтитры через n8n.",
-        "en": "AI Video Pipeline is a local-first Shorts/Reels workflow connecting scripting, a local LLM, rendering, TTS and captions through n8n."
-      },
-      "source": {
-        "label": "AI Video Pipeline"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "n8n-youtube-shorts-workflow",
-        "projectName": "AI Video Pipeline"
-      }
-    },
-    {
-      "id": "project.shorts.stack",
-      "topics": [
-        "projects",
-        "shorts",
-        "automation",
-        "n8n",
-        "ollama",
-        "ffmpeg"
-      ],
-      "text": {
-        "ru": "Проверенная локальная база проекта использует n8n Community Edition, Ollama, FFmpeg и Windows System.Speech; отдельный control plane агрегирует health и явные actions.",
-        "en": "The project's verified local base uses n8n Community Edition, Ollama, FFmpeg and Windows System.Speech; a separate control plane aggregates health and explicit actions."
-      },
-      "source": {
-        "label": "AI Video Pipeline README"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "n8n-youtube-shorts-workflow",
-        "projectName": "AI Video Pipeline"
-      }
-    },
-    {
       "id": "project.tubescore.architecture",
       "topics": [
         "projects",
@@ -1118,11 +178,11 @@
         "browser"
       ],
       "text": {
-        "ru": "Production runtime TubeScore не требует API key, backend, LLM или computer vision; matching детерминированный, данные идут через официальный Wikidata Action API.",
-        "en": "TubeScore's production runtime requires no API key, backend, LLM or computer vision; matching is deterministic and data comes through the official Wikidata Action API."
+        "ru": "TubeScore использует архитектуру Manifest V3 с UI через content script, оркестрацией через service worker, детерминированным матчингом, кешированием и браузерными smoke-тестами.",
+        "en": "TubeScore uses a Manifest V3 architecture with content-script UI, service-worker orchestration, deterministic matching, caching and browser smoke testing."
       },
       "source": {
-        "label": "TubeScore README",
+        "label": "TubeScore implementation",
         "url": "https://github.com/tim8es/TubeScore"
       },
       "confidence": "verified",
@@ -1142,41 +202,14 @@
         "tubescore",
         "browser",
         "chrome",
-        "youtube",
-        "product"
+        "youtube"
       ],
       "text": {
-        "ru": "TubeScore — Chrome/Chromium Manifest V3 extension, который определяет фильм или сериал на YouTube и показывает рейтинги рядом с metadata видео.",
-        "en": "TubeScore is a Chrome/Chromium Manifest V3 extension that identifies a movie or TV series on YouTube and shows ratings near the video metadata."
+        "ru": "TubeScore — Chrome-расширение, которое показывает рейтинги фильмов и сериалов прямо на YouTube-трейлерах и видео.",
+        "en": "TubeScore is a Chrome extension that displays movie and series ratings directly on YouTube trailers and videos."
       },
       "source": {
         "label": "TubeScore",
-        "url": "https://github.com/tim8es/TubeScore"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "projects",
-        "projectId": "tubescore",
-        "projectName": "TubeScore",
-        "links": {
-          "github": "https://github.com/tim8es/TubeScore"
-        }
-      }
-    },
-    {
-      "id": "project.tubescore.verification",
-      "topics": [
-        "projects",
-        "tubescore",
-        "testing",
-        "quality"
-      ],
-      "text": {
-        "ru": "Проверка TubeScore включает strict TypeScript typecheck, Vitest suite, production build isolation и browser acceptance smoke в Chromium.",
-        "en": "TubeScore verification includes strict TypeScript typecheck, the Vitest suite, production build isolation and browser acceptance smoke in Chromium."
-      },
-      "source": {
-        "label": "TubeScore README",
         "url": "https://github.com/tim8es/TubeScore"
       },
       "confidence": "verified",
@@ -1199,8 +232,8 @@
         "automation"
       ],
       "text": {
-        "ru": "Тимур работает с AI-агентами и LLM-workflow, уделяя внимание оркестрации инструментов, памяти, permissions, валидации, reliability и failure handling.",
-        "en": "Timur works with AI agents and LLM workflows, with attention to tool orchestration, memory, permissions, validation, reliability and failure handling."
+        "ru": "Он работает с AI-агентами и LLM-workflow, особенно интересуясь оркестрацией инструментов, валидацией, надёжностью и памятью.",
+        "en": "He works with AI agents and LLM-based workflows, with particular interest in tool orchestration, validation, reliability and memory."
       },
       "source": {
         "label": "AI work"
@@ -1212,27 +245,6 @@
       }
     },
     {
-      "id": "skills.platforms",
-      "topics": [
-        "skills",
-        "technical",
-        "cloud",
-        "api"
-      ],
-      "text": {
-        "ru": "В личных и рабочих задачах он использовал Google APIs/Google Cloud, Yandex APIs/Yandex Cloud, Jira, Confluence, DataLens и другие интеграционные инструменты.",
-        "en": "In personal and work projects he has used Google APIs/Google Cloud, Yandex APIs/Yandex Cloud, Jira, Confluence, DataLens and other integration tooling."
-      },
-      "source": {
-        "label": "Technical toolkit"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "skills",
-        "skillGroup": "technical"
-      }
-    },
-    {
       "id": "skills.process",
       "topics": [
         "skills",
@@ -1241,8 +253,8 @@
         "automation"
       ],
       "text": {
-        "ru": "Его сильная сторона — разбор AS-IS workflow, поиск узких мест, проектирование TO-BE и автоматизация повторяющихся handoff'ов.",
-        "en": "A core strength is mapping AS-IS workflows, finding bottlenecks, designing TO-BE flows and automating repetitive handoffs."
+        "ru": "Он умеет разбирать, перепроектировать и автоматизировать операционные процессы и сокращать лишние ручные handoff'ы.",
+        "en": "He is experienced in mapping, redesigning and automating operational processes and in reducing unnecessary manual handoffs."
       },
       "source": {
         "label": "Process work"
@@ -1262,8 +274,8 @@
         "discovery"
       ],
       "text": {
-        "ru": "Тимур умеет переводить размытые задачи в проверяемый scope, собирать или координировать MVP и оценивать результат по явным критериям.",
-        "en": "Timur can turn ambiguous problems into testable scope, build or coordinate an MVP and evaluate it against explicit criteria."
+        "ru": "Он умеет превращать размытые задачи в ограниченный проверяемый продуктовый scope, собирать или координировать MVP и оценивать результат по явным критериям успеха.",
+        "en": "He can turn an ambiguous problem into a smaller testable product scope, build or coordinate an MVP and evaluate the result against explicit success criteria."
       },
       "source": {
         "label": "Product work"
@@ -1283,8 +295,8 @@
         "engineering"
       ],
       "text": {
-        "ru": "Практический стек включает JavaScript/Node.js, Python, SQL, REST API, webhooks, browser APIs, GitHub, Playwright и n8n.",
-        "en": "His practical stack includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, GitHub, Playwright and n8n."
+        "ru": "В его регулярный технический набор входят основы JavaScript и Node.js, browser API, REST API, webhooks, SQL, GitHub и инструменты автоматизации.",
+        "en": "His recurring technical toolkit includes JavaScript and Node.js basics, browser APIs, REST APIs, webhooks, SQL, GitHub and automation tooling."
       },
       "source": {
         "label": "Technical toolkit"
@@ -1304,32 +316,11 @@
         "skills"
       ],
       "text": {
-        "ru": "Профиль Тимура сочетает управление операционными и продуктовым процессами с hands-on реализацией: он может одинаково обсуждать метрику, workflow, API и проверку результата.",
-        "en": "Timur's profile combines operational and product management with hands-on implementation: he can work across metrics, workflow, APIs and result verification."
+        "ru": "Заметная особенность его профиля — сочетание операционного управления, продуктового мышления и hands-on реализации.",
+        "en": "A notable part of his profile is the combination of operational management, product thinking and hands-on implementation."
       },
       "source": {
         "label": "Portfolio profile"
-      },
-      "confidence": "verified",
-      "context": {
-        "section": "positioning",
-        "positioningGroup": "strengths"
-      }
-    },
-    {
-      "id": "strength.existing_systems",
-      "topics": [
-        "strengths",
-        "skills",
-        "technical",
-        "product"
-      ],
-      "text": {
-        "ru": "Он умеет входить в существующую систему или codebase, прослеживать фактическое поведение, ограничивать изменение и проверять его регрессиями или E2E.",
-        "en": "He is comfortable entering an existing system or codebase, tracing actual behavior, bounding a change and verifying it with regression or E2E checks."
-      },
-      "source": {
-        "label": "Portfolio evidence"
       },
       "confidence": "verified",
       "context": {
