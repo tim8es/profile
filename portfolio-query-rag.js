@@ -7,30 +7,32 @@
     lastSubject: "timur",
     lastIntent: "identity",
     lastProject: null,
-    moreCursor: { timur:0, skills:0, tube:0, critic:0, gac:0, market:0, shorts:0, feed:0, hh:0 }
+    moreCursor: { timur: 0, skills: 0, tube: 0, feed: 0 }
   };
 
   const ui = {
     en: {
+      demo: "04 / Hybrid candidate",
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
-        eyebrow:"Product builder / AI automation",
+        eyebrow:"Product builder / process thinker",
         title:"Build.<br><span>Automate.</span><br>Simplify.",
-        lede:"I turn messy workflows into working products and automation — from process design to AI agents, APIs and code.",
-        meta:["Problem → prototype","Process → system","AI → automation"]
+        lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
+        meta:["Product → prototype","AI-native workflow","Hands-on builder"]
       },
-      field: { title:"Capability field", buttons:["AI","Automation","Product","Agents"] },
+      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Agents"] },
       query: {
         title:"Portfolio Query",
-        intro:"Ask about Timur’s experience, projects, AI/automation work or technical decisions.",
+        status:"grounded local composer / curated knowledge base",
+        intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
           ["Who is Timur?","Who is Timur?"],
-          ["What has he built?","What projects has Timur built?"],
-          ["AI & agents","What has Timur built with AI agents?"],
+          ["What can he do?","What can Timur do?"],
+          ["AI work","Show me AI work"],
           ["Background","What's your background?"]
         ],
         placeholder:"Ask the portfolio…",
-        hint:'Press <kbd>/</kbd> to focus.',
+        hint:'Runs from a curated knowledge base with conversational context and visible evidence. The local composer works without a model download. Press <kbd>/</kbd> to focus.',
         rolePortfolio:"portfolio",
         roleYou:"you",
         showProject:"Show related project ↓",
@@ -38,52 +40,57 @@
       },
       work: {
         title:"Selected work",
-        note:"",
-        tube:{kind:"Browser product",desc:"A Chrome extension that identifies movies on YouTube and shows ratings in context — without API keys or a backend.",details:[["Problem","Checking ratings breaks the viewing flow."],["Built","MV3 extension, deterministic matching, Wikidata provider, caching and SPA handling."],["Proof","Typecheck, tests, production build checks and Chromium browser smoke."]],ask:"Ask deeper about TubeScore →"},
-        critic:{kind:"AI system",desc:"An evidence-backed critic designed to catch material mistakes and contradictions without interrupting on every minor issue.",details:[["Problem","AI assistants can lose context or miss important contradictions."],["Built","Context, critic and verifier workflows plus a privacy-gated desktop bridge experiment."],["Status","Early-stage; implemented slices and security-flow checks are separated from host verification."]],ask:"Ask deeper about AI Critic →"},
-        gac:{kind:"Agent infrastructure",desc:"A GitHub-native protocol that lets autonomous coding agents continue work safely across disposable sessions.",details:[["Problem","Agent sessions disappear, while ownership and unfinished work need to survive."],["Built","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints and takeover rules."],["Proof","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Ask deeper about GAC →"},
-        market:{kind:"Data product",desc:"A labor-market data product with a resumable MV3 collector, versioned contracts and a validated Next.js publishing path.",details:[["Problem","Scraped market data can be stale, partial or silently wrong."],["Built","MV3 collector, canonical snapshot/batch contracts, persistence boundary and Next.js web app."],["Proof","Deterministic fixtures plus repository-wide lint, test and production-build verification."]],ask:"Ask deeper about HH Market Scanner →"},
-        shorts:{kind:"Automation system",desc:"A local-first pipeline for generating short-form AI video from research and scripting through rendering and review.",details:[["Problem","Content production has many repetitive handoffs and failure points."],["Built","n8n workflows with local LLMs, FFmpeg rendering, TTS, captions and an operations control plane."],["Boundary","Publishing is kept separate from generation and requires explicit review/credentials."]],ask:"Ask deeper about the pipeline →"},
-        feed:{kind:"Agent utility",desc:"A lightweight feed ingestion utility that gives AI agents predictable content from RSS and Atom sources.",details:[["Problem","Agents repeatedly need to normalize inconsistent feed formats."],["Built","Small Node.js utility with a focused XML parser and bounded content handling."],["Proof","Designed to run across Windows, macOS and Linux with a small dependency surface."]],ask:"Ask deeper about FeedPulse →"},
-        hh:{kind:"Open-source contribution",desc:"A merged upstream contribution that exposed existing multi-profile support in the project's desktop UI.",details:[["Problem","The CLI supported isolated profiles, but the UI could not manage or switch them."],["Built","Profile CRUD, auth state, switching, isolated data and safe runtime guards."],["Proof","Merged PR #84; 116 regression tests and Chromium/Playwright UI E2E passed."]],ask:"Ask deeper about the contribution →"}
+        note:"current shortlist / more projects will be curated later",
+        tube:{
+          kind:"Browser product",
+          desc:"A Chrome extension that places movie ratings directly on YouTube trailers, removing the extra search step.",
+          details:[["Problem","Ratings live outside the viewing context."],["Built","Extension, data layer, caching and SPA handling."],["Proof","Working MVP with automated browser tests."]],
+          ask:"Ask deeper about TubeScore →"
+        },
+        feed:{
+          kind:"Agent utility",
+          desc:"A small ingestion layer for AI agents that normalizes RSS/Atom sources into predictable content.",
+          details:[["Problem","Agents repeatedly need to parse inconsistent feeds."],["Built","Portable Node.js parser with a small dependency footprint."],["Proof","Cross-platform workflow for Windows, macOS and Linux."]],
+          ask:"Ask deeper about FeedPulse →"
+        }
       },
       about: {
         title:"About",
-        note:"",
-        statement:"I work best where a messy process needs to become a clear product or system.",
-        body:["My background spans project, process and delivery work at Skyeng, SPIKS and OpiniQ — from QA/CX operations and B2B CRM to workflow automation.","Now I work hands-on with AI agents, n8n, APIs, JavaScript/Node.js, Python, SQL, browser tooling and testable prototypes."]
+        note:"less biography / more operating principle",
+        statement:"I like software that removes friction instead of adding another system people have to manage.",
+        body:[
+          "My background is in project and process management, so I usually start from the workflow, constraint or user problem — not from the technology.",
+          "Now I work hands-on: prototypes, AI agents, APIs, browser tools, automation and small products that can be tested quickly."
+        ]
       },
-      footer:["Timur Dautov © 2026",""],
+      footer:["Timur Dautov © 2026","Built as a static page. Query and 3D field run locally in your browser."],
       deep:{
         tube:[["Architecture","How is TubeScore built?"],["Hardest part","What was the hardest part of TubeScore?"],["Testing","How did you test TubeScore?"]],
-        critic:[["Architecture","How is AI Critic built?"],["Safety","How does AI Critic handle privacy and permissions?"],["Status","What is actually verified in AI Critic?"]],
-        gac:[["Protocol","How does GitHub Agent Continuity work?"],["Concurrency","How does GAC prevent conflicting agents?"],["Testing","How was GAC tested?"]],
-        market:[["Architecture","How is HH Market Scanner built?"],["Data quality","How does HH Market Scanner avoid bad data?"],["Testing","How is HH Market Scanner verified?"]],
-        shorts:[["Workflow","How is the AI video pipeline built?"],["Local stack","What runs locally in the pipeline?"],["Safety","Why is publishing separated?"]],
-        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Portability","How does FeedPulse stay cross-platform?"]],
-        hh:[["Contribution","What did Timur add to hh-applicant-tool?"],["Architecture","How was multi-account isolation implemented?"],["Testing","How was the contribution verified?"]]
+        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Why Node.js","Why Node for FeedPulse?"]]
       }
     },
     ru: {
+      demo: "04 / Гибридный вариант",
       nav: { work:"Работы", query:"Спросить", about:"Обо мне" },
       hero: {
-        eyebrow:"Product builder / AI-автоматизация",
+        eyebrow:"Product builder / системное мышление",
         title:"Создаю.<br><span>Автоматизирую.</span><br>Упрощаю.",
-        lede:"Превращаю сложные процессы в работающие продукты и автоматизации — от проектирования процессов до AI-агентов, API и кода.",
-        meta:["Задача → прототип","Процесс → система","AI → автоматизация"]
+        lede:"Превращаю размытые задачи и неудобные процессы в небольшие работающие продукты — с помощью AI, автоматизации и кода.",
+        meta:["От задачи → к прототипу","AI-native подход","Делаю руками"]
       },
-      field: { title:"Карта компетенций", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
+      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
       query: {
         title:"Portfolio Query",
-        intro:"Спроси про опыт Тимура, проекты, AI/автоматизацию или технические решения.",
+        status:"grounded composer / модерируемая база знаний",
+        intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
           ["Кто такой Тимур?","Кто такой Тимур?"],
-          ["Что он сделал?","Какие проекты сделал Тимур?"],
-          ["AI и агенты","Что Тимур делал с AI-агентами?"],
-          ["Опыт","Где работал Тимур и что изменил?"]
+          ["Что он умеет?","Что умеет Тимур?"],
+          ["Работа с ИИ","Покажи работу с ИИ"],
+          ["Опыт","Какой у Тимура опыт?"]
         ],
         placeholder:"Спроси портфолио…",
-        hint:'Нажми <kbd>/</kbd>, чтобы перейти к вопросу.',
+        hint:'Отвечает из модерируемой базы знаний, помнит контекст и показывает использованные факты. Локальный composer работает без скачивания модели. Нажми <kbd>/</kbd>, чтобы перейти к строке.',
         rolePortfolio:"портфолио",
         roleYou:"вы",
         showProject:"Показать связанный проект ↓",
@@ -91,30 +98,33 @@
       },
       work: {
         title:"Избранные работы",
-        note:"",
-        tube:{kind:"Браузерный продукт",desc:"Chrome-расширение, которое определяет фильмы на YouTube и показывает рейтинги прямо в контексте просмотра — без API-ключей и backend.",details:[["Проблема","Проверка рейтинга прерывает просмотр и требует отдельного поиска."],["Что сделал","MV3-расширение, детерминированный матчинг, Wikidata, кеширование и SPA-навигация."],["Проверка","Typecheck, тесты, production build checks и Chromium browser smoke."]],ask:"Спросить подробнее о TubeScore →"},
-        critic:{kind:"AI-система",desc:"Система критики, которая ищет существенные ошибки и противоречия по проверяемым данным, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и эксперимент с desktop bridge с privacy-gates."],["Статус","Early-stage: реализованные части и security-проверки отделены от проверки на реальном host."]],ask:"Спросить подробнее об AI Critic →"},
-        gac:{kind:"Инфраструктура агентов",desc:"Протокол на базе GitHub, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
-        market:{kind:"Продукт данных",desc:"Продукт для анализа рынка труда: возобновляемый MV3-сборщик, версионированные контракты данных и проверяемая публикация через Next.js.",details:[["Проблема","Данные со страниц могут быть устаревшими, неполными или ошибочно интерпретироваться как ноль."],["Что сделал","MV3-сборщик, canonical snapshot/batch contracts, слой хранения и Next.js-приложение."],["Проверка","Детерминированные fixtures и общий gate: lint, tests и production build."]],ask:"Спросить подробнее о HH Market Scanner →"},
-        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся ручных переходов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и отдельная панель контроля."],["Граница","Публикация отделена от генерации и требует отдельного review и credentials."]],ask:"Спросить подробнее о pipeline →"},
-        feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с узким XML-парсером и ограничением объёма контента."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
-        hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Создание, удаление и переключение профилей, auth-state, изоляция данных и runtime guards."],["Проверка","PR #84 принят upstream; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
+        note:"текущий список / проекты ещё будем отбирать",
+        tube:{
+          kind:"Браузерный продукт",
+          desc:"Chrome-расширение, которое показывает рейтинги фильмов прямо на YouTube-трейлерах и убирает лишний переход на другой сайт.",
+          details:[["Проблема","Рейтинг находится вне контекста просмотра."],["Что сделал","Расширение, слой данных, кеширование и обработка SPA-навигации."],["Подтверждение","Рабочий MVP с автоматизированными браузерными тестами."]],
+          ask:"Спросить подробнее о TubeScore →"
+        },
+        feed:{
+          kind:"Инструмент для агентов",
+          desc:"Небольшой слой загрузки контента для AI-агентов, который приводит RSS/Atom-источники к предсказуемой структуре.",
+          details:[["Проблема","Агентам снова и снова приходится разбирать несовместимые фиды."],["Что сделал","Переносимый Node.js-парсер с небольшим числом зависимостей."],["Подтверждение","Работает на Windows, macOS и Linux."]],
+          ask:"Спросить подробнее о FeedPulse →"
+        }
       },
       about: {
         title:"Обо мне",
-        note:"",
-        statement:"Лучше всего я работаю там, где запутанный процесс нужно превратить в понятный продукт или систему.",
-        body:["Мой бэкграунд — проекты, процессы и delivery в Skyeng, SPIKS и OpiniQ: от QA/CX и B2B CRM до автоматизации процессов.","Сейчас много делаю руками: AI-агенты, n8n, API, JavaScript/Node.js, Python, SQL, браузерные инструменты и проверяемые прототипы."]
+        note:"меньше биографии / больше принципов работы",
+        statement:"Мне нравится софт, который убирает трение, а не создаёт ещё одну систему, которой нужно управлять.",
+        body:[
+          "Мой основной бэкграунд — управление проектами и процессами, поэтому я обычно начинаю с рабочего процесса, ограничений и проблемы пользователя, а не с выбора технологии.",
+          "Сейчас я много делаю руками: прототипы, AI-агенты, API, браузерные инструменты, автоматизацию и небольшие продукты, которые можно быстро проверить."
+        ]
       },
-      footer:["Timur Dautov © 2026",""],
+      footer:["Timur Dautov © 2026","Статическая страница: Query и 3D-поле работают локально в браузере."],
       deep:{
         tube:[["Архитектура","Как устроен TubeScore?"],["Самая сложная часть","Что было самым сложным в TubeScore?"],["Тестирование","Как ты тестировал TubeScore?"]],
-        critic:[["Архитектура","Как устроен AI Critic?"],["Безопасность","Как AI Critic работает с privacy и permissions?"],["Статус","Что реально проверено в AI Critic?"]],
-        gac:[["Протокол","Как работает GitHub Agent Continuity?"],["Конкуренция","Как GAC предотвращает конфликты между агентами?"],["Тестирование","Как тестировался GAC?"]],
-        market:[["Архитектура","Как устроен HH Market Scanner?"],["Качество данных","Как HH Market Scanner защищается от плохих данных?"],["Тестирование","Как проверяется HH Market Scanner?"]],
-        shorts:[["Workflow","Как устроен AI video pipeline?"],["Локальный стек","Что в pipeline работает локально?"],["Безопасность","Почему публикация отделена от генерации?"]],
-        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Переносимость","Как FeedPulse работает на разных ОС?"]],
-        hh:[["Вклад","Что Тимур добавил в hh-applicant-tool?"],["Архитектура","Как реализована изоляция нескольких аккаунтов?"],["Тестирование","Как проверялся этот вклад?"]]
+        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Почему Node.js","Почему для FeedPulse выбран Node.js?"]]
       }
     }
   };
@@ -142,30 +152,16 @@
     companies:["компан","где работал","employer","company"],
     skills:["умеет","навык","компетенц","skills","can do","capabil"],
     strengths:["удив","сильн","преимущ","strength","differentiat","unique"],
-    impact:["результат","метрик","цифр","эффект","impact","results","metrics"],
     fit:["подойд","работ","роль","fit","role","job","suitable"],
     projects:["проект","делал","создал","built","project","portfolio"],
     product:["продукт","mvp","гипотез","product","prototype"],
     process:["процесс","операц","workflow","process"],
-    ai:["ии","ai","llm","нейросет"],
-    agents:["agent","агент"],
-    reliability:["качество","плох","ошиб","reliab","quality","bad data","freshness"],
+    ai:["ии","ai","llm","agent","агент"],
     technical:["стек","технолог","api","javascript","node","sql","technical","stack"],
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
     tubescore:["tubescore","tube score"],
-    critic:["ai critic","critic","критик"],
-    gac:["github agent continuity","gac","continuity"],
-    market:["hh market scanner","market scanner","professions statistics","рынок труда"],
-    shorts:["video pipeline","shorts","youtube shorts","n8n","видео"],
-    feedpulse:["feedpulse","feed pulse"],
-    hh:["hh-applicant-tool","hh applicant","multi-account","мультиаккаунт"],
-    booktranslator:["book translator","переводчик книг","перевод книг"],
-    mindrail:["mindrail","control plane","контрольный слой"],
-    pmo:["pm 0.1","pmo01","инженерия исполнения"],
-    screenpipe:["open-screen-pipe","screenpipe"],
-    plugins:["tim8plugins","policy plugins","policy plugin"],
-    arc:["arc-whitebox","arc whitebox"]
+    feedpulse:["feedpulse","feed pulse"]
   };
 
   function norm(value){
@@ -195,14 +191,6 @@
     const q=norm(question);
     let score=0;
     fact.topics.forEach(topic=>{if(topics.includes(topic)) score+=4;});
-
-    const projectTopics=["tubescore","critic","gac","market","shorts","feedpulse","hh","booktranslator","mindrail","pmo","screenpipe","plugins","arc"];
-    const specificProject=projectTopics.find(topic=>topics.includes(topic));
-    if(specificProject && fact.topics.includes(specificProject)) score+=10;
-    if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;
-    if((topics.includes("experience")||topics.includes("companies")) && fact.id==="portfolio.experience.summary") score+=10;
-    if((topics.includes("impact")||topics.includes("metrics")||topics.includes("results")) && fact.id==="portfolio.impact.summary") score+=12;
-    if((/расскажи все|расскажи всё|everything|all you know/.test(q)) && fact.id==="portfolio.summary") score+=16;
     const words=new Set(q.split(" ").filter(word=>word.length>3));
     const searchable=norm(fact.text.ru+" "+fact.text.en+" "+fact.id+" "+fact.topics.join(" "));
     words.forEach(word=>{if(searchable.includes(word)) score+=0.7;});
@@ -215,10 +203,10 @@
     let topics=detectTopics(question);
     const q=norm(question);
 
-    if(/все что|всё что|расскажи все|расскажи всё|everything|all you know/.test(q)){
+    if(/все что|всё что|everything|all you know/.test(q)){
       topics=["identity","experience","companies","skills","projects","strengths","product","ai","technical"];
     }
-    if(/слаб/.test(q)||/weakness/.test(q)) topics=["limitations","weakness","fit"];
+    if(/слаб/.test(q)||/weakness/.test(q)) topics=["fit","strengths"];
 
     const ranked=kb.facts
       .map(fact=>({fact,score:scoreFact(fact,question,topics)}))
@@ -231,7 +219,7 @@
 
   function planType(question){
     const q=norm(question);
-    if(/все что|всё что|расскажи все|расскажи всё|everything|all you know/.test(q)) return "broad";
+    if(/все что|всё что|everything|all you know/.test(q)) return "broad";
     if(/удив|сильн|преимущ|differentiat|strength|unique/.test(q)) return "strengths";
     if(/подойд|fit|role|job|работу|роль/.test(q)) return "fit";
     if(/слаб|weakness/.test(q)) return "weakness";
@@ -247,8 +235,8 @@
       .replace(/^Он\\s+/,"");
   }
 
-  function joinFacts(facts,lang,limit=3){
-    return facts.slice(0,limit).map((fact,index)=>{
+  function joinFacts(facts,lang){
+    return facts.slice(0,5).map((fact,index)=>{
       let text=fact.text[lang]||fact.text.en||fact.text.ru;
       if(index>0) text=stripLead(text);
       return text.replace(/\\.$/,"");
@@ -257,22 +245,22 @@
 
   function composeLocal(question,facts,lang){
     const kind=planType(question);
-    const body=joinFacts(facts,lang,kind==="broad"?4:3);
+    const body=joinFacts(facts,lang);
     const lead={
       ru:{
-        identity:"",
+        identity:"Тимур Даутов — ",
         broad:"Если собрать главное: ",
         strengths:"Если смотреть на профиль целиком, его отличие в сочетании нескольких вещей: ",
         fit:"По подтверждённым фактам наиболее естественный fit выглядит так: ",
-        weakness:"По доступным фактам корректнее говорить о trade-off профиля: ",
+        weakness:"Портфолио не должно придумывать слабые стороны. Из подтверждённых данных можно осторожно сказать следующее: ",
         default:""
       },
       en:{
-        identity:"",
+        identity:"Timur Dautov — ",
         broad:"The main picture is: ",
         strengths:"Looking across the profile, the differentiator is the combination of several things: ",
         fit:"Based on verified portfolio facts, the clearest fit is: ",
-        weakness:"A visible trade-off in the profile is: ",
+        weakness:"The portfolio should not invent weaknesses. From the available evidence, the most careful statement is: ",
         default:""
       }
     };
@@ -285,28 +273,29 @@
   const suggestions=[...document.querySelectorAll("[data-suggestion]")];
   const askProjectButtons=[...document.querySelectorAll("[data-ask-project]")];
 
-  function appendSources(bubble,facts,lang){
+  function appendSources(bubble,facts,lang,engine){
     if(!facts?.length) return;
-    const unique=[];
-    const seen=new Set();
-    facts.forEach((fact)=>{
-      const key=(fact.source?.url||"")+"|"+(fact.source?.label||"Portfolio");
-      if(!seen.has(key)){seen.add(key);unique.push(fact);}
-    });
+    const meta=document.createElement("div");
+    meta.className="rag-answer-meta";
+    const chip=document.createElement("span");
+    chip.className="rag-chip";
+    chip.textContent=engine==="server"?"grounded LLM":"local composer";
+    meta.appendChild(chip);
 
     const details=document.createElement("details");
     details.className="rag-sources";
     const summary=document.createElement("summary");
-    summary.textContent=(lang==="ru"?"Источники":"Sources")+" · "+unique.length;
+    summary.textContent=(lang==="ru"?"Источники":"Sources")+" · "+facts.length;
     const list=document.createElement("div");
     list.className="rag-source-list";
 
-    unique.forEach((fact,index)=>{
+    facts.forEach((fact,index)=>{
       const item=document.createElement("div");
       item.className="rag-source";
       const num=document.createElement("b");
       num.textContent=String(index+1).padStart(2,"0");
       const body=document.createElement("span");
+      body.appendChild(document.createTextNode((fact.text[lang]||fact.text.en||fact.text.ru)+" — "));
       if(fact.source?.url){
         const link=document.createElement("a");
         link.href=fact.source.url;
@@ -315,14 +304,14 @@
         link.textContent=fact.source.label;
         body.appendChild(link);
       }else{
-        body.textContent=fact.source?.label||"Portfolio";
+        body.appendChild(document.createTextNode(fact.source?.label||"Portfolio"));
       }
       item.append(num,body);
       list.appendChild(item);
     });
 
     details.append(summary,list);
-    bubble.append(details);
+    bubble.append(meta,details);
   }
 
   function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang,facts=[],engine="local"){
@@ -362,7 +351,7 @@
       bubble.append(br,link);
     }
 
-    if(role==="bot"&&facts.length) appendSources(bubble,facts,lang);
+    if(role==="bot"&&facts.length) appendSources(bubble,facts,lang,engine);
 
     row.append(roleEl,bubble);
     chatLog.appendChild(row);
@@ -407,18 +396,6 @@
     const lang=qlang(text);
     appendMessage("user",text,null,[],true,lang);
 
-    const q=norm(text);
-    if(/^(привет|здравствуй|здравствуйте|добрый день|добрый вечер|hello|hi|hey)( |$)/.test(q)){
-      appendMessage("bot",lang==="ru"
-        ?"Можно спросить про опыт, проекты, AI/автоматизацию, стек или конкретное техническое решение."
-        :"Ask about experience, projects, AI/automation, stack or a specific technical decision.",null,[],true,lang);
-      return;
-    }
-    if(/^(спасибо|благодарю|thanks|thank you)( |$)/.test(q)){
-      appendMessage("bot",lang==="ru"?"Пожалуйста. Можно продолжить с любого проекта или части опыта.":"You’re welcome. You can continue with any project or part of the experience.",null,[],true,lang);
-      return;
-    }
-
     if(!kb) await kbReady;
     if(!kb?.facts?.length){
       appendMessage(
@@ -437,8 +414,7 @@
     const server=await serverAnswer(text,facts,lang);
     const answer=server||local;
     const project=facts.find(f=>f.context?.projectId)?.context?.projectId;
-    const projectMap={tubescore:"tube","ai-critic":"critic","github-agent-continuity":"gac","hh-market-scanner":"market","n8n-youtube-shorts-workflow":"shorts",feedpulse:"feed","hh-applicant-tool":"hh"};
-    const projectId=projectMap[project]||null;
+    const projectId=project==="tubescore"?"tube":project==="feedpulse"?"feed":null;
 
     state.lastSubject=projectId||"timur";
     state.lastProject=projectId||state.lastProject;
@@ -450,7 +426,7 @@
 
   function openProjectQuestions(id){
     const lang=state.lang;
-    const names={tube:"TubeScore",critic:"AI Critic",gac:"GitHub Agent Continuity",market:"HH Market Scanner",shorts:"AI Video Pipeline",feed:"FeedPulse",hh:"hh-applicant-tool"}; const name=names[id]||id;
+    const name=id==="tube"?"TubeScore":"FeedPulse";
     state.lastSubject=id;
     state.lastProject=id;
     state.lastIntent="project-overview";
@@ -499,6 +475,7 @@
     langToggle?.setAttribute("aria-label",lang==="en"?"Переключить на русский":"Switch to English");
     const t=ui[lang];
 
+    setText("[data-demo-label]",t.demo);
     setText('.nav-links a[href="#work"]',t.nav.work);
     setText('.nav-links a[href="#query"]',t.nav.query);
     setText('.nav-links a[href="#about"]',t.nav.about);
@@ -506,7 +483,7 @@
     setHTML(".hero h1",t.hero.title);
     setText(".hero-lede",t.hero.lede);
     document.querySelectorAll(".hero-meta span").forEach((el,i)=>{if(t.hero.meta[i])el.textContent=t.hero.meta[i];});
-    const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;
+    const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;if(fh[1])fh[1].textContent=t.field.hint;
     document.querySelectorAll(".field-fallback button").forEach((el,i)=>{if(t.field.buttons[i])el.textContent=t.field.buttons[i];});
 
     const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;
@@ -514,7 +491,7 @@
     if(input)input.placeholder=t.query.placeholder;setHTML(".query-hint",t.query.hint);
 
     const wLabels=document.querySelectorAll("#work > .section-label span");if(wLabels[0])wLabels[0].textContent=t.work.title;if(wLabels[1])wLabels[1].textContent=t.work.note;
-    const pcopy={tube:t.work.tube,critic:t.work.critic,gac:t.work.gac,market:t.work.market,shorts:t.work.shorts,feed:t.work.feed,hh:t.work.hh};
+    const pcopy={tube:t.work.tube,feed:t.work.feed};
     projects.forEach((item)=>{
       const p=pcopy[item.dataset.project];if(!p)return;
       item.querySelector(".project-main small").textContent=p.kind;
