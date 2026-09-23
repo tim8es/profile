@@ -58,23 +58,23 @@
     <section class="query-section shell" id="query">
       <div class="section-label">
         <span>Portfolio Query</span>
-        <span>local / no API / no LLM</span>
+        <span>local / fuzzy retrieval / no API / no LLM</span>
       </div>
 
-      <div class="query-box">
-        <div class="chat-log" data-chat-log aria-live="polite">
+      <div class="query-box query-box--compact">
+        <div class="chat-log chat-log--compact" data-chat-log aria-live="polite">
           <div class="chat-message chat-message--bot">
             <span class="chat-role">portfolio</span>
             <div class="chat-bubble">
-              Ask about my work, background, AI, automation, browser projects or how I build products.
+              Ask me about Timur, his work, projects, product approach or technical decisions.
             </div>
           </div>
         </div>
 
         <div class="suggestions" aria-label="Suggested questions">
+          <button type="button" data-suggestion="Who is Timur?">Who is Timur?</button>
           <button type="button" data-suggestion="What do you build?">What do you build?</button>
-          <button type="button" data-suggestion="Show me AI work">Show me AI work</button>
-          <button type="button" data-suggestion="How do you automate processes?">Automation</button>
+          <button type="button" data-suggestion="Show me AI work">AI work</button>
           <button type="button" data-suggestion="What's your background?">Background</button>
         </div>
 
@@ -83,17 +83,17 @@
           <input data-query-input type="text" autocomplete="off" placeholder="Ask the portfolio…" aria-label="Ask portfolio" />
           <button type="submit">Ask</button>
         </form>
-        <div class="query-hint">Try “browser”, “agents”, “testing”, “product”, “API”, “what did you build?” — press <kbd>/</kbd> to focus.</div>
+        <div class="query-hint">Runs entirely in your browser. It uses a small local knowledge base, fuzzy matching and intent scoring — not an LLM. Press <kbd>/</kbd> to focus.</div>
       </div>
     </section>
 
     <section class="work-section shell" id="work">
       <div class="section-label">
         <span>Selected work</span>
-        <span>working set / projects still being curated</span>
+        <span>current shortlist / more projects will be curated later</span>
       </div>
 
-      <div class="work-layout">
+      <div class="work-layout work-layout--single">
         <div class="project-list">
           <article class="project-item is-active" data-project="tube">
             <button class="project-trigger" type="button" aria-expanded="true">
@@ -108,10 +108,13 @@
               <div>
                 <p>A Chrome extension that places movie ratings directly on YouTube trailers, removing the extra search step.</p>
                 <dl>
-                  <div><dt>Problem</dt><dd>Rating lives outside the viewing context.</dd></div>
+                  <div><dt>Problem</dt><dd>Ratings live outside the viewing context.</dd></div>
                   <div><dt>Built</dt><dd>Extension, data layer, caching and SPA handling.</dd></div>
                   <div><dt>Proof</dt><dd>Working MVP with automated browser tests.</dd></div>
                 </dl>
+                <div class="project-actions">
+                  <button type="button" data-ask-project="tube">Ask deeper about TubeScore →</button>
+                </div>
               </div>
             </div>
           </article>
@@ -133,117 +136,13 @@
                   <div><dt>Built</dt><dd>Portable Node.js parser with a small dependency footprint.</dd></div>
                   <div><dt>Proof</dt><dd>Cross-platform workflow for Windows, macOS and Linux.</dd></div>
                 </dl>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-item" data-project="automation">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">03</span>
-              <span class="project-main">
-                <strong>AI workflow</strong>
-                <small>Process automation</small>
-              </span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal">
-              <div>
-                <p>A repeatable pattern for turning manual decision-heavy work into an observable workflow with tools and checks.</p>
-                <dl>
-                  <div><dt>Problem</dt><dd>Too many manual handoffs and repeated decisions.</dd></div>
-                  <div><dt>Built</dt><dd>Input → reasoning → tools → validation → result.</dd></div>
-                  <div><dt>Focus</dt><dd>Useful automation, not automation for its own sake.</dd></div>
-                </dl>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-item" data-project="oss">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">04</span>
-              <span class="project-main">
-                <strong>Open-source work</strong>
-                <small>Existing codebases</small>
-              </span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal">
-              <div>
-                <p>Product changes inside unfamiliar repositories: trace behavior, isolate the issue, make a bounded change and verify it.</p>
-                <dl>
-                  <div><dt>Problem</dt><dd>Real systems arrive with history and constraints.</dd></div>
-                  <div><dt>Built</dt><dd>Features, fixes, tests and upstream pull requests.</dd></div>
-                  <div><dt>Signal</dt><dd>Comfort working beyond greenfield prototypes.</dd></div>
-                </dl>
+                <div class="project-actions">
+                  <button type="button" data-ask-project="feed">Ask deeper about FeedPulse →</button>
+                </div>
               </div>
             </div>
           </article>
         </div>
-
-        <aside class="project-preview" aria-live="polite">
-          <div class="preview-topline">
-            <span data-preview-index>01 / TubeScore</span>
-            <span data-preview-kind>Browser product</span>
-          </div>
-
-          <div class="preview-screen">
-            <div class="preview-panel is-visible" data-preview="tube">
-              <div class="tube-browser">
-                <div class="browser-bar"><i></i><i></i><i></i><span>youtube.com / trailer</span></div>
-                <div class="video-frame">
-                  <div class="video-title">TRAILER</div>
-                  <div class="rating-card"><b>★ 8.8</b><span>IMDb 8.7</span><span>KP 8.5</span></div>
-                </div>
-              </div>
-              <div class="preview-proof">
-                <span>Context-aware overlay</span><span>Cached data</span><span>SPA navigation</span>
-              </div>
-            </div>
-
-            <div class="preview-panel" data-preview="feed">
-              <div class="terminal-card">
-                <div><span class="dim">$</span> feedpulse read source.xml</div>
-                <div class="ok">✓ source detected</div>
-                <div class="ok">✓ 18 entries parsed</div>
-                <div class="ok">✓ content normalized</div>
-                <div class="ok">✓ ready for agent</div>
-                <div class="terminal-output">{ title, url, publishedAt, content }</div>
-              </div>
-              <div class="preview-proof">
-                <span>RSS + Atom</span><span>Node.js</span><span>Cross-platform</span>
-              </div>
-            </div>
-
-            <div class="preview-panel" data-preview="automation">
-              <div class="workflow-map">
-                <div class="flow-node">input</div><b>→</b><div class="flow-node">reason</div><b>→</b><div class="flow-node">tools</div><b>→</b><div class="flow-node">verify</div><b>→</b><div class="flow-node">result</div>
-              </div>
-              <div class="metrics-strip">
-                <div><b>↓</b><span>manual steps</span></div>
-                <div><b>↑</b><span>traceability</span></div>
-                <div><b>↺</b><span>repeatability</span></div>
-              </div>
-            </div>
-
-            <div class="preview-panel" data-preview="oss">
-              <div class="diff-card">
-                <div><span class="dim">diff --git a/app.py b/app.py</span></div>
-                <div class="plus">+ support_multiple_accounts()</div>
-                <div class="plus">+ preserve_existing_state()</div>
-                <div class="dim">&nbsp;&nbsp;run_regression_checks()</div>
-                <div class="plus">+ verified behavior</div>
-              </div>
-              <div class="preview-proof">
-                <span>Read existing code</span><span>Bounded change</span><span>PR-ready</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="preview-caption">
-            <span data-preview-problem>Remove a needless context switch.</span>
-            <button type="button" data-preview-query>Ask about this project →</button>
-          </div>
-        </aside>
       </div>
     </section>
 
