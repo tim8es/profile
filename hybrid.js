@@ -7,30 +7,32 @@
     lastSubject: "timur",
     lastIntent: "identity",
     lastProject: null,
-    moreCursor: { timur:0, skills:0, tube:0, critic:0, gac:0, market:0, shorts:0, feed:0, hh:0 }
+    moreCursor: { timur: 0, skills: 0, tube: 0, feed: 0 }
   };
 
   const ui = {
     en: {
+      demo: "04 / Hybrid candidate",
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
-        eyebrow:"Product builder / AI automation",
+        eyebrow:"Product builder / process thinker",
         title:"Build.<br><span>Automate.</span><br>Simplify.",
-        lede:"I turn messy workflows into working products and automation — from process design to AI agents, APIs and code.",
-        meta:["Problem → prototype","Process → system","AI → automation"]
+        lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
+        meta:["Product → prototype","AI-native workflow","Hands-on builder"]
       },
-      field: { title:"Capability field", buttons:["AI","Automation","Product","Agents"] },
+      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Agents"] },
       query: {
         title:"Portfolio Query",
-        intro:"Ask about Timur’s experience, projects, AI/automation work or technical decisions.",
+        status:"contextual local engine / 0 MB model download",
+        intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
           ["Who is Timur?","Who is Timur?"],
-          ["What has he built?","What projects has Timur built?"],
-          ["AI & agents","What has Timur built with AI agents?"],
+          ["What can he do?","What can Timur do?"],
+          ["AI work","Show me AI work"],
           ["Background","What's your background?"]
         ],
         placeholder:"Ask the portfolio…",
-        hint:'Press <kbd>/</kbd> to focus.',
+        hint:'Runs entirely in your browser. No model download, API or server. It keeps conversational context and answers from a local knowledge base. Press <kbd>/</kbd> to focus.',
         rolePortfolio:"portfolio",
         roleYou:"you",
         showProject:"Show related project ↓",
@@ -38,52 +40,57 @@
       },
       work: {
         title:"Selected work",
-        note:"",
-        tube:{kind:"Browser product",desc:"A Chrome extension that identifies movies on YouTube and shows ratings in context — without API keys or a backend.",details:[["Problem","Checking ratings breaks the viewing flow."],["Built","MV3 extension, deterministic matching, Wikidata provider, caching and SPA handling."],["Proof","Typecheck, tests, production build checks and Chromium browser smoke."]],ask:"Ask deeper about TubeScore →"},
-        critic:{kind:"AI system",desc:"An evidence-backed critic designed to catch material mistakes and contradictions without interrupting on every minor issue.",details:[["Problem","AI assistants can lose context or miss important contradictions."],["Built","Context, critic and verifier workflows plus a privacy-gated desktop bridge experiment."],["Status","Early-stage; implemented slices and security-flow checks are separated from host verification."]],ask:"Ask deeper about AI Critic →"},
-        gac:{kind:"Agent infrastructure",desc:"A GitHub-native protocol that lets autonomous coding agents continue work safely across disposable sessions.",details:[["Problem","Agent sessions disappear, while ownership and unfinished work need to survive."],["Built","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints and takeover rules."],["Proof","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Ask deeper about GAC →"},
-        market:{kind:"Data product",desc:"A labor-market data product with a resumable MV3 collector, versioned contracts and a validated Next.js publishing path.",details:[["Problem","Scraped market data can be stale, partial or silently wrong."],["Built","MV3 collector, canonical snapshot/batch contracts, persistence boundary and Next.js web app."],["Proof","Deterministic fixtures plus repository-wide lint, test and production-build verification."]],ask:"Ask deeper about HH Market Scanner →"},
-        shorts:{kind:"Automation system",desc:"A local-first pipeline for generating short-form AI video from research and scripting through rendering and review.",details:[["Problem","Content production has many repetitive handoffs and failure points."],["Built","n8n workflows with local LLMs, FFmpeg rendering, TTS, captions and an operations control plane."],["Boundary","Publishing is kept separate from generation and requires explicit review/credentials."]],ask:"Ask deeper about the pipeline →"},
-        feed:{kind:"Agent utility",desc:"A lightweight feed ingestion utility that gives AI agents predictable content from RSS and Atom sources.",details:[["Problem","Agents repeatedly need to normalize inconsistent feed formats."],["Built","Small Node.js utility with a focused XML parser and bounded content handling."],["Proof","Designed to run across Windows, macOS and Linux with a small dependency surface."]],ask:"Ask deeper about FeedPulse →"},
-        hh:{kind:"Open-source contribution",desc:"A merged upstream contribution that exposed existing multi-profile support in the project's desktop UI.",details:[["Problem","The CLI supported isolated profiles, but the UI could not manage or switch them."],["Built","Profile CRUD, auth state, switching, isolated data and safe runtime guards."],["Proof","Merged PR #84; 116 regression tests and Chromium/Playwright UI E2E passed."]],ask:"Ask deeper about the contribution →"}
+        note:"current shortlist / more projects will be curated later",
+        tube:{
+          kind:"Browser product",
+          desc:"A Chrome extension that places movie ratings directly on YouTube trailers, removing the extra search step.",
+          details:[["Problem","Ratings live outside the viewing context."],["Built","Extension, data layer, caching and SPA handling."],["Proof","Working MVP with automated browser tests."]],
+          ask:"Ask deeper about TubeScore →"
+        },
+        feed:{
+          kind:"Agent utility",
+          desc:"A small ingestion layer for AI agents that normalizes RSS/Atom sources into predictable content.",
+          details:[["Problem","Agents repeatedly need to parse inconsistent feeds."],["Built","Portable Node.js parser with a small dependency footprint."],["Proof","Cross-platform workflow for Windows, macOS and Linux."]],
+          ask:"Ask deeper about FeedPulse →"
+        }
       },
       about: {
         title:"About",
-        note:"",
-        statement:"I work best where a messy process needs to become a clear product or system.",
-        body:["My background spans project, process and delivery work at Skyeng, SPIKS and OpiniQ — from QA/CX operations and B2B CRM to workflow automation.","Now I work hands-on with AI agents, n8n, APIs, JavaScript/Node.js, Python, SQL, browser tooling and testable prototypes."]
+        note:"less biography / more operating principle",
+        statement:"I like software that removes friction instead of adding another system people have to manage.",
+        body:[
+          "My background is in project and process management, so I usually start from the workflow, constraint or user problem — not from the technology.",
+          "Now I work hands-on: prototypes, AI agents, APIs, browser tools, automation and small products that can be tested quickly."
+        ]
       },
-      footer:["Timur Dautov © 2026",""],
+      footer:["Timur Dautov © 2026","Built as a static page. Query and 3D field run locally in your browser."],
       deep:{
         tube:[["Architecture","How is TubeScore built?"],["Hardest part","What was the hardest part of TubeScore?"],["Testing","How did you test TubeScore?"]],
-        critic:[["Architecture","How is AI Critic built?"],["Safety","How does AI Critic handle privacy and permissions?"],["Status","What is actually verified in AI Critic?"]],
-        gac:[["Protocol","How does GitHub Agent Continuity work?"],["Concurrency","How does GAC prevent conflicting agents?"],["Testing","How was GAC tested?"]],
-        market:[["Architecture","How is HH Market Scanner built?"],["Data quality","How does HH Market Scanner avoid bad data?"],["Testing","How is HH Market Scanner verified?"]],
-        shorts:[["Workflow","How is the AI video pipeline built?"],["Local stack","What runs locally in the pipeline?"],["Safety","Why is publishing separated?"]],
-        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Portability","How does FeedPulse stay cross-platform?"]],
-        hh:[["Contribution","What did Timur add to hh-applicant-tool?"],["Architecture","How was multi-account isolation implemented?"],["Testing","How was the contribution verified?"]]
+        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Why Node.js","Why Node for FeedPulse?"]]
       }
     },
     ru: {
+      demo: "04 / Гибридный вариант",
       nav: { work:"Работы", query:"Спросить", about:"Обо мне" },
       hero: {
-        eyebrow:"Product builder / AI-автоматизация",
+        eyebrow:"Product builder / системное мышление",
         title:"Создаю.<br><span>Автоматизирую.</span><br>Упрощаю.",
-        lede:"Превращаю сложные процессы в работающие продукты и автоматизации — от проектирования процессов до AI-агентов, API и кода.",
-        meta:["Задача → прототип","Процесс → система","AI → автоматизация"]
+        lede:"Превращаю размытые задачи и неудобные процессы в небольшие работающие продукты — с помощью AI, автоматизации и кода.",
+        meta:["От задачи → к прототипу","AI-native подход","Делаю руками"]
       },
-      field: { title:"Карта компетенций", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
+      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
       query: {
         title:"Portfolio Query",
-        intro:"Спроси про опыт Тимура, проекты, AI/автоматизацию или технические решения.",
+        status:"контекстный локальный движок / 0 МБ модели",
+        intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
           ["Кто такой Тимур?","Кто такой Тимур?"],
-          ["Что он сделал?","Какие проекты сделал Тимур?"],
-          ["AI и агенты","Что Тимур делал с AI-агентами?"],
-          ["Опыт","Где работал Тимур и что изменил?"]
+          ["Что он умеет?","Что умеет Тимур?"],
+          ["Работа с ИИ","Покажи работу с ИИ"],
+          ["Опыт","Какой у Тимура опыт?"]
         ],
         placeholder:"Спроси портфолио…",
-        hint:'Нажми <kbd>/</kbd>, чтобы перейти к вопросу.',
+        hint:'Работает полностью в браузере: без скачивания модели, API и сервера. Помнит контекст диалога и отвечает из локальной базы знаний. Нажми <kbd>/</kbd>, чтобы перейти к строке.',
         rolePortfolio:"портфолио",
         roleYou:"вы",
         showProject:"Показать связанный проект ↓",
@@ -91,297 +98,134 @@
       },
       work: {
         title:"Избранные работы",
-        note:"",
-        tube:{kind:"Браузерный продукт",desc:"Chrome-расширение, которое определяет фильмы на YouTube и показывает рейтинги прямо в контексте просмотра — без API-ключей и backend.",details:[["Проблема","Проверка рейтинга прерывает просмотр и требует отдельного поиска."],["Что сделал","MV3-расширение, детерминированный матчинг, Wikidata, кеширование и SPA-навигация."],["Проверка","Typecheck, тесты, production build checks и Chromium browser smoke."]],ask:"Спросить подробнее о TubeScore →"},
-        critic:{kind:"AI-система",desc:"Система критики, которая ищет существенные ошибки и противоречия по проверяемым данным, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и эксперимент с desktop bridge с privacy-gates."],["Статус","Early-stage: реализованные части и security-проверки отделены от проверки на реальном host."]],ask:"Спросить подробнее об AI Critic →"},
-        gac:{kind:"Инфраструктура агентов",desc:"Протокол на базе GitHub, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
-        market:{kind:"Продукт данных",desc:"Продукт для анализа рынка труда: возобновляемый MV3-сборщик, версионированные контракты данных и проверяемая публикация через Next.js.",details:[["Проблема","Данные со страниц могут быть устаревшими, неполными или ошибочно интерпретироваться как ноль."],["Что сделал","MV3-сборщик, canonical snapshot/batch contracts, слой хранения и Next.js-приложение."],["Проверка","Детерминированные fixtures и общий gate: lint, tests и production build."]],ask:"Спросить подробнее о HH Market Scanner →"},
-        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся ручных переходов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и отдельная панель контроля."],["Граница","Публикация отделена от генерации и требует отдельного review и credentials."]],ask:"Спросить подробнее о pipeline →"},
-        feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с узким XML-парсером и ограничением объёма контента."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
-        hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Создание, удаление и переключение профилей, auth-state, изоляция данных и runtime guards."],["Проверка","PR #84 принят upstream; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
+        note:"текущий список / проекты ещё будем отбирать",
+        tube:{
+          kind:"Браузерный продукт",
+          desc:"Chrome-расширение, которое показывает рейтинги фильмов прямо на YouTube-трейлерах и убирает лишний переход на другой сайт.",
+          details:[["Проблема","Рейтинг находится вне контекста просмотра."],["Что сделал","Расширение, слой данных, кеширование и обработка SPA-навигации."],["Подтверждение","Рабочий MVP с автоматизированными браузерными тестами."]],
+          ask:"Спросить подробнее о TubeScore →"
+        },
+        feed:{
+          kind:"Инструмент для агентов",
+          desc:"Небольшой слой загрузки контента для AI-агентов, который приводит RSS/Atom-источники к предсказуемой структуре.",
+          details:[["Проблема","Агентам снова и снова приходится разбирать несовместимые фиды."],["Что сделал","Переносимый Node.js-парсер с небольшим числом зависимостей."],["Подтверждение","Работает на Windows, macOS и Linux."]],
+          ask:"Спросить подробнее о FeedPulse →"
+        }
       },
       about: {
         title:"Обо мне",
-        note:"",
-        statement:"Лучше всего я работаю там, где запутанный процесс нужно превратить в понятный продукт или систему.",
-        body:["Мой бэкграунд — проекты, процессы и delivery в Skyeng, SPIKS и OpiniQ: от QA/CX и B2B CRM до автоматизации процессов.","Сейчас много делаю руками: AI-агенты, n8n, API, JavaScript/Node.js, Python, SQL, браузерные инструменты и проверяемые прототипы."]
+        note:"меньше биографии / больше принципов работы",
+        statement:"Мне нравится софт, который убирает трение, а не создаёт ещё одну систему, которой нужно управлять.",
+        body:[
+          "Мой основной бэкграунд — управление проектами и процессами, поэтому я обычно начинаю с рабочего процесса, ограничений и проблемы пользователя, а не с выбора технологии.",
+          "Сейчас я много делаю руками: прототипы, AI-агенты, API, браузерные инструменты, автоматизацию и небольшие продукты, которые можно быстро проверить."
+        ]
       },
-      footer:["Timur Dautov © 2026",""],
+      footer:["Timur Dautov © 2026","Статическая страница: Query и 3D-поле работают локально в браузере."],
       deep:{
         tube:[["Архитектура","Как устроен TubeScore?"],["Самая сложная часть","Что было самым сложным в TubeScore?"],["Тестирование","Как ты тестировал TubeScore?"]],
-        critic:[["Архитектура","Как устроен AI Critic?"],["Безопасность","Как AI Critic работает с privacy и permissions?"],["Статус","Что реально проверено в AI Critic?"]],
-        gac:[["Протокол","Как работает GitHub Agent Continuity?"],["Конкуренция","Как GAC предотвращает конфликты между агентами?"],["Тестирование","Как тестировался GAC?"]],
-        market:[["Архитектура","Как устроен HH Market Scanner?"],["Качество данных","Как HH Market Scanner защищается от плохих данных?"],["Тестирование","Как проверяется HH Market Scanner?"]],
-        shorts:[["Workflow","Как устроен AI video pipeline?"],["Локальный стек","Что в pipeline работает локально?"],["Безопасность","Почему публикация отделена от генерации?"]],
-        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Переносимость","Как FeedPulse работает на разных ОС?"]],
-        hh:[["Вклад","Что Тимур добавил в hh-applicant-tool?"],["Архитектура","Как реализована изоляция нескольких аккаунтов?"],["Тестирование","Как проверялся этот вклад?"]]
+        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Почему Node.js","Почему для FeedPulse выбран Node.js?"]]
       }
     }
   };
 
   const answers = {
     en: {
-      greeting:"Hi. Ask about Timur's experience, projects, AI/automation work, technical decisions or product approach.",
-      thanks:"You're welcome. You can ask about a specific project, work experience, measurable results, stack or role fit.",
-      identity:"Timur Dautov is a product/process manager and hands-on product builder. He works where product thinking, operations, AI automation and implementation meet.",
+      greeting:"Hi. You can ask about Timur, what he can do, his projects, technical decisions or how he approaches products.",
+      thanks:"You're welcome. You can keep going — for example, ask what Timur can do, how TubeScore is built, or what kind of problems he likes to automate.",
+      identity:"Timur Dautov is a product and process manager moving increasingly into hands-on product building. He combines product thinking with AI tooling, automation, APIs and lightweight software development.",
       identityMore:[
-        "He usually starts with the workflow and the user or business problem, then narrows the scope until there is something concrete to build and verify.",
-        "His background spans Skyeng, SPIKS and OpiniQ, while his current hands-on work includes AI agents, browser products, automation pipelines and agent infrastructure.",
-        "A recurring pattern in his work is evidence over presentation: explicit constraints, tests, measurable process changes and clear boundaries between what is implemented and what is still experimental."
+        "His management background matters because he usually starts with the workflow and the user problem rather than with a preferred technology.",
+        "He is strongest at the intersection of product, process and implementation: defining the problem, reducing scope and getting a working version into reality.",
+        "He prefers practical, inspectable systems — small products, browser tools, automations and AI workflows — over technology added only for presentation."
       ],
       skills:[
-        "Timur can map and redesign processes, frame product problems, coordinate delivery, build small MVPs, integrate APIs/webhooks and automate workflows with AI or deterministic tooling.",
-        "His practical stack includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, GitHub, Playwright and n8n.",
-        "He is comfortable entering an existing codebase or operating process, tracing actual behavior, making a bounded change and verifying it with regression or E2E checks."
+        "Timur can frame product problems, design and improve processes, build small MVPs, connect APIs and webhooks, automate workflows and work with AI agents and LLM-based tooling.",
+        "On the technical side, he works with JavaScript / Node.js, browser APIs, REST APIs, webhooks, SQL, GitHub, automation tools and testing workflows.",
+        "He is also comfortable taking an unfamiliar existing codebase, tracing how it behaves, making a bounded change and verifying the result."
       ],
-      background:"Timur has worked across project, process and delivery roles. At Skyeng he led a remote assessment team and worked on QA/CX process automation; at SPIKS he managed a B2B Loyalty CRM ecosystem; at OpiniQ he worked on process automation, Jira workflows and AI research/PoCs.",
-      impact:"Examples of measured impact include a SQL + DataLens BI dashboard for 20 products that reduced reporting time by 70%, an audit-automation initiative covering 95%+ of transactions and improving audit efficiency by 44%, CRM process migration that increased processing speed by 20%, and crisis-process redesign that reduced critical-incident resolution time by 25%.",
-      companies:"Recent relevant experience includes Skyeng, SPIKS and OpiniQ. The work ranges from team leadership and process redesign to B2B CRM delivery, automation and AI-related process research.",
-      ai:"He works with AI agents and LLM workflows as systems rather than just chat prompts: tool orchestration, memory, permissions, validation, reliability and failure handling. Projects such as AI Critic, GitHub Agent Continuity, MindRail and Book Translator explore those concerns from different angles.",
-      automation:"His automation work ranges from n8n/JavaScript invoice generation to QA/CX workflows and a local AI-video pipeline. The common pattern is to define inputs and boundaries, automate repeatable steps, then add validation and observable failure states.",
-      stack:"The recurring stack is JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, GitHub, Playwright and n8n, plus Google/Yandex APIs and cloud tooling where needed.",
-      product:"His product loop is simple: understand the real workflow, reduce scope, build the smallest useful version, verify behavior, then keep, change or stop based on evidence.",
-      strengths:"The strongest differentiator is the combination of process/product work and hands-on implementation. He can move between metrics, user workflow, API behavior, code and verification without treating any one of them as the whole product.",
-      weakness:"The portfolio does not infer personality weaknesses. The visible trade-off is that Timur's profile is broader than a narrow specialist engineering track: it is strongest where product/process understanding and implementation need to meet.",
-      fit:"The clearest fit is Product Builder, AI/Automation, Project/Process or technical-product work where the role needs both workflow understanding and the ability to prototype or implement.",
-      projectsOverview:"Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, an AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution. Other work includes Book Translator, MindRail, PM 0.1, open-screen-pipe, agent policy plugins and ARC Whitebox research.",
-      broad:"Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on product building and AI automation. His work spans team and process leadership, B2B product delivery, measurable operational improvements, AI-agent systems, browser tooling and automation. Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution.",
-      projects: {
-        tube:{
-          overview:"TubeScore is a zero-token Chrome/Chromium MV3 extension that identifies movies or TV series on YouTube and shows ratings in the viewing context.",
-          architecture:"Its production path uses YouTube page metadata, deterministic scoring and the official Wikidata Action API. It does not require an API key, backend, LLM or computer vision.",
-          hard:"The hard part is reliable matching and SPA lifecycle behavior, not drawing the rating card. The system deliberately prefers false negatives over confident false positives.",
-          testing:"Verification includes strict TypeScript typecheck, Vitest, production-build isolation checks and browser acceptance smoke in Chromium."
-        },
-        critic:{
-          overview:"AI Critic is an evidence-backed system intended to remember relevant work context, catch material mistakes or contradictions and stay silent when intervention is not worth it.",
-          architecture:"It separates Context/Critic/Verifier workflows, a local-first Ambient architecture and a narrow privacy-gated Lite Bridge experiment.",
-          safety:"Privacy admission happens before screenshot transfer; automatic analysis uses a restricted safe root and failures default to silence. Autonomous click/type/send is outside the product scope.",
-          testing:"Strict TypeScript and targeted security-flow PASS evidence exist for the new safe-root/Codex modules. Real Windows/Codex host verification remains a separate gate."
-        },
-        gac:{
-          overview:"GitHub Agent Continuity is a GitHub-native coordination protocol for autonomous coding agents that need to continue work across disposable or scheduled sessions.",
-          architecture:"It uses GitHub Issues, immutable generation claim refs, separate work branches, leases, checkpoints and takeover rules so durable state lives outside any one chat session.",
-          hard:"The difficult part is concurrency and recovery: exactly one current owner, safe takeover after expiry, and stale-writer isolation without a separate database or daemon.",
-          testing:"Its adversarial live subset completed 5 PASS, 0 FAIL and 0 NOT EXECUTED, including claim serialization, takeover and stale-writer isolation."
-        },
-        market:{
-          overview:"HH Market Scanner is a labor-market data product that combines a resumable Chrome MV3 collector with validated snapshots and a Next.js web application.",
-          architecture:"The collector exports canonical versioned market snapshot/batch contracts into a file-backed repository boundary; the web app reads only validated data and keeps freshness tied to collection provenance.",
-          hard:"The key data-quality problem is distinguishing a real zero from selector failure, blocking, wrong-page or navigation failure. Unknown observations are not silently converted to zero.",
-          testing:"Repository verification covers deterministic collector fixtures plus lint, tests and a production Next.js build; live hh.ru behavior remains a separate operational smoke check."
-        },
-        shorts:{
-          overview:"AI Video Pipeline is a local-first n8n workflow for producing Shorts/Reels from scripting through rendering and review.",
-          architecture:"The verified local base uses n8n Community Edition, Ollama, FFmpeg and Windows System.Speech, with a separate localhost control plane for health and explicit actions.",
-          safety:"Publishing is intentionally separated from generation. The workflow can stop at review-ready state, while OAuth and upload live in a separate path.",
-          testing:"The repository documents a verified local base and operational recovery/control procedures rather than presenting publishing as an unattended black box."
-        },
-        feed:{
-          overview:"FeedPulse is a lightweight utility for AI agents that reads RSS/Atom feeds and normalizes them into predictable bounded content.",
-          architecture:"It is a small Node.js utility inside tim8skills, intentionally keeping a focused XML parser and a small dependency surface.",
-          hard:"The main issue is feed inconsistency: namespaces, content fields, dates and markup vary across sources that nominally use the same formats.",
-          testing:"The design targets the same normalized behavior across Windows, macOS and Linux."
-        },
-        hh:{
-          overview:"Timur's hh-applicant-tool contribution added multi-account/profile management to the existing desktop UI and was merged upstream as PR #84.",
-          architecture:"The change exposes the project's existing isolated-profile model: profile CRUD, auth state, switching, separate tokens/cookies/SQLite/settings and guards against switching during active operations.",
-          hard:"The important part was integrating with an unfamiliar existing codebase without breaking CLI profile behavior or leaking profile-scoped state.",
-          testing:"Validation included Ruff, Python compileall, JavaScript syntax checks, 116 regression tests and Chromium/Playwright UI E2E, all reported as passing in the merged PR."
-        },
-        book:{
-          overview:"Book Translator is an agent-agnostic workflow for long-form book translation with durable progress, terminology/style state and separate review.",
-          architecture:"Per-book workspace files store source units, translations, progress, glossary, style guide and source-manifest state so another session can resume without relying on chat history.",
-          testing:"The repository treats source integrity, review state and persistence as explicit workflow contracts rather than assuming a web chat session is permanent."
-        },
-        mindrail:{
-          overview:"MindRail is an early-stage vendor-neutral control plane for autonomous AI agents, keeping tasks, policy and coordination outside any single model runtime.",
-          architecture:"The current verified slice covers Goal → Task → Lease → Checkpoint → completion with deterministic in-memory runtime behavior.",
-          testing:"Durable persistence, deployed transports and real agent integrations are explicitly still in development; the repository distinguishes implemented and planned state."
-        },
-        pmo:{
-          overview:"PM 0.1 is a reference prototype for practical Project Management training organized around seven flows of project execution rather than one framework.",
-          architecture:"Its first validation slice separates learning-domain scoring/state logic, validation content, UI and browser persistence.",
-          testing:"CI checks scoring/promotion state, content structure, integration/accessibility contracts and JavaScript syntax."
-        },
-        screenpipe:{
-          overview:"open-screen-pipe is an early-stage privacy-first desktop UI for a local Screenpipe installation.",
-          architecture:"The product direction separates capture, history, context, memory and automation while keeping local-only operation explicit and requiring deliberate confirmation for networked, destructive or code-executing actions.",
-          testing:"The current repository is an early structural bootstrap; frontend build/tests are available, while native Tauri integration and final visual QA are still planned."
-        },
-        plugins:{
-          overview:"tim8plugins contains small policy plugins for AI-agent gateways.",
-          architecture:"One plugin requires human approval for selected tools and out-of-workspace exec paths; another bounds tool-call attempts and forces a checkpoint when the budget is exhausted.",
-          testing:"The packages are intentionally dependency-light and focused on deterministic policy behavior rather than model reasoning."
-        },
-        arc:{
-          overview:"ARC Whitebox is a research repository for the ARC White-Box Estimation Challenge 2026 Phase 2 under CPU/FLOP constraints.",
-          architecture:"The research process is organized around hypotheses, reproducible experiments, a ledger and explicit compute budgets.",
-          testing:"Its operating rule is hypothesis → implementation → benchmark → compare → ablate → keep/drop; theoretical plausibility alone is not enough to promote a method."
-        }
+      background:"His main background is project and process management, including team leadership, metrics, hiring, process design and operational improvement. More recently he has shifted toward hands-on product and automation work.",
+      ai:"He uses LLMs as components inside products and workflows — for reasoning, classification, content processing and tool orchestration. The surrounding system, validation and failure handling matter more to him than the chat interface itself.",
+      automation:"His automation approach starts with repeated decisions and handoffs: define inputs and success criteria, connect tools or APIs, then add validation and observability so the workflow is repeatable.",
+      stack:"The recurring stack includes JavaScript / Node.js, browser APIs, REST APIs, webhooks, SQL, GitHub, automation tools and LLM tooling. The stack is chosen around the problem rather than treated as the product.",
+      product:"His product loop is: understand the problem, cut scope hard, build the smallest useful version, test it against reality, then keep, change or kill the hypothesis based on evidence.",
+      tube:{
+        overview:"TubeScore is a Chrome extension that puts movie ratings directly on YouTube trailers, removing the extra search step.",
+        architecture:"TubeScore uses a Manifest V3 extension architecture with a content-script UI, service-worker orchestration and a separate provider layer for metadata. Matching is deterministic and caching keeps lookups lightweight.",
+        hard:"The hard part was not the visual badge. It was reliably identifying the correct film from messy YouTube context and keeping the overlay working across SPA navigation without relying on an LLM.",
+        testing:"TubeScore is checked with deterministic tests plus an isolated Chromium/Playwright smoke flow covering initial rendering and SPA navigation."
       },
-      unknown:"I don't have a reliable answer to that in the local portfolio knowledge base. Try asking about experience, measurable results, stack, AI/automation, role fit or a named project."
+      feed:{
+        overview:"FeedPulse is a lightweight ingestion utility for AI agents. It reads RSS/Atom sources and normalizes them into predictable structured content.",
+        architecture:"FeedPulse intentionally uses a small Node.js implementation with a focused XML parser instead of a heavy framework. The goal is portability and a narrow dependency surface.",
+        hard:"The main problem is inconsistency between feeds: namespaces, content fields, dates and embedded markup vary even when the formats look similar.",
+        testing:"The important verification target is deterministic parsing across representative feed variants and consistent normalized output on Windows, macOS and Linux."
+      },
+      unknown:"I don't have a reliable answer to that in the portfolio knowledge base yet. Try asking about Timur, his skills, background, TubeScore, FeedPulse, AI, automation, product thinking or technical stack."
     },
     ru: {
-      greeting:"Привет. Можно спросить про опыт Тимура, проекты, AI/автоматизацию, технические решения или продуктовый подход.",
-      thanks:"Пожалуйста. Можно продолжить: спросить про конкретный проект, опыт работы, измеримые результаты, стек или подходящие роли.",
-      identity:"Тимур Даутов — менеджер проектов и процессов и hands-on product builder. Он работает на стыке продукта, операционных процессов, AI-автоматизации и реализации.",
+      greeting:"Привет. Можно спросить о Тимуре, его навыках, проектах, технических решениях или о том, как он подходит к продуктам.",
+      thanks:"Пожалуйста. Можно продолжить — например, спросить, что умеет Тимур, как устроен TubeScore или какие процессы он автоматизирует.",
+      identity:"Тимур Даутов — менеджер проектов и процессов, который всё больше работает как hands-on product builder. Он сочетает продуктовое мышление с AI-инструментами, автоматизацией, API и разработкой небольших программных продуктов.",
       identityMore:[
-        "Обычно он начинает с реального workflow и проблемы пользователя или бизнеса, а затем сокращает scope до конкретного решения, которое можно собрать и проверить.",
-        "Бэкграунд включает Skyeng, SPIKS и OpiniQ, а текущая hands-on работа — AI-агенты, браузерные продукты, automation pipeline и agent infrastructure.",
-        "Повторяющийся принцип — evidence over presentation: явные ограничения, тесты, измеримые изменения процессов и честное разделение реализованного и экспериментального."
+        "Его управленческий бэкграунд влияет на подход к разработке: обычно он начинает с рабочего процесса и проблемы пользователя, а не с любимой технологии.",
+        "Сильнее всего он работает на стыке продукта, процессов и реализации: формулирует проблему, сокращает scope и доводит идею до работающей версии.",
+        "Ему ближе небольшие понятные системы — браузерные инструменты, автоматизации и AI-workflow — чем технологии, добавленные только ради эффекта."
       ],
       skills:[
-        "Тимур умеет разбирать и перестраивать процессы, формулировать продуктовые задачи, вести delivery, собирать небольшие MVP, интегрировать API/webhooks и автоматизировать workflow.",
-        "Практический стек: JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, GitHub, Playwright и n8n.",
-        "Он умеет входить в существующую codebase или операционный процесс, прослеживать фактическое поведение, делать ограниченное изменение и проверять его regression/E2E тестами."
+        "Тимур умеет формулировать продуктовые задачи, проектировать и улучшать процессы, собирать небольшие MVP, соединять API и webhooks, автоматизировать workflow и работать с AI-агентами и LLM-инструментами.",
+        "Из технического: JavaScript / Node.js, browser API, REST API, webhooks, SQL, GitHub, инструменты автоматизации и тестирования.",
+        "Он также умеет разбираться в чужой кодовой базе: проследить текущее поведение, локализовать проблему, внести ограниченное изменение и проверить результат."
       ],
-      background:"Тимур работал в project/process/delivery ролях. В Skyeng руководил удалённой командой и занимался QA/CX и автоматизацией процессов; в SPIKS управлял B2B Loyalty CRM; в OpiniQ работал с автоматизацией, Jira workflow и AI research/PoC.",
-      impact:"Примеры измеримого эффекта: BI на SQL + DataLens для 20 продуктов сократил время на отчётность на 70%; автоматизация аудита охватывала 95%+ транзакций и повысила эффективность аудита на 44%; перенос ручных процессов в CRM повысил скорость обработки на 20%; перестройка кризисного процесса сократила время решения критических инцидентов на 25%.",
-      companies:"Последний релевантный опыт — Skyeng, SPIKS и OpiniQ: от team leadership и redesign процессов до B2B CRM delivery, автоматизации и AI-related исследований.",
-      ai:"С AI-агентами и LLM Тимур работает как с системами, а не только с промптами: tool orchestration, memory, permissions, validation, reliability и failure handling. Это видно в AI Critic, GitHub Agent Continuity, MindRail и Book Translator.",
-      automation:"Автоматизация включает n8n/JavaScript генерацию инвойсов, QA/CX workflow и local-first AI video pipeline. Общий подход: определить входы и границы, автоматизировать повторяемые шаги и добавить валидацию и наблюдаемые failure states.",
-      stack:"Регулярный стек: JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, GitHub, Playwright и n8n; при необходимости — Google/Yandex APIs и cloud tooling.",
-      product:"Продуктовый цикл простой: понять реальный workflow, сократить scope, собрать минимально полезную версию, проверить поведение и по фактам оставить, изменить или остановить гипотезу.",
-      strengths:"Главное отличие — сочетание process/product опыта и hands-on реализации. Тимур может работать одновременно с метрикой, пользовательским workflow, API, кодом и проверкой результата.",
-      weakness:"Портфолио не должно придумывать личные слабые стороны. Видимый trade-off — профиль шире узкой инженерной специализации; он сильнее там, где понимание продукта/процесса нужно соединять с реализацией.",
-      fit:"Наиболее подтверждённый fit — Product Builder, AI/Automation, Project/Process или technical product роли, где нужно соединять понимание процесса с прототипированием и delivery.",
-      projectsOverview:"В Selected work: TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool. Среди других работ — Book Translator, MindRail, PM 0.1, open-screen-pipe, agent policy plugins и ARC Whitebox research.",
-      broad:"Тимур сочетает project/process опыт в Skyeng, SPIKS и OpiniQ с hands-on разработкой продуктов и AI-автоматизацией. В опыте — управление командами и процессами, B2B product delivery, измеримые операционные улучшения, AI-agent systems, браузерные инструменты и автоматизация. В Selected work — TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый вклад в hh-applicant-tool.",
-      projects: {
-        tube:{
-          overview:"TubeScore — Chrome/Chromium MV3 extension без токенов, который определяет фильм или сериал на YouTube и показывает рейтинги прямо в контексте просмотра.",
-          architecture:"Production path использует metadata страницы YouTube, детерминированный scoring и официальный Wikidata Action API. API key, backend, LLM и computer vision не нужны.",
-          hard:"Сложная часть — надёжный matching и SPA lifecycle, а не отрисовка карточки. Система намеренно предпочитает false negative уверенному false positive.",
-          testing:"Проверка включает strict TypeScript typecheck, Vitest, production-build isolation checks и browser acceptance smoke в Chromium."
-        },
-        critic:{
-          overview:"AI Critic — evidence-backed система, которая должна помнить релевантный контекст, находить существенные ошибки или противоречия и молчать, когда вмешательство не стоит того.",
-          architecture:"Архитектура разделяет Context/Critic/Verifier workflow, local-first Ambient и узкий privacy-gated Lite Bridge experiment.",
-          safety:"Privacy admission происходит до передачи screenshot; automatic analysis идёт через restricted safe root, а failures default to silence. Autonomous click/type/send не входит в scope.",
-          testing:"Для новых safe-root/Codex модулей есть strict TypeScript и targeted security-flow PASS evidence. Реальная Windows/Codex host verification остаётся отдельным gate."
-        },
-        gac:{
-          overview:"GitHub Agent Continuity — GitHub-native coordination protocol для autonomous coding agents, которым нужно продолжать работу между disposable или scheduled sessions.",
-          architecture:"Он использует GitHub Issues, immutable generation claim refs, отдельные work branches, leases, checkpoints и takeover rules, поэтому durable state живёт вне одной chat session.",
-          hard:"Сложная часть — concurrency и recovery: один текущий owner, безопасный takeover после expiry и stale-writer isolation без отдельной базы или daemon.",
-          testing:"Adversarial live subset завершился с 5 PASS, 0 FAIL и 0 NOT EXECUTED, включая claim serialization, takeover и stale-writer isolation."
-        },
-        market:{
-          overview:"HH Market Scanner — продукт данных о рынке труда: возобновляемый Chrome MV3 collector, валидируемые snapshots и Next.js web-приложение.",
-          architecture:"Collector приводит данные к versioned snapshot/batch contracts и сохраняет их через file-backed repository boundary; UI читает только валидированные данные, а freshness определяется временем сбора, а не деплоя.",
-          hard:"Ключевая задача качества данных — отличить настоящий ноль от selector failure, блокировки, неверной страницы или navigation failure. Неизвестное наблюдение не превращается в ноль.",
-          testing:"Проверка репозитория включает детерминированные fixtures collector'а, lint, tests и production Next.js build; живое поведение hh.ru остаётся отдельным operational smoke."
-        },
-        shorts:{
-          overview:"AI Video Pipeline — local-first n8n workflow для производства Shorts/Reels от сценария до рендера и review.",
-          architecture:"Проверенная локальная база использует n8n Community Edition, Ollama, FFmpeg и Windows System.Speech; отдельный localhost control plane собирает health и explicit actions.",
-          safety:"Публикация намеренно отделена от генерации. Workflow может остановиться на review-ready состоянии, а OAuth и upload живут отдельным path.",
-          testing:"Репозиторий фиксирует verified local base и operational recovery/control процедуры, а не выдаёт публикацию за полностью unattended black box."
-        },
-        feed:{
-          overview:"FeedPulse — лёгкая утилита для AI-агентов, которая читает RSS/Atom и приводит материалы к предсказуемому bounded content.",
-          architecture:"Это небольшая Node.js-утилита внутри tim8skills с focused XML parser и малым dependency surface.",
-          hard:"Основная сложность — неоднородность feed: namespaces, content fields, dates и markup различаются даже у формально одинаковых форматов.",
-          testing:"Дизайн рассчитан на одинаковый нормализованный результат в Windows, macOS и Linux."
-        },
-        hh:{
-          overview:"Вклад Тимура в hh-applicant-tool добавил управление несколькими профилями/аккаунтами в существующий desktop UI и был принят upstream как PR #84.",
-          architecture:"Изменение раскрывает существующую модель изолированных профилей: CRUD, auth state, switching, отдельные tokens/cookies/SQLite/settings и guards от переключения во время активных операций.",
-          hard:"Ключевая задача — встроиться в незнакомую codebase, не сломав CLI profile behavior и не смешав profile-scoped state.",
-          testing:"Проверка включала Ruff, Python compileall, JavaScript syntax, 116 regression tests и Chromium/Playwright UI E2E; в merged PR всё отмечено как PASS."
-        },
-        book:{
-          overview:"Book Translator — agent-agnostic workflow для длинного перевода книг с durable progress, terminology/style state и отдельным review.",
-          architecture:"Per-book workspace хранит source units, translations, progress, glossary, style guide и source manifest, поэтому следующая сессия может продолжить работу без истории чата.",
-          testing:"В workflow source integrity, review state и persistence оформлены как явные контракты, а не как предположение о вечной web-chat session."
-        },
-        mindrail:{
-          overview:"MindRail — early-stage vendor-neutral control plane для автономных AI-агентов, где tasks, policy и coordination вынесены из конкретной model runtime.",
-          architecture:"Текущий verified slice покрывает Goal → Task → Lease → Checkpoint → completion с deterministic in-memory runtime.",
-          testing:"Durable persistence, deployed transports и реальные agent integrations явно остаются в разработке; репозиторий разделяет implemented и planned state."
-        },
-        pmo:{
-          overview:"PM 0.1 — reference prototype практической программы по Project Management вокруг семи потоков исполнения проекта, а не одного framework.",
-          architecture:"Первый validation slice разделяет learning-domain scoring/state, validation content, UI и browser persistence.",
-          testing:"CI проверяет scoring/promotion state, структуру контента, integration/accessibility contracts и JavaScript syntax."
-        },
-        screenpipe:{
-          overview:"open-screen-pipe — early-stage privacy-first desktop UI для локального Screenpipe.",
-          architecture:"Продукт разделяет capture, history, context, memory и automation, сохраняет local-only режим явным и требует осознанного подтверждения для сетевых, destructive или code-executing действий.",
-          testing:"Сейчас это ранний structural bootstrap: frontend build/tests есть, а native Tauri integration и финальная visual QA ещё запланированы."
-        },
-        plugins:{
-          overview:"tim8plugins — небольшие policy plugins для gateway'ев AI-агентов.",
-          architecture:"Один plugin требует human approval для выбранных tools и exec вне workspace; второй ограничивает число tool-call попыток и требует checkpoint после исчерпания бюджета.",
-          testing:"Пакеты намеренно dependency-light и опираются на детерминированную policy-логику, а не на model reasoning."
-        },
-        arc:{
-          overview:"ARC Whitebox — research-репозиторий для ARC White-Box Estimation Challenge 2026 Phase 2 с CPU/FLOP ограничениями.",
-          architecture:"Исследовательский процесс организован вокруг hypotheses, воспроизводимых экспериментов, ledger и явного compute budget.",
-          testing:"Рабочее правило: hypothesis → implementation → benchmark → compare → ablate → keep/drop; теоретической правдоподобности недостаточно для продвижения метода."
-        }
+      background:"Основной бэкграунд Тимура — управление проектами и процессами: команды, метрики, найм, проектирование процессов и операционные улучшения. В последние годы он всё больше смещается в hands-on разработку продуктов и автоматизаций.",
+      ai:"LLM он использует как компонент продукта или процесса: для reasoning, классификации, обработки контента и оркестрации инструментов. При этом система вокруг модели — входы, проверки и обработка ошибок — для него важнее самого чат-интерфейса.",
+      automation:"Подход к автоматизации начинается с повторяющихся решений и handoff'ов: определить входы и критерии успеха, связать инструменты или API, а затем добавить валидацию и наблюдаемость.",
+      stack:"Регулярный стек: JavaScript / Node.js, browser API, REST API, webhooks, SQL, GitHub, инструменты автоматизации и LLM-tooling. Стек выбирается под задачу, а не становится самоцелью.",
+      product:"Продуктовый цикл для него выглядит так: понять проблему, жёстко сократить scope, собрать минимальную полезную версию, проверить её в реальности и затем оставить, изменить или закрыть гипотезу по фактам.",
+      tube:{
+        overview:"TubeScore — Chrome-расширение, которое показывает рейтинги фильмов прямо на YouTube-трейлерах и убирает лишний поиск на другом сайте.",
+        architecture:"TubeScore построен как Manifest V3 extension: интерфейс через content script, оркестрация через service worker, метаданные — через отдельный provider-слой. Матчинг детерминированный, а кеширование уменьшает число запросов.",
+        hard:"Самая сложная часть — не нарисовать бейдж, а надёжно определить нужный фильм из неоднозначного контекста YouTube и сохранить корректную работу overlay при SPA-навигации без LLM.",
+        testing:"TubeScore проверяется детерминированными тестами и изолированным Chromium/Playwright smoke-flow, который покрывает первоначальный рендер и SPA-навигацию."
       },
-      unknown:"В локальной базе портфолио нет надёжного ответа на этот вопрос. Можно спросить про опыт, измеримые результаты, стек, AI/автоматизацию, role fit или конкретный проект."
+      feed:{
+        overview:"FeedPulse — лёгкая утилита для AI-агентов, которая читает RSS/Atom и приводит материалы к предсказуемой структуре.",
+        architecture:"FeedPulse намеренно сделан как небольшая Node.js-утилита с узкоспециализированным XML-парсером вместо тяжёлого фреймворка. Цель — переносимость и минимум зависимостей.",
+        hard:"Главная сложность — неоднородность фидов: namespaces, поля контента, даты и встроенная разметка различаются даже в формально похожих источниках.",
+        testing:"Главная проверка — детерминированный парсинг разных вариантов фидов и одинаковый нормализованный результат на Windows, macOS и Linux."
+      },
+      unknown:"В локальной базе портфолио пока нет надёжного ответа на этот вопрос. Можно спросить о Тимуре, его навыках, опыте, TubeScore, FeedPulse, ИИ, автоматизации, продуктовом подходе или техническом стеке."
     }
   };
 
-  function qlang(text){
+  function qlang(text) {
     const c=(text.match(/[А-Яа-яЁё]/g)||[]).length;
     const l=(text.match(/[A-Za-zА-Яа-яЁё]/g)||[]).length;
-    return l&&c/l>.25?"ru":state.lang;
+    return l && c/l>.25 ? "ru" : state.lang;
   }
-  function norm(v){return String(v||"").toLowerCase().replace(/ё/g,"е").replace(/[^a-zа-я0-9\s.-]/gi," ").replace(/\s+/g," ").trim();}
-  function hasAny(q,arr){return arr.some(x=>q.includes(x));}
-  function startsWithPhrase(q,phrases){return phrases.some(p=>q===p||q.startsWith(p+" "));}
+  function norm(v){return String(v||"").toLowerCase().replace(/ё/g,"е").replace(/[^a-zа-я0-9\s-]/gi," ").replace(/\s+/g," ").trim();}
+  function hasAny(q,arr){return arr.some((x)=>q.includes(x));}
+  function startsWithPhrase(q, phrases){return phrases.some((p)=>q===p||q.startsWith(p+" "));}
   function looksLikeGreeting(q){return startsWithPhrase(q,["привет","здравствуй","здравствуйте","добрый день","добрый вечер","hello","hi","hey"]);}
   function looksLikeThanks(q){return startsWithPhrase(q,["спасибо","благодарю","thanks","thank you"]);}
-  function isPronounFollowup(q){return hasAny(q,["он ","его ","о нем","о нём","ему ","he ","him ","his "])||/^(он|его|ему|he|him)$/.test(q);}
-  function isMore(q){return hasAny(q,["что еще","что ещё","расскажи еще","расскажи ещё","а еще","а ещё","what else","tell me more","anything else"]);}
-
-  const projectTerms={
-    tube:["tubescore","tube score"],
-    critic:["ai critic"],
-    gac:["github agent continuity","gac"],
-    market:["hh market scanner","market scanner","professions statistics","рынок труда"],
-    shorts:["ai video pipeline","video pipeline","youtube shorts","shorts pipeline"],
-    feed:["feedpulse","feed pulse"],
-    hh:["hh-applicant-tool","hh applicant"],
-    book:["book translator"],
-    mindrail:["mindrail"],
-    pmo:["pm 0.1","pmo01"],
-    screenpipe:["open-screen-pipe","screenpipe"],
-    plugins:["tim8plugins","policy plugins","policy plugin"],
-    arc:["arc-whitebox","arc whitebox"]
-  };
-  const selectedProjects=new Set(["tube","critic","gac","market","shorts","feed","hh"]);
-
-  function resolveSubject(q){
-    for(const [id,terms] of Object.entries(projectTerms)){
-      if(terms.some(term=>q.includes(term))) return id;
-    }
-    if(hasAny(q,["тимур","даутов","timur","dautov"])) return "timur";
-    if(isPronounFollowup(q)||isMore(q)) return state.lastSubject||"timur";
-    return state.lastSubject||"timur";
-  }
+  function hasTimur(q){return hasAny(q,["тимур","даутов","timur","dautov"]);}
+  function hasTube(q){return q.includes("tubescore")||q.includes("tube score");}
+  function hasFeed(q){return q.includes("feedpulse")||q.includes("feed pulse");}
+  function isPronounFollowup(q){return hasAny(q,["он ","его ","о нем","о нём","ему ","he ","him ","his "]) || /^(он|его|ему|he|him)$/.test(q);}
+  function isMore(q){return hasAny(q,["что еще","что ещё","расскажи еще","расскажи ещё","а еще","а ещё","что еще можешь","what else","tell me more","anything else","more about"]);}
 
   function rotate(key,values){
-    const usable=values.filter(Boolean);
-    if(!usable.length)return"";
     const idx=state.moreCursor[key]||0;
-    state.moreCursor[key]=(idx+1)%usable.length;
-    return usable[idx];
+    state.moreCursor[key]=(idx+1)%values.length;
+    return values[idx];
   }
 
-  function projectResult(lang,subject,query){
-    const p=answers[lang].projects[subject];
-    if(!p)return null;
-    let text=p.overview;
-    if(hasAny(query,["архитект","как устро","как сделан","architecture","how built","how is"])) text=p.architecture||p.overview;
-    else if(hasAny(query,["безопас","privacy","permission","safety","security"])) text=p.safety||p.architecture||p.overview;
-    else if(hasAny(query,["тест","провер","proof","status","verified","testing","tested"])) text=p.testing||p.status||p.overview;
-    else if(hasAny(query,["слож","hardest","difficult","challenge","качество","плох","ошиб","quality","bad data","freshness"])) text=p.hard||p.architecture||p.overview;
-    return {lang,intent:"project",text,subject,project:selectedProjects.has(subject)?subject:null};
+  function resolveSubject(q){
+    if(hasTube(q))return "tube";
+    if(hasFeed(q))return "feed";
+    if(hasTimur(q))return "timur";
+    if(isPronounFollowup(q)||isMore(q))return state.lastSubject||"timur";
+    return state.lastSubject||"timur";
   }
 
   function classify(raw){
@@ -396,33 +240,58 @@
 
     if(isMore(q)){
       if(subject==="timur"){
-        if(state.lastIntent==="skills")return{lang,intent:"skills",text:rotate("skills",a.skills),subject};
+        if(state.lastIntent==="skills") return{lang,intent:"skills",text:rotate("skills",a.skills),subject};
         return{lang,intent:"identity-more",text:rotate("timur",a.identityMore),subject};
       }
-      const p=a.projects[subject];
-      if(p)return{lang,intent:"project-more",text:rotate(subject,[p.architecture,p.hard,p.testing,p.safety]),subject,project:selectedProjects.has(subject)?subject:null};
+      if(subject==="tube") return{lang,intent:"project-more",text:rotate("tube",[a.tube.architecture,a.tube.hard,a.tube.testing]),subject,project:"tube"};
+      if(subject==="feed") return{lang,intent:"project-more",text:rotate("feed",[a.feed.architecture,a.feed.hard,a.feed.testing]),subject,project:"feed"};
     }
 
-    if(subject!=="timur"){
-      const result=projectResult(lang,subject,q);
-      if(result)return result;
+    const skillsQ=hasAny(q,["что умеет","что он умеет","навык","навыки","компетенц","skills","what can","can timur","capabilities","умеешь"]);
+    if(skillsQ) return{lang,intent:"skills",text:rotate("skills",a.skills),subject:"timur"};
+
+    const identityQ=hasAny(q,["кто такой","кто тимур","who is","tell me about timur","расскажи про тимура"]);
+    if(identityQ) return{lang,intent:"identity",text:a.identity,subject:"timur"};
+
+    const backgroundQ=hasAny(q,["опыт","карьер","background","experience","career","где работал"]);
+    if(backgroundQ) return{lang,intent:"background",text:a.background,subject:"timur"};
+
+    const stackQ=hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","sql","api","webhook"]);
+    if(stackQ && subject==="timur") return{lang,intent:"stack",text:a.stack,subject:"timur"};
+
+    const aiQ=hasAny(q,["ии","нейросет","llm"," ai ","ai ","агент","agent"]);
+    if(aiQ && subject==="timur") return{lang,intent:"ai",text:a.ai,subject:"timur"};
+
+    const automationQ=hasAny(q,["автоматиз","автоматизац","automation","automate","workflow","процесс"]);
+    if(automationQ && subject==="timur") return{lang,intent:"automation",text:a.automation,subject:"timur"};
+
+    const productQ=hasAny(q,["продукт","mvp","гипотез","product","prototype","прототип"]);
+    if(productQ && subject==="timur") return{lang,intent:"product",text:a.product,subject:"timur"};
+
+    const hardQ=hasAny(q,["самым слож","что было слож","сложност","hardest","difficult","challenge"]);
+    const archQ=hasAny(q,["как устро","архитект","как сделан","architecture","how is","how built","built"]);
+    const testQ=hasAny(q,["как тест","тестир","провер","testing","tested","verify"]);
+    if(subject==="tube"){
+      if(hardQ)return{lang,intent:"project-hard",text:a.tube.hard,subject,project:"tube"};
+      if(testQ)return{lang,intent:"project-testing",text:a.tube.testing,subject,project:"tube"};
+      if(archQ)return{lang,intent:"project-architecture",text:a.tube.architecture,subject,project:"tube"};
+      return{lang,intent:"project-overview",text:a.tube.overview,subject,project:"tube"};
+    }
+    if(subject==="feed"){
+      if(hardQ)return{lang,intent:"project-hard",text:a.feed.hard,subject,project:"feed"};
+      if(testQ)return{lang,intent:"project-testing",text:a.feed.testing,subject,project:"feed"};
+      if(archQ||q.includes("node"))return{lang,intent:"project-architecture",text:a.feed.architecture,subject,project:"feed"};
+      return{lang,intent:"project-overview",text:a.feed.overview,subject,project:"feed"};
     }
 
-    if(hasAny(q,["расскажи все","расскажи всё","все что знаешь","всё что знаешь","everything","all you know"]))return{lang,intent:"broad",text:a.broad,subject:"timur"};
-    if(hasAny(q,["слаб","weakness"]))return{lang,intent:"weakness",text:a.weakness,subject:"timur"};
-    if(hasAny(q,["сильн","преимущ","удив","strength","differentiat","unique"]))return{lang,intent:"strengths",text:a.strengths,subject:"timur"};
-    if(hasAny(q,["подойд","роль","ваканс","role fit","suitable","what role","job fit"]))return{lang,intent:"fit",text:a.fit,subject:"timur"};
-    if(hasAny(q,["результат","метрик","цифр","эффект","impact","results","metrics"]))return{lang,intent:"impact",text:a.impact,subject:"timur"};
-    if(hasAny(q,["где работал","компан","employer","companies","where worked"]))return{lang,intent:"companies",text:a.companies,subject:"timur"};
-    if(hasAny(q,["что умеет","навык","компетенц","skills","what can","capabilities"]))return{lang,intent:"skills",text:rotate("skills",a.skills),subject:"timur"};
-    if(hasAny(q,["кто такой","кто тимур","who is","tell me about timur","расскажи про тимура"]))return{lang,intent:"identity",text:a.identity,subject:"timur"};
-    if(hasAny(q,["опыт","карьер","background","experience","career"]))return{lang,intent:"background",text:a.background,subject:"timur"};
-    if(hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","python","sql","api","webhook"]))return{lang,intent:"stack",text:a.stack,subject:"timur"};
-    if(hasAny(q,["ии","нейросет","llm"," ai ","ai ","агент","agent"]))return{lang,intent:"ai",text:a.ai,subject:"timur"};
-    if(hasAny(q,["автоматиз","automation","automate","workflow","процесс"]))return{lang,intent:"automation",text:a.automation,subject:"timur"};
-    if(hasAny(q,["продукт","mvp","гипотез","product","prototype","прототип"]))return{lang,intent:"product",text:a.product,subject:"timur"};
-    if(hasAny(q,["что дела","что стро","какие проект","проекты","what do you build","what has he built","projects","portfolio"]))return{lang,intent:"overview",text:a.projectsOverview,subject:"timur"};
-    if(isPronounFollowup(q))return{lang,intent:"identity-more",text:rotate("timur",a.identityMore),subject:"timur"};
+    if(hasAny(q,["что дела","что стро","какие проект","what do you build","what have you built","projects","portfolio"])) {
+      return{lang,intent:"overview",text:lang==="ru"?"Тимур делает небольшие продукты и автоматизации на стыке product thinking, AI и разработки. Сейчас в выбранных работах — TubeScore и FeedPulse; список проектов ещё будет расширяться.":"Timur builds small products and automations at the intersection of product thinking, AI and software. The current selected work includes TubeScore and FeedPulse; the project list is still being curated.",subject:"timur"};
+    }
+
+    if(isPronounFollowup(q)&&subject==="timur"){
+      return{lang,intent:"identity-more",text:rotate("timur",a.identityMore),subject};
+    }
+
     return{lang,intent:"unknown",text:a.unknown,subject};
   }
 
@@ -488,7 +357,7 @@
 
   function openProjectQuestions(id){
     const lang=state.lang;
-    const names={tube:"TubeScore",critic:"AI Critic",gac:"GitHub Agent Continuity",market:"HH Market Scanner",shorts:"AI Video Pipeline",feed:"FeedPulse",hh:"hh-applicant-tool"}; const name=names[id]||id;
+    const name=id==="tube"?"TubeScore":"FeedPulse";
     state.lastSubject=id;state.lastProject=id;state.lastIntent="project-overview";
     const deep=ui[lang].deep[id].map(([label,query])=>({label,query}));
     appendMessage("user",lang==="ru"?`Спросить подробнее про ${name}`:`Ask deeper about ${name}`,null,[],true,lang);
@@ -528,6 +397,7 @@
     langToggle?.setAttribute("aria-label",lang==="en"?"Переключить на русский":"Switch to English");
     const t=ui[lang];
 
+    setText("[data-demo-label]",t.demo);
     setText('.nav-links a[href="#work"]',t.nav.work);
     setText('.nav-links a[href="#query"]',t.nav.query);
     setText('.nav-links a[href="#about"]',t.nav.about);
@@ -535,7 +405,7 @@
     setHTML(".hero h1",t.hero.title);
     setText(".hero-lede",t.hero.lede);
     document.querySelectorAll(".hero-meta span").forEach((el,i)=>{if(t.hero.meta[i])el.textContent=t.hero.meta[i];});
-    const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;
+    const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;if(fh[1])fh[1].textContent=t.field.hint;
     document.querySelectorAll(".field-fallback button").forEach((el,i)=>{if(t.field.buttons[i])el.textContent=t.field.buttons[i];});
 
     const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;
@@ -543,7 +413,7 @@
     if(input)input.placeholder=t.query.placeholder;setHTML(".query-hint",t.query.hint);
 
     const wLabels=document.querySelectorAll("#work > .section-label span");if(wLabels[0])wLabels[0].textContent=t.work.title;if(wLabels[1])wLabels[1].textContent=t.work.note;
-    const pcopy={tube:t.work.tube,critic:t.work.critic,gac:t.work.gac,market:t.work.market,shorts:t.work.shorts,feed:t.work.feed,hh:t.work.hh};
+    const pcopy={tube:t.work.tube,feed:t.work.feed};
     projects.forEach((item)=>{
       const p=pcopy[item.dataset.project];if(!p)return;
       item.querySelector(".project-main small").textContent=p.kind;
