@@ -1,24 +1,21 @@
-(async () => {
+(() => {
   const html = document.documentElement;
-  let kb;
+  let kb = null;
+  let kbError = null;
 
-  try {
-    const response = await fetch("./generated/portfolio-data.json", { cache: "no-cache" });
-    if (!response.ok) throw new Error(`portfolio-data.json: HTTP ${response.status}`);
-    kb = await response.json();
-    if (!kb || !Array.isArray(kb.facts)) throw new Error("Invalid portfolio runtime data");
-  } catch (error) {
-    console.error("Portfolio knowledge base failed to load", error);
-    const log = document.querySelector("[data-chat-log]");
-    if (log) {
-      log.innerHTML = "";
-      const row = document.createElement("div");
-      row.className = "chat-message chat-message--bot";
-      row.innerHTML = '<span class="chat-role">portfolio</span><div class="chat-bubble">Knowledge base failed to load.</div>';
-      log.appendChild(row);
-    }
-    return;
-  }
+  const kbReady = fetch("./generated/portfolio-data.json", { cache: "no-cache" })
+    .then(async (response) => {
+      if (!response.ok) throw new Error(`portfolio-data.json: HTTP ${response.status}`);
+      const data = await response.json();
+      if (!data || !Array.isArray(data.facts)) throw new Error("Invalid portfolio runtime data");
+      kb = data;
+      return data;
+    })
+    .catch((error) => {
+      kbError = error;
+      console.error("Portfolio knowledge base failed to load", error);
+      return null;
+    });
 
   const state = {
     lang: localStorage.getItem("portfolio-lang") || "ru",
@@ -54,7 +51,7 @@
     const n=norm(q), found=[];
     Object.entries(topicLexicon).forEach(([topic,terms])=>{if(terms.some(t=>n.includes(norm(t))))found.push(topic);});
     if (!found.length && /^(что еще|что ещё|а еще|а ещё|what else|tell me more)/.test(n)) {
-      return state.lastFacts.flatMap(id => kb.facts.find(f=>f.id===id)?.topics||[]);
+      return state.lastFacts.flatMap(id => kb?.facts?.find(f=>f.id===id)?.topics||[]);
     }
     return [...new Set(found)];
   }
@@ -68,6 +65,7 @@
     return score;
   }
   function retrieve(q){
+    if (!kb?.facts?.length) return [];
     let topics=detectTopics(q);
     const n=norm(q);
     if(/все что|всё что|everything|all you know/.test(n))topics=["identity","experience","companies","skills","projects","strengths","product","ai","technical"];
@@ -157,6 +155,22 @@
     const q=String(question||"").trim();if(!q)return;
     state.lang=detectLang(q);
     append("user",q);
+
+    if (!kb) await kbReady;
+    if (!kb?.facts?.length) {
+      append(
+        "bot",
+        state.lang==="ru"
+          ? "База знаний не загрузилась. Остальная интерактивность страницы продолжает работать; попробуйте обновить страницу."
+          : "The knowledge base failed to load. The rest of the page remains interactive; try refreshing the page."
+      );
+      if (mode) {
+        mode.textContent="knowledge base unavailable";
+        mode.className="rag-mode-local";
+      }
+      return;
+    }
+
     const facts=retrieve(q);
     state.lastFacts=facts.map(f=>f.id);
     const type=planType(q);
@@ -185,6 +199,11 @@
   }
 
   form?.addEventListener("submit",e=>{e.preventDefault();ask(input.value);input.value="";});
+  document.addEventListener("keydown",(event)=>{
+    const tag=document.activeElement?.tagName?.toLowerCase();
+    const editing=tag==="input"||tag==="textarea"||document.activeElement?.isContentEditable;
+    if(event.key==="/"&&!editing&&input){event.preventDefault();input.focus();}
+  });
   document.querySelectorAll("[data-suggestion]").forEach(b=>b.addEventListener("click",()=>ask(b.dataset.suggestion)));
   document.querySelectorAll("[data-project-question]").forEach(b=>b.addEventListener("click",()=>{ask(b.dataset.projectQuestion);document.getElementById("query").scrollIntoView({behavior:"smooth"});}));
   const projectItems=[...document.querySelectorAll(".project-item")];
