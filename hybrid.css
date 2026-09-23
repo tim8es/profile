@@ -191,3 +191,99 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
   .chat-log--compact .chat-message{grid-template-columns:1fr}
   .project-actions{margin-left:42px}
 }
+
+
+/* Hybrid v3: alignment, navigation controls, clean separators */
+.nav-links a{position:relative}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-5px;
+  height:1px;
+  background:currentColor;
+  transition:right .24s var(--ease);
+}
+.nav-links a:hover::after{right:0}
+
+.lang-toggle,.theme-toggle{
+  width:35px;
+  height:35px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  padding:0;
+  flex:0 0 auto;
+}
+.lang-toggle{
+  width:42px;
+  border-radius:999px;
+  font:10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:var(--muted);
+}
+.lang-toggle:hover,.theme-toggle:hover{
+  color:var(--text);
+  border-color:var(--line-strong);
+}
+.theme-icon{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.65;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.theme-icon--moon{display:none}
+html[data-theme="light"] .theme-icon--sun{display:none}
+html[data-theme="light"] .theme-icon--moon{display:block}
+
+.field-fallback{
+  position:relative;
+  border-top:0 !important;
+}
+.field-fallback::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:1px;
+  background:var(--line);
+  pointer-events:none;
+}
+.field-canvas{
+  margin:0;
+  vertical-align:top;
+}
+
+.query-box--compact{
+  max-width:none !important;
+  width:100%;
+}
+.work-layout--single{
+  width:100%;
+}
+.work-layout--single .project-list{
+  max-width:none !important;
+  width:100%;
+}
+.work-layout--single .project-reveal p{
+  max-width:860px;
+}
+.work-layout--single .project-reveal dl{
+  max-width:980px;
+}
+
+.ai-status-ready{color:var(--accent)!important}
+.ai-status-loading{color:var(--muted)!important}
+.ai-status-fallback{color:var(--muted)!important}
+
+@media(max-width:650px){
+  .nav-links{gap:9px}
+  .lang-toggle{width:38px;height:34px}
+  .theme-toggle{width:34px;height:34px}
+}
