@@ -184,6 +184,12 @@
     const q=norm(question);
     let score=0;
     fact.topics.forEach(topic=>{if(topics.includes(topic)) score+=4;});
+
+    const projectTopics=["tubescore","critic","gac","shorts","feedpulse","hh","booktranslator","mindrail","pmo"];
+    const specificProject=projectTopics.find(topic=>topics.includes(topic));
+    if(specificProject && fact.topics.includes(specificProject)) score+=10;
+    if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;
+    if((/расскажи все|расскажи всё|everything|all you know/.test(q)) && fact.id==="portfolio.summary") score+=16;
     const words=new Set(q.split(" ").filter(word=>word.length>3));
     const searchable=norm(fact.text.ru+" "+fact.text.en+" "+fact.id+" "+fact.topics.join(" "));
     words.forEach(word=>{if(searchable.includes(word)) score+=0.7;});
@@ -196,10 +202,10 @@
     let topics=detectTopics(question);
     const q=norm(question);
 
-    if(/все что|всё что|everything|all you know/.test(q)){
+    if(/все что|всё что|расскажи все|расскажи всё|everything|all you know/.test(q)){
       topics=["identity","experience","companies","skills","projects","strengths","product","ai","technical"];
     }
-    if(/слаб/.test(q)||/weakness/.test(q)) topics=["fit","strengths"];
+    if(/слаб/.test(q)||/weakness/.test(q)) topics=["limitations","weakness","fit"];
 
     const ranked=kb.facts
       .map(fact=>({fact,score:scoreFact(fact,question,topics)}))
@@ -212,7 +218,7 @@
 
   function planType(question){
     const q=norm(question);
-    if(/все что|всё что|everything|all you know/.test(q)) return "broad";
+    if(/все что|всё что|расскажи все|расскажи всё|everything|all you know/.test(q)) return "broad";
     if(/удив|сильн|преимущ|differentiat|strength|unique/.test(q)) return "strengths";
     if(/подойд|fit|role|job|работу|роль/.test(q)) return "fit";
     if(/слаб|weakness/.test(q)) return "weakness";
