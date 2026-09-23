@@ -44,7 +44,7 @@
     const targetY = rowRect.top - zoneRect.top + rowRect.height / 2 - orbit.offsetHeight / 2;
     const targetX = Math.max(0, Math.min(zoneRect.clientWidth - orbit.offsetWidth, zoneRect.clientWidth * 0.76));
     orbit.classList.add("is-awake");
-    orbit.style.transform = `translate(${targetX - (zoneRect.clientWidth - orbit.offsetWidth)}px, ${targetY - zoneRect.clientHeight * 0.06}px)`;
+    orbit.style.transform = `translate(${targetX - (zoneRect.clientWidth - orbit.offsetWidth)}px, ${targetY - playZone.clientHeight * 0.06}px)`;
   }
 
   playRows.forEach((row) => {
