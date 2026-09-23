@@ -141,6 +141,7 @@
       weakness:"The portfolio does not infer personality weaknesses. The visible trade-off is that Timur's profile is broader than a narrow specialist engineering track: it is strongest where product/process understanding and implementation need to meet.",
       fit:"The clearest fit is Product Builder, AI/Automation, Project/Process or technical-product work where the role needs both workflow understanding and the ability to prototype or implement.",
       projectsOverview:"Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, an AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution. Other public experiments include Book Translator, MindRail and PM 0.1.",
+      broad:"Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on product building and AI automation. His work spans team and process leadership, B2B product delivery, measurable operational improvements, AI-agent systems, browser tooling and automation. Selected public work includes TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution.",
       projects: {
         tube:{
           overview:"TubeScore is a zero-token Chrome/Chromium MV3 extension that identifies movies or TV series on YouTube and shows ratings in the viewing context.",
@@ -220,7 +221,8 @@
       strengths:"Главное отличие — сочетание process/product опыта и hands-on реализации. Тимур может работать одновременно с метрикой, пользовательским workflow, API, кодом и проверкой результата.",
       weakness:"Портфолио не должно придумывать личные слабые стороны. Видимый trade-off — профиль шире узкой инженерной специализации; он сильнее там, где понимание продукта/процесса нужно соединять с реализацией.",
       fit:"Наиболее подтверждённый fit — Product Builder, AI/Automation, Project/Process или technical product роли, где нужно соединять понимание процесса с прототипированием и delivery.",
-      projectsOverview:"В Selected work: TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и merged-вклад в hh-applicant-tool. Среди других публичных экспериментов — Book Translator, MindRail и PM 0.1.",
+      projectsOverview:"В Selected work: TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool. Среди других публичных экспериментов — Book Translator, MindRail и PM 0.1.",
+      broad:"Тимур сочетает project/process опыт в Skyeng, SPIKS и OpiniQ с hands-on разработкой продуктов и AI-автоматизацией. В опыте — управление командами и процессами, B2B product delivery, измеримые операционные улучшения, AI-agent systems, браузерные инструменты и автоматизация. В Selected work — TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый вклад в hh-applicant-tool.",
       projects: {
         tube:{
           overview:"TubeScore — Chrome/Chromium MV3 extension без токенов, который определяет фильм или сериал на YouTube и показывает рейтинги прямо в контексте просмотра.",
@@ -356,6 +358,7 @@
       if(result)return result;
     }
 
+    if(hasAny(q,["расскажи все","расскажи всё","все что знаешь","всё что знаешь","everything","all you know"]))return{lang,intent:"broad",text:a.broad,subject:"timur"};
     if(hasAny(q,["слаб","weakness"]))return{lang,intent:"weakness",text:a.weakness,subject:"timur"};
     if(hasAny(q,["сильн","преимущ","удив","strength","differentiat","unique"]))return{lang,intent:"strengths",text:a.strengths,subject:"timur"};
     if(hasAny(q,["подойд","роль","ваканс","role fit","suitable","what role","job fit"]))return{lang,intent:"fit",text:a.fit,subject:"timur"};
