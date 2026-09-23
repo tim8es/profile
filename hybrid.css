@@ -63,14 +63,14 @@ button{background:none;border:0}
 }
 .hero h1 span{color:var(--muted)}
 html[lang="ru"] .hero h1{
-  font-size:clamp(62px,min(7.6vw,11.5vh),108px);
-  letter-spacing:-.07em;
+  font-size:clamp(56px,min(6.45vw,10.4vh),94px);
+  letter-spacing:-.065em;
 }
 html[lang="ru"] .hero h1 span{
   display:inline-block;
   white-space:nowrap;
-  font-size:.78em;
-  letter-spacing:-.055em;
+  font-size:1em;
+  letter-spacing:inherit;
 }
 .hero-lede{max-width:600px;margin:34px 0 0;font-size:clamp(17px,2vw,21px);line-height:1.55;color:var(--muted)}
 .hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
@@ -176,8 +176,8 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
   .nav-links>a:nth-child(1),.nav-links>a:nth-child(3){display:none}
   .hero{padding:36px 0 72px}
   .hero h1{font-size:clamp(54px,16vw,66px)}
-  html[lang="ru"] .hero h1{font-size:clamp(50px,14.5vw,60px)}
-  html[lang="ru"] .hero h1 span{font-size:.8em;letter-spacing:-.045em}
+  html[lang="ru"] .hero h1{font-size:clamp(43px,12.1vw,54px);letter-spacing:-.055em}
+  html[lang="ru"] .hero h1 span{font-size:1em;letter-spacing:inherit}
   .field-canvas{height:340px}
   .chat-message{grid-template-columns:1fr;gap:3px}
   .chat-role{padding:0}
@@ -201,7 +201,7 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
     gap:clamp(32px,5vw,64px);
   }
   .hero h1{font-size:clamp(60px,min(7.4vw,11vh),98px)}
-  html[lang="ru"] .hero h1{font-size:clamp(56px,min(6.8vw,10.2vh),90px)}
+  html[lang="ru"] .hero h1{font-size:clamp(52px,min(6.15vw,9.6vh),82px)}
   .hero-lede{margin-top:24px;font-size:clamp(15px,1.7vw,18px)}
   .hero-meta{margin-top:22px}
   .field-canvas{height:360px}
