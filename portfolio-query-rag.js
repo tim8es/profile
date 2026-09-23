@@ -234,7 +234,7 @@
       .replace(/^Он\\s+/,"");
   }
 
-  function joinFacts(facts,lang,limit=4){
+  function joinFacts(facts,lang,limit=3){
     return facts.slice(0,limit).map((fact,index)=>{
       let text=fact.text[lang]||fact.text.en||fact.text.ru;
       if(index>0) text=stripLead(text);
@@ -244,7 +244,7 @@
 
   function composeLocal(question,facts,lang){
     const kind=planType(question);
-    const body=joinFacts(facts,lang,kind==="broad"?5:4);
+    const body=joinFacts(facts,lang,kind==="broad"?4:3);
     const lead={
       ru:{
         identity:"Тимур Даутов — ",
@@ -272,29 +272,28 @@
   const suggestions=[...document.querySelectorAll("[data-suggestion]")];
   const askProjectButtons=[...document.querySelectorAll("[data-ask-project]")];
 
-  function appendSources(bubble,facts,lang,engine){
+  function appendSources(bubble,facts,lang){
     if(!facts?.length) return;
-    const meta=document.createElement("div");
-    meta.className="rag-answer-meta";
-    const chip=document.createElement("span");
-    chip.className="rag-chip";
-    chip.textContent=engine==="server"?"grounded LLM":"local composer";
-    meta.appendChild(chip);
+    const unique=[];
+    const seen=new Set();
+    facts.forEach((fact)=>{
+      const key=(fact.source?.url||"")+"|"+(fact.source?.label||"Portfolio");
+      if(!seen.has(key)){seen.add(key);unique.push(fact);}
+    });
 
     const details=document.createElement("details");
     details.className="rag-sources";
     const summary=document.createElement("summary");
-    summary.textContent=(lang==="ru"?"Источники":"Sources")+" · "+facts.length;
+    summary.textContent=(lang==="ru"?"Источники":"Sources")+" · "+unique.length;
     const list=document.createElement("div");
     list.className="rag-source-list";
 
-    facts.forEach((fact,index)=>{
+    unique.forEach((fact,index)=>{
       const item=document.createElement("div");
       item.className="rag-source";
       const num=document.createElement("b");
       num.textContent=String(index+1).padStart(2,"0");
       const body=document.createElement("span");
-      body.appendChild(document.createTextNode((fact.text[lang]||fact.text.en||fact.text.ru)+" — "));
       if(fact.source?.url){
         const link=document.createElement("a");
         link.href=fact.source.url;
@@ -303,14 +302,14 @@
         link.textContent=fact.source.label;
         body.appendChild(link);
       }else{
-        body.appendChild(document.createTextNode(fact.source?.label||"Portfolio"));
+        body.textContent=fact.source?.label||"Portfolio";
       }
       item.append(num,body);
       list.appendChild(item);
     });
 
     details.append(summary,list);
-    bubble.append(meta,details);
+    bubble.append(details);
   }
 
   function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang,facts=[],engine="local"){
@@ -350,7 +349,7 @@
       bubble.append(br,link);
     }
 
-    if(role==="bot"&&facts.length) appendSources(bubble,facts,lang,engine);
+    if(role==="bot"&&facts.length) appendSources(bubble,facts,lang);
 
     row.append(roleEl,bubble);
     chatLog.appendChild(row);
