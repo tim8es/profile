@@ -169,11 +169,21 @@
   form?.addEventListener("submit",e=>{e.preventDefault();ask(input.value);input.value="";});
   document.querySelectorAll("[data-suggestion]").forEach(b=>b.addEventListener("click",()=>ask(b.dataset.suggestion)));
   document.querySelectorAll("[data-project-question]").forEach(b=>b.addEventListener("click",()=>{ask(b.dataset.projectQuestion);document.getElementById("query").scrollIntoView({behavior:"smooth"});}));
-  document.querySelectorAll(".project-trigger").forEach(b=>b.addEventListener("click",()=>{
-    const item=b.closest(".project-item"),open=!item.classList.contains("is-active");
-    document.querySelectorAll(".project-item").forEach(x=>x.classList.remove("is-active"));
-    if(open)item.classList.add("is-active");
-  }));
+  const projectItems=[...document.querySelectorAll(".project-item")];
+  function activateProject(item, open=true){
+    projectItems.forEach(x=>{
+      const active=x===item&&open;
+      x.classList.toggle("is-active",active);
+      x.querySelector(".project-trigger")?.setAttribute("aria-expanded",String(active));
+    });
+  }
+  projectItems.forEach(item=>{
+    const trigger=item.querySelector(".project-trigger");
+    trigger?.addEventListener("click",()=>activateProject(item,!item.classList.contains("is-active")));
+    if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+      item.addEventListener("mouseenter",()=>activateProject(item,true));
+    }
+  });
 
   const langToggle=document.querySelector("[data-lang-toggle]"),langLabel=document.querySelector("[data-lang-label]");
   if(langLabel)langLabel.textContent=state.lang.toUpperCase();
