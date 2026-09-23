@@ -37,7 +37,8 @@ button,input{font:inherit;color:inherit}
 a{color:inherit;text-decoration:none}
 button{background:none;border:0}
 ::selection{background:var(--accent);color:var(--inverse)}
-.shell{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+.shell,.demo-bar{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+.demo-bar{height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font:11px/1 var(--font-mono);color:var(--muted)}
 .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .brand{font-weight:700;font-size:14px}
 .nav-links{display:flex;align-items:center;gap:20px;font-size:12px;color:var(--muted)}
@@ -50,7 +51,7 @@ button{background:none;border:0}
   grid-template-columns:minmax(0,1.04fr) minmax(390px,.96fr);
   gap:clamp(38px,6vw,82px);
   align-items:center;
-  min-height:calc(100svh - 78px);
+  min-height:calc(100svh - 130px);
   padding:clamp(30px,5vh,58px) 0 clamp(44px,6vh,72px);
 }
 .hero h1{
@@ -168,7 +169,9 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
   .about-grid{grid-template-columns:1fr}
 }
 @media(max-width:650px){
-  .shell,    .nav{align-items:flex-start;padding:17px 0}
+  .shell,.demo-bar{width:min(calc(100% - 28px),var(--max))}
+  .demo-bar{font-size:9px}
+  .nav{align-items:flex-start;padding:17px 0}
   .nav-links{justify-content:flex-end;gap:11px}
   .nav-links>a:nth-child(1),.nav-links>a:nth-child(3){display:none}
   .hero{padding:36px 0 72px}
@@ -193,7 +196,7 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 }
 @media(min-width:941px) and (max-height:820px){
   .hero{
-    min-height:calc(100svh - 78px);
+    min-height:calc(100svh - 130px);
     padding:24px 0 38px;
     gap:clamp(32px,5vw,64px);
   }
@@ -225,9 +228,9 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 .work-layout--single{display:block;padding-top:32px}
 .work-layout--single .project-list{max-width:900px}
 .work-layout--single .project-reveal p{max-width:760px}
-.project-actions{margin:0 0 28px 52px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.project-actions button,.project-actions a{border-bottom:1px solid var(--line-strong);padding:0 0 4px;cursor:pointer;font-size:11px;color:var(--muted)}
-.project-actions button:hover,.project-actions a:hover{color:var(--text)}
+.project-actions{margin:0 0 28px 52px}
+.project-actions button{border-bottom:1px solid var(--line-strong);padding:0 0 4px;cursor:pointer;font-size:11px;color:var(--muted)}
+.project-actions button:hover{color:var(--text)}
 @media(max-width:650px){
   .chat-log--compact .chat-message{grid-template-columns:1fr}
   .project-actions{margin-left:42px}
