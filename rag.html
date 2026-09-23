@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <title>Timur Dautov — Product Builder</title>
-  <meta name="description" content="Product builder working across AI automation, agent systems, process design and hands-on prototypes." />
+  <meta name="description" content="AI product builder, automation and product work by Timur Dautov." />
   <link rel="stylesheet" href="./hybrid.css" />
   <link rel="stylesheet" href="./rag.css" />
 </head>
 <body>
+  <div class="demo-bar">
+    <a href="./">← All directions</a>
+    <span data-demo-label>04 / Hybrid candidate</span>
+  </div>
+
   <header class="nav shell">
     <a class="brand" href="#top">Timur Dautov</a>
     <nav class="nav-links" aria-label="Main navigation">
@@ -100,141 +105,49 @@
           <article class="project-item is-active" data-project="tube">
             <button class="project-trigger" type="button" aria-expanded="true">
               <span class="project-num">01</span>
-              <span class="project-main"><strong>TubeScore</strong><small>Browser product</small></span>
+              <span class="project-main">
+                <strong>TubeScore</strong>
+                <small>Browser product</small>
+              </span>
               <span class="project-arrow">↗</span>
             </button>
-            <div class="project-reveal"><div>
-              <p>A Chrome extension that identifies movies on YouTube and shows ratings in context — without API keys or a backend.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>Checking ratings breaks the viewing flow.</dd></div>
-                <div><dt>Built</dt><dd>MV3 extension, deterministic matching, Wikidata provider, caching and SPA handling.</dd></div>
-                <div><dt>Proof</dt><dd>Typecheck, tests, production build checks and Chromium browser smoke.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="tube">Ask deeper about TubeScore →</button>
-                <a href="https://github.com/tim8es/TubeScore" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <div class="project-reveal">
+              <div>
+                <p>A Chrome extension that places movie ratings directly on YouTube trailers, removing the extra search step.</p>
+                <dl>
+                  <div><dt>Problem</dt><dd>Ratings live outside the viewing context.</dd></div>
+                  <div><dt>Built</dt><dd>Extension, data layer, caching and SPA handling.</dd></div>
+                  <div><dt>Proof</dt><dd>Working MVP with automated browser tests.</dd></div>
+                </dl>
+                <div class="project-actions">
+                  <button type="button" data-ask-project="tube">Ask deeper about TubeScore →</button>
+                </div>
               </div>
-            </div></div>
-          </article>
-
-          <article class="project-item" data-project="critic">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">02</span>
-              <span class="project-main"><strong>AI Critic</strong><small>AI system</small></span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal"><div>
-              <p>An evidence-backed critic designed to catch material mistakes and contradictions without interrupting on every minor issue.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>AI assistants can lose context or miss important contradictions.</dd></div>
-                <div><dt>Built</dt><dd>Context, critic and verifier workflows plus a privacy-gated desktop bridge experiment.</dd></div>
-                <div><dt>Status</dt><dd>Early-stage; implemented slices and security-flow checks are separated from host verification.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="critic">Ask deeper about AI Critic →</button>
-                
-              </div>
-            </div></div>
-          </article>
-
-          <article class="project-item" data-project="gac">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">03</span>
-              <span class="project-main"><strong>GitHub Agent Continuity</strong><small>Agent infrastructure</small></span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal"><div>
-              <p>A GitHub-native protocol that lets autonomous coding agents continue work safely across disposable sessions.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>Agent sessions disappear, while ownership and unfinished work need to survive.</dd></div>
-                <div><dt>Built</dt><dd>Issue lifecycle, atomic claim refs, work branches, leases, checkpoints and takeover rules.</dd></div>
-                <div><dt>Proof</dt><dd>Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="gac">Ask deeper about GAC →</button>
-                
-              </div>
-            </div></div>
-          </article>
-
-          <article class="project-item" data-project="market">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">04</span>
-              <span class="project-main"><strong>HH Market Scanner</strong><small>Data product</small></span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal"><div>
-              <p>A labor-market data product that collects resumable hh.ru snapshots and publishes only validated repository data.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>Scraped market data can be stale, partial or silently wrong.</dd></div>
-                <div><dt>Built</dt><dd>MV3 collector, versioned data contracts, persistence boundary and Next.js web app.</dd></div>
-                <div><dt>Proof</dt><dd>Deterministic fixtures plus repository-wide lint, test and production-build verification.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="market">Ask deeper about HH Market Scanner →</button>
-                
-              </div>
-            </div></div>
-          </article>
-
-          <article class="project-item" data-project="shorts">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">05</span>
-              <span class="project-main"><strong>AI Video Pipeline</strong><small>Automation system</small></span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal"><div>
-              <p>A local-first pipeline for generating short-form AI video from research and scripting through rendering and review.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>Content production has many repetitive handoffs and failure points.</dd></div>
-                <div><dt>Built</dt><dd>n8n workflows with local LLMs, FFmpeg rendering, TTS, captions and an operations control plane.</dd></div>
-                <div><dt>Boundary</dt><dd>Publishing is kept separate from generation and requires explicit review/credentials.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="shorts">Ask deeper about the pipeline →</button>
-                
-              </div>
-            </div></div>
+            </div>
           </article>
 
           <article class="project-item" data-project="feed">
             <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">06</span>
-              <span class="project-main"><strong>FeedPulse</strong><small>Agent utility</small></span>
+              <span class="project-num">02</span>
+              <span class="project-main">
+                <strong>FeedPulse</strong>
+                <small>Agent utility</small>
+              </span>
               <span class="project-arrow">↗</span>
             </button>
-            <div class="project-reveal"><div>
-              <p>A lightweight feed ingestion utility that gives AI agents predictable content from RSS and Atom sources.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>Agents repeatedly need to normalize inconsistent feed formats.</dd></div>
-                <div><dt>Built</dt><dd>Small Node.js utility with a focused XML parser and bounded content handling.</dd></div>
-                <div><dt>Proof</dt><dd>Designed to run across Windows, macOS and Linux with a small dependency surface.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="feed">Ask deeper about FeedPulse →</button>
-                <a href="https://github.com/tim8es/tim8skills/tree/main/feed-pulse" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <div class="project-reveal">
+              <div>
+                <p>A small ingestion layer for AI agents that normalizes RSS/Atom sources into predictable content.</p>
+                <dl>
+                  <div><dt>Problem</dt><dd>Agents repeatedly need to parse inconsistent feeds.</dd></div>
+                  <div><dt>Built</dt><dd>Portable Node.js parser with a small dependency footprint.</dd></div>
+                  <div><dt>Proof</dt><dd>Cross-platform workflow for Windows, macOS and Linux.</dd></div>
+                </dl>
+                <div class="project-actions">
+                  <button type="button" data-ask-project="feed">Ask deeper about FeedPulse →</button>
+                </div>
               </div>
-            </div></div>
-          </article>
-
-          <article class="project-item" data-project="hh">
-            <button class="project-trigger" type="button" aria-expanded="false">
-              <span class="project-num">07</span>
-              <span class="project-main"><strong>hh-applicant-tool</strong><small>Open-source contribution</small></span>
-              <span class="project-arrow">↗</span>
-            </button>
-            <div class="project-reveal"><div>
-              <p>A merged upstream contribution that exposed existing multi-profile support in the project's desktop UI.</p>
-              <dl>
-                <div><dt>Problem</dt><dd>The CLI supported isolated profiles, but the UI could not manage or switch them.</dd></div>
-                <div><dt>Built</dt><dd>Profile CRUD, auth state, switching, isolated data and safe runtime guards.</dd></div>
-                <div><dt>Proof</dt><dd>Merged PR #84; 116 regression tests and Chromium/Playwright UI E2E passed.</dd></div>
-              </dl>
-              <div class="project-actions">
-                <button type="button" data-ask-project="hh">Ask deeper about the contribution →</button>
-                <a href="https://github.com/s3rgeym/hh-applicant-tool/pull/84" target="_blank" rel="noreferrer">Merged PR ↗</a>
-              </div>
-            </div></div>
+            </div>
           </article>
         </div>
       </div>
@@ -243,10 +156,10 @@
     <section class="about-section shell" id="about">
       <div class="section-label"><span>About</span></div>
       <div class="about-grid">
-        <p class="about-statement">I work best where a messy process needs to become a clear product or system.</p>
+        <p class="about-statement">I like software that removes friction instead of adding another system people have to manage.</p>
         <div class="about-copy">
-          <p>My background spans project, process and delivery work at Skyeng, SPIKS and OpiniQ — from QA/CX operations and B2B CRM to workflow automation.</p>
-          <p>Now I work hands-on with AI agents, n8n, APIs, JavaScript/Node.js, Python, SQL, browser tooling and testable prototypes.</p>
+          <p>My background is in project and process management, so I usually start from the workflow, constraint or user problem — not from the technology.</p>
+          <p>Now I work hands-on: prototypes, AI agents, APIs, browser tools, automation and small products that can be tested quickly.</p>
         </div>
       </div>
     </section>
