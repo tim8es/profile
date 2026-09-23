@@ -446,7 +446,7 @@
   document.addEventListener("keydown",(event)=>{
     const tag=document.activeElement?.tagName?.toLowerCase();
     const editing=tag==="input"||tag==="textarea"||document.activeElement?.isContentEditable;
-    if(event.key==="/"&&!editing&&input){
+    if((event.key==="/"||event.code==="Slash")&&!editing&&input){
       event.preventDefault();
       input.focus();
     }
