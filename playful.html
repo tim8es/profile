@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playful — Timur Dautov</title>
+  <meta name="description" content="Playful minimal portfolio concept for Timur Dautov." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="portfolio playful-page">
+  <div class="demo-bar">
+    <a class="demo-back" href="./">← All directions</a>
+    <nav class="demo-switch" aria-label="Concepts">
+      <a href="./editorial.html">01</a>
+      <a href="./playful.html" aria-current="page">02</a>
+      <a href="./command.html">03</a>
+    </nav>
+  </div>
+
+  <div class="site-shell" data-play-zone>
+    <nav class="site-nav">
+      <a class="site-name" href="#top">Timur Dautov</a>
+      <div class="site-links">
+        <a href="#work">Work</a>
+        <a href="#toy">Play</a>
+        <a href="https://github.com/tim8es" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="playful-hero">
+        <div class="playful-orbit" data-orbit aria-hidden="true"></div>
+        <p class="eyebrow">I make small digital things</p>
+        <h1 class="playful-headline">Useful.<br><em>Sometimes</em><br>weird.</h1>
+        <p class="playful-note">AI tools, automation and product experiments. The interface stays quiet until you touch it.</p>
+      </section>
+
+      <section class="playful-work" id="work">
+        <p class="section-kicker" style="margin-bottom:22px">Selected work / click around</p>
+
+        <button class="play-row" type="button" data-play-project>
+          <span class="n">01</span><h2>TubeScore</h2><span class="kind">Browser product</span><span class="go">↗</span>
+        </button>
+        <div class="play-row-panel"><div><div class="play-panel-inner">
+          <p>A Chrome extension that puts movie ratings directly on YouTube trailers. The product idea is intentionally tiny: remove one annoying extra step.</p>
+          <div class="play-tags"><span>JavaScript</span><span>MV3</span><span>Wikidata</span><span>Playwright</span></div>
+        </div></div></div>
+
+        <button class="play-row" type="button" data-play-project>
+          <span class="n">02</span><h2>FeedPulse</h2><span class="kind">Agent utility</span><span class="go">↗</span>
+        </button>
+        <div class="play-row-panel"><div><div class="play-panel-inner">
+          <p>A lightweight content ingestion utility for agents. Feed in RSS/Atom sources, get normalized material back without building another parser every time.</p>
+          <div class="play-tags"><span>Node.js</span><span>RSS</span><span>Agents</span><span>CLI</span></div>
+        </div></div></div>
+
+        <button class="play-row" type="button" data-play-project>
+          <span class="n">03</span><h2>Automation</h2><span class="kind">Business workflow</span><span class="go">↗</span>
+        </button>
+        <div class="play-row-panel"><div><div class="play-panel-inner">
+          <p>Take a process with repeated manual decisions, connect the inputs, tools and checks, and turn it into a small reliable workflow.</p>
+          <div class="play-tags"><span>LLM</span><span>API</span><span>Webhooks</span><span>n8n</span></div>
+        </div></div></div>
+
+        <button class="play-row" type="button" data-play-project>
+          <span class="n">04</span><h2>Open source</h2><span class="kind">Existing products</span><span class="go">↗</span>
+        </button>
+        <div class="play-row-panel"><div><div class="play-panel-inner">
+          <p>Not everything starts from an empty folder. I also work inside unfamiliar codebases: understand behavior, make a bounded change, test it and contribute back.</p>
+          <div class="play-tags"><span>GitHub</span><span>Debugging</span><span>PRs</span><span>Testing</span></div>
+        </div></div></div>
+      </section>
+
+      <section class="playful-experiment" id="toy">
+        <div>
+          <p class="section-kicker" style="margin-bottom:20px">Tiny useless interaction</p>
+          <h3>A portfolio is allowed to have one thing with no KPI.</h3>
+          <p class="playful-note">Click inside the box or drag the dot. It does nothing productive. That is the point.</p>
+        </div>
+        <div class="toy-box" data-toy-box>
+          <div class="toy-dot" data-toy-dot role="img" aria-label="Draggable orange dot"></div>
+          <span class="toy-caption">drag me / or click anywhere</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-simple">
+      <span>Timur Dautov © 2026</span>
+      <span>Useful first. Personality second.</span>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
