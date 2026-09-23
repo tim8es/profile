@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tim8es.github.io/profile/schema/portfolio.schema.json",
+  "title": "Timur Dautov portfolio knowledge base",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "person", "profile", "experience", "skills", "projects", "positioning"],
+  "properties": {
+    "version": { "const": 1 },
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facts"],
+      "properties": { "facts": { "$ref": "#/$defs/factArray" } }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "company", "facts"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "company": { "type": "string", "minLength": 1 },
+          "facts": { "$ref": "#/$defs/factArray" }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/factArray" },
+      "minProperties": 1
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "facts"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "links": {
+            "type": "object",
+            "additionalProperties": { "type": "string", "format": "uri" }
+          },
+          "facts": { "$ref": "#/$defs/factArray" }
+        }
+      }
+    },
+    "positioning": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/factArray" },
+      "minProperties": 1
+    }
+  },
+  "$defs": {
+    "factArray": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fact" }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "topics", "text", "source", "confidence", "public"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "topics": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "text": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ru", "en"],
+          "properties": {
+            "ru": { "type": "string", "minLength": 1 },
+            "en": { "type": "string", "minLength": 1 }
+          }
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label"],
+          "properties": {
+            "label": { "type": "string", "minLength": 1 },
+            "url": { "type": "string", "format": "uri" }
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["verified", "self-reported", "inferred"]
+        },
+        "public": { "type": "boolean" }
+      }
+    }
+  }
+}
