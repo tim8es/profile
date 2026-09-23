@@ -142,7 +142,7 @@
     projects:["проект","делал","создал","built","project","portfolio"],
     product:["продукт","mvp","гипотез","product","prototype"],
     process:["процесс","операц","workflow","process"],
-    ai:["ии","ai","llm","agent","агент"],
+    ai:["ии","ai","llm","нейросет"],\n    agents:["agent","агент"],
     technical:["стек","технолог","api","javascript","node","sql","technical","stack"],
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
@@ -188,7 +188,7 @@
     const projectTopics=["tubescore","critic","gac","shorts","feedpulse","hh","booktranslator","mindrail","pmo"];
     const specificProject=projectTopics.find(topic=>topics.includes(topic));
     if(specificProject && fact.topics.includes(specificProject)) score+=10;
-    if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;
+    if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;\n    if((topics.includes("experience")||topics.includes("companies")) && fact.id==="portfolio.experience.summary") score+=10;\n    if((topics.includes("impact")||topics.includes("metrics")||topics.includes("results")) && fact.id==="portfolio.impact.summary") score+=12;
     if((/расскажи все|расскажи всё|everything|all you know/.test(q)) && fact.id==="portfolio.summary") score+=16;
     const words=new Set(q.split(" ").filter(word=>word.length>3));
     const searchable=norm(fact.text.ru+" "+fact.text.en+" "+fact.id+" "+fact.topics.join(" "));
@@ -247,7 +247,7 @@
     const body=joinFacts(facts,lang,kind==="broad"?4:3);
     const lead={
       ru:{
-        identity:"Тимур Даутов — ",
+        identity:"",
         broad:"Если собрать главное: ",
         strengths:"Если смотреть на профиль целиком, его отличие в сочетании нескольких вещей: ",
         fit:"По подтверждённым фактам наиболее естественный fit выглядит так: ",
@@ -255,7 +255,7 @@
         default:""
       },
       en:{
-        identity:"Timur Dautov — ",
+        identity:"",
         broad:"The main picture is: ",
         strengths:"Looking across the profile, the differentiator is the combination of several things: ",
         fit:"Based on verified portfolio facts, the clearest fit is: ",
