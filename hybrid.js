@@ -140,7 +140,7 @@
       strengths:"The strongest differentiator is the combination of process/product work and hands-on implementation. He can move between metrics, user workflow, API behavior, code and verification without treating any one of them as the whole product.",
       weakness:"The portfolio does not infer personality weaknesses. The visible trade-off is that Timur's profile is broader than a narrow specialist engineering track: it is strongest where product/process understanding and implementation need to meet.",
       fit:"The clearest fit is Product Builder, AI/Automation, Project/Process or technical-product work where the role needs both workflow understanding and the ability to prototype or implement.",
-      projectsOverview:"Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, an AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution. Other public experiments include Book Translator, MindRail and PM 0.1.",
+      projectsOverview:"Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, an AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution. Other public work includes Book Translator, MindRail, PM 0.1, open-screen-pipe, agent policy plugins and ARC Whitebox research.",
       broad:"Timur combines project/process experience at Skyeng, SPIKS and OpiniQ with hands-on product building and AI automation. His work spans team and process leadership, B2B product delivery, measurable operational improvements, AI-agent systems, browser tooling and automation. Selected public work includes TubeScore, AI Critic, GitHub Agent Continuity, HH Market Scanner, AI Video Pipeline, FeedPulse and a merged hh-applicant-tool contribution.",
       projects: {
         tube:{
@@ -199,6 +199,21 @@
           overview:"PM 0.1 is a reference prototype for practical Project Management training organized around seven flows of project execution rather than one framework.",
           architecture:"Its first validation slice separates learning-domain scoring/state logic, validation content, UI and browser persistence.",
           testing:"CI checks scoring/promotion state, content structure, integration/accessibility contracts and JavaScript syntax."
+        },
+        screenpipe:{
+          overview:"open-screen-pipe is an early-stage privacy-first desktop UI for a local Screenpipe installation.",
+          architecture:"The product direction separates capture, history, context, memory and automation while keeping local-only operation explicit and requiring deliberate confirmation for networked, destructive or code-executing actions.",
+          testing:"The current repository is an early structural bootstrap; frontend build/tests are available, while native Tauri integration and final visual QA are still planned."
+        },
+        plugins:{
+          overview:"tim8plugins contains small policy plugins for AI-agent gateways.",
+          architecture:"One plugin requires human approval for selected tools and out-of-workspace exec paths; another bounds tool-call attempts and forces a checkpoint when the budget is exhausted.",
+          testing:"The packages are intentionally dependency-light and focused on deterministic policy behavior rather than model reasoning."
+        },
+        arc:{
+          overview:"ARC Whitebox is a research repository for the ARC White-Box Estimation Challenge 2026 Phase 2 under CPU/FLOP constraints.",
+          architecture:"The research process is organized around hypotheses, reproducible experiments, a ledger and explicit compute budgets.",
+          testing:"Its operating rule is hypothesis → implementation → benchmark → compare → ablate → keep/drop; theoretical plausibility alone is not enough to promote a method."
         }
       },
       unknown:"I don't have a reliable answer to that in the local portfolio knowledge base. Try asking about experience, measurable results, stack, AI/automation, role fit or a named project."
@@ -227,7 +242,7 @@
       strengths:"Главное отличие — сочетание process/product опыта и hands-on реализации. Тимур может работать одновременно с метрикой, пользовательским workflow, API, кодом и проверкой результата.",
       weakness:"Портфолио не должно придумывать личные слабые стороны. Видимый trade-off — профиль шире узкой инженерной специализации; он сильнее там, где понимание продукта/процесса нужно соединять с реализацией.",
       fit:"Наиболее подтверждённый fit — Product Builder, AI/Automation, Project/Process или technical product роли, где нужно соединять понимание процесса с прототипированием и delivery.",
-      projectsOverview:"В Selected work: TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool. Среди других публичных экспериментов — Book Translator, MindRail и PM 0.1.",
+      projectsOverview:"В Selected work: TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool. Среди других публичных работ — Book Translator, MindRail, PM 0.1, open-screen-pipe, agent policy plugins и ARC Whitebox research.",
       broad:"Тимур сочетает project/process опыт в Skyeng, SPIKS и OpiniQ с hands-on разработкой продуктов и AI-автоматизацией. В опыте — управление командами и процессами, B2B product delivery, измеримые операционные улучшения, AI-agent systems, браузерные инструменты и автоматизация. В Selected work — TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый вклад в hh-applicant-tool.",
       projects: {
         tube:{
@@ -286,6 +301,21 @@
           overview:"PM 0.1 — reference prototype практической программы по Project Management вокруг семи потоков исполнения проекта, а не одного framework.",
           architecture:"Первый validation slice разделяет learning-domain scoring/state, validation content, UI и browser persistence.",
           testing:"CI проверяет scoring/promotion state, структуру контента, integration/accessibility contracts и JavaScript syntax."
+        },
+        screenpipe:{
+          overview:"open-screen-pipe — early-stage privacy-first desktop UI для локального Screenpipe.",
+          architecture:"Продукт разделяет capture, history, context, memory и automation, сохраняет local-only режим явным и требует осознанного подтверждения для сетевых, destructive или code-executing действий.",
+          testing:"Сейчас это ранний structural bootstrap: frontend build/tests есть, а native Tauri integration и финальная visual QA ещё запланированы."
+        },
+        plugins:{
+          overview:"tim8plugins — небольшие policy plugins для gateway'ев AI-агентов.",
+          architecture:"Один plugin требует human approval для выбранных tools и exec вне workspace; второй ограничивает число tool-call попыток и требует checkpoint после исчерпания бюджета.",
+          testing:"Пакеты намеренно dependency-light и опираются на детерминированную policy-логику, а не на model reasoning."
+        },
+        arc:{
+          overview:"ARC Whitebox — research-репозиторий для ARC White-Box Estimation Challenge 2026 Phase 2 с CPU/FLOP ограничениями.",
+          architecture:"Исследовательский процесс организован вокруг hypotheses, воспроизводимых экспериментов, ledger и явного compute budget.",
+          testing:"Рабочее правило: hypothesis → implementation → benchmark → compare → ablate → keep/drop; теоретической правдоподобности недостаточно для продвижения метода."
         }
       },
       unknown:"В локальной базе портфолио нет надёжного ответа на этот вопрос. Можно спросить про опыт, измеримые результаты, стек, AI/автоматизацию, role fit или конкретный проект."
@@ -314,7 +344,7 @@
     hh:["hh-applicant-tool","hh applicant"],
     book:["book translator"],
     mindrail:["mindrail"],
-    pmo:["pm 0.1","pmo01"]
+    pmo:["pm 0.1","pmo01"],\n    screenpipe:["open-screen-pipe","screenpipe"],\n    plugins:["tim8plugins","policy plugins","policy plugin"],\n    arc:["arc-whitebox","arc whitebox"]
   };
   const selectedProjects=new Set(["tube","critic","gac","market","shorts","feed","hh"]);
 
