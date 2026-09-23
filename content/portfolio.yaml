@@ -53,8 +53,8 @@ profile:
     - id: portfolio.projects.other
       topics: [projects, portfolio, agents, product, experiments]
       text:
-        ru: Среди других публичных работ — Book Translator, MindRail, PM 0.1, privacy-first Screenpipe UI, policy plugins для AI-агентов и ARC Whitebox research.
-        en: Other public work includes Book Translator, MindRail, PM 0.1, a privacy-first Screenpipe UI, policy plugins for AI agents and ARC Whitebox research.
+        ru: Среди других работ — Book Translator, MindRail, PM 0.1, privacy-first Screenpipe UI, policy plugins для AI-агентов и ARC Whitebox research.
+        en: Other work includes Book Translator, MindRail, PM 0.1, a privacy-first Screenpipe UI, policy plugins for AI agents and ARC Whitebox research.
       source:
         label: Public GitHub projects
       confidence: verified
@@ -306,8 +306,6 @@ projects:
 
   - id: ai-critic
     name: AI Critic
-    links:
-      github: https://github.com/tim8es/ai-critic
     facts:
       - id: project.critic.overview
         topics: [projects, critic, ai, agents, reliability]
@@ -316,7 +314,6 @@ projects:
           en: AI Critic is an evidence-backed system intended to remember relevant work context, detect material mistakes or contradictions and intervene only when the expected value of criticism is high.
         source:
           label: AI Critic
-          url: https://github.com/tim8es/ai-critic
         confidence: verified
         public: true
 
@@ -327,7 +324,6 @@ projects:
           en: The project separates Context/Critic/Verifier workflows, a local-first Ambient architecture and a narrow privacy-gated Lite Bridge experiment; autonomous actions in third-party apps are out of scope.
         source:
           label: AI Critic README
-          url: https://github.com/tim8es/ai-critic
         confidence: verified
         public: true
 
@@ -338,14 +334,11 @@ projects:
           en: The repository has strict TypeScript and targeted security-flow PASS evidence for the new safe-root/Codex modules; real Windows/Codex host verification is separate and still required before dogfood.
         source:
           label: AI Critic README
-          url: https://github.com/tim8es/ai-critic
         confidence: verified
         public: true
 
   - id: github-agent-continuity
     name: GitHub Agent Continuity
-    links:
-      github: https://github.com/tim8es/github-agent-continuity
     facts:
       - id: project.gac.overview
         topics: [projects, gac, agents, github, infrastructure]
@@ -354,7 +347,6 @@ projects:
           en: GitHub Agent Continuity lets autonomous coding agents continue work across independent or scheduled sessions using GitHub as durable coordination state.
         source:
           label: GitHub Agent Continuity
-          url: https://github.com/tim8es/github-agent-continuity
         confidence: verified
         public: true
 
@@ -365,7 +357,6 @@ projects:
           en: The protocol uses Issues, immutable generation claim refs, separate work branches, leases, checkpoints and takeover rules for cooperative crash-tolerant coordination.
         source:
           label: GAC README
-          url: https://github.com/tim8es/github-agent-continuity
         confidence: verified
         public: true
 
@@ -376,15 +367,12 @@ projects:
           en: GAC's adversarial live subset completed with 5 PASS, 0 FAIL and 0 NOT EXECUTED, including claim serialization, takeover and stale-writer isolation.
         source:
           label: GAC README
-          url: https://github.com/tim8es/github-agent-continuity
         confidence: verified
         public: true
 
 
   - id: hh-market-scanner
     name: HH Market Scanner
-    links:
-      github: https://github.com/tim8es/professions_statistics
     facts:
       - id: project.market.overview
         topics: [projects, market, data, browser, product]
@@ -393,7 +381,6 @@ projects:
           en: HH Market Scanner is a labor-market data product combining a resumable Chrome MV3 collector, validated snapshots and a Next.js web application.
         source:
           label: HH Market Scanner
-          url: https://github.com/tim8es/professions_statistics
         confidence: verified
         public: true
 
@@ -404,7 +391,6 @@ projects:
           en: The collector distinguishes valid zero, selector failure, wrong-page, blocking and navigation failure; unknown observations are not silently converted to zero.
         source:
           label: HH Market Scanner README
-          url: https://github.com/tim8es/professions_statistics
         confidence: verified
         public: true
 
@@ -415,14 +401,11 @@ projects:
           en: Data flows through versioned market snapshot/batch contracts and FileSnapshotRepository; repository-wide verification includes lint, tests and a production Next.js build.
         source:
           label: HH Market Scanner README
-          url: https://github.com/tim8es/professions_statistics
         confidence: verified
         public: true
 
   - id: open-screen-pipe
     name: open-screen-pipe
-    links:
-      github: https://github.com/tim8es/open-screen-pipe
     facts:
       - id: project.screenpipe.overview
         topics: [projects, screenpipe, privacy, desktop, product]
@@ -431,7 +414,6 @@ projects:
           en: open-screen-pipe is an early-stage privacy-first desktop UI for local Screenpipe with explicit boundaries around networked, destructive and code-executing actions.
         source:
           label: open-screen-pipe
-          url: https://github.com/tim8es/open-screen-pipe
         confidence: verified
         public: true
 
@@ -480,8 +462,6 @@ projects:
 
   - id: n8n-youtube-shorts-workflow
     name: AI Video Pipeline
-    links:
-      github: https://github.com/tim8es/n8n-youtube-shorts-workflow
     facts:
       - id: project.shorts.overview
         topics: [projects, shorts, automation, n8n, video, ai]
@@ -490,7 +470,6 @@ projects:
           en: AI Video Pipeline is a local-first Shorts/Reels workflow connecting scripting, a local LLM, rendering, TTS and captions through n8n.
         source:
           label: AI Video Pipeline
-          url: https://github.com/tim8es/n8n-youtube-shorts-workflow
         confidence: verified
         public: true
 
@@ -501,7 +480,6 @@ projects:
           en: The project's verified local base uses n8n Community Edition, Ollama, FFmpeg and Windows System.Speech; a separate control plane aggregates health and explicit actions.
         source:
           label: AI Video Pipeline README
-          url: https://github.com/tim8es/n8n-youtube-shorts-workflow
         confidence: verified
         public: true
 
@@ -512,7 +490,6 @@ projects:
           en: Publishing is intentionally separated from generation: the workflow stops at a review-ready state and OAuth/publishing are added separately.
         source:
           label: AI Video Pipeline README
-          url: https://github.com/tim8es/n8n-youtube-shorts-workflow
         confidence: verified
         public: true
 
@@ -599,8 +576,6 @@ projects:
 
   - id: mindrail
     name: MindRail
-    links:
-      github: https://github.com/tim8es/mindRail
     facts:
       - id: project.mindrail.overview
         topics: [projects, mindrail, agents, infrastructure, control]
@@ -609,7 +584,6 @@ projects:
           en: MindRail is an early-stage vendor-neutral control plane for autonomous AI agents, keeping state, policy and coordination outside any one chat/session runtime.
         source:
           label: MindRail
-          url: https://github.com/tim8es/mindRail
         confidence: verified
         public: true
 
@@ -620,14 +594,11 @@ projects:
           en: The project has an implemented and verified deterministic in-memory Goal → Task → Lease → Checkpoint → completion vertical slice; durable persistence and real agent integrations are still in development.
         source:
           label: MindRail README
-          url: https://github.com/tim8es/mindRail
         confidence: verified
         public: true
 
   - id: pmo01
     name: PM 0.1
-    links:
-      github: https://github.com/tim8es/pmo01
     facts:
       - id: project.pmo.overview
         topics: [projects, pmo, product, education, project-management]
@@ -636,7 +607,6 @@ projects:
           en: PM 0.1 is a reference prototype for a practical Project Management program organized around seven project flows rather than one framework.
         source:
           label: PM 0.1
-          url: https://github.com/tim8es/pmo01
         confidence: verified
         public: true
 
@@ -647,7 +617,6 @@ projects:
           en: The project includes a separate M01 learning-validation slice with baseline/post-case, decision drills, browser persistence and CI checks for scoring/state/content contracts.
         source:
           label: PM 0.1 README
-          url: https://github.com/tim8es/pmo01
         confidence: verified
         public: true
 
