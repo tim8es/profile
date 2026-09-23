@@ -347,6 +347,47 @@
       }
     },
     {
+      "id": "portfolio.experience.summary",
+      "topics": [
+        "experience",
+        "companies",
+        "background"
+      ],
+      "text": {
+        "ru": "В Skyeng Тимур руководил командой и улучшал QA/CX-процессы; в SPIKS управлял развитием B2B Loyalty CRM; в OpiniQ работал с автоматизацией процессов, Jira workflow и AI-исследованиями.",
+        "en": "At Skyeng, Timur led a team and improved QA/CX processes; at SPIKS, he managed development of a B2B Loyalty CRM; at OpiniQ, he worked on process automation, Jira workflows and AI research."
+      },
+      "source": {
+        "label": "Career history"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "portfolio.impact.summary",
+      "topics": [
+        "experience",
+        "impact",
+        "metrics",
+        "results",
+        "process",
+        "automation"
+      ],
+      "text": {
+        "ru": "Среди измеримых результатов: −70% времени на отчётность, +44% эффективности аудита при охвате 95%+ транзакций, +20% скорости обработки после миграции процессов в CRM и −25% времени решения критических инцидентов.",
+        "en": "Measured results include 70% less reporting time, 44% higher audit efficiency at 95%+ transaction coverage, 20% faster processing after CRM process migration and 25% lower critical-incident resolution time."
+      },
+      "source": {
+        "label": "Career results"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
       "id": "portfolio.projects.other",
       "topics": [
         "projects",
