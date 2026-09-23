@@ -149,12 +149,12 @@
     tubescore:["tubescore","tube score"],
     critic:["ai critic","critic","критик"],
     gac:["github agent continuity","gac","continuity"],
-    shorts:["video pipeline","shorts","youtube shorts","n8n","видео"],
+    market:["hh market scanner","market scanner","professions statistics","рынок труда"],\n    shorts:["video pipeline","shorts","youtube shorts","n8n","видео"],
     feedpulse:["feedpulse","feed pulse"],
     hh:["hh-applicant-tool","hh applicant","multi-account","мультиаккаунт"],
     booktranslator:["book translator","переводчик книг","перевод книг"],
     mindrail:["mindrail","control plane","контрольный слой"],
-    pmo:["pm 0.1","pmo01","инженерия исполнения"]
+    pmo:["pm 0.1","pmo01","инженерия исполнения"],\n    screenpipe:["open-screen-pipe","screenpipe"],\n    plugins:["tim8plugins","policy plugins","policy plugin"],\n    arc:["arc-whitebox","arc whitebox"]
   };
 
   function norm(value){
@@ -185,7 +185,7 @@
     let score=0;
     fact.topics.forEach(topic=>{if(topics.includes(topic)) score+=4;});
 
-    const projectTopics=["tubescore","critic","gac","shorts","feedpulse","hh","booktranslator","mindrail","pmo"];
+    const projectTopics=["tubescore","critic","gac","market","shorts","feedpulse","hh","booktranslator","mindrail","pmo","screenpipe","plugins","arc"];
     const specificProject=projectTopics.find(topic=>topics.includes(topic));
     if(specificProject && fact.topics.includes(specificProject)) score+=10;
     if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;\n    if((topics.includes("experience")||topics.includes("companies")) && fact.id==="portfolio.experience.summary") score+=10;\n    if((topics.includes("impact")||topics.includes("metrics")||topics.includes("results")) && fact.id==="portfolio.impact.summary") score+=12;
@@ -424,7 +424,7 @@
     const server=await serverAnswer(text,facts,lang);
     const answer=server||local;
     const project=facts.find(f=>f.context?.projectId)?.context?.projectId;
-    const projectMap={tubescore:"tube","ai-critic":"critic","github-agent-continuity":"gac","n8n-youtube-shorts-workflow":"shorts",feedpulse:"feed","hh-applicant-tool":"hh"};
+    const projectMap={tubescore:"tube","ai-critic":"critic","github-agent-continuity":"gac","hh-market-scanner":"market","n8n-youtube-shorts-workflow":"shorts",feedpulse:"feed","hh-applicant-tool":"hh"};
     const projectId=projectMap[project]||null;
 
     state.lastSubject=projectId||"timur";
