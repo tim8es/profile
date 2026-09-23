@@ -380,7 +380,7 @@
     if(hasAny(query,["архитект","как устро","как сделан","architecture","how built","how is"])) text=p.architecture||p.overview;
     else if(hasAny(query,["безопас","privacy","permission","safety","security"])) text=p.safety||p.architecture||p.overview;
     else if(hasAny(query,["тест","провер","proof","status","verified","testing","tested"])) text=p.testing||p.status||p.overview;
-    else if(hasAny(query,["слож","hardest","difficult","challenge"])) text=p.hard||p.architecture||p.overview;
+    else if(hasAny(query,["слож","hardest","difficult","challenge","качество","плох","ошиб","quality","bad data","freshness"])) text=p.hard||p.architecture||p.overview;
     return {lang,intent:"project",text,subject,project:selectedProjects.has(subject)?subject:null};
   }
 
