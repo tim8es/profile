@@ -14,15 +14,15 @@
     en: {
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
-        eyebrow:"Product builder / process thinker",
+        eyebrow:"Product builder / AI automation",
         title:"Build.<br><span>Automate.</span><br>Simplify.",
-        lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
-        meta:["Product → prototype","AI-native workflow","Hands-on builder"]
+        lede:"I turn messy workflows into working products and automation — from process design to AI agents, APIs and code.",
+        meta:["Problem → prototype","Process → system","AI → automation"]
       },
       field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Agents"] },
       query: {
         title:"Portfolio Query",
-        intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
+        intro:"Ask about Timur’s experience, projects, AI/automation work or technical decisions.",
         suggestions:[
           ["Who is Timur?","Who is Timur?"],
           ["What has he built?","What projects has Timur built?"],
@@ -65,15 +65,15 @@
     ru: {
       nav: { work:"Работы", query:"Спросить", about:"Обо мне" },
       hero: {
-        eyebrow:"Product builder / системное мышление",
+        eyebrow:"Product builder / AI-автоматизация",
         title:"Создаю.<br><span>Автоматизирую.</span><br>Упрощаю.",
-        lede:"Превращаю размытые задачи и неудобные процессы в небольшие работающие продукты — с помощью AI, автоматизации и кода.",
-        meta:["От задачи → к прототипу","AI-native подход","Делаю руками"]
+        lede:"Превращаю сложные процессы в работающие продукты и автоматизации — от проектирования процессов до AI-агентов, API и кода.",
+        meta:["Задача → прототип","Процесс → система","AI → автоматизация"]
       },
       field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
       query: {
         title:"Portfolio Query",
-        intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
+        intro:"Спроси про опыт Тимура, проекты, AI/автоматизацию или технические решения.",
         suggestions:[
           ["Кто такой Тимур?","Кто такой Тимур?"],
           ["Что он сделал?","Какие проекты сделал Тимур?"],
@@ -91,17 +91,17 @@
         title:"Избранные работы",
         note:"",
         tube:{kind:"Браузерный продукт",desc:"Chrome-расширение без токенов, которое определяет фильмы на YouTube и показывает рейтинги прямо в контексте просмотра.",details:[["Проблема","Проверка рейтинга прерывает просмотр и требует отдельного поиска."],["Что сделал","MV3-расширение, детерминированный матчинг, Wikidata, кеширование и SPA-навигация."],["Проверка","Typecheck, тесты, production build checks и Chromium browser smoke."]],ask:"Спросить подробнее о TubeScore →"},
-        critic:{kind:"AI-система",desc:"Evidence-backed критик, который ищет существенные ошибки и противоречия, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и privacy-gated эксперимент с desktop bridge."],["Статус","Early-stage: реализованные части и security-flow проверки отделены от host verification."]],ask:"Спросить подробнее об AI Critic →"},
-        gac:{kind:"Инфраструктура агентов",desc:"GitHub-native протокол, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
-        shorts:{kind:"Система автоматизации",desc:"Local-first pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся handoff'ов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и operations control plane."],["Граница","Публикация отделена от генерации и требует отдельного review/credentials."]],ask:"Спросить подробнее о pipeline →"},
-        feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с focused XML parser и bounded content handling."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
-        hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Profile CRUD, состояние авторизации, переключение, изоляция данных и runtime guards."],["Проверка","PR #84 merged; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
+        critic:{kind:"AI-система",desc:"Система критики, которая ищет существенные ошибки и противоречия по проверяемым данным, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и эксперимент с desktop bridge с privacy-gates."],["Статус","Early-stage: реализованные части и security-проверки отделены от проверки на реальном host."]],ask:"Спросить подробнее об AI Critic →"},
+        gac:{kind:"Инфраструктура агентов",desc:"Протокол на базе GitHub, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
+        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся handoff'ов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и operations control plane."],["Граница","Публикация отделена от генерации и требует отдельного review/credentials."]],ask:"Спросить подробнее о pipeline →"},
+        feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с узким XML-парсером и ограничением объёма контента."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
+        hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Создание, удаление и переключение профилей, auth-state, изоляция данных и runtime guards."],["Проверка","PR #84 принят upstream; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
       },
       about: {
         title:"Обо мне",
         note:"",
         statement:"Лучше всего я работаю там, где запутанный процесс нужно превратить в понятный продукт или систему.",
-        body:["Мой бэкграунд — проекты, процессы и delivery в Skyeng, SPIKS и OpiniQ: от QA/CX и B2B CRM до автоматизации workflow.","Сейчас много делаю руками: AI-агенты, n8n, API, JavaScript/Node.js, Python, SQL, браузерные инструменты и проверяемые прототипы."]
+        body:["Мой бэкграунд — проекты, процессы и delivery в Skyeng, SPIKS и OpiniQ: от QA/CX и B2B CRM до автоматизации процессов.","Сейчас много делаю руками: AI-агенты, n8n, API, JavaScript/Node.js, Python, SQL, браузерные инструменты и проверяемые прототипы."]
       },
       footer:["Timur Dautov © 2026",""],
       deep:{
