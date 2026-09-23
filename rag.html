@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Timur Dautov — Grounded Portfolio Query</title>
+  <meta name="description" content="Experimental grounded portfolio query for Timur Dautov." />
+  <link rel="stylesheet" href="./hybrid.css" />
+  <link rel="stylesheet" href="./rag.css" />
+</head>
+<body>
+  <div class="demo-bar">
+    <a href="./hybrid.html">← Current hybrid</a>
+    <span>EXP / Grounded Query</span>
+  </div>
+
+  <header class="nav shell">
+    <a class="brand" href="#top">Timur Dautov</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#query">Query</a>
+      <a href="#about">About</a>
+      <a href="https://github.com/tim8es" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language"><span data-lang-label>EN</span></button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.75"></circle><path d="M12 2.25v2.1M12 19.65v2.1M2.25 12h2.1M19.65 12h2.1M5.1 5.1l1.5 1.5M17.4 17.4l1.5 1.5M18.9 5.1l-1.5 1.5M6.6 17.4l-1.5 1.5"></path></svg>
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.4 8.4 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Product builder / process thinker</p>
+        <h1>Build.<br><span>Automate.</span><br>Simplify.</h1>
+        <p class="hero-lede">I turn vague problems and awkward processes into small working products — with AI, automation and code.</p>
+        <div class="hero-meta"><span>Product → prototype</span><span>AI-native workflow</span><span>Hands-on builder</span></div>
+      </div>
+      <div class="field-wrap" aria-label="Interactive capability field">
+        <div class="field-head"><span>Capability field</span><span>current visual kept intact</span></div>
+        <div class="rag-placeholder-visual" aria-hidden="true">
+          <span>3D field intentionally left in current hybrid</span>
+          <a href="./hybrid.html">open current version ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="query-section shell" id="query">
+      <div class="section-label">
+        <span>Portfolio Query / grounded experiment</span>
+        <span data-query-mode>local composer</span>
+      </div>
+      <div class="query-box query-box--compact rag-query">
+        <div class="chat-log chat-log--compact" data-chat-log aria-live="polite"></div>
+        <div class="suggestions" aria-label="Suggested questions">
+          <button type="button" data-suggestion="Кто такой Тимур?">Кто такой Тимур?</button>
+          <button type="button" data-suggestion="Чем Тимур может удивить?">Чем может удивить?</button>
+          <button type="button" data-suggestion="Какие проекты делал и где работал?">Проекты + опыт</button>
+          <button type="button" data-suggestion="На какую работу он подойдёт?">Role fit</button>
+        </div>
+        <form class="query-form" data-query-form>
+          <span class="prompt-mark">›</span>
+          <input data-query-input type="text" autocomplete="off" placeholder="Ask the portfolio…" aria-label="Ask portfolio" />
+          <button type="submit">Ask</button>
+        </form>
+        <div class="query-hint">Facts are curated. The server LLM is optional; when unavailable, the local composer uses the same evidence.</div>
+      </div>
+    </section>
+
+    <section class="work-section shell" id="work">
+      <div class="section-label"><span>Selected work</span><span>unchanged content direction</span></div>
+      <div class="work-layout work-layout--single">
+        <div class="project-list">
+          <article class="project-item" data-project="tube">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">01</span><span class="project-main"><strong>TubeScore</strong><small>Browser product</small></span><span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div><p>Chrome extension that puts ratings directly into the YouTube viewing context.</p><div class="project-actions"><button type="button" data-project-question="Расскажи подробнее про TubeScore">Ask deeper →</button></div></div></div>
+          </article>
+          <article class="project-item" data-project="feed">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">02</span><span class="project-main"><strong>FeedPulse</strong><small>Agent utility</small></span><span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div><p>Lightweight feed ingestion and normalization for AI agents.</p><div class="project-actions"><button type="button" data-project-question="Расскажи подробнее про FeedPulse">Ask deeper →</button></div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section shell" id="about">
+      <div class="section-label"><span>About</span><span>same positioning, new query architecture</span></div>
+      <div class="about-grid">
+        <p class="about-statement">I like software that removes friction instead of adding another system people have to manage.</p>
+        <div class="about-copy"><p>This experiment changes only the Portfolio Query architecture. The current visual direction remains preserved in <code>hybrid.html</code>.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell"><span>Experimental branch</span><span>Grounded facts → retrieval → composer → optional server LLM.</span></footer>
+
+  <script src="./portfolio-data.js"></script>
+  <script src="./portfolio-query-rag.js"></script>
+</body>
+</html>
