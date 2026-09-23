@@ -234,8 +234,8 @@
       .replace(/^Он\\s+/,"");
   }
 
-  function joinFacts(facts,lang){
-    return facts.slice(0,5).map((fact,index)=>{
+  function joinFacts(facts,lang,limit=4){
+    return facts.slice(0,limit).map((fact,index)=>{
       let text=fact.text[lang]||fact.text.en||fact.text.ru;
       if(index>0) text=stripLead(text);
       return text.replace(/\\.$/,"");
@@ -244,7 +244,7 @@
 
   function composeLocal(question,facts,lang){
     const kind=planType(question);
-    const body=joinFacts(facts,lang);
+    const body=joinFacts(facts,lang,kind==="broad"?5:4);
     const lead={
       ru:{
         identity:"Тимур Даутов — ",
@@ -394,6 +394,18 @@
     if(!text)return;
     const lang=qlang(text);
     appendMessage("user",text,null,[],true,lang);
+
+    const q=norm(text);
+    if(/^(привет|здравствуй|здравствуйте|добрый день|добрый вечер|hello|hi|hey)( |$)/.test(q)){
+      appendMessage("bot",lang==="ru"
+        ?"Можно спросить про опыт, проекты, AI/автоматизацию, стек или конкретное техническое решение."
+        :"Ask about experience, projects, AI/automation, stack or a specific technical decision.",null,[],true,lang);
+      return;
+    }
+    if(/^(спасибо|благодарю|thanks|thank you)( |$)/.test(q)){
+      appendMessage("bot",lang==="ru"?"Пожалуйста. Можно продолжить с любого проекта или части опыта.":"You’re welcome. You can continue with any project or part of the experience.",null,[],true,lang);
+      return;
+    }
 
     if(!kb) await kbReady;
     if(!kb?.facts?.length){
