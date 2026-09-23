@@ -326,6 +326,49 @@
       }
     },
     {
+      "id": "portfolio.projects.other",
+      "topics": [
+        "projects",
+        "portfolio",
+        "agents",
+        "product",
+        "experiments"
+      ],
+      "text": {
+        "ru": "Среди других публичных проектов — Book Translator, MindRail и PM 0.1; они остаются доступными через Portfolio Query, но не перегружают основной список работ.",
+        "en": "Other public projects include Book Translator, MindRail and PM 0.1; they remain discoverable through Portfolio Query without overloading the main work list."
+      },
+      "source": {
+        "label": "Public GitHub projects"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "portfolio.projects.selected",
+      "topics": [
+        "projects",
+        "portfolio",
+        "product",
+        "ai",
+        "automation",
+        "opensource"
+      ],
+      "text": {
+        "ru": "В Selected work собраны TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse и принятый upstream-вклад в hh-applicant-tool.",
+        "en": "Selected work includes TubeScore, AI Critic, GitHub Agent Continuity, AI Video Pipeline, FeedPulse and a merged upstream contribution to hh-applicant-tool."
+      },
+      "source": {
+        "label": "Selected work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
       "id": "project.booktranslator.overview",
       "topics": [
         "projects",
