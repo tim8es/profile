@@ -1,0 +1,332 @@
+{
+  "version": 1,
+  "person": {
+    "id": "timur",
+    "name": "Timur Dautov"
+  },
+  "facts": [
+    {
+      "id": "experience.skyeng",
+      "topics": [
+        "experience",
+        "companies",
+        "management",
+        "leadership",
+        "operations"
+      ],
+      "text": {
+        "ru": "В Skyeng он руководил удалённой командой из 23 асессоров и одного тренера и работал с планированием, KPI, наймом, онбордингом, отчётностью и улучшением процессов.",
+        "en": "At Skyeng, he led a remote assessment team of 23 assessors and one trainer and worked with planning, KPIs, hiring, onboarding, reporting and process improvement."
+      },
+      "source": {
+        "label": "Skyeng experience"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "experience",
+        "experienceId": "skyeng",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "experience.spiks",
+      "topics": [
+        "experience",
+        "companies",
+        "product",
+        "project",
+        "crm",
+        "requirements"
+      ],
+      "text": {
+        "ru": "В SPIKS он работал с B2B Loyalty CRM: web-приложениями, мобильными приложениями, backend, PostgreSQL и внешними интеграциями, включая требования, backlog, delivery и взаимодействие с разработкой.",
+        "en": "In SPIKS, he worked with a B2B Loyalty CRM product across web applications, mobile applications, backend, PostgreSQL and external integrations, including requirements, backlog, delivery and coordination with development."
+      },
+      "source": {
+        "label": "SPIKS experience"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "experience",
+        "experienceId": "spiks",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "experience.years",
+      "topics": [
+        "experience",
+        "background"
+      ],
+      "text": {
+        "ru": "У него более 10 лет профессионального опыта.",
+        "en": "He has more than 10 years of professional experience."
+      },
+      "source": {
+        "label": "Career history"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "fit.roles",
+      "topics": [
+        "fit",
+        "roles",
+        "work",
+        "product",
+        "ai",
+        "automation"
+      ],
+      "text": {
+        "ru": "Его профиль лучше всего подтверждён для задач, где понимание продукта или процесса сочетается с прототипированием, AI или автоматизацией, а не для узкой чисто инженерной специализации.",
+        "en": "His profile is most directly supported for work where product or process understanding is combined with prototyping, AI or automation rather than for a narrowly specialized pure engineering role."
+      },
+      "source": {
+        "label": "Portfolio positioning"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "positioning",
+        "positioningGroup": "fit"
+      }
+    },
+    {
+      "id": "identity.product_process_builder",
+      "topics": [
+        "identity",
+        "skills",
+        "product",
+        "positioning"
+      ],
+      "text": {
+        "ru": "Тимур сочетает опыт управления проектами и процессами с всё более hands-on работой над продуктами.",
+        "en": "Timur combines project and process management with increasingly hands-on product building."
+      },
+      "source": {
+        "label": "Portfolio profile"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "project.feedpulse.design",
+      "topics": [
+        "projects",
+        "feedpulse",
+        "architecture",
+        "node",
+        "cross-platform"
+      ],
+      "text": {
+        "ru": "FeedPulse намеренно сохраняет небольшой набор зависимостей и рассчитан на работу в Windows, macOS и Linux.",
+        "en": "FeedPulse deliberately keeps a small dependency surface and is designed to work across Windows, macOS and Linux."
+      },
+      "source": {
+        "label": "FeedPulse design",
+        "url": "https://github.com/tim8es/tim8skills/tree/main/feed-pulse"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "feedpulse",
+        "projectName": "FeedPulse",
+        "links": {
+          "github": "https://github.com/tim8es/tim8skills/tree/main/feed-pulse"
+        }
+      }
+    },
+    {
+      "id": "project.feedpulse.overview",
+      "topics": [
+        "projects",
+        "feedpulse",
+        "agents",
+        "rss",
+        "atom",
+        "node"
+      ],
+      "text": {
+        "ru": "FeedPulse — лёгкая утилита, которая читает и нормализует RSS/Atom-источники в предсказуемый структурированный контент для AI-агентов.",
+        "en": "FeedPulse is a lightweight utility that reads and normalizes RSS/Atom-style sources into predictable structured content for AI agents."
+      },
+      "source": {
+        "label": "FeedPulse",
+        "url": "https://github.com/tim8es/tim8skills/tree/main/feed-pulse"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "feedpulse",
+        "projectName": "FeedPulse",
+        "links": {
+          "github": "https://github.com/tim8es/tim8skills/tree/main/feed-pulse"
+        }
+      }
+    },
+    {
+      "id": "project.tubescore.architecture",
+      "topics": [
+        "projects",
+        "tubescore",
+        "architecture",
+        "testing",
+        "browser"
+      ],
+      "text": {
+        "ru": "TubeScore использует архитектуру Manifest V3 с UI через content script, оркестрацией через service worker, детерминированным матчингом, кешированием и браузерными smoke-тестами.",
+        "en": "TubeScore uses a Manifest V3 architecture with content-script UI, service-worker orchestration, deterministic matching, caching and browser smoke testing."
+      },
+      "source": {
+        "label": "TubeScore implementation",
+        "url": "https://github.com/tim8es/TubeScore"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tubescore",
+        "projectName": "TubeScore",
+        "links": {
+          "github": "https://github.com/tim8es/TubeScore"
+        }
+      }
+    },
+    {
+      "id": "project.tubescore.overview",
+      "topics": [
+        "projects",
+        "tubescore",
+        "browser",
+        "chrome",
+        "youtube"
+      ],
+      "text": {
+        "ru": "TubeScore — Chrome-расширение, которое показывает рейтинги фильмов и сериалов прямо на YouTube-трейлерах и видео.",
+        "en": "TubeScore is a Chrome extension that displays movie and series ratings directly on YouTube trailers and videos."
+      },
+      "source": {
+        "label": "TubeScore",
+        "url": "https://github.com/tim8es/TubeScore"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tubescore",
+        "projectName": "TubeScore",
+        "links": {
+          "github": "https://github.com/tim8es/TubeScore"
+        }
+      }
+    },
+    {
+      "id": "skills.ai",
+      "topics": [
+        "skills",
+        "ai",
+        "agents",
+        "llm",
+        "automation"
+      ],
+      "text": {
+        "ru": "Он работает с AI-агентами и LLM-workflow, особенно интересуясь оркестрацией инструментов, валидацией, надёжностью и памятью.",
+        "en": "He works with AI agents and LLM-based workflows, with particular interest in tool orchestration, validation, reliability and memory."
+      },
+      "source": {
+        "label": "AI work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills",
+        "skillGroup": "ai"
+      }
+    },
+    {
+      "id": "skills.process",
+      "topics": [
+        "skills",
+        "process",
+        "operations",
+        "automation"
+      ],
+      "text": {
+        "ru": "Он умеет разбирать, перепроектировать и автоматизировать операционные процессы и сокращать лишние ручные handoff'ы.",
+        "en": "He is experienced in mapping, redesigning and automating operational processes and in reducing unnecessary manual handoffs."
+      },
+      "source": {
+        "label": "Process work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills",
+        "skillGroup": "process"
+      }
+    },
+    {
+      "id": "skills.product",
+      "topics": [
+        "skills",
+        "product",
+        "mvp",
+        "discovery"
+      ],
+      "text": {
+        "ru": "Он умеет превращать размытые задачи в ограниченный проверяемый продуктовый scope, собирать или координировать MVP и оценивать результат по явным критериям успеха.",
+        "en": "He can turn an ambiguous problem into a smaller testable product scope, build or coordinate an MVP and evaluate the result against explicit success criteria."
+      },
+      "source": {
+        "label": "Product work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills",
+        "skillGroup": "product"
+      }
+    },
+    {
+      "id": "skills.technical",
+      "topics": [
+        "skills",
+        "technical",
+        "stack",
+        "engineering"
+      ],
+      "text": {
+        "ru": "В его регулярный технический набор входят основы JavaScript и Node.js, browser API, REST API, webhooks, SQL, GitHub и инструменты автоматизации.",
+        "en": "His recurring technical toolkit includes JavaScript and Node.js basics, browser APIs, REST APIs, webhooks, SQL, GitHub and automation tooling."
+      },
+      "source": {
+        "label": "Technical toolkit"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills",
+        "skillGroup": "technical"
+      }
+    },
+    {
+      "id": "strength.cross_functional",
+      "topics": [
+        "strengths",
+        "differentiators",
+        "fit",
+        "skills"
+      ],
+      "text": {
+        "ru": "Заметная особенность его профиля — сочетание операционного управления, продуктового мышления и hands-on реализации.",
+        "en": "A notable part of his profile is the combination of operational management, product thinking and hands-on implementation."
+      },
+      "source": {
+        "label": "Portfolio profile"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "positioning",
+        "positioningGroup": "strengths"
+      }
+    }
+  ]
+}
