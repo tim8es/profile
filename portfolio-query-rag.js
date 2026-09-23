@@ -42,7 +42,8 @@
         tube:{kind:"Browser product",desc:"A Chrome extension that identifies movies on YouTube and shows ratings in context — without API keys or a backend.",details:[["Problem","Checking ratings breaks the viewing flow."],["Built","MV3 extension, deterministic matching, Wikidata provider, caching and SPA handling."],["Proof","Typecheck, tests, production build checks and Chromium browser smoke."]],ask:"Ask deeper about TubeScore →"},
         critic:{kind:"AI system",desc:"An evidence-backed critic designed to catch material mistakes and contradictions without interrupting on every minor issue.",details:[["Problem","AI assistants can lose context or miss important contradictions."],["Built","Context, critic and verifier workflows plus a privacy-gated desktop bridge experiment."],["Status","Early-stage; implemented slices and security-flow checks are separated from host verification."]],ask:"Ask deeper about AI Critic →"},
         gac:{kind:"Agent infrastructure",desc:"A GitHub-native protocol that lets autonomous coding agents continue work safely across disposable sessions.",details:[["Problem","Agent sessions disappear, while ownership and unfinished work need to survive."],["Built","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints and takeover rules."],["Proof","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Ask deeper about GAC →"},
-        market:{kind:"Data product",desc:"A labor-market data product with a resumable MV3 collector, versioned contracts and a validated Next.js publishing path.",details:[["Problem","Scraped market data can be stale, partial or silently wrong."],["Built","MV3 collector, canonical snapshot/batch contracts, persistence boundary and Next.js web app."],["Proof","Deterministic fixtures plus repository-wide lint, test and production-build verification."]],ask:"Ask deeper about HH Market Scanner →"},\n        shorts:{kind:"Automation system",desc:"A local-first pipeline for generating short-form AI video from research and scripting through rendering and review.",details:[["Problem","Content production has many repetitive handoffs and failure points."],["Built","n8n workflows with local LLMs, FFmpeg rendering, TTS, captions and an operations control plane."],["Boundary","Publishing is kept separate from generation and requires explicit review/credentials."]],ask:"Ask deeper about the pipeline →"},
+        market:{kind:"Data product",desc:"A labor-market data product with a resumable MV3 collector, versioned contracts and a validated Next.js publishing path.",details:[["Problem","Scraped market data can be stale, partial or silently wrong."],["Built","MV3 collector, canonical snapshot/batch contracts, persistence boundary and Next.js web app."],["Proof","Deterministic fixtures plus repository-wide lint, test and production-build verification."]],ask:"Ask deeper about HH Market Scanner →"},
+        shorts:{kind:"Automation system",desc:"A local-first pipeline for generating short-form AI video from research and scripting through rendering and review.",details:[["Problem","Content production has many repetitive handoffs and failure points."],["Built","n8n workflows with local LLMs, FFmpeg rendering, TTS, captions and an operations control plane."],["Boundary","Publishing is kept separate from generation and requires explicit review/credentials."]],ask:"Ask deeper about the pipeline →"},
         feed:{kind:"Agent utility",desc:"A lightweight feed ingestion utility that gives AI agents predictable content from RSS and Atom sources.",details:[["Problem","Agents repeatedly need to normalize inconsistent feed formats."],["Built","Small Node.js utility with a focused XML parser and bounded content handling."],["Proof","Designed to run across Windows, macOS and Linux with a small dependency surface."]],ask:"Ask deeper about FeedPulse →"},
         hh:{kind:"Open-source contribution",desc:"A merged upstream contribution that exposed existing multi-profile support in the project's desktop UI.",details:[["Problem","The CLI supported isolated profiles, but the UI could not manage or switch them."],["Built","Profile CRUD, auth state, switching, isolated data and safe runtime guards."],["Proof","Merged PR #84; 116 regression tests and Chromium/Playwright UI E2E passed."]],ask:"Ask deeper about the contribution →"}
       },
@@ -57,7 +58,8 @@
         tube:[["Architecture","How is TubeScore built?"],["Hardest part","What was the hardest part of TubeScore?"],["Testing","How did you test TubeScore?"]],
         critic:[["Architecture","How is AI Critic built?"],["Safety","How does AI Critic handle privacy and permissions?"],["Status","What is actually verified in AI Critic?"]],
         gac:[["Protocol","How does GitHub Agent Continuity work?"],["Concurrency","How does GAC prevent conflicting agents?"],["Testing","How was GAC tested?"]],
-        market:[["Architecture","How is HH Market Scanner built?"],["Data quality","How does HH Market Scanner avoid bad data?"],["Testing","How is HH Market Scanner verified?"]],\n        shorts:[["Workflow","How is the AI video pipeline built?"],["Local stack","What runs locally in the pipeline?"],["Safety","Why is publishing separated?"]],
+        market:[["Architecture","How is HH Market Scanner built?"],["Data quality","How does HH Market Scanner avoid bad data?"],["Testing","How is HH Market Scanner verified?"]],
+        shorts:[["Workflow","How is the AI video pipeline built?"],["Local stack","What runs locally in the pipeline?"],["Safety","Why is publishing separated?"]],
         feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Portability","How does FeedPulse stay cross-platform?"]],
         hh:[["Contribution","What did Timur add to hh-applicant-tool?"],["Architecture","How was multi-account isolation implemented?"],["Testing","How was the contribution verified?"]]
       }
@@ -93,7 +95,8 @@
         tube:{kind:"Браузерный продукт",desc:"Chrome-расширение, которое определяет фильмы на YouTube и показывает рейтинги прямо в контексте просмотра — без API-ключей и backend.",details:[["Проблема","Проверка рейтинга прерывает просмотр и требует отдельного поиска."],["Что сделал","MV3-расширение, детерминированный матчинг, Wikidata, кеширование и SPA-навигация."],["Проверка","Typecheck, тесты, production build checks и Chromium browser smoke."]],ask:"Спросить подробнее о TubeScore →"},
         critic:{kind:"AI-система",desc:"Система критики, которая ищет существенные ошибки и противоречия по проверяемым данным, но не вмешивается по мелочам.",details:[["Проблема","AI-ассистенты могут терять контекст и пропускать важные противоречия."],["Что сделал","Context/Critic/Verifier workflow и эксперимент с desktop bridge с privacy-gates."],["Статус","Early-stage: реализованные части и security-проверки отделены от проверки на реальном host."]],ask:"Спросить подробнее об AI Critic →"},
         gac:{kind:"Инфраструктура агентов",desc:"Протокол на базе GitHub, который позволяет автономным coding-агентам продолжать работу между независимыми сессиями.",details:[["Проблема","Сессия агента исчезает, а состояние, ownership и незавершённая работа должны сохраняться."],["Что сделал","Issue lifecycle, atomic claim refs, work branches, leases, checkpoints и takeover rules."],["Проверка","Adversarial live subset: 5 PASS, 0 FAIL, 0 not executed."]],ask:"Спросить подробнее о GAC →"},
-        market:{kind:"Продукт данных",desc:"Продукт для анализа рынка труда: возобновляемый MV3-сборщик, версионированные контракты данных и проверяемая публикация через Next.js.",details:[["Проблема","Данные со страниц могут быть устаревшими, неполными или ошибочно интерпретироваться как ноль."],["Что сделал","MV3-сборщик, canonical snapshot/batch contracts, слой хранения и Next.js-приложение."],["Проверка","Детерминированные fixtures и общий gate: lint, tests и production build."]],ask:"Спросить подробнее о HH Market Scanner →"},\n        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся ручных переходов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и отдельная панель контроля."],["Граница","Публикация отделена от генерации и требует отдельного review и credentials."]],ask:"Спросить подробнее о pipeline →"},
+        market:{kind:"Продукт данных",desc:"Продукт для анализа рынка труда: возобновляемый MV3-сборщик, версионированные контракты данных и проверяемая публикация через Next.js.",details:[["Проблема","Данные со страниц могут быть устаревшими, неполными или ошибочно интерпретироваться как ноль."],["Что сделал","MV3-сборщик, canonical snapshot/batch contracts, слой хранения и Next.js-приложение."],["Проверка","Детерминированные fixtures и общий gate: lint, tests и production build."]],ask:"Спросить подробнее о HH Market Scanner →"},
+        shorts:{kind:"Система автоматизации",desc:"Локальный pipeline для производства коротких AI-видео: от исследования и сценария до рендера и review.",details:[["Проблема","В производстве контента много повторяющихся ручных переходов и точек отказа."],["Что сделал","n8n workflow, локальные LLM, FFmpeg, TTS, субтитры и отдельная панель контроля."],["Граница","Публикация отделена от генерации и требует отдельного review и credentials."]],ask:"Спросить подробнее о pipeline →"},
         feed:{kind:"Инструмент для агентов",desc:"Небольшая утилита, которая приводит RSS/Atom-источники к предсказуемому контенту для AI-агентов.",details:[["Проблема","Агентам постоянно приходится нормализовать несовместимые форматы фидов."],["Что сделал","Компактная Node.js-утилита с узким XML-парсером и ограничением объёма контента."],["Проверка","Рассчитана на Windows, macOS и Linux с небольшим числом зависимостей."]],ask:"Спросить подробнее о FeedPulse →"},
         hh:{kind:"Open-source вклад",desc:"Принятый upstream PR, который добавил управление несколькими профилями в desktop UI существующего проекта.",details:[["Проблема","CLI уже поддерживал изолированные профили, но UI не позволял ими управлять и переключаться."],["Что сделал","Создание, удаление и переключение профилей, auth-state, изоляция данных и runtime guards."],["Проверка","PR #84 принят upstream; 116 regression tests и Chromium/Playwright UI E2E прошли."]],ask:"Спросить подробнее о вкладе →"}
       },
@@ -108,7 +111,8 @@
         tube:[["Архитектура","Как устроен TubeScore?"],["Самая сложная часть","Что было самым сложным в TubeScore?"],["Тестирование","Как ты тестировал TubeScore?"]],
         critic:[["Архитектура","Как устроен AI Critic?"],["Безопасность","Как AI Critic работает с privacy и permissions?"],["Статус","Что реально проверено в AI Critic?"]],
         gac:[["Протокол","Как работает GitHub Agent Continuity?"],["Конкуренция","Как GAC предотвращает конфликты между агентами?"],["Тестирование","Как тестировался GAC?"]],
-        market:[["Архитектура","Как устроен HH Market Scanner?"],["Качество данных","Как HH Market Scanner защищается от плохих данных?"],["Тестирование","Как проверяется HH Market Scanner?"]],\n        shorts:[["Workflow","Как устроен AI video pipeline?"],["Локальный стек","Что в pipeline работает локально?"],["Безопасность","Почему публикация отделена от генерации?"]],
+        market:[["Архитектура","Как устроен HH Market Scanner?"],["Качество данных","Как HH Market Scanner защищается от плохих данных?"],["Тестирование","Как проверяется HH Market Scanner?"]],
+        shorts:[["Workflow","Как устроен AI video pipeline?"],["Локальный стек","Что в pipeline работает локально?"],["Безопасность","Почему публикация отделена от генерации?"]],
         feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Переносимость","Как FeedPulse работает на разных ОС?"]],
         hh:[["Вклад","Что Тимур добавил в hh-applicant-tool?"],["Архитектура","Как реализована изоляция нескольких аккаунтов?"],["Тестирование","Как проверялся этот вклад?"]]
       }
@@ -137,24 +141,30 @@
     experience:["где работал","компан","опыт","career","experience","worked","background"],
     companies:["компан","где работал","employer","company"],
     skills:["умеет","навык","компетенц","skills","can do","capabil"],
-    strengths:["удив","сильн","преимущ","strength","differentiat","unique"],\n    impact:["результат","метрик","цифр","эффект","impact","results","metrics"],
+    strengths:["удив","сильн","преимущ","strength","differentiat","unique"],
+    impact:["результат","метрик","цифр","эффект","impact","results","metrics"],
     fit:["подойд","работ","роль","fit","role","job","suitable"],
     projects:["проект","делал","создал","built","project","portfolio"],
     product:["продукт","mvp","гипотез","product","prototype"],
     process:["процесс","операц","workflow","process"],
-    ai:["ии","ai","llm","нейросет"],\n    agents:["agent","агент"],
+    ai:["ии","ai","llm","нейросет"],
+    agents:["agent","агент"],
     technical:["стек","технолог","api","javascript","node","sql","technical","stack"],
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
     tubescore:["tubescore","tube score"],
     critic:["ai critic","critic","критик"],
     gac:["github agent continuity","gac","continuity"],
-    market:["hh market scanner","market scanner","professions statistics","рынок труда"],\n    shorts:["video pipeline","shorts","youtube shorts","n8n","видео"],
+    market:["hh market scanner","market scanner","professions statistics","рынок труда"],
+    shorts:["video pipeline","shorts","youtube shorts","n8n","видео"],
     feedpulse:["feedpulse","feed pulse"],
     hh:["hh-applicant-tool","hh applicant","multi-account","мультиаккаунт"],
     booktranslator:["book translator","переводчик книг","перевод книг"],
     mindrail:["mindrail","control plane","контрольный слой"],
-    pmo:["pm 0.1","pmo01","инженерия исполнения"],\n    screenpipe:["open-screen-pipe","screenpipe"],\n    plugins:["tim8plugins","policy plugins","policy plugin"],\n    arc:["arc-whitebox","arc whitebox"]
+    pmo:["pm 0.1","pmo01","инженерия исполнения"],
+    screenpipe:["open-screen-pipe","screenpipe"],
+    plugins:["tim8plugins","policy plugins","policy plugin"],
+    arc:["arc-whitebox","arc whitebox"]
   };
 
   function norm(value){
@@ -188,7 +198,9 @@
     const projectTopics=["tubescore","critic","gac","market","shorts","feedpulse","hh","booktranslator","mindrail","pmo","screenpipe","plugins","arc"];
     const specificProject=projectTopics.find(topic=>topics.includes(topic));
     if(specificProject && fact.topics.includes(specificProject)) score+=10;
-    if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;\n    if((topics.includes("experience")||topics.includes("companies")) && fact.id==="portfolio.experience.summary") score+=10;\n    if((topics.includes("impact")||topics.includes("metrics")||topics.includes("results")) && fact.id==="portfolio.impact.summary") score+=12;
+    if(!specificProject && topics.includes("projects") && fact.id.startsWith("portfolio.projects.")) score+=8;
+    if((topics.includes("experience")||topics.includes("companies")) && fact.id==="portfolio.experience.summary") score+=10;
+    if((topics.includes("impact")||topics.includes("metrics")||topics.includes("results")) && fact.id==="portfolio.impact.summary") score+=12;
     if((/расскажи все|расскажи всё|everything|all you know/.test(q)) && fact.id==="portfolio.summary") score+=16;
     const words=new Set(q.split(" ").filter(word=>word.length>3));
     const searchable=norm(fact.text.ru+" "+fact.text.en+" "+fact.id+" "+fact.topics.join(" "));
