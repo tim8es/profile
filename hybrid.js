@@ -7,6 +7,9 @@
     lastSubject: "timur",
     lastIntent: "identity",
     lastProject: null,
+    llmConfigured: false,
+    runtimeMode: "checking",
+    history: [],
     moreCursor: { timur:0, skills:0, audit:0, crm:0, bi:0, invoice:0, book:0, video:0, tube:0, lightning:0, market:0, feed:0 }
   };
 
@@ -22,7 +25,7 @@
       field: { title:"Capability field", hint:"drag / move / click" },
       query: {
         title:"Portfolio Query",
-        status:"local composer",
+        status:"Checking…",
         intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
           ["Projects","What projects are in the portfolio?"],
@@ -89,7 +92,7 @@
       field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай" },
       query: {
         title:"Portfolio Query",
-        status:"local composer",
+        status:"Проверка…",
         intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
           ["Проекты","Какие проекты в портфолио?"],
@@ -537,8 +540,98 @@
   const chatLog=document.querySelector("[data-chat-log]");
   const form=document.querySelector("[data-query-form]");
   const input=document.querySelector("[data-query-input]");
+  const statusEl=document.querySelector("#query > .section-label span:nth-child(2)");
   const suggestions=[...document.querySelectorAll("[data-suggestion]")];
   const askProjectButtons=[...document.querySelectorAll("[data-ask-project]")];
+
+  function renderRuntimeStatus(mode=state.runtimeMode){
+    state.runtimeMode=mode;
+    if(!statusEl)return;
+    const ru=state.lang==="ru";
+    const labels={
+      checking:ru?"● Проверка…":"● Checking…",
+      llm:"● LLM",
+      local:"● Local",
+      fallback:"● Local fallback"
+    };
+    const titles={
+      checking:ru?"Проверяю доступный режим ответа.":"Checking the available answer mode.",
+      llm:ru?"Содержательные ответы формируются LLM на основе данных портфолио.":"Substantive answers are composed by an LLM grounded in the portfolio knowledge base.",
+      local:ru?"Ответ формируется локально в браузере из встроенной базы знаний без LLM-запроса.":"The answer is composed locally in the browser from the built-in knowledge base, with no LLM request.",
+      fallback:ru?"LLM был выбран, но этот запрос не прошёл. Использован локальный ответ.":"LLM was selected, but this request failed. The local answer was used instead."
+    };
+    statusEl.textContent=labels[mode]||labels.local;
+    statusEl.title=titles[mode]||titles.local;
+    statusEl.dataset.mode=mode;
+  }
+
+  async function checkRuntimeMode(){
+    renderRuntimeStatus("checking");
+    try{
+      const controller=new AbortController();
+      const timer=window.setTimeout(()=>controller.abort(),4000);
+      const response=await fetch("/api/status",{cache:"no-store",signal:controller.signal});
+      window.clearTimeout(timer);
+      if(!response.ok)throw new Error("status unavailable");
+      const data=await response.json();
+      state.llmConfigured=Boolean(data?.llmConfigured);
+      renderRuntimeStatus(state.llmConfigured?"llm":"local");
+    }catch{
+      state.llmConfigured=false;
+      renderRuntimeStatus("local");
+    }
+  }
+
+  function collectFacts(result,lang){
+    const a=answers[lang];
+    const facts=[];
+    const seen=new Set();
+    const add=(value)=>{
+      const text=String(value||"").trim();
+      if(!text||seen.has(text))return;
+      seen.add(text);facts.push({text});
+    };
+
+    add(result?.text);
+
+    if(result?.project&&a.project?.[result.project]){
+      const p=a.project[result.project];
+      add(p.overview);add(p.company);add(p.role);add(p.result);add(p.detail);add(p.stack);
+      add(a.identity);add(a.background);add(a.impact);
+    }else{
+      [
+        a.identity,a.background,a.backgroundMore,a.skills,a.impact,
+        a.currentFocus,a.workStyle,a.technicalDepth,a.scope,a.interesting,
+        a.management,a.hire
+      ].forEach(add);
+    }
+    return facts.slice(0,10);
+  }
+
+  async function requestLLM(question,lang,result,history){
+    const controller=new AbortController();
+    const timer=window.setTimeout(()=>controller.abort(),8000);
+    try{
+      const response=await fetch("/api/ask",{
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        cache:"no-store",
+        signal:controller.signal,
+        body:JSON.stringify({
+          question,
+          locale:lang,
+          history:history.slice(-6),
+          facts:collectFacts(result,lang)
+        })
+      });
+      if(!response.ok)throw new Error(`LLM request failed: ${response.status}`);
+      const data=await response.json();
+      if(!data?.answer||typeof data.answer!=="string")throw new Error("LLM returned no answer");
+      return data.answer.trim();
+    }finally{
+      window.clearTimeout(timer);
+    }
+  }
 
   function showThinkingMessage(lang){
     if(!chatLog)return null;
@@ -654,23 +747,47 @@
     if(!chatLog)return;
     chatLog.innerHTML="";
     appendMessage("bot",ui[state.lang].query.intro,null,[],false,state.lang);
-    state.lastSubject="timur";state.lastIntent="identity";state.lastProject=null;
+    state.lastSubject="timur";state.lastIntent="identity";state.lastProject=null;state.history=[];
   }
 
   async function askPortfolio(query){
     const text=String(query||"").trim();
     if(!text)return;
     const lang=qlang(text);
+    const history=state.history.slice(-6);
     appendMessage("user",text,null,[],true,lang);
     const thinking=showThinkingMessage(lang);
     const result=classify(text);
+
     if(result.intent!=="greeting"&&result.intent!=="thanks"&&result.intent!=="unknown"){
       state.lastSubject=result.subject||state.lastSubject;
       state.lastIntent=result.intent;
       state.lastProject=result.project||state.lastProject;
     }
+
+    let answer=result.text;
+    const useLLM=state.llmConfigured&&result.intent!=="greeting"&&result.intent!=="thanks";
+
+    if(useLLM){
+      try{
+        answer=await requestLLM(text,lang,result,history);
+        renderRuntimeStatus("llm");
+      }catch{
+        answer=result.text;
+        renderRuntimeStatus("fallback");
+      }
+    }else{
+      renderRuntimeStatus("local");
+    }
+
+    state.history.push(
+      {role:"user",content:text},
+      {role:"assistant",content:answer}
+    );
+    if(state.history.length>12)state.history=state.history.slice(-12);
+
     if(thinking) await thinking.finish(reduced?0:340);
-    appendMessage("bot",result.text,result.project,[],true,result.lang);
+    appendMessage("bot",answer,result.project,[],true,result.lang);
   }
 
   function openProjectQuestions(id){
@@ -745,7 +862,7 @@
     document.querySelectorAll(".hero-meta span").forEach((el,i)=>{if(t.hero.meta[i])el.textContent=t.hero.meta[i];});
     const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;if(fh[1])fh[1].textContent=t.field.hint;
 
-    const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;
+    const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;renderRuntimeStatus();
     document.querySelectorAll(".suggestions button").forEach((button,i)=>{const pair=t.query.suggestions[i];if(pair){button.textContent=pair[0];button.dataset.suggestion=pair[1];}});
     if(input)input.placeholder=t.query.placeholder;setHTML(".query-hint",t.query.hint);
 
@@ -826,4 +943,5 @@
 
   applyLanguage(state.lang,false);
   resetChatLog();
+  checkRuntimeMode();
 })();
