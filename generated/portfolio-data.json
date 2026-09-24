@@ -156,8 +156,8 @@
         "context"
       ],
       "text": {
-        "ru": "Проект выполнялся в Skyeng; в публичном списке проектов название компании намеренно не показывается.",
-        "en": "The project was done at Skyeng; the company name is intentionally omitted from the public project list."
+        "ru": "Проект выполнялся в Skyeng.",
+        "en": "The project was done at Skyeng."
       },
       "source": {
         "label": "Skyeng project context"
@@ -180,8 +180,8 @@
         "research"
       ],
       "text": {
-        "ru": "Внешние решения для дальнейшей автоматизации аудита были исследованы, но полноценная автоматизированная система аудита внедрена не была.",
-        "en": "External solutions for further audit automation were researched, but a fully automated audit system was not implemented."
+        "ru": "Провёл исследование внешних решений для автоматизации аудита и оценил варианты дальнейшего развития процесса.",
+        "en": "Researched external solutions for audit automation and evaluated options for further development of the process."
       },
       "source": {
         "label": "Audit automation boundary"
@@ -930,8 +930,8 @@
         "data"
       ],
       "text": {
-        "ru": "Настоящий ноль отделён от selector failure, блокировки и неизвестного значения; freshness определяется временем фактического сбора данных, а не временем деплоя.",
-        "en": "A real zero is kept distinct from selector failure, blocking and unknown values; freshness is based on actual collection time rather than deployment time."
+        "ru": "Система отдельно отмечает неполные или ошибочные данные и хранит фактическую дату сбора, чтобы результаты можно было корректно сравнивать во времени.",
+        "en": "The system flags incomplete or invalid observations and keeps the actual collection date so market results can be compared correctly over time."
       },
       "source": {
         "label": "Job Market Scanner data quality"
