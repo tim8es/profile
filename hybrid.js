@@ -473,6 +473,44 @@
   const suggestions=[...document.querySelectorAll("[data-suggestion]")];
   const askProjectButtons=[...document.querySelectorAll("[data-ask-project]")];
 
+  function showThinkingMessage(lang){
+    if(!chatLog)return null;
+    const row=document.createElement("div");
+    row.className="chat-message chat-message--bot chat-message--thinking";
+    const roleEl=document.createElement("span");
+    roleEl.className="chat-role";
+    roleEl.textContent=lang==="ru"?"портфолио":"portfolio";
+    const bubble=document.createElement("div");
+    bubble.className="chat-bubble chat-bubble--thinking";
+    const label=document.createElement("span");
+    label.className="thinking-label";
+    label.textContent=lang==="ru"?"Собираю контекст":"Gathering context";
+    const dots=document.createElement("span");
+    dots.className="thinking-dots";
+    dots.setAttribute("aria-hidden","true");
+    dots.textContent="…";
+    bubble.append(label,dots);
+    row.append(roleEl,bubble);
+    chatLog.appendChild(row);
+    chatLog.scrollTo({top:chatLog.scrollHeight,behavior:reduced?"auto":"smooth"});
+
+    const started=performance.now();
+    const swap=window.setTimeout(()=>{
+      if(row.isConnected) label.textContent=lang==="ru"?"Формирую ответ":"Composing answer";
+    },850);
+
+    return {
+      row,
+      started,
+      async finish(minimum=340){
+        const elapsed=performance.now()-started;
+        if(elapsed<minimum) await new Promise(resolve=>window.setTimeout(resolve,minimum-elapsed));
+        window.clearTimeout(swap);
+        row.remove();
+      }
+    };
+  }
+
   function typeBotText(bubble,text,scroll,onDone){
     const value=String(text||"");
     if(reduced||!scroll||value.length<2){
@@ -552,18 +590,20 @@
     state.lastSubject="timur";state.lastIntent="identity";state.lastProject=null;
   }
 
-  function askPortfolio(query){
+  async function askPortfolio(query){
     const text=String(query||"").trim();
     if(!text)return;
     const lang=qlang(text);
     appendMessage("user",text,null,[],true,lang);
+    const thinking=showThinkingMessage(lang);
     const result=classify(text);
     if(result.intent!=="greeting"&&result.intent!=="thanks"&&result.intent!=="unknown"){
       state.lastSubject=result.subject||state.lastSubject;
       state.lastIntent=result.intent;
       state.lastProject=result.project||state.lastProject;
     }
-    window.setTimeout(()=>appendMessage("bot",result.text,result.project,[],true,result.lang),reduced?0:70);
+    if(thinking) await thinking.finish(reduced?0:340);
+    appendMessage("bot",result.text,result.project,[],true,result.lang);
   }
 
   function openProjectQuestions(id){
