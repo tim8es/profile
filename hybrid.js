@@ -1532,16 +1532,30 @@
     if(state.history.length>12)state.history=state.history.slice(-12);
 
     if(thinking) await thinking.finish(reduced?0:340);
-    appendMessage("bot",answer,result.project,[],true,result.lang,result.evidence||null);
+    const topicActions=result.project?projectQuestionActions(result.project,result.lang):[];
+    appendMessage("bot",answer,result.project,topicActions,true,result.lang,result.evidence||null);
+  }
+
+  function projectQuestionActions(id,lang=state.lang){
+    if(!id||!ui[lang]?.deep?.[id])return [];
+    const names={audit:"Audit Process Consulting",crm:"CRM Product Development",bi:"Operations & BI Dashboards",invoice:"Invoice Automation",book:"Book Translator",video:"AI Video Pipeline",tube:"TubeScore",lightning:"HH Lightning",market:"Job Market Scanner",feed:"FeedPulse"};
+    const name=names[id]||id;
+    const deepIntents=["project-problem","project-workflow","project-role","project-result","project-reliability","project-limitations","project-decision","project-alternatives","project-challenge","project-readiness"];
+    const actions=ui[lang].deep[id].map(([label,query],index)=>({label,query,projectId:id,intent:deepIntents[index]}));
+    actions.push({
+      label:lang==="ru"?"Артефакты":"Artifacts",
+      query:lang==="ru"?`Покажи артефакты ${name}`:`Show me artifacts for ${name}`,
+      projectId:id,
+      intent:"project-evidence"
+    });
+    return actions;
   }
 
   function openProjectQuestions(id){
     const lang=state.lang;
     const names={audit:"Audit Process Consulting",crm:"CRM Product Development",bi:"Operations & BI Dashboards",invoice:"Invoice Automation",book:"Book Translator",video:"AI Video Pipeline",tube:"TubeScore",lightning:"HH Lightning",market:"Job Market Scanner",feed:"FeedPulse"}; const name=names[id]||id;
     state.lastSubject=id;state.lastProject=id;state.lastIntent="project-overview";
-    const deepIntents=["project-problem","project-workflow","project-role","project-result","project-reliability","project-limitations","project-decision","project-alternatives","project-challenge","project-readiness"];
-    const deep=ui[lang].deep[id].map(([label,query],index)=>({label,query,projectId:id,intent:deepIntents[index]}));
-    deep.push({label:lang==="ru"?"Артефакты":"Artifacts",query:lang==="ru"?`Покажи артефакты ${name}`:`Show me artifacts for ${name}`,projectId:id,intent:"project-evidence"});
+    const deep=projectQuestionActions(id,lang);
     appendMessage("user",lang==="ru"?`Спросить подробнее про ${name}`:`Ask deeper about ${name}`,null,[],true,lang);
     appendMessage("bot",`${ui[lang].query.deeper} ${name}:`,null,deep,true,lang);
     document.getElementById("query")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
