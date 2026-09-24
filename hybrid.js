@@ -10,7 +10,8 @@
     llmConfigured: false,
     runtimeMode: "checking",
     history: [],
-    moreCursor: { timur:0, skills:0, audit:0, crm:0, bi:0, invoice:0, book:0, video:0, tube:0, lightning:0, market:0, feed:0 }
+    moreCursor: { timur:0, skills:0, audit:0, crm:0, bi:0, invoice:0, book:0, video:0, tube:0, lightning:0, market:0, feed:0 },
+    seenProjectIntents: {}
   };
 
   const ui = {
@@ -794,7 +795,7 @@
   function startsWithPhrase(q,phrases){return phrases.some(p=>q===norm(p)||q.startsWith(norm(p)+" "));}
   function looksLikeGreeting(q){return startsWithPhrase(q,["привет","здравствуй","здравствуйте","добрый день","добрый вечер","hello","hi","hey"]);}
   function looksLikeThanks(q){return startsWithPhrase(q,["спасибо","благодарю","thanks","thank you"]);}
-  function isMore(q){return hasAny(q,["что еще","что ещё","расскажи еще","расскажи ещё","а еще","а ещё","это все","это всё","и это все","и это всё","больше ничего","what else","tell me more","anything else","is that all","that's all"]);}
+  function isMore(q){return q==="еще"||q==="ещё"||q==="еще?"||q==="ещё?"||q==="more"||hasAny(q,["что еще","что ещё","расскажи еще","расскажи ещё","покажи еще","покажи ещё","дай еще","дай ещё","а еще","а ещё","еще что","ещё что","еще информации","ещё информации","это все","это всё","и это все","и это всё","больше ничего","what else","tell me more","show me more","give me more","anything else","is that all","that's all"]);}
 
   const projectTerms={
     audit:["audit process","audit consulting","аудит процесс","аудит процессов","контроль качества"],
@@ -994,12 +995,46 @@
     }
   };
 
+  function projectMoreResult(lang,id,p,simple){
+    const order=[
+      ["project-challenge",simple.challenge||p.challenge],
+      ["project-decision",simple.decision||p.decision],
+      ["project-alternatives",simple.alternatives||p.alternatives],
+      ["project-reliability",simple.reliability||p.reliability],
+      ["project-limitations",simple.limitations||p.detail],
+      ["project-readiness",simple.readiness||p.readiness],
+      ["project-workflow",simple.workflow||p.workflow],
+      ["project-role",simple.role||p.role],
+      ["project-result",simple.result||p.result],
+      ["project-problem",simple.problem||p.problem]
+    ].filter(([,value])=>Boolean(value));
+
+    const seen=new Set(state.seenProjectIntents[id]||[]);
+    let next=order.find(([intent])=>!seen.has(intent) && intent!==state.lastIntent);
+
+    if(!next){
+      return {
+        lang,
+        intent:"project-more-exhausted",
+        text:lang==="ru"
+          ?"Мы уже прошли основные подтверждённые факты по этому проекту. Можно спросить про конкретную деталь, стек, архитектуру или открыть артефакты."
+          :"We've already covered the main verified facts about this project. You can ask about a specific detail, the stack, architecture, or open the artifacts.",
+        subject:id,
+        project:id
+      };
+    }
+
+    const [intent,text]=next;
+    return {lang,intent,text,subject:id,project:id};
+  }
+
   function projectResult(lang,id,q,forcedIntent=null){
     const p=answers[lang].project[id];
     const simple=projectPlain[lang]?.[id]||p;
     if(!p)return null;
 
     const join=(...parts)=>parts.filter(Boolean).join(" ");
+    if(!forcedIntent&&isMore(q)) return projectMoreResult(lang,id,p,simple);
     if(forcedIntent){
       const exact={
         "project-problem":simple.problem||p.problem,
@@ -1134,7 +1169,12 @@
     if(intent==="hire"||intent==="work-style") return {lang,intent:"hire",text:a.hire+" "+a.workStyle,subject:"timur"};
     if(intent==="scope"||intent==="interesting") return {lang,intent:"scope",text:a.scope+" "+a.interesting,subject:"timur"};
     if(intent==="automation"||intent==="reliability") return {lang,intent:"reliability",text:a.reliability+" "+a.automation,subject:"timur"};
-    return {lang,intent:"identity-more",text:a.identityMore+" "+a.interesting,subject:"timur"};
+
+    const generalMore=[a.interesting,a.scope,a.collaboration,a.decisionMaking,a.whatProblems,a.currentFocus,a.workStyle].filter(Boolean);
+    const cursor=state.moreCursor.timur||0;
+    const text=generalMore[cursor%generalMore.length];
+    state.moreCursor.timur=(cursor+1)%generalMore.length;
+    return {lang,intent:"identity-more",text,subject:"timur"};
   }
 
   function classify(raw){
@@ -1142,6 +1182,7 @@
     if(!q)return{lang,intent:"empty",text:"",subject:state.lastSubject};
     if(looksLikeGreeting(q))return{lang,intent:"greeting",text:a.greeting,subject:"timur"};
     if(looksLikeThanks(q))return{lang,intent:"thanks",text:a.thanks,subject:state.lastSubject};
+    if(isMore(q)) return followupResult(lang,q);
 
     const subject=resolveSubject(q);
     if(subject!=="timur") return projectResult(lang,subject,q);
@@ -1500,7 +1541,7 @@
     chatLog.innerHTML="";
     const quickReplies=ui[state.lang].query.suggestions.map(([label,query])=>({label,query}));
     appendMessage("bot",ui[state.lang].query.intro,null,quickReplies,false,state.lang);
-    state.lastSubject="timur";state.lastIntent="identity";state.lastProject=null;state.history=[];
+    state.lastSubject="timur";state.lastIntent="identity";state.lastProject=null;state.history=[];state.seenProjectIntents={};
   }
 
   async function askPortfolio(query,options={}){
@@ -1520,6 +1561,11 @@
       state.lastSubject=result.subject||state.lastSubject;
       state.lastIntent=result.intent;
       state.lastProject=result.project||state.lastProject;
+      if(result.project&&result.intent?.startsWith("project-")&&result.intent!=="project-more-exhausted"){
+        const seen=state.seenProjectIntents[result.project]||[];
+        if(!seen.includes(result.intent))seen.push(result.intent);
+        state.seenProjectIntents[result.project]=seen;
+      }
     }
 
     let answer=result.text;
