@@ -465,7 +465,11 @@
     const server=await serverAnswer(text,facts,lang);
     const answer=server||local;
     const project=facts.find(f=>f.context?.projectId)?.context?.projectId;
-    const projectId=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"].includes(project)?project:null;
+    const projectTermsInQuery=["audit process","crm product","operations bi","invoice automation","book translator","ai video pipeline","tubescore","tube score","hh lightning","job market scanner","feedpulse","аудит процесс","crm система","дашборд","инвойс","перевод книг"];
+    const explicitProject=projectTermsInQuery.some(term=>norm(text).includes(norm(term)));
+    const contextualProject=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"].includes(state.lastSubject)
+      && /^(что еще|что ещё|а еще|а ещё|подробнее|больше|what else|tell me more|more)/.test(norm(text));
+    const projectId=(explicitProject||contextualProject)&&["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"].includes(project)?project:null;
 
     const globalPerson=/\b(тимур|ты|тебя|твой|твои|timur|you|your)\b/.test(norm(text));
     state.lastSubject=projectId&&!globalPerson?projectId:"timur";
