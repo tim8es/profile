@@ -365,6 +365,8 @@
       if(terms.some(term=>q.includes(norm(term)))) return id;
     }
     if(isMore(q) && selectedProjects.has(state.lastSubject)) return state.lastSubject;
+    const followupIntent=hasAny(q,["где","компан","контекст","роль","отвечал","результат","метрик","эффект","масштаб","стек","технолог","архитект","как устро","нюанс","огранич","почему","where","company","role","responsib","result","impact","metric","scale","stack","technology","architecture","detail","constraint","why","how"]);
+    if(followupIntent && selectedProjects.has(state.lastSubject)) return state.lastSubject;
     return "timur";
   }
 
