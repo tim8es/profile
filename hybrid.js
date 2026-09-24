@@ -541,6 +541,7 @@
       "в нем","в нём","он работает","она работает","как он","как она","его архитект","его стек",
       "зачем делался","зачем делали","какую проблему","какую програм","какие предпосыл","какая статистика",
       "какие результаты","результаты проекта","метрики проекта","что нормализует","на разных ос","разных os",
+      "за что отвечал","что делал","что сделал","что реализовал","что спроектировал","как проверял","как тестировал","какой результат",
       "this project","the project","of the project","in it","how does it","how it works","its stack","its architecture",
       "why was it built","what problem","what prompted","project results","project metrics","technical stats","across operating systems"
     ]);
@@ -577,6 +578,8 @@
       text=p.formats||join(p.workflow,p.stack,p.detail);intent="project-formats";
     }else if(hasAny(q,["как работает","как устроен workflow","механик","процесс работы","workflow","how does it work","how it works","flow"])){
       text=p.workflow||join(p.overview,p.stack,p.detail);intent="project-workflow";
+    }else if(hasAny(q,["надежност","надёжност","провер","тестир","валидац","ошиб","сбой","дубл","reliability","verification","testing","validation","failure","error","duplicate"])){
+      text=p.reliability||join(p.detail,p.result);intent="project-reliability";
     }else if(hasAny(q,["статистик","сколько тест","технические цифр","technical stats","statistics","test matrix"])){
       text=p.stats||join(p.result,p.detail);intent="project-stats";
     }else if(hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"])){
@@ -724,7 +727,7 @@
     if(result?.project&&a.project?.[result.project]){
       const p=a.project[result.project];
       add(p.overview);add(p.company);add(p.role);add(p.problem);add(p.premise);add(p.workflow);
-      add(p.formats);add(p.portability);add(p.result);add(p.stats);add(p.detail);add(p.stack);
+      add(p.reliability);add(p.formats);add(p.portability);add(p.result);add(p.stats);add(p.detail);add(p.stack);
       add(a.identity);add(a.background);add(a.impact);
     }else{
       [
