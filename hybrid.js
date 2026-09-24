@@ -585,6 +585,205 @@
     }
   };
 
+  const projectEvidence={
+    en:{
+      audit:{
+        title:"Case evidence",
+        note:"No internal corporate screenshots are published. This is a factual process diagram, not a reconstructed UI screenshot.",
+        flow:["Google Workspace","Process mapping","Internal CRM","Operational workflow"],
+        facts:["~20% faster processing","Used in the real process"],
+        artifacts:["process redesign","CRM migration"],
+        links:[]
+      },
+      crm:{
+        title:"Case evidence",
+        note:"No customer or internal CRM screenshots are published. The diagram shows the verified delivery scope.",
+        flow:["Business need","Backlog","Web / Mobile / Backend","Integrations","Release"],
+        facts:["4 web apps","2 mobile apps","> RUB 20M dev/support budget","SaaS + on-premise"],
+        artifacts:["multi-app product scope","release delivery"],
+        links:[]
+      },
+      bi:{
+        title:"Case evidence",
+        note:"The underlying dashboards were internal, so no fabricated screenshots are shown.",
+        flow:["Operational data","SQL","Yandex DataLens","Dashboards","Regular reporting"],
+        facts:["20 products","~70% less reporting preparation time"],
+        artifacts:["metric layer","operational dashboards"],
+        links:[]
+      },
+      invoice:{
+        title:"Working-output evidence",
+        note:"The verified production artifact is automated invoice generation; private accounting documents are not exposed.",
+        flow:["Source data","Validation","n8n + JavaScript","Invoice document","Accounting cycle"],
+        facts:["< 15 sec / invoice","Used in real monthly cycles"],
+        artifacts:["generated invoice","validation workflow"],
+        links:[]
+      },
+      book:{
+        title:"Technical artifacts",
+        note:"The public repository exposes the durable workflow and state model used to resume long-form translation.",
+        flow:["Source","Extraction","Durable book state","Translator","Reviewer","Output"],
+        facts:["EPUB / HTML / MD / TXT","SHA-256 source manifest","Resume across sessions"],
+        artifacts:["progress.json","glossary.md","style-guide.md","source-manifest.json"],
+        links:[
+          {label:"GitHub ↗",href:"https://github.com/tim8es/book-translator"},
+          {label:"README / workflow ↗",href:"https://github.com/tim8es/book-translator#readme"}
+        ]
+      },
+      video:{
+        title:"Pipeline artifacts",
+        note:"The repository documents the real local production pipeline and its generated output types.",
+        flow:["Research / topic","LLM script","TTS","Subtitles","FFmpeg render","Review"],
+        facts:["1080×1920 H.264","WAV narration","SRT captions","Publishing kept separate"],
+        artifacts:["short.mp4","narration.wav","captions.srt","n8n workflow"],
+        links:[
+          {label:"GitHub ↗",href:"https://github.com/tim8es/n8n-youtube-shorts-workflow"},
+          {label:"Operations guide ↗",href:"https://github.com/tim8es/n8n-youtube-shorts-workflow/blob/main/docs/PIPELINE_OPERATIONS_GUIDE.md"}
+        ]
+      },
+      tube:{
+        title:"Public product evidence",
+        note:"TubeScore is publicly installable. The Store page is the closest available real visual artifact; the repository exposes the implementation and verification path.",
+        flow:["YouTube page","Metadata","Service worker","Wikidata","Deterministic match","Rating card"],
+        facts:["Published in Chrome Web Store","Zero-token runtime","No own backend","Browser smoke verification"],
+        artifacts:["Manifest V3 extension","rating overlay","source-selection UI"],
+        links:[
+          {label:"Chrome Web Store ↗",href:"https://chromewebstore.google.com/detail/tubescore/nalkekfbhfagmgbaifmhlphihnddkfkc"},
+          {label:"GitHub ↗",href:"https://github.com/tim8es/TubeScore"}
+        ]
+      },
+      lightning:{
+        title:"Public product evidence",
+        note:"HH Lightning is published in Chrome Web Store. Its source repository is private, so the portfolio links only to evidence that a visitor can actually access.",
+        flow:["hh.ru","Browser extension","Vacancy / resume context","AI-assisted actions","Analytics","License backend"],
+        facts:["Chrome Web Store publication","Manifest V3","AI cover-letter / vacancy flows","Resume analytics"],
+        artifacts:["browser extension","analytics UI","job-search automation"],
+        links:[
+          {label:"Chrome Web Store ↗",href:"https://chromewebstore.google.com/detail/hunterjob-lightning-%E2%80%94-%D0%B0%D0%BD%D0%B0/ojncamdnpfncebicocmoaidgdcmckmpa"}
+        ]
+      },
+      market:{
+        title:"Live product evidence",
+        note:"The live site is the real visual artifact. Dataset freshness is determined by collected data, not deployment time.",
+        flow:["hh.ru","Resumable collector","Contract validation","Snapshots","Next.js","Live site"],
+        facts:["Live Vercel product","Versioned snapshots","Resumable collection","Production-build verification"],
+        artifacts:["market-snapshot.v1","market-batch.v1","history view"],
+        links:[
+          {label:"Open live site ↗",href:"https://professions-statistics.vercel.app"}
+        ]
+      },
+      feed:{
+        title:"Technical artifacts",
+        note:"FeedPulse is primarily infrastructure, so the strongest evidence is its public runtime contract, data model and cross-platform CI rather than a UI screenshot.",
+        flow:["RSS / Atom","Fetch + parse","Normalize","Filter + dedupe","Versioned JSON","Agent"],
+        facts:["1 runtime dependency","3 OS × 3 Node versions","JSON schema v2","Explicit partial failures"],
+        artifacts:["feeds.json","check JSON","data-model.md","CLI contract"],
+        links:[
+          {label:"GitHub ↗",href:"https://github.com/tim8es/tim8skills/tree/main/feed-pulse"},
+          {label:"Data model ↗",href:"https://github.com/tim8es/tim8skills/blob/main/feed-pulse/references/data-model.md"}
+        ]
+      }
+    },
+    ru:{
+      audit:{
+        title:"Доказательства кейса",
+        note:"Внутренние корпоративные скриншоты не публикуются. Ниже — фактическая схема процесса, а не реконструкция интерфейса.",
+        flow:["Google Workspace","Process mapping","Внутренняя CRM","Рабочий процесс"],
+        facts:["≈ +20% к скорости обработки","Использовалось в реальном процессе"],
+        artifacts:["переработка процесса","CRM migration"],
+        links:[]
+      },
+      crm:{
+        title:"Доказательства кейса",
+        note:"Клиентские и внутренние CRM-экраны не публикуются. Схема показывает подтверждённый scope delivery.",
+        flow:["Бизнес-задача","Backlog","Web / Mobile / Backend","Интеграции","Release"],
+        facts:["4 web-приложения","2 mobile-приложения","> 20 млн ₽ бюджет разработки/поддержки","SaaS + on-premise"],
+        artifacts:["multi-app product scope","release delivery"],
+        links:[]
+      },
+      bi:{
+        title:"Доказательства кейса",
+        note:"Исходные дашборды были внутренними, поэтому поддельных screenshots здесь нет.",
+        flow:["Операционные данные","SQL","Yandex DataLens","Дашборды","Регулярная отчётность"],
+        facts:["20 продуктов","≈ −70% времени на подготовку отчётности"],
+        artifacts:["metric layer","операционные дашборды"],
+        links:[]
+      },
+      invoice:{
+        title:"Артефакты результата",
+        note:"Подтверждённый production-артефакт — автоматическая генерация инвойсов; приватные бухгалтерские документы не публикуются.",
+        flow:["Исходные данные","Validation","n8n + JavaScript","Инвойс","Бухгалтерский цикл"],
+        facts:["< 15 сек / инвойс","Реальные ежемесячные циклы"],
+        artifacts:["generated invoice","validation workflow"],
+        links:[]
+      },
+      book:{
+        title:"Технические артефакты",
+        note:"Публичный репозиторий показывает durable workflow и state model для продолжения длинного перевода между сессиями.",
+        flow:["Исходник","Extraction","Durable book state","Translator","Reviewer","Output"],
+        facts:["EPUB / HTML / MD / TXT","SHA-256 source manifest","Resume между сессиями"],
+        artifacts:["progress.json","glossary.md","style-guide.md","source-manifest.json"],
+        links:[
+          {label:"GitHub ↗",href:"https://github.com/tim8es/book-translator"},
+          {label:"README / workflow ↗",href:"https://github.com/tim8es/book-translator#readme"}
+        ]
+      },
+      video:{
+        title:"Артефакты pipeline",
+        note:"Репозиторий документирует реальный локальный production pipeline и типы его выходных файлов.",
+        flow:["Research / topic","LLM script","TTS","Субтитры","FFmpeg render","Review"],
+        facts:["1080×1920 H.264","WAV-озвучка","SRT-субтитры","Publishing отделён"],
+        artifacts:["short.mp4","narration.wav","captions.srt","n8n workflow"],
+        links:[
+          {label:"GitHub ↗",href:"https://github.com/tim8es/n8n-youtube-shorts-workflow"},
+          {label:"Operations guide ↗",href:"https://github.com/tim8es/n8n-youtube-shorts-workflow/blob/main/docs/PIPELINE_OPERATIONS_GUIDE.md"}
+        ]
+      },
+      tube:{
+        title:"Публичные доказательства",
+        note:"TubeScore можно установить публично. Страница Store — доступный реальный визуальный артефакт; GitHub показывает реализацию и verification.",
+        flow:["YouTube","Metadata","Service worker","Wikidata","Deterministic match","Rating card"],
+        facts:["Опубликован в Chrome Web Store","Zero-token runtime","Без собственного backend","Browser smoke verification"],
+        artifacts:["Manifest V3 extension","rating overlay","source-selection UI"],
+        links:[
+          {label:"Chrome Web Store ↗",href:"https://chromewebstore.google.com/detail/tubescore/nalkekfbhfagmgbaifmhlphihnddkfkc"},
+          {label:"GitHub ↗",href:"https://github.com/tim8es/TubeScore"}
+        ]
+      },
+      lightning:{
+        title:"Публичные доказательства",
+        note:"HH Lightning опубликован в Chrome Web Store. Репозиторий private, поэтому портфолио показывает только то, что посетитель действительно может открыть.",
+        flow:["hh.ru","Browser extension","Vacancy / resume context","AI-assisted actions","Analytics","License backend"],
+        facts:["Публикация в Chrome Web Store","Manifest V3","AI vacancy / cover-letter flow","Resume analytics"],
+        artifacts:["browser extension","analytics UI","job-search automation"],
+        links:[
+          {label:"Chrome Web Store ↗",href:"https://chromewebstore.google.com/detail/hunterjob-lightning-%E2%80%94-%D0%B0%D0%BD%D0%B0/ojncamdnpfncebicocmoaidgdcmckmpa"}
+        ]
+      },
+      market:{
+        title:"Live-доказательства",
+        note:"Live-сайт — настоящий визуальный артефакт. Свежесть dataset определяется датой сбора данных, а не датой deployment.",
+        flow:["hh.ru","Resumable collector","Contract validation","Snapshots","Next.js","Live site"],
+        facts:["Live Vercel product","Versioned snapshots","Resumable collection","Production-build verification"],
+        artifacts:["market-snapshot.v1","market-batch.v1","history view"],
+        links:[
+          {label:"Открыть live site ↗",href:"https://professions-statistics.vercel.app"}
+        ]
+      },
+      feed:{
+        title:"Технические артефакты",
+        note:"FeedPulse — infrastructure utility, поэтому сильнейшие доказательства здесь — публичный runtime contract, data model и cross-platform CI, а не UI screenshot.",
+        flow:["RSS / Atom","Fetch + parse","Normalize","Filter + dedupe","Versioned JSON","Agent"],
+        facts:["1 runtime-зависимость","3 ОС × 3 Node versions","JSON schema v2","Явные partial failures"],
+        artifacts:["feeds.json","check JSON","data-model.md","CLI contract"],
+        links:[
+          {label:"GitHub ↗",href:"https://github.com/tim8es/tim8skills/tree/main/feed-pulse"},
+          {label:"Data model ↗",href:"https://github.com/tim8es/tim8skills/blob/main/feed-pulse/references/data-model.md"}
+        ]
+      }
+    }
+  };
+
   function qlang(text){
     const c=(text.match(/[А-Яа-яЁё]/g)||[]).length;
     const l=(text.match(/[A-Za-zА-Яа-яЁё]/g)||[]).length;
