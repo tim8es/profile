@@ -38,7 +38,7 @@ export async function onRequest(context) {
   }
 
   const factBlock = facts
-    .slice(0, 10)
+    .slice(0, 18)
     .map((fact, index) => `[${index + 1}] ${fact.text}`)
     .join("\n");
 
