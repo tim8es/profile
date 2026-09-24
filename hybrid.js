@@ -842,10 +842,59 @@
     if(!p)return null;
 
     const join=(...parts)=>parts.filter(Boolean).join(" ");
+    const wants={
+      evidence:hasAny(q,["покажи","как выглядит","артефакт","доказательств","скриншот","пример результата","evidence","artifact","screenshot","show me","what does it look like","demo"]),
+      company:hasAny(q,["где","компан","контекст","where","company","employer"]),
+      role:hasAny(q,["роль","отвечал","responsib","role","what did timur do","что сделал","что делал","что реализовал","что спроектировал"]),
+      decision:hasAny(q,["почему ты сделал именно так","почему сделал именно так","почему именно так","почему такой подход","почему выбрал","why did you do it this way","why this approach","why did you choose","why was this approach chosen"]),
+      alternatives:hasAny(q,["какие варианты рассматривал","какие варианты","какие альтернатив","что рассматривал","альтернативы","alternatives","other options","what options","what alternatives"]),
+      challenge:hasAny(q,["что было самым сложным","самым сложным","самым слож","сложнее всего","главная сложност","hardest part","most difficult","biggest challenge","main challenge"]),
+      readiness:hasAny(q,["production-ready","production ready","что уже production","что готово к production","что готово в production","что уже готово","что готово","готовность проекта","production status","ready for production","what is production ready"]),
+      premise:hasAny(q,["предпосыл","почему появился","с чего начался","откуда идея","what prompted","origin","why start","why did you start"]),
+      problem:hasAny(q,["какую проблему","какую програм","проблему реш","зачем нужен","зачем делался","зачем делали","для чего","purpose","what problem","why was it built","why build","use case"]),
+      portability:hasAny(q,["как работает на разных","на разных ос","разных os","windows","macos","linux","cross-platform","cross platform","operating systems","portable","portability"]),
+      formats:hasAny(q,["что нормализует","какие форматы","форматы","rss","atom","what does it normalize","formats","data model"]),
+      workflow:hasAny(q,["как работает","как устроен workflow","механик","процесс работы","workflow","how does it work","how it works","flow"]),
+      reliability:hasAny(q,["надежност","надёжност","провер","тестир","валидац","ошиб","сбой","дубл","reliability","verification","testing","validation","failure","error","duplicate"]),
+      stats:hasAny(q,["статистик","сколько тест","технические цифр","technical stats","statistics","test matrix"]),
+      result:hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"]),
+      stack:hasAny(q,["стек","технолог","архитект","stack","technology","architecture","how built"]),
+      limitations:hasAny(q,["огранич","не умеет","не делает","компромисс","trade-off","tradeoff","limitations","does not","can't","cannot"])
+    };
+    if(wants.portability)wants.workflow=false;
+    const compositeParts=[];
+    const push=(flag,value)=>{if(flag&&value&&!compositeParts.includes(value))compositeParts.push(value);};
+    push(wants.company,p.company);
+    push(wants.role,p.role);
+    push(wants.problem,p.problem);
+    push(wants.premise,p.premise);
+    push(wants.decision,p.decision);
+    push(wants.alternatives,p.alternatives);
+    push(wants.challenge,p.challenge);
+    push(wants.workflow,p.workflow);
+    push(wants.portability,p.portability);
+    push(wants.formats,p.formats);
+    push(wants.reliability,p.reliability);
+    push(wants.result,p.result);
+    push(wants.stats,p.stats);
+    push(wants.stack,p.stack);
+    push(wants.limitations,p.detail);
+    push(wants.readiness,p.readiness);
+    if(compositeParts.length>=2){
+      return {
+        lang,
+        intent:"project-composite",
+        text:compositeParts.join(" "),
+        subject:id,
+        project:id,
+        evidence:wants.evidence?id:null
+      };
+    }
+
     let text;
     let intent="project-overview";
 
-    if(hasAny(q,["покажи","как выглядит","артефакт","доказательств","скриншот","пример результата","evidence","artifact","screenshot","show me","what does it look like","demo"])){
+    if(wants.evidence){
       text=lang==="ru"
         ?"Вот доступные проверяемые артефакты и схема реализации. Если публичного screenshot нет, я показываю только фактическую схему и доступные внешние доказательства."
         :"Here are the available verifiable artifacts and implementation evidence. When no public screenshot exists, only factual diagrams and accessible external evidence are shown.";
