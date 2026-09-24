@@ -78,7 +78,7 @@
         tube:[["Architecture","How is TubeScore built?"],["Matching","How does TubeScore identify the right movie?"],["Testing","How did you test TubeScore?"]],
         lightning:[["Product","What can HH Lightning do?"],["Backend","How does the license and payment backend work?"],["AI","How is AI used in HH Lightning?"]],
         market:[["Architecture","How is Job Market Scanner built?"],["Data quality","How does it avoid bad market data?"],["Collector","How does collection resume after interruption?"]],
-        feed:[["Architecture","How is FeedPulse built?"],["Formats","What does FeedPulse normalize?"],["Portability","How does it stay cross-platform?"]]
+        feed:[["Problem","What problem does FeedPulse solve?"],["Workflow","How does FeedPulse work?"],["Formats","What does FeedPulse normalize?"],["Reliability","How does FeedPulse handle failures and duplicates?"],["Portability","How does it work across operating systems?"],["Metrics","What technical stats does FeedPulse have?"]]
       }
     },
     ru: {
@@ -145,7 +145,7 @@
         tube:[["Архитектура","Как устроен TubeScore?"],["Matching","Как TubeScore определяет правильный фильм?"],["Тестирование","Как тестировался TubeScore?"]],
         lightning:[["Продукт","Что умеет HH Lightning?"],["Backend","Как устроены лицензии и платежи?"],["AI","Как AI используется в HH Lightning?"]],
         market:[["Архитектура","Как устроен Job Market Scanner?"],["Качество данных","Как он защищается от плохих данных?"],["Сбор","Как сбор продолжается после прерывания?"]],
-        feed:[["Архитектура","Как устроен FeedPulse?"],["Форматы","Что нормализует FeedPulse?"],["Переносимость","Как он работает на разных ОС?"]]
+        feed:[["Проблема","Какую проблему решает FeedPulse?"],["Workflow","Как работает FeedPulse?"],["Форматы","Что нормализует FeedPulse?"],["Надёжность","Как FeedPulse обрабатывает ошибки и дубли?"],["Переносимость","Как он работает на разных ОС?"],["Метрики","Какая техническая статистика у FeedPulse?"]]
       }
     }
   };
@@ -265,12 +265,18 @@
           stack:"Chrome Manifest V3, versioned data contracts, file-backed persistence, Next.js, deterministic fixtures and production-build verification."
         },
         feed:{
-          overview:"FeedPulse is a lightweight content-ingestion utility for AI agents.",
+          overview:"FeedPulse is a deterministic RSS/Atom ingestion and monitoring utility for AI agents. It moves feed retrieval, parsing, filtering, deduplication and persistent state out of the model and leaves analysis/summarization to the agent.",
           company:"This is Timur's own open-source utility inside tim8skills.",
-          role:"He designed it as a small reusable layer rather than making every agent reimplement feed parsing.",
-          result:"It normalizes RSS/Atom-style sources into predictable bounded content for downstream processing.",
-          detail:"The implementation intentionally keeps the dependency surface small and targets Windows, macOS and Linux.",
-          stack:"Node.js, XML/feed parsing and cross-platform CLI-style workflow."
+          role:"He designed it as a small reusable runtime layer so every agent does not have to reimplement network access, XML parsing, date handling, filtering, deduplication and feed state.",
+          problem:"The problem is repeated, inconsistent feed ingestion inside agent workflows. An agent should receive a stable structured result instead of spending model context and custom logic on parsing RSS/Atom, tracking state and deciding whether a failed source means no updates.",
+          premise:"The project started from a separation-of-responsibility idea: deterministic operations such as fetching, XML parsing, filtering and deduplication belong in code; the model should work on the retrieved content. Mutable feed state should also live outside the skill code so upgrades do not overwrite user configuration.",
+          workflow:"The CLI supports add, list, remove and check. A check fetches configured feeds, parses RSS/Atom, normalizes entries, applies category/time/keyword filters, deduplicates items, updates successful feed state and returns a versioned JSON response for the agent. Partial source failures are returned explicitly instead of being treated as empty feeds.",
+          formats:"It accepts RSS and Atom feeds. The canonical agent response is schema_version 2 JSON. Feed-provided summary and content are kept separately: summaries are bounded to 2,000 characters and content to 8,000, with explicit truncation flags. Item identity prefers feed GUID/ID, then URL, then a deterministic SHA-256 fallback.",
+          portability:"The runtime requires Node.js 18+ and resolves persistent state from the current user's home directory, so the same CLI works on Windows, macOS and Linux. CI tests the project across all three operating systems and Node.js 18, 20 and 22; FEED_PULSE_DATA_DIR can isolate state for tests, CI or agent runtimes.",
+          result:"The result is a working reusable CLI/runtime with persistent feed configuration, deterministic normalization, filtering and deduplication, structured partial-failure reporting and a stable JSON interface for agents.",
+          stats:"Verified technical characteristics: one runtime dependency (fast-xml-parser 5.11.1); CI covers 3 operating systems × 3 Node.js versions; HTTP timeout is 10 seconds; redirects are capped at 5; responses at 5 MiB; summaries at 2,000 characters and feed content at 8,000. The portfolio does not claim user, revenue or adoption metrics for FeedPulse.",
+          detail:"FeedPulse does not crawl linked article pages. It returns feed-provided summary/content and the item URL; when full-page reading is needed, the agent must open that URL separately. Missing publication dates stay unknown, and a failed source is never silently interpreted as zero updates.",
+          stack:"Node.js 18+, fast-xml-parser, Node's built-in test runner, JSON CLI contracts and filesystem-backed state."
         }
       },
       unknown:"I don't have a reliable local answer to that. Try asking about a named project, company/context, role, result, stack or Timur's background."
@@ -389,12 +395,18 @@
           stack:"Chrome Manifest V3, versioned data contracts, file-backed persistence, Next.js, deterministic fixtures и production-build verification."
         },
         feed:{
-          overview:"FeedPulse — лёгкая утилита ingestion контента для AI-агентов.",
+          overview:"FeedPulse — детерминированная утилита для ingestion и мониторинга RSS/Atom-лент AI-агентами. Сеть, XML parsing, фильтрация, deduplication и persistent state вынесены из модели; агент получает структурированный результат и занимается анализом.",
           company:"Это собственная open-source утилита Тимура внутри tim8skills.",
-          role:"Она спроектирована как небольшой переиспользуемый слой, чтобы агентам не приходилось заново реализовывать feed parsing.",
-          result:"FeedPulse нормализует RSS/Atom-источники в предсказуемый bounded content для последующей обработки.",
-          detail:"Реализация намеренно сохраняет небольшой dependency surface и рассчитана на Windows, macOS и Linux.",
-          stack:"Node.js, XML/feed parsing и cross-platform workflow."
+          role:"Тимур спроектировал её как небольшой переиспользуемый runtime-слой, чтобы каждому агенту не приходилось заново реализовывать network access, XML parsing, работу с датами, фильтрацию, deduplication и состояние лент.",
+          problem:"FeedPulse решает проблему повторной и нестабильной обработки фидов внутри agent-workflow. Агенту нужен предсказуемый структурированный результат, а не расход контекста и отдельная логика для RSS/Atom, состояния и различения «нет обновлений» от «источник сломался».",
+          premise:"Предпосылка проекта — разделить ответственность: детерминированные операции вроде загрузки, XML parsing, фильтрации и deduplication должны выполняться кодом, а модель — анализировать уже полученный контент. Изменяемое состояние лент также хранится отдельно от кода skill, чтобы обновление skill не затирало пользовательскую конфигурацию.",
+          workflow:"CLI поддерживает add, list, remove и check. При check он загружает настроенные ленты, разбирает RSS/Atom, нормализует записи, применяет фильтры по категории/времени/ключевым словам, удаляет дубли, обновляет состояние успешно проверенных фидов и возвращает агенту versioned JSON. Частичные ошибки источников показываются явно.",
+          formats:"Поддерживаются RSS и Atom. Канонический интерфейс для агента — JSON schema_version 2. Feed-provided summary и content хранятся отдельно: summary ограничен 2 000 символами, content — 8 000, с явными флагами truncation. ID записи выбирается из GUID/ID, затем URL, затем детерминированного SHA-256 fallback.",
+          portability:"Runtime требует Node.js 18+ и определяет каталог состояния через home directory текущего пользователя, поэтому один CLI работает на Windows, macOS и Linux. CI проверяет все три ОС на Node.js 18, 20 и 22; FEED_PULSE_DATA_DIR позволяет изолировать состояние для тестов, CI или отдельного agent runtime.",
+          result:"Результат — рабочий переиспользуемый CLI/runtime с persistent feed configuration, детерминированной нормализацией, фильтрацией и deduplication, явной обработкой partial failures и стабильным JSON-интерфейсом для агентов.",
+          stats:"Проверяемая техническая статистика: одна runtime-зависимость — fast-xml-parser 5.11.1; CI покрывает 3 ОС × 3 версии Node.js; HTTP timeout — 10 секунд; максимум 5 redirects; ответ — до 5 MiB; summary — до 2 000 символов; feed content — до 8 000. Пользовательские, revenue или adoption-метрики для FeedPulse в портфолио не заявлены.",
+          detail:"FeedPulse не открывает саму страницу статьи. Он отдаёт текст, который пришёл в feed, и URL; если нужен полный материал, агент должен отдельно открыть ссылку. Отсутствующая дата публикации остаётся неизвестной, а ошибка источника никогда не трактуется как отсутствие обновлений.",
+          stack:"Node.js 18+, fast-xml-parser, встроенный Node test runner, JSON CLI contracts и filesystem-backed state."
         }
       },
       unknown:"В локальной базе нет надёжного ответа на этот вопрос. Можно спросить про конкретный проект, компанию/контекст, роль, результат, стек или опыт Тимура."
