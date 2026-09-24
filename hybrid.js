@@ -18,9 +18,9 @@
         eyebrow:"Product builder / process thinker",
         title:"Build.<br><span>Automate.</span><br>Simplify.",
         lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
-        meta:["Product → prototype","AI-native workflow","Hands-on builder"]
+        meta:["Product → prototype","AI-native workflow"]
       },
-      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Agents"] },
+      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Process","Analytics / BI","APIs & Integrations","Delivery","Browser tools"] },
       query: {
         title:"Portfolio Query",
         status:"contextual local engine / 0 MB model download",
@@ -82,9 +82,9 @@
         eyebrow:"Product builder / системное мышление",
         title:"Создаю.<br><span>Автоматизирую.</span><br>Упрощаю.",
         lede:"Превращаю размытые задачи и неудобные процессы в небольшие работающие продукты — с помощью AI, автоматизации и кода.",
-        meta:["От задачи → к прототипу","AI-native подход","Делаю руками"]
+        meta:["От задачи → к прототипу","AI-native подход"]
       },
-      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Агенты"] },
+      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Процессы","Аналитика / BI","API и интеграции","Delivery","Browser tools"] },
       query: {
         title:"Portfolio Query",
         status:"контекстный локальный движок / 0 МБ модели",
@@ -485,17 +485,6 @@
     if((event.key==="/"||event.code==="Slash")&&!editing&&input){event.preventDefault();input.focus();}
   });
 
-  // Theme
-  const themeToggle=document.querySelector("[data-theme-toggle]");
-  const savedTheme=localStorage.getItem("portfolio-theme");
-  const preferredTheme=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
-  function setTheme(theme){
-    html.dataset.theme=theme;localStorage.setItem("portfolio-theme",theme);
-    themeToggle?.setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");
-  }
-  setTheme(savedTheme||preferredTheme);
-  themeToggle?.addEventListener("click",()=>setTheme(html.dataset.theme==="dark"?"light":"dark"));
-
   // Language
   const langToggle=document.querySelector("[data-lang-toggle]");
   const langLabel=document.querySelector("[data-lang-label]");
@@ -562,28 +551,37 @@
   const fieldButtons=[...document.querySelectorAll("[data-field-query]")];
   fieldButtons.forEach((button)=>button.addEventListener("click",()=>{
     const map={
-      AI:{en:"Show me AI work",ru:"Покажи работу с ИИ"},
+      AI:{en:"Show me AI and automation work",ru:"Покажи работу с AI и автоматизацией"},
       automation:{en:"How do you automate processes?",ru:"Как ты автоматизируешь процессы?"},
-      product:{en:"Tell me about product thinking",ru:"Расскажи про продуктовый подход"},
+      product:{en:"Tell me about CRM Product Development",ru:"Расскажи про CRM Product Development"},
+      process:{en:"Tell me about Audit Process Consulting",ru:"Расскажи про Audit Process Consulting"},
+      analytics:{en:"Tell me about Operations & BI Dashboards",ru:"Расскажи про Operations & BI Dashboards"},
+      integrations:{en:"What stack do you use?",ru:"Какой стек ты используешь?"},
+      delivery:{en:"What was Timur responsible for in CRM Product Development?",ru:"За что Тимур отвечал в CRM Product Development?"},
+      browser:{en:"Tell me about HH Lightning",ru:"Расскажи про HH Lightning"},
       agents:{en:"Tell me about AI agents",ru:"Расскажи про AI-агентов"}
     };
     askPortfolio(map[button.dataset.fieldQuery]?.[state.lang]||button.dataset.fieldQuery);
     document.getElementById("query")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
   }));
 
-  const labels={en:["AI","Agents","APIs","Automation","Product","Data","QA","Open source"],ru:["ИИ","Агенты","API","Автоматизация","Продукт","Данные","QA","Open source"]};
+  const labels={en:["AI","Automation","Product","Process","Analytics / BI","APIs","Delivery","Browser","Agents","SQL / Data","JS / Node","n8n"],ru:["ИИ","Автоматизация","Продукт","Процессы","Аналитика / BI","API","Delivery","Browser","Агенты","SQL / Данные","JS / Node","n8n"]};
   if(canvas){
     const ctx=canvas.getContext("2d");
     if(ctx){
       const caps=[
-        {x:-.62,y:-.5,q:{en:"Show me AI work",ru:"Покажи работу с ИИ"}},
-        {x:-.12,y:-.68,q:{en:"Tell me about AI agents",ru:"Расскажи про AI-агентов"}},
-        {x:.56,y:-.48,q:{en:"What stack do you use?",ru:"Какой стек ты используешь?"}},
-        {x:-.58,y:.16,q:{en:"How do you automate processes?",ru:"Как ты автоматизируешь процессы?"}},
-        {x:.06,y:.04,q:{en:"Tell me about product thinking",ru:"Расскажи про продуктовый подход"}},
-        {x:.62,y:.22,q:{en:"What stack do you use?",ru:"Какие технологии ты используешь?"}},
-        {x:-.18,y:.58,q:{en:"How did you test TubeScore?",ru:"Как ты тестировал TubeScore?"}},
-        {x:.48,y:.66,q:{en:"What's your background?",ru:"Какой у тебя опыт?"}}
+        {x:-.74,y:-.58,q:{en:"Show me AI and automation work",ru:"Покажи работу с AI и автоматизацией"}},
+        {x:-.28,y:-.72,q:{en:"How do you automate processes?",ru:"Как ты автоматизируешь процессы?"}},
+        {x:.24,y:-.68,q:{en:"Tell me about CRM Product Development",ru:"Расскажи про CRM Product Development"}},
+        {x:.70,y:-.46,q:{en:"Tell me about Audit Process Consulting",ru:"Расскажи про Audit Process Consulting"}},
+        {x:-.72,y:-.08,q:{en:"Tell me about Operations & BI Dashboards",ru:"Расскажи про Operations & BI Dashboards"}},
+        {x:.70,y:-.02,q:{en:"What stack do you use?",ru:"Какой стек ты используешь?"}},
+        {x:-.56,y:.34,q:{en:"What was Timur responsible for in CRM Product Development?",ru:"За что Тимур отвечал в CRM Product Development?"}},
+        {x:-.02,y:.24,q:{en:"Tell me about HH Lightning",ru:"Расскажи про HH Lightning"}},
+        {x:.58,y:.32,q:{en:"Tell me about AI agents",ru:"Расскажи про AI-агентов"}},
+        {x:-.38,y:.72,q:{en:"What stack do you use?",ru:"Какой стек ты используешь?"}},
+        {x:.16,y:.68,q:{en:"What stack do you use?",ru:"Какой стек ты используешь?"}},
+        {x:.68,y:.70,q:{en:"Tell me about Invoice Automation",ru:"Расскажи про Invoice Automation"}}
       ];
       let dpr=Math.min(window.devicePixelRatio||1,2),width=1,height=1,rotX=-.78,rotZ=-.18,targetRotX=rotX,targetRotZ=rotZ;
       let pointer={x:0,y:0,inside:false,down:false,lastX:0,lastY:0},hover=-1,nodeScreens=[],time=0;
