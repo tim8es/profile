@@ -300,6 +300,19 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 .chat-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
 .chat-actions button{border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:10px;cursor:pointer}
 .chat-actions button:hover{color:var(--text);border-color:var(--line-strong)}
+.evidence-panel{margin-top:14px;max-width:760px;border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg)}
+.evidence-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px}
+.evidence-head strong{font-size:12px;font-weight:560;letter-spacing:-.01em}
+.evidence-marker{font:9px/1 var(--font-mono);text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 7px}
+.evidence-note{margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5}
+.evidence-flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:0 0 11px}
+.evidence-node{border:1px solid var(--line);border-radius:8px;padding:7px 8px;font:10px/1.25 var(--font-mono);color:var(--text);background:var(--surface)}
+.evidence-arrow{font:11px/1 var(--font-mono);color:var(--muted)}
+.evidence-facts,.evidence-artifacts,.evidence-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.evidence-facts span{border:1px solid var(--line);border-radius:999px;padding:6px 8px;font-size:10px;color:var(--muted)}
+.evidence-artifacts code{border:1px solid var(--line);border-radius:6px;padding:5px 7px;font:9px/1.2 var(--font-mono);color:var(--muted);background:var(--surface)}
+.evidence-links a{border-bottom:1px solid var(--line-strong);padding:3px 0;font-size:11px;color:var(--muted)}
+.evidence-links a:hover{color:var(--text)}
 .work-layout--single{display:block;padding-top:0}
 .work-layout--single .project-list{max-width:900px}
 .work-layout--single .project-reveal p{max-width:760px}
