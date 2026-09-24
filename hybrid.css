@@ -355,10 +355,13 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
   stroke-width:1.65;
   stroke-linecap:round;
   stroke-linejoin:round;
+  display:none;
 }
-.theme-icon--moon{display:none}
-html[data-theme="light"] .theme-icon--sun{display:none}
-html[data-theme="light"] .theme-icon--moon{display:block}
+.theme-icon--system{display:block}
+html[data-theme-mode="light"] .theme-icon--system,
+html[data-theme-mode="dark"] .theme-icon--system{display:none}
+html[data-theme-mode="light"] .theme-icon--sun{display:block}
+html[data-theme-mode="dark"] .theme-icon--moon{display:block}
 
 .field-fallback{
   position:relative;
