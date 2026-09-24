@@ -15,7 +15,7 @@
       demo: "04 / Hybrid candidate",
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
-        eyebrow:"Product builder / process thinker",
+        eyebrow:"Product builder + Delivery Driver",
         title:"Build.<br><span>Automate.</span><br>Simplify.",
         lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
         meta:["Product → prototype","AI-native workflow"]
