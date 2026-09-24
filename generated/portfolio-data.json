@@ -1204,6 +1204,27 @@
       "context": {
         "section": "skills"
       }
+    },
+    {
+      "id": "strength.cross_functional",
+      "topics": [
+        "strengths",
+        "skills",
+        "product",
+        "process"
+      ],
+      "text": {
+        "ru": "Тимур сочетает операционный и продуктовый опыт с hands-on реализацией и умеет переходить от процесса к рабочему решению.",
+        "en": "Timur combines operational and product experience with hands-on implementation and can move from process understanding to a working solution."
+      },
+      "source": {
+        "label": "Portfolio profile"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "positioning",
+        "positioningGroup": "strengths"
+      }
     }
   ]
 }
