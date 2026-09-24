@@ -1,6 +1,6 @@
 # Grounded Portfolio Query experiment
 
-This experiment is intentionally isolated from `main` and from the existing `hybrid.html`.
+This experiment is intentionally isolated from `main` and from the existing `my.html`.
 
 ## Data architecture
 
@@ -61,4 +61,4 @@ Without them, the API returns 503 by design and the frontend falls back locally.
 
 ## Rollback safety
 
-The experiment lives on `exp/grounded-portfolio-query`. Existing production files on `main`, including `hybrid.html`, are unchanged.
+The experiment lives on `exp/grounded-portfolio-query`. Existing production files on `main`, including `my.html`, are unchanged.
