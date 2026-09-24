@@ -1,9 +1,10 @@
-function json(data, status = 200, headers = {}) {
+function json(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      ...headers
+      "cache-control": "no-store",
+      ...extraHeaders
     }
   });
 }
@@ -12,7 +13,7 @@ export async function onRequest(context) {
   const { request, env } = context;
 
   if (request.method !== "POST") {
-    return json({ error: "Method not allowed" }, 405, { Allow: "POST" });
+    return json({ error: "Method not allowed" }, 405, { allow: "POST" });
   }
 
   let body;
@@ -22,12 +23,7 @@ export async function onRequest(context) {
     return json({ error: "Invalid JSON body" }, 400);
   }
 
-  const {
-    question,
-    locale = "en",
-    history = [],
-    facts = []
-  } = body || {};
+  const { question, locale = "en", history = [], facts = [] } = body || {};
 
   if (!question || !Array.isArray(facts) || facts.length === 0) {
     return json({ error: "question and facts are required" }, 400);
@@ -37,7 +33,6 @@ export async function onRequest(context) {
   const apiKey = env.LLM_API_KEY;
   const model = env.LLM_MODEL;
 
-  // No provider configured: frontend will use its deterministic local composer.
   if (!apiUrl || !apiKey || !model) {
     return json({ error: "LLM provider is not configured" }, 503);
   }
@@ -65,11 +60,10 @@ export async function onRequest(context) {
     { role: "system", content: system },
     ...history
       .slice(-6)
-      .filter(
-        message =>
-          message &&
-          ["user", "assistant"].includes(message.role) &&
-          typeof message.content === "string"
+      .filter(message =>
+        message &&
+        ["user", "assistant"].includes(message.role) &&
+        typeof message.content === "string"
       ),
     { role: "user", content: question }
   ];
@@ -90,14 +84,8 @@ export async function onRequest(context) {
     });
 
     if (!upstream.ok) {
-      const upstreamBody = await upstream.text();
-      return json(
-        {
-          error: "LLM upstream failed",
-          detail: upstreamBody.slice(0, 500)
-        },
-        502
-      );
+      const detail = (await upstream.text()).slice(0, 500);
+      return json({ error: "LLM upstream failed", detail }, 502);
     }
 
     const data = await upstream.json();
@@ -114,10 +102,7 @@ export async function onRequest(context) {
     return json({ answer: answer.trim() });
   } catch (error) {
     return json(
-      {
-        error: "LLM request failed",
-        detail: String(error?.message || error)
-      },
+      { error: "LLM request failed", detail: String(error?.message || error) },
       502
     );
   }
