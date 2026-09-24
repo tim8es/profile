@@ -309,6 +309,7 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 .project-actions a{font-size:11px;color:var(--muted)}
 .project-actions button:hover,.project-actions a:hover{color:var(--text)}
 .project-chat-icon{width:14px;height:14px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.project-triangle-icon{width:12px;height:12px;fill:currentColor;stroke:none}
 @media(max-width:650px){
   .chat-log--compact .chat-message{grid-template-columns:1fr}
   .project-actions{margin-left:42px}
