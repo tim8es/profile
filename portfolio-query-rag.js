@@ -174,7 +174,8 @@
     technical:["стек","технолог","api","javascript","node","sql","technical","stack"],
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
-    limitations:["огранич","не было","boundary","constraint","limitation"],
+    limitations:["огранич","не было","реально","фактически","boundary","constraint","limitation"],
+    quality:["качество","плох","ошиб","quality","bad data","reliability","freshness"],
     audit:["audit process","audit consulting","аудит процесс","аудит процессов","контроль качества"],
     crm:["crm product","crm product development","loyalty crm","crm система","crm-система"],
     bi:["operations bi","bi dashboards","дашборд","datalens","операционная аналитика"],
@@ -209,7 +210,7 @@
     }
     const projectTopics=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"];
     const hasProject=found.some(topic=>projectTopics.includes(topic));
-    const followupTopics=["companies","role","results","technical","architecture","testing","limitations"];
+    const followupTopics=["companies","role","results","technical","architecture","testing","limitations","quality"];
     if(!hasProject && projectTopics.includes(state.lastSubject) && found.some(topic=>followupTopics.includes(topic))){
       found.push(state.lastSubject);
     }
@@ -226,6 +227,8 @@
     if(topics.includes("role") && fact.topics.includes("role")) score+=8;
     if(topics.includes("results") && (fact.topics.includes("results")||fact.topics.includes("metrics")||fact.topics.includes("scale"))) score+=8;
     if(topics.includes("technical") && fact.topics.includes("technical")) score+=6;
+    if(topics.includes("architecture") && (fact.topics.includes("architecture")||fact.topics.includes("technical")||fact.topics.includes("backend"))) score+=6;
+    if(topics.includes("quality") && (fact.topics.includes("quality")||fact.topics.includes("reliability"))) score+=10;
     if(topics.includes("limitations") && fact.topics.includes("limitations")) score+=8;
     if(topics.includes("companies") && fact.context?.company) score+=5;
     const words=new Set(q.split(" ").filter(word=>word.length>3));
