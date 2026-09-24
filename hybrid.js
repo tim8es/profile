@@ -822,6 +822,7 @@
       "какие результаты","результаты проекта","метрики проекта","что нормализует","на разных ос","разных os",
       "за что отвечал","что делал","что сделал","что реализовал","что спроектировал","как проверял","как тестировал","какой результат",
       "почему именно так","почему ты сделал","какие варианты","какие альтернатив","что рассматривал","самым слож","сложнее всего","production-ready","production ready","что готово","готовность",
+      "покажи","как выглядит","артефакт","доказательств","скриншот","пример результата","evidence","artifact","screenshot","show me","what does it look like","demo",
       "this project","the project","of the project","in it","how does it","how it works","its stack","its architecture",
       "why was it built","what problem","what prompted","project results","project metrics","technical stats","across operating systems"
     ]);
@@ -844,7 +845,12 @@
     let text;
     let intent="project-overview";
 
-    if(hasAny(q,["где","компан","контекст","where","company","employer"])){
+    if(hasAny(q,["покажи","как выглядит","артефакт","доказательств","скриншот","пример результата","evidence","artifact","screenshot","show me","what does it look like","demo"])){
+      text=lang==="ru"
+        ?"Вот доступные проверяемые артефакты и схема реализации. Если публичного screenshot нет, я показываю только фактическую схему и доступные внешние доказательства."
+        :"Here are the available verifiable artifacts and implementation evidence. When no public screenshot exists, only factual diagrams and accessible external evidence are shown.";
+      intent="project-evidence";
+    }else if(hasAny(q,["где","компан","контекст","where","company","employer"])){
       text=p.company;intent="project-company";
     }else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])){
       text=join(p.role,p.result);intent="project-role";
@@ -883,7 +889,7 @@
     }else{
       text=join(p.overview,p.result,p.detail);
     }
-    return {lang,intent,text,subject:id,project:id};
+    return {lang,intent,text,subject:id,project:id,evidence:intent==="project-evidence"?id:null};
   }
 
   function followupResult(lang,q){
@@ -1215,6 +1221,7 @@
     const names={audit:"Audit Process Consulting",crm:"CRM Product Development",bi:"Operations & BI Dashboards",invoice:"Invoice Automation",book:"Book Translator",video:"AI Video Pipeline",tube:"TubeScore",lightning:"HH Lightning",market:"Job Market Scanner",feed:"FeedPulse"}; const name=names[id]||id;
     state.lastSubject=id;state.lastProject=id;state.lastIntent="project-overview";
     const deep=ui[lang].deep[id].map(([label,query])=>({label,query}));
+    deep.push({label:lang==="ru"?"Артефакты":"Artifacts",query:lang==="ru"?`Покажи артефакты ${name}`:`Show me artifacts for ${name}`});
     appendMessage("user",lang==="ru"?`Спросить подробнее про ${name}`:`Ask deeper about ${name}`,null,[],true,lang);
     appendMessage("bot",`${ui[lang].query.deeper} ${name}:`,null,deep,true,lang);
     document.getElementById("query")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
