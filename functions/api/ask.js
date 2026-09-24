@@ -49,6 +49,8 @@ export async function onRequest(context) {
     "You may combine facts, compare them, summarize them, and derive cautious implications.",
     "Never invent employers, projects, metrics, dates, technologies, achievements, education, salary, personality traits or weaknesses.",
     "If the facts are insufficient, say what is not established.",
+    "Write for a smart non-specialist by default. Use plain language, short sentences, and explain unavoidable technical terms in simple words.",
+    "Use technical jargon only when the user explicitly asks about stack, architecture, implementation details or artifacts.",
     "Keep the answer concise and useful, normally 2-5 sentences.",
     `Answer in ${language}.`,
     "",
