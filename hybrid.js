@@ -996,6 +996,7 @@
 
   function projectResult(lang,id,q){
     const p=answers[lang].project[id];
+    const simple=projectPlain[lang]?.[id]||p;
     if(!p)return null;
 
     const join=(...parts)=>parts.filter(Boolean).join(" ");
@@ -1022,21 +1023,21 @@
     const compositeParts=[];
     const push=(flag,value)=>{if(flag&&value&&!compositeParts.includes(value))compositeParts.push(value);};
     push(wants.company,p.company);
-    push(wants.role,p.role);
-    push(wants.problem,p.problem);
-    push(wants.premise,p.premise);
-    push(wants.decision,p.decision);
-    push(wants.alternatives,p.alternatives);
-    push(wants.challenge,p.challenge);
-    push(wants.workflow,p.workflow);
+    push(wants.role,simple.role||p.role);
+    push(wants.problem,simple.problem||p.problem);
+    push(wants.premise,simple.premise||p.premise);
+    push(wants.decision,simple.decision||p.decision);
+    push(wants.alternatives,simple.alternatives||p.alternatives);
+    push(wants.challenge,simple.challenge||p.challenge);
+    push(wants.workflow,simple.workflow||p.workflow);
     push(wants.portability,p.portability);
     push(wants.formats,p.formats);
-    push(wants.reliability,p.reliability);
-    push(wants.result,p.result);
-    push(wants.stats,p.stats);
+    push(wants.reliability,simple.reliability||p.reliability);
+    push(wants.result,simple.result||p.result);
+    push(wants.stats,simple.stats||p.stats);
     push(wants.stack,p.stack);
-    push(wants.limitations,p.detail);
-    push(wants.readiness,p.readiness);
+    push(wants.limitations,simple.limitations||p.detail);
+    push(wants.readiness,simple.readiness||p.readiness);
     if(compositeParts.length>=2){
       return {
         lang,
@@ -1059,41 +1060,41 @@
     }else if(hasAny(q,["где","компан","контекст","where","company","employer"])){
       text=p.company;intent="project-company";
     }else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])){
-      text=join(p.role,p.result);intent="project-role";
+      text=join(simple.role||p.role,simple.result||p.result);intent="project-role";
     }else if(hasAny(q,["почему ты сделал именно так","почему сделал именно так","почему именно так","почему такой подход","почему выбрал","why did you do it this way","why this approach","why did you choose","why was this approach chosen"])){
-      text=p.decision||p.premise||join(p.problem,p.detail);intent="project-decision";
+      text=simple.decision||p.decision||simple.premise||p.premise||join(simple.problem||p.problem,simple.limitations||p.detail);intent="project-decision";
     }else if(hasAny(q,["какие варианты рассматривал","какие варианты","какие альтернатив","что рассматривал","альтернативы","alternatives","other options","what options","what alternatives"])){
-      text=p.alternatives||p.detail;intent="project-alternatives";
+      text=simple.alternatives||p.alternatives||simple.limitations||p.detail;intent="project-alternatives";
     }else if(hasAny(q,["что было самым сложным","самым сложным","самым слож","сложнее всего","главная сложност","hardest part","most difficult","biggest challenge","main challenge"])){
-      text=p.challenge||join(p.detail,p.reliability);intent="project-challenge";
+      text=simple.challenge||p.challenge||join(simple.limitations||p.detail,simple.reliability||p.reliability);intent="project-challenge";
     }else if(hasAny(q,["production-ready","production ready","что уже production","что готово к production","что готово в production","что уже готово","что готово","готовность проекта","production status","ready for production","what is production ready"])){
-      text=p.readiness||join(p.result,p.detail);intent="project-readiness";
+      text=simple.readiness||p.readiness||join(simple.result||p.result,simple.limitations||p.detail);intent="project-readiness";
     }else if(hasAny(q,["предпосыл","почему появился","с чего начался","откуда идея","what prompted","origin","why start","why did you start"])){
-      text=p.premise||join(p.problem,p.overview,p.detail);intent="project-premise";
+      text=simple.premise||p.premise||join(simple.problem||p.problem,simple.overview||p.overview,simple.limitations||p.detail);intent="project-premise";
     }else if(hasAny(q,["какую проблему","какую програм","проблему реш","зачем нужен","зачем делался","зачем делали","для чего","purpose","what problem","why was it built","why build","use case"])){
-      text=p.problem||join(p.overview,p.detail);intent="project-problem";
+      text=simple.problem||p.problem||join(simple.overview||p.overview,simple.limitations||p.detail);intent="project-problem";
     }else if(hasAny(q,["как работает на разных","на разных ос","разных os","windows","macos","linux","cross-platform","cross platform","operating systems","portable","portability"])){
-      text=p.portability||join(p.stack,p.detail);intent="project-portability";
+      text=p.portability||join(p.stack,simple.limitations||p.detail);intent="project-portability";
     }else if(hasAny(q,["что нормализует","какие форматы","форматы","rss","atom","what does it normalize","formats","data model"])){
-      text=p.formats||join(p.workflow,p.stack,p.detail);intent="project-formats";
+      text=p.formats||join(simple.workflow||p.workflow,p.stack,simple.limitations||p.detail);intent="project-formats";
     }else if(hasAny(q,["как работает","как устроен workflow","механик","процесс работы","workflow","how does it work","how it works","flow"])){
-      text=p.workflow||join(p.overview,p.stack,p.detail);intent="project-workflow";
+      text=simple.workflow||p.workflow||join(simple.overview||p.overview,p.stack,simple.limitations||p.detail);intent="project-workflow";
     }else if(hasAny(q,["надежност","надёжност","провер","тестир","валидац","ошиб","сбой","дубл","reliability","verification","testing","validation","failure","error","duplicate"])){
-      text=p.reliability||join(p.detail,p.result);intent="project-reliability";
+      text=simple.reliability||p.reliability||join(simple.limitations||p.detail,simple.result||p.result);intent="project-reliability";
     }else if(hasAny(q,["статистик","сколько тест","технические цифр","technical stats","statistics","test matrix"])){
-      text=p.stats||join(p.result,p.detail);intent="project-stats";
+      text=simple.stats||p.stats||join(simple.result||p.result,simple.limitations||p.detail);intent="project-stats";
     }else if(hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"])){
-      text=join(p.result,p.stats,p.detail);intent="project-result";
+      text=join(simple.result||p.result,simple.stats||p.stats,simple.limitations||p.detail);intent="project-result";
     }else if(hasAny(q,["стек","технолог","архитект","как устро","stack","technology","architecture","how built"])){
       text=join(p.stack,p.workflow,p.detail);intent="project-stack";
     }else if(hasAny(q,["огранич","не умеет","не делает","limitations","does not","can't","cannot"])){
-      text=p.detail;intent="project-limitations";
+      text=simple.limitations||p.detail;intent="project-limitations";
     }else if(isMore(q)||hasAny(q,["подробнее","больше","more detail","more about"])){
-      text=join(p.role,p.problem,p.result,p.detail,p.stack);intent="project-more";
+      text=join(simple.role||p.role,simple.problem||p.problem,simple.result||p.result,simple.limitations||p.detail);intent="project-more";
     }else if(hasAny(q,["нюанс","почему","реально","фактически","качество","плох","ошиб","detail","constraint","why","hard","quality","bad data","freshness"])){
-      text=join(p.detail,p.result);intent="project-detail";
+      text=join(simple.limitations||p.detail,simple.result||p.result);intent="project-detail";
     }else{
-      text=join(p.overview,p.result,p.detail);
+      text=join(simple.overview||p.overview,simple.result||p.result,simple.limitations||p.detail);
     }
     return {lang,intent,text,subject:id,project:id,evidence:intent==="project-evidence"?id:null};
   }
