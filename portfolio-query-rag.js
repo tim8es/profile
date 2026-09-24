@@ -161,19 +161,30 @@
   const topicLexicon = {
     identity:["кто","тимур","who","person","profile","профиль"],
     experience:["где работал","компан","опыт","career","experience","worked","background"],
-    companies:["компан","где работал","employer","company"],
+    companies:["компан","где","контекст","employer","company","where"],
+    role:["роль","отвечал","responsib","role"],
+    results:["результат","метрик","цифр","эффект","масштаб","impact","result","metric","scale"],
     skills:["умеет","навык","компетенц","skills","can do","capabil"],
-    strengths:["удив","сильн","преимущ","strength","differentiat","unique"],
+    strengths:["сильн","преимущ","strength","differentiat"],
     fit:["подойд","работ","роль","fit","role","job","suitable"],
     projects:["проект","делал","создал","built","project","portfolio"],
-    product:["продукт","mvp","гипотез","product","prototype"],
+    product:["продукт","mvp","product","prototype"],
     process:["процесс","операц","workflow","process"],
     ai:["ии","ai","llm","agent","агент"],
     technical:["стек","технолог","api","javascript","node","sql","technical","stack"],
     architecture:["архитект","как устро","how built","architecture"],
     testing:["тест","провер","testing","tested","verify"],
-    tubescore:["tubescore","tube score"],
-    feedpulse:["feedpulse","feed pulse"]
+    limitations:["огранич","не было","boundary","constraint","limitation"],
+    audit:["audit process","audit consulting","аудит процесс","аудит процессов","контроль качества"],
+    crm:["crm product","crm product development","loyalty crm","crm система","crm-система"],
+    bi:["operations bi","bi dashboards","дашборд","datalens","операционная аналитика"],
+    invoice:["invoice automation","invoice","инвойс","инвойсов"],
+    book:["book translator","перевод книг","переводчик книг"],
+    video:["ai video pipeline","video pipeline","youtube shorts","shorts pipeline","видео pipeline"],
+    tube:["tubescore","tube score"],
+    lightning:["hh lightning","headhunter lightning"],
+    market:["job market scanner","market scanner","professions statistics","сканер рынка"],
+    feed:["feedpulse","feed pulse"]
   };
 
   function norm(value){
@@ -203,8 +214,16 @@
     const q=norm(question);
     let score=0;
     fact.topics.forEach(topic=>{if(topics.includes(topic)) score+=4;});
+    const projectTopics=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"];
+    const specificProject=projectTopics.find(topic=>topics.includes(topic));
+    if(specificProject && fact.context?.projectId===specificProject) score+=12;
+    if(topics.includes("role") && fact.topics.includes("role")) score+=8;
+    if(topics.includes("results") && (fact.topics.includes("results")||fact.topics.includes("metrics")||fact.topics.includes("scale"))) score+=8;
+    if(topics.includes("technical") && fact.topics.includes("technical")) score+=6;
+    if(topics.includes("limitations") && fact.topics.includes("limitations")) score+=8;
+    if(topics.includes("companies") && fact.context?.company) score+=5;
     const words=new Set(q.split(" ").filter(word=>word.length>3));
-    const searchable=norm(fact.text.ru+" "+fact.text.en+" "+fact.id+" "+fact.topics.join(" "));
+    const searchable=norm(fact.text.ru+" "+fact.text.en+" "+fact.id+" "+fact.topics.join(" ")+" "+(fact.context?.company||""));
     words.forEach(word=>{if(searchable.includes(word)) score+=0.7;});
     if(state.lastFacts.includes(fact.id)) score-=0.6;
     return score;
@@ -426,7 +445,7 @@
     const server=await serverAnswer(text,facts,lang);
     const answer=server||local;
     const project=facts.find(f=>f.context?.projectId)?.context?.projectId;
-    const projectId=project==="tubescore"?"tube":project==="feedpulse"?"feed":null;
+    const projectId=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"].includes(project)?project:null;
 
     state.lastSubject=projectId||"timur";
     state.lastProject=projectId||state.lastProject;
