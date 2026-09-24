@@ -7,7 +7,7 @@
     lastSubject: "timur",
     lastIntent: "identity",
     lastProject: null,
-    moreCursor: { timur: 0, skills: 0, tube: 0, feed: 0 }
+    moreCursor: { timur:0, skills:0, audit:0, crm:0, bi:0, invoice:0, book:0, video:0, tube:0, lightning:0, market:0, feed:0 }
   };
 
   const ui = {
@@ -40,19 +40,17 @@
       },
       work: {
         title:"Selected work",
-        note:"current shortlist / more projects will be curated later",
-        tube:{
-          kind:"Browser product",
-          desc:"A Chrome extension that places movie ratings directly on YouTube trailers, removing the extra search step.",
-          details:[["Problem","Ratings live outside the viewing context."],["Built","Extension, data layer, caching and SPA handling."],["Proof","Working MVP with automated browser tests."]],
-          ask:"Ask deeper about TubeScore →"
-        },
-        feed:{
-          kind:"Agent utility",
-          desc:"A small ingestion layer for AI agents that normalizes RSS/Atom sources into predictable content.",
-          details:[["Problem","Agents repeatedly need to parse inconsistent feeds."],["Built","Portable Node.js parser with a small dependency footprint."],["Proof","Cross-platform workflow for Windows, macOS and Linux."]],
-          ask:"Ask deeper about FeedPulse →"
-        }
+        note:"",
+        audit:{kind:"Process consulting",desc:"A consulting and process-redesign project for a manual communication-quality audit workflow.",details:[["What","Mapped the workflow and moved manual Google Workspace steps into an internal CRM."],["Why","Reduce fragmented tracking and create a cleaner base for future automation."],["Detail","External audit-automation solutions were evaluated; full automated auditing was not implemented."]],ask:"Ask deeper about the audit project →"},
+        crm:{kind:"B2B product / Delivery",desc:"Development of a B2B loyalty CRM product spanning web, mobile, backend and external integrations.",details:[["What","Requirements, backlog, planning and delivery across a multi-application CRM ecosystem."],["Why","Give business customers one system for managing loyalty programs and connected workflows."],["Detail","SaaS and on-premise product with four web apps, two mobile apps, PostgreSQL and integrations."]],ask:"Ask deeper about the CRM product →"},
+        bi:{kind:"Analytics / Operations",desc:"Operational dashboards that turned fragmented process data into a shared view of performance and bottlenecks.",details:[["What","Built SQL + BI reporting for operational and product metrics across 20 products."],["Why","Replace repetitive manual reporting and make deviations visible earlier."],["Detail","Reduced the time spent preparing regular reporting by about 70%."]],ask:"Ask deeper about the dashboards →"},
+        invoice:{kind:"Workflow automation",desc:"An n8n/JavaScript workflow that automates invoice preparation for remote employees.",details:[["What","Validated source data and generated ready-to-use invoice documents from a repeatable workflow."],["Why","Remove repetitive manual preparation and reduce the risk of document errors."],["Detail","One invoice was generated in under 15 seconds and the workflow was used in real monthly cycles."]],ask:"Ask deeper about Invoice Automation →"},
+        book:{kind:"AI product / Telegram",desc:"An AI-assisted book-translation system with durable progress and a Telegram interface.",details:[["What","Stores translation progress, terminology, style and review state outside a single chat session."],["Why","Long-form translation needs consistency and the ability to continue across multiple sessions."],["Detail","The Telegram bot is the user-facing layer of the same translation workflow."]],ask:"Ask deeper about Book Translator →"},
+        video:{kind:"AI automation / Content production",desc:"An automated pipeline for producing short-form video from research and scripting through rendering and review.",details:[["What","Connected n8n, LLM steps, TTS, subtitles and FFmpeg rendering into one workflow."],["Why","Reduce repetitive handoffs and make content production more repeatable."],["Detail","Generation is separated from publishing so the final output remains reviewable before release."]],ask:"Ask deeper about the video pipeline →"},
+        tube:{kind:"Consumer product / Browser extension",desc:"A Chrome extension that shows movie and series ratings directly in the YouTube viewing context.",details:[["What","Identifies the title, matches it deterministically and renders the rating next to video metadata."],["Why","Remove the extra search step when deciding whether a film or series is worth watching."],["Detail","Runs without its own backend, LLM or required API key; browser behavior is covered by automated smoke tests."]],ask:"Ask deeper about TubeScore →"},
+        lightning:{kind:"AI product / Browser automation",desc:"A browser product for automating repetitive parts of the job-search workflow on hh.ru.",details:[["What","Combines AI-assisted vacancy handling, cover letters, automated responses and resume-performance analytics."],["Why","Reduce manual job-search work while keeping the process measurable."],["Detail","The product also has its own backend layer for tariffs, licensing and payments."]],ask:"Ask deeper about HH Lightning →"},
+        market:{kind:"Data product / Market analytics",desc:"A data product for collecting and comparing labor-market signals across professions.",details:[["What","Combines a browser collector, validated snapshots, history and a web interface for analysis."],["Why","Make profession and competition research reproducible instead of relying on one-off manual checks."],["Detail","Unknown data is not treated as zero, and freshness follows the actual collection time rather than deployment time."]],ask:"Ask deeper about Job Market Scanner →"},
+        feed:{kind:"Agent utility / Content ingestion",desc:"A lightweight ingestion utility that turns RSS/Atom sources into predictable content for AI agents.",details:[["What","Normalizes inconsistent feed formats into a stable structure for downstream processing."],["Why","Agents should not need to reimplement feed parsing every time they consume a new source."],["Detail","Designed to stay small, dependency-light and portable across Windows, macOS and Linux."]],ask:"Ask deeper about FeedPulse →"}
       },
       about: {
         title:"About",
@@ -65,8 +63,16 @@
       },
       footer:["Timur Dautov © 2026","Built as a static page. Query and 3D field run locally in your browser."],
       deep:{
-        tube:[["Architecture","How is TubeScore built?"],["Hardest part","What was the hardest part of TubeScore?"],["Testing","How did you test TubeScore?"]],
-        feed:[["Architecture","How is FeedPulse built?"],["Hardest part","What was the hardest part of FeedPulse?"],["Why Node.js","Why Node for FeedPulse?"]]
+        audit:[["Context","Where was this project done?"],["Work","What exactly changed in the audit process?"],["Automation","What automation was actually implemented?"]],
+        crm:[["Scope","How large was the CRM product?"],["Role","What was Timur responsible for?"],["Architecture","What was inside the CRM ecosystem?"]],
+        bi:[["Metrics","What did the dashboards change?"],["Stack","What was used to build the dashboards?"],["Context","Where was this project done?"]],
+        invoice:[["Workflow","How did Invoice Automation work?"],["Result","What was the measured result?"],["Context","Where was this project done?"]],
+        book:[["Architecture","How does Book Translator preserve context?"],["Telegram","How does the Telegram bot fit into the product?"],["Workflow","How does translation continue between sessions?"]],
+        video:[["Workflow","How is the AI Video Pipeline built?"],["Stack","What runs locally?"],["Review","Why is publishing separated from generation?"]],
+        tube:[["Architecture","How is TubeScore built?"],["Matching","How does TubeScore identify the right movie?"],["Testing","How did you test TubeScore?"]],
+        lightning:[["Product","What can HH Lightning do?"],["Backend","How does the license and payment backend work?"],["AI","How is AI used in HH Lightning?"]],
+        market:[["Architecture","How is Job Market Scanner built?"],["Data quality","How does it avoid bad market data?"],["Collector","How does collection resume after interruption?"]],
+        feed:[["Architecture","How is FeedPulse built?"],["Formats","What does FeedPulse normalize?"],["Portability","How does it stay cross-platform?"]]
       }
     },
     ru: {
@@ -97,20 +103,18 @@
         deeper:"Выбери, что хочется узнать подробнее про"
       },
       work: {
-        title:"Избранные работы",
-        note:"текущий список / проекты ещё будем отбирать",
-        tube:{
-          kind:"Браузерный продукт",
-          desc:"Chrome-расширение, которое показывает рейтинги фильмов прямо на YouTube-трейлерах и убирает лишний переход на другой сайт.",
-          details:[["Проблема","Рейтинг находится вне контекста просмотра."],["Что сделал","Расширение, слой данных, кеширование и обработка SPA-навигации."],["Подтверждение","Рабочий MVP с автоматизированными браузерными тестами."]],
-          ask:"Спросить подробнее о TubeScore →"
-        },
-        feed:{
-          kind:"Инструмент для агентов",
-          desc:"Небольшой слой загрузки контента для AI-агентов, который приводит RSS/Atom-источники к предсказуемой структуре.",
-          details:[["Проблема","Агентам снова и снова приходится разбирать несовместимые фиды."],["Что сделал","Переносимый Node.js-парсер с небольшим числом зависимостей."],["Подтверждение","Работает на Windows, macOS и Linux."]],
-          ask:"Спросить подробнее о FeedPulse →"
-        }
+        title:"Проекты",
+        note:"",
+        audit:{kind:"Консалтинг процессов",desc:"Проект по анализу и переработке ручного процесса контроля качества коммуникаций.",details:[["Что","Разобрал текущий процесс и перенёс ручные шаги из Google Workspace во внутреннюю CRM."],["Зачем","Собрать работу в одном процессе, сделать её прозрачнее и подготовить основу для дальнейшей автоматизации."],["Особенность","Исследовал внешние решения для автоматизации аудита; полная автоматизация аудита внедрена не была."]],ask:"Спросить подробнее про аудит процессов →"},
+        crm:{kind:"B2B-продукт / Delivery",desc:"Развитие B2B CRM-продукта для управления программами лояльности.",details:[["Что","Требования, backlog, планирование и delivery экосистемы из нескольких приложений."],["Зачем","Объединить управление программами лояльности и связанными процессами в одном продукте."],["Особенность","SaaS и on-premise: четыре web-приложения, два mobile-приложения, PostgreSQL и внешние интеграции."]],ask:"Спросить подробнее про CRM-продукт →"},
+        bi:{kind:"Аналитика / Operations",desc:"Операционные дашборды, которые собрали разрозненные данные о процессах и показателях в единую систему.",details:[["Что","Построил SQL + BI-отчётность по операционным и продуктовым метрикам для 20 продуктов."],["Зачем","Сократить ручную подготовку отчётов и быстрее замечать отклонения."],["Особенность","Время на регулярную отчётность сократилось примерно на 70%."]],ask:"Спросить подробнее про BI-дашборды →"},
+        invoice:{kind:"Автоматизация workflow",desc:"n8n/JavaScript workflow для автоматической подготовки инвойсов удалённым сотрудникам.",details:[["Что","Проверка исходных данных и генерация готового документа по повторяемому сценарию."],["Зачем","Убрать ручную подготовку и снизить риск ошибок в документах."],["Особенность","Один инвойс формировался менее чем за 15 секунд; workflow использовался в реальных ежемесячных циклах."]],ask:"Спросить подробнее про Invoice Automation →"},
+        book:{kind:"AI-продукт / Telegram",desc:"Система AI-перевода книг с сохранением прогресса и интерфейсом в Telegram.",details:[["Что","Хранит прогресс перевода, терминологию, стиль и review-state вне одной chat-сессии."],["Зачем","Длинный перевод должен сохранять единый стиль и продолжаться между сессиями."],["Особенность","Telegram-бот — пользовательский интерфейс того же translation workflow."]],ask:"Спросить подробнее про Book Translator →"},
+        video:{kind:"AI-автоматизация / Контент",desc:"Автоматизированный pipeline производства коротких видео — от исследования и сценария до рендера и review.",details:[["Что","Объединил n8n, LLM-шаги, TTS, субтитры и FFmpeg-рендер в один workflow."],["Зачем","Сократить повторяющиеся ручные переходы и сделать производство контента воспроизводимым."],["Особенность","Генерация отделена от публикации, поэтому результат можно проверить до выхода."]],ask:"Спросить подробнее про AI Video Pipeline →"},
+        tube:{kind:"Consumer product / Browser extension",desc:"Chrome-расширение, которое показывает рейтинги фильмов и сериалов прямо в интерфейсе YouTube.",details:[["Что","Определяет название, детерминированно сопоставляет фильм и показывает рейтинг рядом с metadata видео."],["Зачем","Убрать отдельный поиск рейтинга при выборе фильма или сериала."],["Особенность","Работает без собственного backend, LLM и обязательного API-ключа; browser-flow покрыт smoke-тестами."]],ask:"Спросить подробнее про TubeScore →"},
+        lightning:{kind:"AI-продукт / Browser automation",desc:"Браузерный продукт для автоматизации повторяющихся этапов поиска работы на hh.ru.",details:[["Что","AI-обработка вакансий, сопроводительные письма, автоотклики и аналитика эффективности резюме."],["Зачем","Сократить ручную работу при поиске вакансий и при этом измерять результат."],["Особенность","У продукта есть отдельный backend для тарифов, лицензирования и платежей."]],ask:"Спросить подробнее про HH Lightning →"},
+        market:{kind:"Data product / Аналитика рынка",desc:"Система сбора и сравнения данных рынка труда по профессиям.",details:[["Что","Browser collector, валидируемые snapshots, история наблюдений и web-интерфейс для анализа."],["Зачем","Сделать исследование профессий и конкуренции воспроизводимым, а не набором разовых ручных проверок."],["Особенность","Неизвестное значение не подменяется нулём, а freshness определяется фактическим временем сбора данных."]],ask:"Спросить подробнее про Job Market Scanner →"},
+        feed:{kind:"Agent utility / Content ingestion",desc:"Лёгкая утилита, которая превращает RSS/Atom-источники в предсказуемый контент для AI-агентов.",details:[["Что","Нормализует разные форматы feed в стабильную структуру для дальнейшей обработки."],["Зачем","Чтобы агентам не приходилось заново реализовывать парсинг для каждого источника."],["Особенность","Небольшой набор зависимостей и работа на Windows, macOS и Linux."]],ask:"Спросить подробнее про FeedPulse →"}
       },
       about: {
         title:"Обо мне",
@@ -123,8 +127,16 @@
       },
       footer:["Timur Dautov © 2026","Статическая страница: Query и 3D-поле работают локально в браузере."],
       deep:{
-        tube:[["Архитектура","Как устроен TubeScore?"],["Самая сложная часть","Что было самым сложным в TubeScore?"],["Тестирование","Как ты тестировал TubeScore?"]],
-        feed:[["Архитектура","Как устроен FeedPulse?"],["Самая сложная часть","Что было самым сложным в FeedPulse?"],["Почему Node.js","Почему для FeedPulse выбран Node.js?"]]
+        audit:[["Контекст","Где выполнялся этот проект?"],["Изменения","Что именно изменилось в процессе аудита?"],["Автоматизация","Что из автоматизации реально было внедрено?"]],
+        crm:[["Масштаб","Насколько большим был CRM-продукт?"],["Роль","За что отвечал Тимур?"],["Архитектура","Что входило в CRM-экосистему?"]],
+        bi:[["Результат","Что изменили BI-дашборды?"],["Стек","На чём были построены дашборды?"],["Контекст","Где выполнялся этот проект?"]],
+        invoice:[["Workflow","Как работала автоматизация инвойсов?"],["Результат","Какой был измеримый результат?"],["Контекст","Где выполнялся этот проект?"]],
+        book:[["Архитектура","Как Book Translator сохраняет контекст?"],["Telegram","Как Telegram-бот связан с продуктом?"],["Workflow","Как перевод продолжается между сессиями?"]],
+        video:[["Workflow","Как устроен AI Video Pipeline?"],["Стек","Что работает локально?"],["Review","Почему публикация отделена от генерации?"]],
+        tube:[["Архитектура","Как устроен TubeScore?"],["Matching","Как TubeScore определяет правильный фильм?"],["Тестирование","Как тестировался TubeScore?"]],
+        lightning:[["Продукт","Что умеет HH Lightning?"],["Backend","Как устроены лицензии и платежи?"],["AI","Как AI используется в HH Lightning?"]],
+        market:[["Архитектура","Как устроен Job Market Scanner?"],["Качество данных","Как он защищается от плохих данных?"],["Сбор","Как сбор продолжается после прерывания?"]],
+        feed:[["Архитектура","Как устроен FeedPulse?"],["Форматы","Что нормализует FeedPulse?"],["Переносимость","Как он работает на разных ОС?"]]
       }
     }
   };
@@ -426,7 +438,7 @@
 
   function openProjectQuestions(id){
     const lang=state.lang;
-    const name=id==="tube"?"TubeScore":"FeedPulse";
+    const names={audit:"Audit Process Consulting",crm:"CRM Product Development",bi:"Operations & BI Dashboards",invoice:"Invoice Automation",book:"Book Translator",video:"AI Video Pipeline",tube:"TubeScore",lightning:"HH Lightning",market:"Job Market Scanner",feed:"FeedPulse"}; const name=names[id]||id;
     state.lastSubject=id;
     state.lastProject=id;
     state.lastIntent="project-overview";
@@ -491,7 +503,7 @@
     if(input)input.placeholder=t.query.placeholder;setHTML(".query-hint",t.query.hint);
 
     const wLabels=document.querySelectorAll("#work > .section-label span");if(wLabels[0])wLabels[0].textContent=t.work.title;if(wLabels[1])wLabels[1].textContent=t.work.note;
-    const pcopy={tube:t.work.tube,feed:t.work.feed};
+    const pcopy={audit:t.work.audit,crm:t.work.crm,bi:t.work.bi,invoice:t.work.invoice,book:t.work.book,video:t.work.video,tube:t.work.tube,lightning:t.work.lightning,market:t.work.market,feed:t.work.feed};
     projects.forEach((item)=>{
       const p=pcopy[item.dataset.project];if(!p)return;
       item.querySelector(".project-main small").textContent=p.kind;
