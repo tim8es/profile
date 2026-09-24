@@ -12,7 +12,6 @@
 
   const ui = {
     en: {
-      demo: "04 / Hybrid candidate",
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
         eyebrow:"Product builder / Delivery Driver",
@@ -80,7 +79,6 @@
       }
     },
     ru: {
-      demo: "04 / Гибридный вариант",
       nav: { work:"Работы", query:"Спросить", about:"Обо мне" },
       hero: {
         eyebrow:"Product builder / Delivery Driver",
@@ -677,7 +675,6 @@
     langToggle?.setAttribute("aria-label",lang==="en"?"Переключить на русский":"Switch to English");
     const t=ui[lang];
 
-    setText("[data-demo-label]",t.demo);
     setText('.nav-links a[href="#work"]',t.nav.work);
     setText('.nav-links a[href="#query"]',t.nav.query);
     setText('.nav-links a[href="#about"]',t.nav.about);
