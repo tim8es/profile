@@ -820,8 +820,8 @@
       "в нем","в нём","он работает","она работает","как он","как она","его архитект","его стек",
       "зачем делался","зачем делали","какую проблему","какую програм","какие предпосыл","какая статистика",
       "какие результаты","результаты проекта","метрики проекта","что нормализует","на разных ос","разных os",
-      "за что отвечал","что делал","что сделал","что реализовал","что спроектировал","как проверял","как тестировал","какой результат",
-      "почему именно так","почему ты сделал","какие варианты","какие альтернатив","что рассматривал","самым слож","сложнее всего","production-ready","production ready","что готово","готовность",
+      "за что отвечал","что делал","что сделал","что именно сделал","что реализовал","что спроектировал","как проверял","как проверяли","как тестировал","какой результат","что получилось",
+      "почему именно так","почему ты сделал","таким способом","какие варианты","другие варианты","какие альтернатив","что рассматривал","самым слож","сложнее всего","production-ready","production ready","что готово","что уже реально работает","готовность","пока ограничено",
       "покажи","как выглядит","артефакт","доказательств","скриншот","пример результата","evidence","artifact","screenshot","show me","what does it look like","demo",
       "this project","the project","of the project","in it","how does it","how it works","its stack","its architecture",
       "why was it built","what problem","what prompted","project results","project metrics","technical stats","across operating systems"
@@ -1005,7 +1005,7 @@
         "project-problem":simple.problem||p.problem,
         "project-workflow":simple.workflow||p.workflow,
         "project-role":simple.role||p.role,
-        "project-result":join(simple.result||p.result,simple.stats||p.stats),
+        "project-result":simple.result||p.result,
         "project-reliability":simple.reliability||p.reliability,
         "project-limitations":simple.limitations||p.detail,
         "project-decision":simple.decision||p.decision,
@@ -1023,10 +1023,10 @@
       evidence:hasAny(q,["покажи","как выглядит","артефакт","доказательств","скриншот","пример результата","evidence","artifact","screenshot","show me","what does it look like","demo"]),
       company:hasAny(q,["где","компан","контекст","where","company","employer"]),
       role:hasAny(q,["роль","отвечал","responsib","role","what did timur do","что сделал","что делал","что реализовал","что спроектировал"]),
-      decision:hasAny(q,["почему ты сделал именно так","почему сделал именно так","почему именно так","почему такой подход","почему выбрал","why did you do it this way","why this approach","why did you choose","why was this approach chosen"]),
-      alternatives:hasAny(q,["какие варианты рассматривал","какие варианты","какие альтернатив","что рассматривал","альтернативы","alternatives","other options","what options","what alternatives"]),
+      decision:hasAny(q,["почему ты сделал именно так","почему сделал именно так","почему именно так","почему такой подход","почему выбрал","таким способом","почему сделали","why did you do it this way","why this approach","why did you choose","why was this approach chosen"]),
+      alternatives:hasAny(q,["какие варианты рассматривал","какие варианты","другие варианты","какие альтернатив","что рассматривал","альтернативы","alternatives","other options","what options","what alternatives"]),
       challenge:hasAny(q,["что было самым сложным","самым сложным","самым слож","сложнее всего","главная сложност","hardest part","most difficult","biggest challenge","main challenge"]),
-      readiness:hasAny(q,["production-ready","production ready","что уже production","что готово к production","что готово в production","что уже готово","что готово","готовность проекта","production status","ready for production","what is production ready"]),
+      readiness:hasAny(q,["production-ready","production ready","что уже production","что готово к production","что готово в production","что уже готово","что готово","что уже реально работает","уже реально работает","готовность проекта","production status","ready for production","what is production ready"]),
       premise:hasAny(q,["предпосыл","почему появился","с чего начался","откуда идея","what prompted","origin","why start","why did you start"]),
       problem:hasAny(q,["какую проблему","какую програм","проблему реш","зачем нужен","зачем делался","зачем делали","для чего","purpose","what problem","why was it built","why build","use case"]),
       portability:hasAny(q,["как работает на разных","на разных ос","разных os","windows","macos","linux","cross-platform","cross platform","operating systems","portable","portability"]),
@@ -1034,9 +1034,9 @@
       workflow:hasAny(q,["как работает","как устроен workflow","механик","процесс работы","workflow","how does it work","how it works","flow"]),
       reliability:hasAny(q,["надежност","надёжност","провер","тестир","валидац","ошиб","сбой","дубл","reliability","verification","testing","validation","failure","error","duplicate"]),
       stats:hasAny(q,["статистик","сколько тест","технические цифр","technical stats","statistics","test matrix"]),
-      result:hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"]),
+      result:hasAny(q,["результат","что получилось","получилось в итоге","итог","метрик","цифр","эффект","result","outcome","impact","metric","scale","масштаб"]),
       stack:hasAny(q,["стек","технолог","архитект","stack","technology","architecture","how built"]),
-      limitations:hasAny(q,["огранич","не умеет","не делает","компромисс","trade-off","tradeoff","limitations","does not","can't","cannot"])
+      limitations:hasAny(q,["огранич","пока ограничено","не закончено","не сделано","не умеет","не делает","компромисс","trade-off","tradeoff","limitations","unfinished","does not","can't","cannot"])
     };
     if(wants.portability)wants.workflow=false;
     const compositeParts=[];
