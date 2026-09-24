@@ -1158,23 +1158,48 @@
     const intent=state.lastIntent;
     if(selectedProjects.has(state.lastSubject)) return projectResult(lang,state.lastSubject,q);
 
-    if(intent==="projects"||intent==="projects-more") return {lang,intent:"projects-more",text:a.projectsMore,subject:"timur"};
-    if(intent==="impact"||intent==="impact-more") return {lang,intent:"impact-more",text:a.impactMore,subject:"timur"};
-    if(intent==="ai"||intent==="ai-more"||intent==="current-focus") return {lang,intent:"ai-more",text:a.aiMore+" "+a.currentFocus,subject:"timur"};
-    if(intent==="background"||intent==="background-more"||intent==="years"||intent==="years-clarification"||intent==="career-path") return {lang,intent:"background-more",text:a.backgroundMore+" "+a.careerPath,subject:"timur"};
-    if(intent==="identity"||intent==="identity-more"||intent==="assistant-identity") return {lang,intent:"identity-more",text:a.identityMore+" "+a.interesting,subject:"timur"};
-    if(intent==="skills"||intent==="skills-more"||intent==="strengths"||intent==="technical-depth") return {lang,intent:"skills-more",text:a.skillsMore+" "+a.strengths,subject:"timur"};
-    if(intent==="stack"||intent==="stack-more") return {lang,intent:"stack-more",text:a.stackMore,subject:"timur"};
-    if(intent==="management"||intent==="leadership") return {lang,intent:"leadership",text:a.management+" "+a.leadership,subject:"timur"};
-    if(intent==="hire"||intent==="work-style") return {lang,intent:"hire",text:a.hire+" "+a.workStyle,subject:"timur"};
-    if(intent==="scope"||intent==="interesting") return {lang,intent:"scope",text:a.scope+" "+a.interesting,subject:"timur"};
-    if(intent==="automation"||intent==="reliability") return {lang,intent:"reliability",text:a.reliability+" "+a.automation,subject:"timur"};
+    const rotate=(key,items)=>{
+      const pool=items.filter(Boolean).filter((value,index,array)=>array.indexOf(value)===index);
+      if(!pool.length)return a.unknown;
+      const cursor=state.moreCursor[key]||0;
+      state.moreCursor[key]=cursor+1;
+      return pool[cursor%pool.length];
+    };
 
-    const generalMore=[a.interesting,a.scope,a.collaboration,a.decisionMaking,a.whatProblems,a.currentFocus,a.workStyle].filter(Boolean);
-    const cursor=state.moreCursor.timur||0;
-    const text=generalMore[cursor%generalMore.length];
-    state.moreCursor.timur=(cursor+1)%generalMore.length;
-    return {lang,intent:"identity-more",text,subject:"timur"};
+    if(intent==="projects"||intent==="projects-more")
+      return {lang,intent:"projects-more",text:rotate("projects",[a.projectsMore,a.currentFocus,a.opensource]),subject:"timur"};
+
+    if(intent==="impact"||intent==="impact-more"||intent==="financial-impact")
+      return {lang,intent:"impact-more",text:rotate("impact",[a.impactMore,a.scope,a.financialImpact]),subject:"timur"};
+
+    if(intent==="ai"||intent==="ai-more"||intent==="current-focus")
+      return {lang,intent:"ai-more",text:rotate("ai",[a.aiMore,a.currentFocus,a.reliability]),subject:"timur"};
+
+    if(intent==="background"||intent==="background-more"||intent==="years"||intent==="years-clarification"||intent==="career-path")
+      return {lang,intent:"background-more",text:rotate("background",[a.backgroundMore,a.careerPath,a.scope]),subject:"timur"};
+
+    if(intent==="identity"||intent==="identity-more"||intent==="assistant-identity")
+      return {lang,intent:"identity-more",text:rotate("timur",[a.identityMore,a.interesting,a.collaboration,a.decisionMaking]),subject:"timur"};
+
+    if(intent==="skills"||intent==="skills-more"||intent==="strengths"||intent==="technical-depth")
+      return {lang,intent:"skills-more",text:rotate("skills",[a.skillsMore,a.strengths,a.technicalDepth,a.whatProblems]),subject:"timur"};
+
+    if(intent==="stack"||intent==="stack-more")
+      return {lang,intent:"stack-more",text:rotate("stack",[a.stackMore,a.technicalDepth,a.skills]),subject:"timur"};
+
+    if(intent==="management"||intent==="leadership")
+      return {lang,intent:"leadership",text:rotate("management",[a.leadership,a.collaboration,a.scope]),subject:"timur"};
+
+    if(intent==="hire"||intent==="work-style"||intent==="best-fit")
+      return {lang,intent:"hire",text:rotate("hire",[a.workStyle,a.whatProblems,a.strengths]),subject:"timur"};
+
+    if(intent==="scope"||intent==="interesting")
+      return {lang,intent:"scope",text:rotate("scope",[a.interesting,a.collaboration,a.currentFocus]),subject:"timur"};
+
+    if(intent==="automation"||intent==="reliability"||intent==="product")
+      return {lang,intent:"reliability",text:rotate("automation",[a.automation,a.reliability,a.product,a.currentFocus]),subject:"timur"};
+
+    return {lang,intent:"identity-more",text:rotate("timur",[a.identityMore,a.interesting,a.scope,a.collaboration,a.decisionMaking,a.whatProblems,a.currentFocus,a.workStyle]),subject:"timur"};
   }
 
   function classify(raw){
