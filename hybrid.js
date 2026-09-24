@@ -495,7 +495,7 @@
 
     if(hasAny(q,["кто мне отвечает","кто отвечает","ты кто","кто ты","что ты такое","who are you","who is answering","who am i talking to"]))return{lang,intent:"assistant-identity",text:a.assistantIdentity,subject:"timur"};
     if(hasAny(q,["все 10 лет","всё 10 лет","все десять лет","всё десять лет","10 лет этим","10 лет так","all 10 years","the whole 10 years"]))return{lang,intent:"years-clarification",text:a.tenYearsClarification,subject:"timur"};
-    if(hasAny(q,["почему я должен нанять","почему нанять","зачем нанимать","почему работать с тимур","почему стоит работать","чем полезен тимур","why hire","why should i hire","why work with timur","why should we work with"]))return{lang,intent:"hire",text:a.hire,subject:"timur"};
+    if(hasAny(q,["почему я должен нанять","почему нанять","зачем нанимать","почему я должен работать с тимур","почему работать с тимур","почему стоит работать","чем полезен тимур","зачем работать с тимур","why hire","why should i hire","why work with timur","why should we work with"]))return{lang,intent:"hire",text:a.hire,subject:"timur"};
     if(hasAny(q,["сильные стороны","в чем силен","в чём силен","главная сила","strengths","strong at","what is he good at"]))return{lang,intent:"strengths",text:a.strengths,subject:"timur"};
     if(hasAny(q,["управлял команд","руководил команд","people management","управление людьми","менеджмент команды","team management","managed a team"]))return{lang,intent:"management",text:a.management,subject:"timur"};
     if(hasAny(q,["стиль управления","как руководит","как управляет","leadership style","management style"]))return{lang,intent:"leadership",text:a.leadership,subject:"timur"};
