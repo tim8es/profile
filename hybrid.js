@@ -969,6 +969,23 @@
     const subject=resolveSubject(q);
     if(subject!=="timur") return projectResult(lang,subject,q);
 
+    const generalParts=[];
+    const addGeneral=(flag,value)=>{if(flag&&value&&!generalParts.includes(value))generalParts.push(value);};
+    addGeneral(hasAny(q,["кто такой тимур","кто тимур","who is timur","tell me about timur"]),a.identity);
+    addGeneral(hasAny(q,["проект","проекты","портфолио","работы","projects","portfolio","what did he build"]),a.projectsOverview);
+    addGeneral(hasAny(q,["результат","метрик","цифр","эффект","достижен","impact","results","metrics","achievement"]),a.impact);
+    addGeneral(hasAny(q,["где работал","опыт","карьер","чем занимался","career","experience","background","where worked"]),a.background);
+    addGeneral(hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","python","sql","api","webhook"]),a.stack);
+    addGeneral(hasAny(q,["ии","ai","llm","агент","agent"]),a.ai);
+    addGeneral(hasAny(q,["автоматиз","automation","workflow","процесс"]),a.automation);
+    addGeneral(hasAny(q,["продукт","product","mvp","prototype"]),a.product);
+    addGeneral(hasAny(q,["сильные стороны","в чем силен","в чём силен","strengths","strong at"]),a.strengths);
+    addGeneral(hasAny(q,["управлял команд","руководил команд","people management","team management","managed a team"]),a.management);
+    addGeneral(hasAny(q,["как работает","стиль работы","формат работы","work style","way of working"]),a.workStyle);
+    addGeneral(hasAny(q,["насколько техничес","технический уровень","умеет программировать","technical depth","how technical"]),a.technicalDepth);
+    addGeneral(hasAny(q,["масштаб опыта","сколько проектов","сколько процессов","размер команды","масштаб","scope","team size"]),a.scope);
+    if(generalParts.length>=2)return{lang,intent:"general-composite",text:generalParts.join(" "),subject:"timur"};
+
     if(hasAny(q,["кто мне отвечает","кто отвечает","ты кто","кто ты","что ты такое","who are you","who is answering","who am i talking to"]))return{lang,intent:"assistant-identity",text:a.assistantIdentity,subject:"timur"};
     if(hasAny(q,["все 10 лет","всё 10 лет","все десять лет","всё десять лет","10 лет этим","10 лет так","all 10 years","the whole 10 years"]))return{lang,intent:"years-clarification",text:a.tenYearsClarification,subject:"timur"};
     if(hasAny(q,["почему я должен нанять","почему нанять","зачем нанимать","почему я должен работать с тимур","почему работать с тимур","почему стоит работать","чем полезен тимур","зачем работать с тимур","why hire","why should i hire","why work with timur","why should we work with"]))return{lang,intent:"hire",text:a.hire,subject:"timur"};
@@ -1080,7 +1097,7 @@
         a.management,a.hire
       ].forEach(add);
     }
-    return facts.slice(0,10);
+    return facts.slice(0,18);
   }
 
   async function requestLLM(question,lang,result,history){
