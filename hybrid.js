@@ -1444,6 +1444,16 @@
     bubble.appendChild(panel);
   }
 
+  function pickQuickReplies(actions,max=3){
+    const pool=[...(actions||[])];
+    if(pool.length<=max)return pool;
+    for(let i=pool.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [pool[i],pool[j]]=[pool[j],pool[i]];
+    }
+    return pool.slice(0,max);
+  }
+
   function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang,evidenceId=null){
     if(!chatLog)return;
     chatLog.querySelectorAll(".chat-actions").forEach((el)=>el.remove());
@@ -1456,9 +1466,10 @@
     bubble.className="chat-bubble";
 
     const appendExtras=()=>{
-      if(actions.length){
+      const visibleActions=pickQuickReplies(actions,3);
+      if(visibleActions.length){
         const wrap=document.createElement("div");wrap.className="chat-actions";
-        actions.forEach((action)=>{
+        visibleActions.forEach((action)=>{
           const button=document.createElement("button");button.type="button";button.textContent=action.label;
           button.addEventListener("click",()=>askPortfolio(action.query,{projectId:action.projectId,intent:action.intent}));
           wrap.appendChild(button);
@@ -1533,7 +1544,9 @@
     if(state.history.length>12)state.history=state.history.slice(-12);
 
     if(thinking) await thinking.finish(reduced?0:340);
-    const topicActions=result.project?projectQuestionActions(result.project,result.lang):[];
+    const topicActions=result.project
+      ?projectQuestionActions(result.project,result.lang).filter((action)=>action.intent!==result.intent)
+      :[];
     appendMessage("bot",answer,result.project,topicActions,true,result.lang,result.evidence||null);
   }
 
