@@ -11,7 +11,7 @@ There is one human-edited source of truth:
 - `scripts/build-portfolio-data.js` — validate + normalize + flatten public facts
 - `generated/portfolio-data.json` — generated runtime data read by the browser
 - `portfolio-query-rag.js` — retrieval, conversation state, local composer and sources UI
-- `api/ask.js` — optional serverless grounded LLM layer
+- `functions/api/ask.js` — Cloudflare Pages Function for the optional grounded LLM layer
 - `rag.html` / `rag.css` — experiment UI
 
 Do **not** edit `generated/portfolio-data.json` manually.
@@ -47,17 +47,19 @@ Supported confidence values:
 6. If it is unavailable, the local composer remains functional.
 7. Every answer can expose its evidence under **Sources**.
 
-## Server configuration
+## Cloudflare Pages configuration
 
-The optional endpoint is provider-agnostic for OpenAI-compatible chat endpoints.
+The optional endpoint is implemented as a Cloudflare Pages Function at `functions/api/ask.js`, which exposes `/api/ask`. It is provider-agnostic for OpenAI-compatible chat endpoints.
 
-Environment variables:
+In Cloudflare, configure these environment variables / secrets for the Pages project:
 
 - `LLM_API_URL`
 - `LLM_API_KEY`
 - `LLM_MODEL`
 
-Without them, the API returns 503 by design and the frontend falls back locally.
+Keep `LLM_API_KEY` as a secret. The browser never receives it; the request to the LLM provider is made from the Pages Function.
+
+Without all three values, `/api/ask` returns 503 by design and the frontend falls back to the deterministic local composer.
 
 ## Rollback safety
 
