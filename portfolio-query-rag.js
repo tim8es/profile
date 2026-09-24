@@ -26,13 +26,13 @@
         status:"grounded local composer / curated knowledge base",
         intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
-          ["Who is Timur?","Who is Timur?"],
-          ["What can he do?","What can Timur do?"],
-          ["AI work","Show me AI work"],
-          ["Background","What's your background?"]
+          ["Projects","What projects are in the portfolio?"],
+          ["Experience","What's Timur's background?"],
+          ["Results","What measurable results does Timur have?"],
+          ["AI & automation","Show me AI and automation work"]
         ],
         placeholder:"Ask the portfolio…",
-        hint:'Runs from a curated knowledge base with conversational context and visible evidence. The local composer works without a model download. Press <kbd>/</kbd> to focus.',
+        hint:'Press <kbd>/</kbd> to focus.',
         rolePortfolio:"portfolio",
         roleYou:"you",
         showProject:"Show related project ↓",
@@ -90,13 +90,13 @@
         status:"grounded composer / модерируемая база знаний",
         intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
-          ["Кто такой Тимур?","Кто такой Тимур?"],
-          ["Что он умеет?","Что умеет Тимур?"],
-          ["Работа с ИИ","Покажи работу с ИИ"],
-          ["Опыт","Какой у Тимура опыт?"]
+          ["Проекты","Какие проекты в портфолио?"],
+          ["Опыт","Какой у Тимура опыт?"],
+          ["Результаты","Какие измеримые результаты у Тимура?"],
+          ["AI и автоматизация","Покажи работу с AI и автоматизацией"]
         ],
         placeholder:"Спроси портфолио…",
-        hint:'Отвечает из модерируемой базы знаний, помнит контекст и показывает использованные факты. Локальный composer работает без скачивания модели. Нажми <kbd>/</kbd>, чтобы перейти к строке.',
+        hint:'Нажми <kbd>/</kbd>, чтобы перейти к вопросу.',
         rolePortfolio:"портфолио",
         roleYou:"вы",
         showProject:"Показать связанный проект ↓",
