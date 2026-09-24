@@ -26,13 +26,13 @@
         status:"contextual local engine / 0 MB model download",
         intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
-          ["Who is Timur?","Who is Timur?"],
-          ["What can he do?","What can Timur do?"],
-          ["AI work","Show me AI work"],
-          ["Background","What's your background?"]
+          ["Projects","What projects are in the portfolio?"],
+          ["Experience","What's Timur's background?"],
+          ["Results","What measurable results does Timur have?"],
+          ["AI & automation","Show me AI and automation work"]
         ],
         placeholder:"Ask the portfolio…",
-        hint:'Runs entirely in your browser. No model download, API or server. It keeps conversational context and answers from a local knowledge base. Press <kbd>/</kbd> to focus.',
+        hint:'Press <kbd>/</kbd> to focus.',
         rolePortfolio:"portfolio",
         roleYou:"you",
         showProject:"Show related project ↓",
@@ -90,13 +90,13 @@
         status:"контекстный локальный движок / 0 МБ модели",
         intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
-          ["Кто такой Тимур?","Кто такой Тимур?"],
-          ["Что он умеет?","Что умеет Тимур?"],
-          ["Работа с ИИ","Покажи работу с ИИ"],
-          ["Опыт","Какой у Тимура опыт?"]
+          ["Проекты","Какие проекты в портфолио?"],
+          ["Опыт","Какой у Тимура опыт?"],
+          ["Результаты","Какие измеримые результаты у Тимура?"],
+          ["AI и автоматизация","Покажи работу с AI и автоматизацией"]
         ],
         placeholder:"Спроси портфолио…",
-        hint:'Работает полностью в браузере: без скачивания модели, API и сервера. Помнит контекст диалога и отвечает из локальной базы знаний. Нажми <kbd>/</kbd>, чтобы перейти к строке.',
+        hint:'Нажми <kbd>/</kbd>, чтобы перейти к вопросу.',
         rolePortfolio:"портфолио",
         roleYou:"вы",
         showProject:"Показать связанный проект ↓",
@@ -151,6 +151,7 @@
       stack:"His practical toolkit includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, n8n, GitHub, Playwright and BI tooling.",
       impact:"Examples include about 70% less reporting time for a BI workflow, invoice generation in under 15 seconds, a B2B CRM ecosystem with a budget above RUB 20M, and process migration into an internal CRM.",
       ai:"His AI work focuses on practical systems: automation workflows, content pipelines, translation, vacancy handling and agent-facing utilities rather than standalone prompts.",
+      automation:"His automation work starts from a real workflow: remove repeated manual steps, define clear inputs and checks, and keep the result observable rather than hiding everything behind one black box.",
       product:"His usual product loop is: understand the workflow, reduce scope, build the smallest useful version, verify the result and iterate from evidence.",
       projectsOverview:"Selected projects: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner and FeedPulse.",
       project:{
@@ -246,6 +247,7 @@
       stack:"Практический стек: JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, n8n, GitHub, Playwright и BI-инструменты.",
       impact:"Примеры результата: около −70% времени на регулярную отчётность, генерация инвойса менее чем за 15 секунд, B2B CRM с бюджетом более 20 млн ₽ и перенос ручных процессов во внутреннюю CRM.",
       ai:"AI используется как часть рабочих систем: automation workflow, content pipeline, перевод, обработка вакансий и инструменты для агентов, а не только как отдельный чат.",
+      automation:"Автоматизация начинается с реального процесса: убрать повторяющиеся ручные шаги, определить понятные входы и проверки и оставить результат наблюдаемым, а не прятать всё в один black box.",
       product:"Обычный цикл работы: понять реальный workflow, сократить scope, собрать минимально полезную версию, проверить результат и дальше двигаться по фактам.",
       projectsOverview:"В портфолио: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner и FeedPulse.",
       project:{
@@ -397,7 +399,7 @@
     if(hasAny(q,["где работал","компан","опыт","career","experience","background","where worked"]))return{lang,intent:"background",text:a.background,subject:"timur"};
     if(hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","python","sql","api","webhook"]))return{lang,intent:"stack",text:a.stack,subject:"timur"};
     if(hasAny(q,["ии","ai","llm","агент","agent"]))return{lang,intent:"ai",text:a.ai,subject:"timur"};
-    if(hasAny(q,["автоматиз","automation","workflow","процесс"]))return{lang,intent:"automation",text:a.product,subject:"timur"};
+    if(hasAny(q,["автоматиз","automation","workflow","процесс"]))return{lang,intent:"automation",text:a.automation,subject:"timur"};
     if(hasAny(q,["продукт","product","mvp","prototype"]))return{lang,intent:"product",text:a.product,subject:"timur"};
     if(hasAny(q,["кто","тимур","who is","tell me about timur"]))return{lang,intent:"identity",text:a.identity,subject:"timur"};
     if(hasAny(q,["умеет","навык","skills","capabil"]))return{lang,intent:"skills",text:a.skills,subject:"timur"};
