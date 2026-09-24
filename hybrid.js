@@ -69,16 +69,16 @@
       },
       footer:["Timur Dautov © 2026","Built as a static page. Query and 3D field run locally in your browser."],
       deep:{
-        audit:[["Context","Where was this project done?"],["Work","What exactly changed in the audit process?"],["Automation","What automation was actually implemented?"]],
-        crm:[["Scope","How large was the CRM product?"],["Role","What was Timur responsible for?"],["Architecture","What was inside the CRM ecosystem?"]],
-        bi:[["Metrics","What did the dashboards change?"],["Stack","What was used to build the dashboards?"],["Context","Where was this project done?"]],
-        invoice:[["Workflow","How did Invoice Automation work?"],["Result","What was the measured result?"],["Context","Where was this project done?"]],
-        book:[["Architecture","How does Book Translator preserve context?"],["Telegram","How does the Telegram bot fit into the product?"],["Workflow","How does translation continue between sessions?"]],
-        video:[["Workflow","How is the AI Video Pipeline built?"],["Stack","What runs locally?"],["Review","Why is publishing separated from generation?"]],
-        tube:[["Architecture","How is TubeScore built?"],["Matching","How does TubeScore identify the right movie?"],["Testing","How did you test TubeScore?"]],
-        lightning:[["Product","What can HH Lightning do?"],["Backend","How does the license and payment backend work?"],["AI","How is AI used in HH Lightning?"]],
-        market:[["Architecture","How is Job Market Scanner built?"],["Data quality","How does it avoid bad market data?"],["Collector","How does collection resume after interruption?"]],
-        feed:[["Problem","What problem does FeedPulse solve?"],["Workflow","How does FeedPulse work?"],["Formats","What does FeedPulse normalize?"],["Reliability","How does FeedPulse handle failures and duplicates?"],["Portability","How does it work across operating systems?"],["Metrics","What technical stats does FeedPulse have?"]]
+        audit:[["Problem","What problem did the audit project solve?"],["Workflow","How was the audit process changed?"],["Role","What was Timur responsible for?"],["Result","What measurable result did it produce?"],["Verification","How was the change validated?"],["Limits","What was researched but not implemented?"]],
+        crm:[["Problem","What problem did the CRM project solve?"],["Workflow","How did CRM delivery work?"],["Role","What was Timur responsible for?"],["Result","What was delivered and at what scale?"],["Verification","How was delivery reliability handled?"],["Limits","What does this case not claim?"]],
+        bi:[["Problem","What reporting problem did the dashboards solve?"],["Workflow","How were the dashboards built and used?"],["Role","What did Timur do himself?"],["Result","What measurable result did the dashboards produce?"],["Verification","How was the effect validated?"],["Limits","What does the project not claim?"]],
+        invoice:[["Problem","What problem did Invoice Automation solve?"],["Workflow","How did Invoice Automation work?"],["Role","What did Timur implement?"],["Result","What was the measured result?"],["Verification","How was the workflow validated?"],["Limits","What was built but not launched in production?"]],
+        book:[["Problem","What problem does Book Translator solve?"],["Workflow","How does a book move through the workflow?"],["Role","What did Timur design in Book Translator?"],["Result","What does the durable workspace enable?"],["Verification","How is source and translation integrity checked?"],["Limits","What are the format and persistence limitations?"]],
+        video:[["Problem","What production problem does the AI Video Pipeline solve?"],["Workflow","How does the pipeline work end to end?"],["Role","What did Timur design?"],["Result","What artifacts does the pipeline produce?"],["Verification","How are weak outputs and failures handled?"],["Limits","Why is publishing outside the base workflow?"]],
+        tube:[["Problem","What problem does TubeScore solve?"],["Workflow","How does TubeScore work?"],["Role","What did Timur build?"],["Result","What is the current product result?"],["Verification","How does TubeScore avoid bad matches?"],["Limits","What are the current data-source limitations?"]],
+        lightning:[["Problem","What job-search problem does HH Lightning solve?"],["Workflow","How does HH Lightning work?"],["Role","What does Timur own in the product?"],["Result","What functionality is implemented?"],["Verification","What affects HH Lightning reliability?"],["Limits","What metrics are not claimed yet?"]],
+        market:[["Problem","What market-research problem does Job Market Scanner solve?"],["Workflow","How does data move from hh.ru to the website?"],["Role","What did Timur design?"],["Result","What is the current product result?"],["Verification","How does it protect data quality?"],["Limits","How should dataset freshness be interpreted?"]],
+        feed:[["Problem","What problem does FeedPulse solve?"],["Workflow","How does FeedPulse work?"],["Role","What did Timur design?"],["Result","What does FeedPulse provide to agents?"],["Verification","How does it handle failures and state safely?"],["Limits","What does FeedPulse deliberately not do?"]]
       }
     },
     ru: {
@@ -136,16 +136,16 @@
       },
       footer:["Timur Dautov © 2026","Статическая страница: Query и 3D-поле работают локально в браузере."],
       deep:{
-        audit:[["Контекст","Где выполнялся этот проект?"],["Изменения","Что именно изменилось в процессе аудита?"],["Автоматизация","Что из автоматизации реально было внедрено?"]],
-        crm:[["Масштаб","Насколько большим был CRM-продукт?"],["Роль","За что отвечал Тимур?"],["Архитектура","Что входило в CRM-экосистему?"]],
-        bi:[["Результат","Что изменили BI-дашборды?"],["Стек","На чём были построены дашборды?"],["Контекст","Где выполнялся этот проект?"]],
-        invoice:[["Workflow","Как работала автоматизация инвойсов?"],["Результат","Какой был измеримый результат?"],["Контекст","Где выполнялся этот проект?"]],
-        book:[["Архитектура","Как Book Translator сохраняет контекст?"],["Telegram","Как Telegram-бот связан с продуктом?"],["Workflow","Как перевод продолжается между сессиями?"]],
-        video:[["Workflow","Как устроен AI Video Pipeline?"],["Стек","Что работает локально?"],["Review","Почему публикация отделена от генерации?"]],
-        tube:[["Архитектура","Как устроен TubeScore?"],["Matching","Как TubeScore определяет правильный фильм?"],["Тестирование","Как тестировался TubeScore?"]],
-        lightning:[["Продукт","Что умеет HH Lightning?"],["Backend","Как устроены лицензии и платежи?"],["AI","Как AI используется в HH Lightning?"]],
-        market:[["Архитектура","Как устроен Job Market Scanner?"],["Качество данных","Как он защищается от плохих данных?"],["Сбор","Как сбор продолжается после прерывания?"]],
-        feed:[["Проблема","Какую проблему решает FeedPulse?"],["Workflow","Как работает FeedPulse?"],["Форматы","Что нормализует FeedPulse?"],["Надёжность","Как FeedPulse обрабатывает ошибки и дубли?"],["Переносимость","Как он работает на разных ОС?"],["Метрики","Какая техническая статистика у FeedPulse?"]]
+        audit:[["Проблема","Какую проблему решал проект аудита?"],["Workflow","Как изменили процесс аудита?"],["Роль","За что отвечал Тимур?"],["Результат","Какой измеримый результат получили?"],["Проверка","Как проверяли эффект изменений?"],["Ограничения","Что исследовали, но не внедрили?"]],
+        crm:[["Проблема","Какую проблему решал CRM-проект?"],["Workflow","Как был устроен delivery CRM?"],["Роль","За что отвечал Тимур?"],["Результат","Что было реализовано и какого масштаба?"],["Проверка","Как обеспечивалась надёжность delivery?"],["Ограничения","Чего этот кейс не утверждает?"]],
+        bi:[["Проблема","Какую проблему отчётности решали дашборды?"],["Workflow","Как строились и использовались дашборды?"],["Роль","Что Тимур делал сам?"],["Результат","Какой измеримый эффект получили?"],["Проверка","Как проверялся эффект?"],["Ограничения","Чего проект не утверждает?"]],
+        invoice:[["Проблема","Какую проблему решала автоматизация инвойсов?"],["Workflow","Как работала автоматизация инвойсов?"],["Роль","Что именно реализовал Тимур?"],["Результат","Какой был измеримый результат?"],["Проверка","Как валидировался workflow?"],["Ограничения","Что было сделано, но не запущено в production?"]],
+        book:[["Проблема","Какую проблему решает Book Translator?"],["Workflow","Как книга проходит через workflow?"],["Роль","Что спроектировал Тимур?"],["Результат","Что даёт durable workspace?"],["Проверка","Как проверяются исходник и перевод?"],["Ограничения","Какие есть ограничения форматов и persistence?"]],
+        video:[["Проблема","Какую production-проблему решает AI Video Pipeline?"],["Workflow","Как pipeline работает от начала до конца?"],["Роль","Что спроектировал Тимур?"],["Результат","Какие артефакты создаёт pipeline?"],["Проверка","Как обрабатываются слабые результаты и ошибки?"],["Ограничения","Почему публикация вынесена из base workflow?"]],
+        tube:[["Проблема","Какую проблему решает TubeScore?"],["Workflow","Как работает TubeScore?"],["Роль","Что именно построил Тимур?"],["Результат","Каков текущий результат продукта?"],["Проверка","Как TubeScore избегает ошибочных совпадений?"],["Ограничения","Какие есть ограничения источника данных?"]],
+        lightning:[["Проблема","Какую проблему поиска работы решает HH Lightning?"],["Workflow","Как работает HH Lightning?"],["Роль","За что Тимур отвечает в продукте?"],["Результат","Какой функционал уже реализован?"],["Проверка","От чего зависит надёжность HH Lightning?"],["Ограничения","Какие метрики пока не заявлены?"]],
+        market:[["Проблема","Какую проблему исследования рынка решает Job Market Scanner?"],["Workflow","Как данные проходят от hh.ru до сайта?"],["Роль","Что спроектировал Тимур?"],["Результат","Каков текущий результат продукта?"],["Проверка","Как система защищает качество данных?"],["Ограничения","Как правильно понимать свежесть данных?"]],
+        feed:[["Проблема","Какую проблему решает FeedPulse?"],["Workflow","Как работает FeedPulse?"],["Роль","Что спроектировал Тимур?"],["Результат","Что FeedPulse даёт агенту?"],["Проверка","Как он безопасно обрабатывает ошибки и состояние?"],["Ограничения","Что FeedPulse намеренно не делает?"]]
       }
     }
   };
