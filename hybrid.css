@@ -133,8 +133,8 @@ html[lang="ru"] .hero h1 span{
 .query-hint{padding:10px 20px 14px;font:10px/1.5 var(--font-mono);color:var(--muted)}
 kbd{border:1px solid var(--line);border-bottom-color:var(--line-strong);border-radius:4px;padding:1px 4px;font:inherit}
 .work-section{padding:0 0 130px}
-.work-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);gap:clamp(50px,8vw,105px);padding-top:42px;align-items:start}
-.project-list{border-top:1px solid var(--line)}
+.work-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);gap:clamp(50px,8vw,105px);padding-top:0;align-items:start}
+.project-list{border-top:0}
 .project-item{border-bottom:1px solid var(--line)}
 .project-trigger{width:100%;display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:center;gap:14px;padding:22px 0;text-align:left;cursor:pointer}
 .project-num{font:10px/1 var(--font-mono);color:var(--muted)}
