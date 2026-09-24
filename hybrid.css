@@ -32,6 +32,34 @@
     color-scheme:light;
   }
 }
+html[data-theme="light"] {
+  --bg:#f3f1eb;
+  --surface:#faf8f3;
+  --surface-2:#e9e6de;
+  --text:#171717;
+  --muted:#706e68;
+  --line:rgba(23,23,23,.15);
+  --line-strong:rgba(23,23,23,.32);
+  --accent:#4f65ff;
+  --accent-2:#ff643f;
+  --inverse:#f3f1eb;
+  --shadow:rgba(30,28,24,.1);
+  color-scheme:light;
+}
+html[data-theme="dark"] {
+  --bg:#151515;
+  --surface:#1c1c1c;
+  --surface-2:#222;
+  --text:#f1efe9;
+  --muted:#8c8c88;
+  --line:rgba(255,255,255,.14);
+  --line-strong:rgba(255,255,255,.28);
+  --accent:#d9ff57;
+  --accent-2:#8ca5ff;
+  --inverse:#151515;
+  --shadow:rgba(0,0,0,.24);
+  color-scheme:dark;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background .28s ease,color .28s ease}
