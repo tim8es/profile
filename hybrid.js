@@ -473,6 +473,40 @@
   const suggestions=[...document.querySelectorAll("[data-suggestion]")];
   const askProjectButtons=[...document.querySelectorAll("[data-ask-project]")];
 
+  function typeBotText(bubble,text,scroll,onDone){
+    const value=String(text||"");
+    if(reduced||!scroll||value.length<2){
+      bubble.textContent=value;
+      onDone?.();
+      return;
+    }
+
+    const duration=Math.min(1150,Math.max(380,value.length*2.2));
+    const start=performance.now();
+    let shown=0;
+    bubble.classList.add("is-typing");
+
+    const frame=(now)=>{
+      const progress=Math.min(1,(now-start)/duration);
+      const next=Math.max(shown,Math.floor(value.length*progress));
+      if(next!==shown){
+        bubble.textContent=value.slice(0,next);
+        shown=next;
+        const nearBottom=chatLog.scrollHeight-chatLog.scrollTop-chatLog.clientHeight<96;
+        if(scroll&&nearBottom) chatLog.scrollTop=chatLog.scrollHeight;
+      }
+      if(progress<1){
+        requestAnimationFrame(frame);
+      }else{
+        bubble.textContent=value;
+        bubble.classList.remove("is-typing");
+        onDone?.();
+        if(scroll) chatLog.scrollTo({top:chatLog.scrollHeight,behavior:"smooth"});
+      }
+    };
+    requestAnimationFrame(frame);
+  }
+
   function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang){
     if(!chatLog)return;
     const row=document.createElement("div");
@@ -482,27 +516,32 @@
     roleEl.textContent=role==="user"?(lang==="ru"?"вы":"you"):(lang==="ru"?"портфолио":"portfolio");
     const bubble=document.createElement("div");
     bubble.className="chat-bubble";
-    bubble.textContent=text;
-    if(actions.length){
-      const wrap=document.createElement("div");wrap.className="chat-actions";
-      actions.forEach((action)=>{
-        const button=document.createElement("button");button.type="button";button.textContent=action.label;
-        button.addEventListener("click",()=>askPortfolio(action.query));
-        wrap.appendChild(button);
-      });
-      bubble.appendChild(wrap);
-    }
-    if(projectId){
-      const br=document.createElement("br");
-      const link=document.createElement("button");link.type="button";link.className="chat-project-link";
-      link.textContent=lang==="ru"?"Показать связанный проект ↓":"Show related project ↓";
-      link.addEventListener("click",()=>{
-        activateProject(projectId,true);
-        document.getElementById("work")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
-      });
-      bubble.append(br,link);
-    }
+
+    const appendExtras=()=>{
+      if(actions.length){
+        const wrap=document.createElement("div");wrap.className="chat-actions";
+        actions.forEach((action)=>{
+          const button=document.createElement("button");button.type="button";button.textContent=action.label;
+          button.addEventListener("click",()=>askPortfolio(action.query));
+          wrap.appendChild(button);
+        });
+        bubble.appendChild(wrap);
+      }
+      if(projectId){
+        const br=document.createElement("br");
+        const link=document.createElement("button");link.type="button";link.className="chat-project-link";
+        link.textContent=lang==="ru"?"Показать связанный проект ↓":"Show related project ↓";
+        link.addEventListener("click",()=>{
+          activateProject(projectId,true);
+          document.getElementById("work")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
+        });
+        bubble.append(br,link);
+      }
+    };
+
     row.append(roleEl,bubble);chatLog.appendChild(row);
+    if(role==="bot") typeBotText(bubble,text,scroll,appendExtras);
+    else{bubble.textContent=text;appendExtras();}
     if(scroll)chatLog.scrollTo({top:chatLog.scrollHeight,behavior:reduced?"auto":"smooth"});
   }
 
