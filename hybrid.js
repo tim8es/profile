@@ -902,6 +902,13 @@
       item.querySelectorAll(".project-reveal dl > div").forEach((block,i)=>{if(p.details[i]){block.querySelector("dt").textContent=p.details[i][0];block.querySelector("dd").textContent=p.details[i][1];}});
       const ask=item.querySelector("[data-ask-project]");if(ask)ask.textContent=p.ask;
     });
+    document.querySelectorAll("[data-project-external]").forEach((link)=>{
+      const type=link.dataset.projectExternal;
+      const labels=lang==="ru"
+        ?{live:"Открыть сайт ↗",store:"Chrome Web Store ↗",github:"GitHub ↗"}
+        :{live:"Live site ↗",store:"Chrome Web Store ↗",github:"GitHub ↗"};
+      if(labels[type])link.textContent=labels[type];
+    });
 
     const aLabels=document.querySelectorAll("#about > .section-label span");if(aLabels[0])aLabels[0].textContent=t.about.title;if(aLabels[1])aLabels[1].textContent=t.about.note;
     setText(".about-statement",t.about.statement);
