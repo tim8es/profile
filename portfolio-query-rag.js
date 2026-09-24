@@ -485,6 +485,38 @@
     }
   });
 
+  // Theme
+  const themeToggle=document.querySelector("[data-theme-toggle]");
+  const systemTheme=window.matchMedia("(prefers-color-scheme: light)");
+  const savedTheme=localStorage.getItem("portfolio-theme");
+
+  function effectiveTheme(){
+    return html.dataset.theme || (systemTheme.matches?"light":"dark");
+  }
+
+  function updateThemeToggle(){
+    const theme=effectiveTheme();
+    themeToggle?.setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");
+  }
+
+  if(savedTheme==="light"||savedTheme==="dark") html.dataset.theme=savedTheme;
+  else delete html.dataset.theme;
+  updateThemeToggle();
+
+  systemTheme.addEventListener?.("change",()=>{
+    if(!localStorage.getItem("portfolio-theme")){
+      delete html.dataset.theme;
+      updateThemeToggle();
+    }
+  });
+
+  themeToggle?.addEventListener("click",()=>{
+    const next=effectiveTheme()==="dark"?"light":"dark";
+    html.dataset.theme=next;
+    localStorage.setItem("portfolio-theme",next);
+    updateThemeToggle();
+  });
+
   // Language
   const langToggle=document.querySelector("[data-lang-toggle]");
   const langLabel=document.querySelector("[data-lang-label]");
