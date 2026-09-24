@@ -1189,7 +1189,6 @@
   const form=document.querySelector("[data-query-form]");
   const input=document.querySelector("[data-query-input]");
   const statusEl=document.querySelector("#query > .section-label span:nth-child(2)");
-  const suggestions=[...document.querySelectorAll("[data-suggestion]")];
   const askProjectButtons=[...document.querySelectorAll("[data-ask-project]")];
 
   function renderRuntimeStatus(mode=state.runtimeMode){
@@ -1468,7 +1467,8 @@
   function resetChatLog(){
     if(!chatLog)return;
     chatLog.innerHTML="";
-    appendMessage("bot",ui[state.lang].query.intro,null,[],false,state.lang);
+    const quickReplies=ui[state.lang].query.suggestions.map(([label,query])=>({label,query}));
+    appendMessage("bot",ui[state.lang].query.intro,null,quickReplies,false,state.lang);
     state.lastSubject="timur";state.lastIntent="identity";state.lastProject=null;state.history=[];
   }
 
@@ -1524,7 +1524,6 @@
   }
 
   form?.addEventListener("submit",(event)=>{event.preventDefault();askPortfolio(input?.value);if(input)input.value="";});
-  suggestions.forEach((button)=>button.addEventListener("click",()=>askPortfolio(button.dataset.suggestion)));
   askProjectButtons.forEach((button)=>button.addEventListener("click",()=>openProjectQuestions(button.dataset.askProject)));
   document.addEventListener("keydown",(event)=>{
     const tag=document.activeElement?.tagName?.toLowerCase();
@@ -1613,7 +1612,6 @@
     const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;if(fh[1])fh[1].textContent=t.field.hint;
 
     const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;renderRuntimeStatus();
-    document.querySelectorAll(".suggestions button").forEach((button,i)=>{const pair=t.query.suggestions[i];if(pair){button.textContent=pair[0];button.dataset.suggestion=pair[1];}});
     if(input)input.placeholder=t.query.placeholder;setHTML(".query-hint",t.query.hint);
 
     const wLabels=document.querySelectorAll("#work > .section-label span");if(wLabels[0])wLabels[0].textContent=t.work.title;if(wLabels[1])wLabels[1].textContent=t.work.note;
