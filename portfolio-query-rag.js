@@ -15,12 +15,12 @@
       demo: "04 / Hybrid candidate",
       nav: { work:"Work", query:"Query", about:"About" },
       hero: {
-        eyebrow:"Product builder + Delivery Driver",
+        eyebrow:"Product builder / Delivery Driver",
         title:"Build.<br><span>Automate.</span><br>Simplify.",
         lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
         meta:["Product → prototype","AI-native workflow"]
       },
-      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Process","Analytics / BI","APIs & Integrations","Delivery","Browser tools"] },
+      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Projects","Process","Analytics / BI","APIs & Integrations","Delivery","Browser tools"] },
       query: {
         title:"Portfolio Query",
         status:"local composer",
@@ -84,7 +84,7 @@
         lede:"Превращаю размытые задачи и неудобные процессы в небольшие работающие продукты — с помощью AI, автоматизации и кода.",
         meta:["От задачи → к прототипу","AI-native подход"]
       },
-      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Процессы","Аналитика / BI","API и интеграции","Delivery","Browser tools"] },
+      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Проекты","Процессы","Аналитика / BI","API и интеграции","Delivery","Browser tools"] },
       query: {
         title:"Portfolio Query",
         status:"local composer",
@@ -586,6 +586,7 @@
       AI:{en:"Show me AI and automation work",ru:"Покажи работу с AI и автоматизацией"},
       automation:{en:"How do you automate processes?",ru:"Как ты автоматизируешь процессы?"},
       product:{en:"Tell me about CRM Product Development",ru:"Расскажи про CRM Product Development"},
+      projects:{en:"What projects are in the portfolio?",ru:"Какие проекты в портфолио?"},
       process:{en:"Tell me about Audit Process Consulting",ru:"Расскажи про Audit Process Consulting"},
       analytics:{en:"Tell me about Operations & BI Dashboards",ru:"Расскажи про Operations & BI Dashboards"},
       integrations:{en:"What stack do you use?",ru:"Какой стек ты используешь?"},
@@ -597,7 +598,7 @@
     document.getElementById("query")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
   }));
 
-  const labels={en:["AI","Automation","Product","Process","Analytics / BI","APIs","Delivery","Browser","Agents","SQL / Data","JS / Node","n8n"],ru:["ИИ","Автоматизация","Продукт","Процессы","Аналитика / BI","API","Delivery","Browser","Агенты","SQL / Данные","JS / Node","n8n"]};
+  const labels={en:["AI","Automation","Product","Projects","Process","Analytics / BI","APIs","Delivery","Browser","Agents","SQL / Data","JS / Node","n8n"],ru:["ИИ","Автоматизация","Продукт","Проекты","Процессы","Аналитика / BI","API","Delivery","Browser","Агенты","SQL / Данные","JS / Node","n8n"]};
   if(canvas){
     const ctx=canvas.getContext("2d");
     if(ctx){
@@ -605,7 +606,8 @@
         {x:-.74,y:-.58,q:{en:"Show me AI and automation work",ru:"Покажи работу с AI и автоматизацией"}},
         {x:-.28,y:-.72,q:{en:"How do you automate processes?",ru:"Как ты автоматизируешь процессы?"}},
         {x:.24,y:-.68,q:{en:"Tell me about CRM Product Development",ru:"Расскажи про CRM Product Development"}},
-        {x:.70,y:-.46,q:{en:"Tell me about Audit Process Consulting",ru:"Расскажи про Audit Process Consulting"}},
+        {x:.72,y:-.62,q:{en:"What projects are in the portfolio?",ru:"Какие проекты в портфолио?"}},
+        {x:.70,y:-.34,q:{en:"Tell me about Audit Process Consulting",ru:"Расскажи про Audit Process Consulting"}},
         {x:-.72,y:-.08,q:{en:"Tell me about Operations & BI Dashboards",ru:"Расскажи про Operations & BI Dashboards"}},
         {x:.70,y:-.02,q:{en:"What stack do you use?",ru:"Какой стек ты используешь?"}},
         {x:-.56,y:.34,q:{en:"What was Timur responsible for in CRM Product Development?",ru:"За что Тимур отвечал в CRM Product Development?"}},
