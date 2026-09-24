@@ -23,7 +23,7 @@
       field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Projects","Process","Analytics / BI","APIs & Integrations","Delivery","Browser tools"] },
       query: {
         title:"Portfolio Query",
-        status:"contextual local engine / 0 MB model download",
+        status:"local composer",
         intro:"Ask me about Timur, his work, projects, product approach or technical decisions.",
         suggestions:[
           ["Projects","What projects are in the portfolio?"],
@@ -87,7 +87,7 @@
       field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Проекты","Процессы","Аналитика / BI","API и интеграции","Delivery","Browser tools"] },
       query: {
         title:"Portfolio Query",
-        status:"контекстный локальный движок / 0 МБ модели",
+        status:"local composer",
         intro:"Спроси о Тимуре, его работах, проектах, продуктовом подходе или технических решениях.",
         suggestions:[
           ["Проекты","Какие проекты в портфолио?"],
@@ -145,15 +145,24 @@
     en:{
       greeting:"Hi. Ask about Timur's projects, work experience, roles, results, technical decisions or product approach.",
       thanks:"You're welcome. You can ask about any project, its context, role, result or technical details.",
-      identity:"Timur Dautov combines project and process management with hands-on product building, automation and AI tooling.",
-      background:"His professional background includes operations and process leadership at Skyeng, B2B CRM product delivery at SPIKS, and process automation work at OpiniQ.",
-      skills:"He works across product discovery, process redesign, delivery, analytics, automation, APIs and lightweight software development.",
-      stack:"His practical toolkit includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, n8n, GitHub, Playwright and BI tooling.",
-      impact:"Examples include about 70% less reporting time for a BI workflow, invoice generation in under 15 seconds, a B2B CRM ecosystem with a budget above RUB 20M, and process migration into an internal CRM.",
-      ai:"His AI work focuses on practical systems: automation workflows, content pipelines, translation, vacancy handling and agent-facing utilities rather than standalone prompts.",
-      automation:"His automation work starts from a real workflow: remove repeated manual steps, define clear inputs and checks, and keep the result observable rather than hiding everything behind one black box.",
-      product:"His usual product loop is: understand the workflow, reduce scope, build the smallest useful version, verify the result and iterate from evidence.",
-      projectsOverview:"Selected projects: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner and FeedPulse.",
+      identity:"Timur Dautov is a Product Builder / Delivery Driver with more than 10 years of professional experience. His background combines operations and process leadership, B2B product delivery, analytics, automation and increasingly hands-on software and AI product building.",
+      identityMore:"He has led a remote team of 23 assessors plus a trainer, managed delivery of a multi-application B2B CRM, redesigned operational processes, built BI reporting and now develops his own browser products, AI workflows and automation tools.",
+      background:"Timur has more than 10 years of professional experience. At Skyeng he worked in operations and process leadership, including a remote team of 23 assessors and one trainer; at SPIKS he managed delivery of a B2B Loyalty CRM; at OpiniQ he worked on process automation and AI/agentic proof-of-concepts.",
+      backgroundMore:"His work has covered people leadership, KPI and process design, requirements, backlog and delivery, SQL/BI analytics, CRM process migration, n8n automation, browser extensions and AI-assisted products. The common thread is taking an unclear operational or product problem and turning it into a controlled working system.",
+      years:"More than 10 years of professional experience, including management, operations, product/project delivery and hands-on automation and product building.",
+      skills:"He works across product discovery, process redesign, delivery, analytics, automation, APIs and lightweight software development. He is comfortable moving from requirements and process mapping to a working prototype or production workflow.",
+      skillsMore:"The profile is deliberately cross-functional: product and project management, process consulting, SQL/BI analytics, API integrations, browser automation, JavaScript/Node.js, n8n and AI-assisted workflows.",
+      stack:"His practical toolkit includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, n8n, GitHub, Playwright, PostgreSQL and BI tooling such as Yandex DataLens.",
+      stackMore:"Depending on the project he also works with Chrome Manifest V3, service workers and content scripts, Next.js, FFmpeg, TTS, Telegram integrations, YDB, JWT and payment/licensing infrastructure.",
+      impact:"Verified results include roughly 70% less time spent on regular reporting, invoice generation in under 15 seconds, about 20% faster processing after moving a manual workflow into CRM, dashboards covering 20 products, and delivery responsibility for a B2B CRM ecosystem with a development/support budget above RUB 20M.",
+      impactMore:"Other evidence is less about a single KPI and more about scope: leading a 23-person assessment team plus a trainer, coordinating web/mobile/backend delivery, moving fragmented workflows into CRM, and building reusable automation instead of repeating manual operations.",
+      financialImpact:"There is no verified portfolio figure for revenue generated or money saved that can be attributed directly to Timur. The defensible evidence is operational: about 70% less reporting time, about 20% faster processing in a migrated workflow, invoice generation under 15 seconds, and responsibility for a CRM program with a budget above RUB 20M.",
+      ai:"AI is used inside working systems rather than as a standalone chat layer. Examples include HH Lightning for AI-assisted vacancy handling and cover letters, Book Translator for long-form translation with persistent state, and AI Video Pipeline for scripted content production.",
+      aiMore:"Other AI/agent work includes FeedPulse as an ingestion utility for agents and experiments around controlled workflows, validation and resumability. The recurring pattern is to put deterministic process, state and checks around the model.",
+      automation:"Automation starts from a real workflow: identify repetitive handoffs, define inputs and success criteria, automate the repeatable part and keep validation observable. Examples include Invoice Automation, BI/reporting workflows and migration of manual process steps into CRM.",
+      product:"His usual product loop is: understand the workflow and user problem, reduce scope, build the smallest useful version, verify it against reality and iterate from evidence rather than adding complexity first.",
+      projectsOverview:"The portfolio combines four business cases and six hands-on products. Business cases: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards and Invoice Automation. Product work: Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner and FeedPulse.",
+      projectsMore:"The projects cover different layers of the same profile: process consulting and delivery, analytics and workflow automation, consumer/browser products, AI-assisted workflows and small infrastructure utilities. Each project card stays concise; the Query can expose role, company context, result, architecture and stack.",
       project:{
         audit:{
           overview:"Audit Process Consulting was a process-analysis and redesign project around a manual communication-quality audit workflow.",
@@ -241,15 +250,24 @@
     ru:{
       greeting:"Привет. Можно спросить про проекты Тимура, опыт, роль, результат, технические решения или продуктовый подход.",
       thanks:"Пожалуйста. Можно спросить подробнее про любой проект: контекст, компанию, роль, результат или технологии.",
-      identity:"Тимур Даутов сочетает управление проектами и процессами с hands-on разработкой продуктов, автоматизаций и AI-инструментов.",
-      background:"Профессиональный опыт включает управление операционными процессами в Skyeng, развитие B2B CRM в SPIKS и автоматизацию процессов в OpiniQ.",
-      skills:"Он работает на стыке product discovery, process redesign, delivery, аналитики, автоматизации, API и lightweight-разработки.",
-      stack:"Практический стек: JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, n8n, GitHub, Playwright и BI-инструменты.",
-      impact:"Примеры результата: около −70% времени на регулярную отчётность, генерация инвойса менее чем за 15 секунд, B2B CRM с бюджетом более 20 млн ₽ и перенос ручных процессов во внутреннюю CRM.",
-      ai:"AI используется как часть рабочих систем: automation workflow, content pipeline, перевод, обработка вакансий и инструменты для агентов, а не только как отдельный чат.",
-      automation:"Автоматизация начинается с реального процесса: убрать повторяющиеся ручные шаги, определить понятные входы и проверки и оставить результат наблюдаемым, а не прятать всё в один black box.",
-      product:"Обычный цикл работы: понять реальный workflow, сократить scope, собрать минимально полезную версию, проверить результат и дальше двигаться по фактам.",
-      projectsOverview:"В портфолио: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner и FeedPulse.",
+      identity:"Тимур Даутов — Product Builder / Delivery Driver с более чем 10 годами профессионального опыта. Профиль сочетает управление процессами и delivery, B2B-продукты, аналитику, автоматизацию и всё более hands-on разработку software/AI-продуктов.",
+      identityMore:"Он руководил удалённой командой из 23 асессоров и тренера, отвечал за delivery сложной B2B CRM, перерабатывал операционные процессы, строил BI-отчётность, а сейчас также самостоятельно делает browser-продукты, AI-workflow и автоматизации.",
+      background:"У Тимура более 10 лет профессионального опыта. В Skyeng он занимался операционным управлением и процессами, включая руководство удалённой командой из 23 асессоров и одного тренера; в SPIKS — delivery B2B Loyalty CRM; в OpiniQ — автоматизацией процессов и AI/agentic PoC.",
+      backgroundMore:"Опыт включает people management, KPI и process design, требования, backlog и delivery, SQL/BI-аналитику, перенос процессов в CRM, n8n-автоматизацию, browser extensions и AI-продукты. Общий паттерн — разобраться в неясной задаче и довести её до управляемой работающей системы.",
+      years:"Более 10 лет профессионального опыта: управление, operations, project/product delivery, а также hands-on автоматизация и разработка продуктов.",
+      skills:"Работает на стыке product discovery, process redesign, delivery, аналитики, автоматизации, API и lightweight-разработки. Может пройти путь от требований и карты процесса до работающего прототипа или production-workflow.",
+      skillsMore:"Профиль намеренно кросс-функциональный: product/project management, process consulting, SQL/BI, API-интеграции, browser automation, JavaScript/Node.js, n8n и AI-workflow.",
+      stack:"Практический стек: JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, n8n, GitHub, Playwright, PostgreSQL и BI-инструменты, включая Yandex DataLens.",
+      stackMore:"В отдельных проектах также используются Chrome Manifest V3, service workers/content scripts, Next.js, FFmpeg, TTS, Telegram-интеграции, YDB, JWT и инфраструктура лицензирования/платежей.",
+      impact:"Подтверждённые результаты: примерно −70% времени на регулярную отчётность, генерация инвойса менее чем за 15 секунд, около +20% к скорости обработки после переноса процесса в CRM, дашборды для 20 продуктов и delivery B2B CRM с бюджетом разработки/поддержки более 20 млн ₽.",
+      impactMore:"Есть и результаты, которые лучше описываются масштабом ответственности: руководство командой из 23 асессоров и тренера, координация web/mobile/backend delivery, перенос разрозненных процессов в CRM и создание переиспользуемых автоматизаций вместо повторяющейся ручной работы.",
+      financialImpact:"Подтверждённой суммы выручки или экономии денег, которую корректно напрямую приписать Тимуру, в портфолио нет. Есть измеримые операционные результаты: около −70% времени на отчётность, около +20% скорости обработки процесса, инвойс менее чем за 15 секунд и ответственность за CRM-программу с бюджетом более 20 млн ₽.",
+      ai:"AI используется внутри рабочих систем, а не только как чат. Примеры: HH Lightning — AI-обработка вакансий и сопроводительных писем; Book Translator — длинный перевод с сохранением состояния; AI Video Pipeline — производство короткого контента по управляемому pipeline.",
+      aiMore:"Дополнительно есть FeedPulse как ingestion-утилита для AI-агентов и эксперименты с контролируемыми workflow, validation и resumability. Повторяющийся принцип — окружать модель детерминированным процессом, состоянием и проверками.",
+      automation:"Автоматизация начинается с реального workflow: найти повторяющиеся handoff'ы, определить входы и критерии результата, автоматизировать повторяемую часть и оставить проверки наблюдаемыми. Примеры — Invoice Automation, BI/reporting и перенос ручных шагов процесса в CRM.",
+      product:"Обычный продуктовый цикл: понять workflow и пользовательскую проблему, жёстко сократить scope, собрать минимально полезную версию, проверить её на реальности и только затем усложнять.",
+      projectsOverview:"Портфолио объединяет четыре бизнес-кейса и шесть hands-on продуктов. Бизнес-кейсы: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards и Invoice Automation. Продукты: Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner и FeedPulse.",
+      projectsMore:"Проекты показывают разные стороны одного профиля: process consulting и delivery, аналитику и workflow automation, browser/consumer продукты, AI-workflow и небольшие инфраструктурные утилиты. В карточках оставлен минимум, а через Query можно раскрыть роль, компанию, результат, архитектуру и стек.",
       project:{
         audit:{
           overview:"Audit Process Consulting — анализ и переработка ручного процесса контроля качества коммуникаций.",
@@ -362,26 +380,61 @@
   };
   const selectedProjects=new Set(Object.keys(projectTerms));
 
+  function mentionsGlobalPerson(q){
+    return hasAny(q,["тимур","ты ","тебя","твой","твои","your ","you ","timur"]);
+  }
+
+  function projectFollowup(q){
+    return hasAny(q,["этот проект","этого проекта","в проекте","по проекту","в нем","в нём","там","его архитект","его стек","this project","the project","in it","its stack","its architecture"]);
+  }
+
   function resolveSubject(q){
     for(const [id,terms] of Object.entries(projectTerms)){
       if(terms.some(term=>q.includes(norm(term)))) return id;
     }
-    if(isMore(q) && selectedProjects.has(state.lastSubject)) return state.lastSubject;
-    const followupIntent=hasAny(q,["где","компан","контекст","роль","отвечал","результат","метрик","эффект","масштаб","стек","технолог","архитект","как устро","нюанс","огранич","почему","реально","фактически","качество","плох","ошиб","where","company","role","responsib","result","impact","metric","scale","stack","technology","architecture","detail","constraint","why","how","quality","bad data","freshness"]);
-    if(followupIntent && selectedProjects.has(state.lastSubject)) return state.lastSubject;
+    if(mentionsGlobalPerson(q)) return "timur";
+    if(selectedProjects.has(state.lastSubject) && (isMore(q)||projectFollowup(q))) return state.lastSubject;
     return "timur";
   }
 
   function projectResult(lang,id,q){
     const p=answers[lang].project[id];
     if(!p)return null;
-    let text=p.overview;
-    if(hasAny(q,["где","компан","контекст","where","company","employer"])) text=p.company;
-    else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])) text=p.role;
-    else if(hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"])) text=p.result;
-    else if(hasAny(q,["стек","технолог","архитект","как устро","stack","technology","architecture","how built"])) text=p.stack;
-    else if(hasAny(q,["нюанс","огранич","почему","реально","фактически","качество","плох","ошиб","detail","constraint","why","hard","quality","bad data","freshness"])) text=p.detail;
-    return {lang,intent:"project",text,subject:id,project:id};
+
+    let text;
+    let intent="project-overview";
+    if(hasAny(q,["где","компан","контекст","where","company","employer"])){
+      text=p.company;intent="project-company";
+    }else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])){
+      text=p.role+" "+p.result;intent="project-role";
+    }else if(hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"])){
+      text=p.result+" "+p.detail;intent="project-result";
+    }else if(hasAny(q,["стек","технолог","архитект","как устро","stack","technology","architecture","how built"])){
+      text=p.stack+" "+p.detail;intent="project-stack";
+    }else if(isMore(q)||hasAny(q,["подробнее","больше","more detail","more about"])){
+      text=p.role+" "+p.detail+" "+p.stack;intent="project-more";
+    }else if(hasAny(q,["нюанс","огранич","почему","реально","фактически","качество","плох","ошиб","detail","constraint","why","hard","quality","bad data","freshness"])){
+      text=p.detail+" "+p.result;intent="project-detail";
+    }else{
+      text=p.overview+" "+p.result+" "+p.detail;
+    }
+    return {lang,intent,text,subject:id,project:id};
+  }
+
+  function followupResult(lang,q){
+    const a=answers[lang];
+    const intent=state.lastIntent;
+    if(selectedProjects.has(state.lastSubject)) return projectResult(lang,state.lastSubject,q);
+
+    if(intent==="projects") return {lang,intent:"projects-more",text:a.projectsMore,subject:"timur"};
+    if(intent==="impact"||intent==="impact-more") return {lang,intent:"impact-more",text:a.impactMore,subject:"timur"};
+    if(intent==="ai"||intent==="ai-more") return {lang,intent:"ai-more",text:a.aiMore,subject:"timur"};
+    if(intent==="background"||intent==="background-more"||intent==="years") return {lang,intent:"background-more",text:a.backgroundMore,subject:"timur"};
+    if(intent==="identity"||intent==="identity-more") return {lang,intent:"identity-more",text:a.identityMore,subject:"timur"};
+    if(intent==="skills"||intent==="skills-more") return {lang,intent:"skills-more",text:a.skillsMore,subject:"timur"};
+    if(intent==="stack"||intent==="stack-more") return {lang,intent:"stack-more",text:a.stackMore,subject:"timur"};
+    if(intent==="automation") return {lang,intent:"ai-more",text:a.aiMore,subject:"timur"};
+    return {lang,intent:"identity-more",text:a.identityMore,subject:"timur"};
   }
 
   function classify(raw){
@@ -393,10 +446,18 @@
     const subject=resolveSubject(q);
     if(subject!=="timur") return projectResult(lang,subject,q);
 
-    if(isMore(q) && selectedProjects.has(state.lastSubject)) return projectResult(lang,state.lastSubject,q);
-    if(hasAny(q,["все проекты","все работы","какие проекты","projects","portfolio","what did he build"]))return{lang,intent:"projects",text:a.projectsOverview,subject:"timur"};
-    if(hasAny(q,["результат","метрик","цифр","эффект","impact","results","metrics"]))return{lang,intent:"impact",text:a.impact,subject:"timur"};
-    if(hasAny(q,["где работал","компан","опыт","career","experience","background","where worked"]))return{lang,intent:"background",text:a.background,subject:"timur"};
+    if(hasAny(q,["сколько денег","сколько заработ","сколько сэконом","деньги помог","заработал","сэкономил","revenue generated","money saved","how much money"]))return{lang,intent:"financial-impact",text:a.financialImpact,subject:"timur"};
+    if(q==="лет"||hasAny(q,["сколько лет опыта","сколько опыта","лет опыта","years of experience","how many years"]))return{lang,intent:"years",text:a.years,subject:"timur"};
+
+    if(hasAny(q,["подробнее про проекты","больше про проекты","проекты подробнее","more about projects"]))return{lang,intent:"projects-more",text:a.projectsOverview+" "+a.projectsMore,subject:"timur"};
+    if(hasAny(q,["больше результатов","еще результаты","ещё результаты","другие результаты","more results","more impact"]))return{lang,intent:"impact-more",text:a.impactMore,subject:"timur"};
+    if(hasAny(q,["чем еще занимался","чем ещё занимался","что еще делал","что ещё делал","what else did he do"]))return{lang,intent:"background-more",text:a.backgroundMore,subject:"timur"};
+    if(hasAny(q,["что еще о тимуре","что ещё о тимуре","more about timur"]))return{lang,intent:"identity-more",text:a.identityMore,subject:"timur"};
+    if(isMore(q)||q==="подробнее"||q==="больше") return followupResult(lang,q);
+
+    if(hasAny(q,["проект","проекты","портфолио","работы","projects","portfolio","what did he build"]))return{lang,intent:"projects",text:a.projectsOverview,subject:"timur"};
+    if(hasAny(q,["результат","метрик","цифр","эффект","достижен","impact","results","metrics","achievement"]))return{lang,intent:"impact",text:a.impact,subject:"timur"};
+    if(hasAny(q,["где работал","компан","опыт","карьер","чем занимался","career","experience","background","where worked"]))return{lang,intent:"background",text:a.background,subject:"timur"};
     if(hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","python","sql","api","webhook"]))return{lang,intent:"stack",text:a.stack,subject:"timur"};
     if(hasAny(q,["ии","ai","llm","агент","agent"]))return{lang,intent:"ai",text:a.ai,subject:"timur"};
     if(hasAny(q,["автоматиз","automation","workflow","процесс"]))return{lang,intent:"automation",text:a.automation,subject:"timur"};
