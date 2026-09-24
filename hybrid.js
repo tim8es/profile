@@ -29,7 +29,11 @@
           ["Projects","What projects are in the portfolio?"],
           ["Experience","What's Timur's background?"],
           ["Results","What measurable results does Timur have?"],
-          ["AI & automation","Show me AI and automation work"]
+          ["AI & automation","Show me AI and automation work"],
+          ["Skills","What skills does Timur have?"],
+          ["Stack","What stack do you use?"],
+          ["Delivery","Tell me about Timur's delivery experience"],
+          ["Product approach","Tell me about Timur's product approach"]
         ],
         placeholder:"Ask the portfolio…",
         hint:'Press <kbd>/</kbd> to focus.',
@@ -93,7 +97,11 @@
           ["Проекты","Какие проекты в портфолио?"],
           ["Опыт","Какой у Тимура опыт?"],
           ["Результаты","Какие измеримые результаты у Тимура?"],
-          ["AI и автоматизация","Покажи работу с AI и автоматизацией"]
+          ["AI и автоматизация","Покажи работу с AI и автоматизацией"],
+          ["Навыки","Какие навыки у Тимура?"],
+          ["Стек","Какой стек ты используешь?"],
+          ["Delivery","Расскажи про delivery-опыт Тимура"],
+          ["Продуктовый подход","Расскажи про продуктовый подход Тимура"]
         ],
         placeholder:"Спроси портфолио…",
         hint:'Нажми <kbd>/</kbd>, чтобы перейти к вопросу.',
