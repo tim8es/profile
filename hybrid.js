@@ -1446,6 +1446,7 @@
 
   function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang,evidenceId=null){
     if(!chatLog)return;
+    chatLog.querySelectorAll(".chat-actions").forEach((el)=>el.remove());
     const row=document.createElement("div");
     row.className=`chat-message chat-message--${role}`;
     const roleEl=document.createElement("span");
