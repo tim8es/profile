@@ -160,14 +160,14 @@
 
   const topicLexicon = {
     identity:["кто","тимур","who","person","profile","профиль"],
-    experience:["где работал","компан","опыт","career","experience","worked","background"],
+    experience:["где работал","компан","опыт","карьер","лет","чем занимался","career","experience","worked","background","years"],
     companies:["компан","где","контекст","employer","company","where"],
     role:["роль","отвечал","responsib","role"],
-    results:["результат","метрик","цифр","эффект","масштаб","impact","result","metric","scale"],
+    results:["результат","метрик","цифр","эффект","масштаб","достижен","деньги","сэконом","заработ","impact","result","metric","scale","achievement","money","saved","revenue"],
     skills:["умеет","навык","компетенц","skills","can do","capabil"],
     strengths:["сильн","преимущ","strength","differentiat"],
     fit:["подойд","работ","роль","fit","role","job","suitable"],
-    projects:["проект","делал","создал","built","project","portfolio"],
+    projects:["проект","проекты","портфолио","работы","делал","создал","built","project","projects","portfolio"],
     product:["продукт","mvp","product","prototype"],
     process:["процесс","операц","workflow","process"],
     ai:["ии","ai","llm","agent","агент"],
@@ -205,13 +205,17 @@
       if(terms.some(term=>q.includes(norm(term)))) found.push(topic);
     });
 
-    if(!found.length && /^(что еще|что ещё|а еще|а ещё|what else|tell me more)/.test(q)){
-      return [...new Set(state.lastFacts.flatMap(id=>kb?.facts?.find(f=>f.id===id)?.topics||[]))];
-    }
+    const globalPerson=/\b(тимур|ты|тебя|твой|твои|timur|you|your)\b/.test(q);
     const projectTopics=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"];
     const hasProject=found.some(topic=>projectTopics.includes(topic));
     const followupTopics=["companies","role","results","technical","architecture","testing","limitations","quality"];
-    if(!hasProject && projectTopics.includes(state.lastSubject) && found.some(topic=>followupTopics.includes(topic))){
+
+    if(!found.length && /^(что еще|что ещё|а еще|а ещё|подробнее|больше|what else|tell me more|more)/.test(q)){
+      const previous=[...new Set(state.lastFacts.flatMap(id=>kb?.facts?.find(f=>f.id===id)?.topics||[]))];
+      return previous.length?previous:["identity","experience","skills"];
+    }
+
+    if(!globalPerson && !hasProject && projectTopics.includes(state.lastSubject) && found.some(topic=>followupTopics.includes(topic))){
       found.push(state.lastSubject);
     }
     return [...new Set(found)];
@@ -242,6 +246,7 @@
     if(!kb?.facts?.length) return [];
     let topics=detectTopics(question);
     const q=norm(question);
+    const wantsMore=/^(что еще|что ещё|а еще|а ещё|подробнее|больше|what else|tell me more|more)/.test(q);
 
     if(/все что|всё что|everything|all you know/.test(q)){
       topics=["identity","experience","companies","skills","projects","strengths","product","ai","technical"];
@@ -249,7 +254,7 @@
     if(/слаб/.test(q)||/weakness/.test(q)) topics=["fit","strengths"];
 
     const ranked=kb.facts
-      .map(fact=>({fact,score:scoreFact(fact,question,topics)}))
+      .map(fact=>({fact,score:scoreFact(fact,question,topics)-(wantsMore&&state.lastFacts.includes(fact.id)?50:0)}))
       .sort((a,b)=>b.score-a.score);
 
     const limit=topics.length>3?9:6;
@@ -276,7 +281,7 @@
   }
 
   function joinFacts(facts,lang){
-    return facts.slice(0,5).map((fact,index)=>{
+    return facts.slice(0,6).map((fact,index)=>{
       let text=fact.text[lang]||fact.text.en||fact.text.ru;
       if(index>0) text=stripLead(text);
       return text.replace(/\.+$/,"");
@@ -441,7 +446,20 @@
       return;
     }
 
-    const facts=retrieve(text);
+    const q=norm(text);
+    let normalizedQuestion=text;
+
+    if(q==="лет"||/сколько (лет )?опыта|years of experience|how many years/.test(q)){
+      normalizedQuestion=lang==="ru"?"опыт лет карьера":"experience years career";
+    }else if(/подробнее про проекты|больше про проекты|проекты подробнее|more about projects/.test(q)){
+      normalizedQuestion=lang==="ru"?"проекты портфолио product automation":"projects portfolio product automation";
+    }else if(/больше результатов|еще результаты|ещё результаты|другие результаты|more results|more impact/.test(q)){
+      normalizedQuestion=lang==="ru"?"результаты метрики эффект масштаб":"results metrics impact scale";
+    }else if(/чем еще занимался|чем ещё занимался|что еще делал|что ещё делал|what else did he do/.test(q)){
+      normalizedQuestion=lang==="ru"?"опыт карьера процессы product delivery":"experience career process product delivery";
+    }
+
+    const facts=retrieve(normalizedQuestion);
     state.lastFacts=facts.map(f=>f.id);
     const local=composeLocal(text,facts,lang);
     const server=await serverAnswer(text,facts,lang);
@@ -449,9 +467,10 @@
     const project=facts.find(f=>f.context?.projectId)?.context?.projectId;
     const projectId=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"].includes(project)?project:null;
 
-    state.lastSubject=projectId||"timur";
+    const globalPerson=/\b(тимур|ты|тебя|твой|твои|timur|you|your)\b/.test(norm(text));
+    state.lastSubject=projectId&&!globalPerson?projectId:"timur";
     state.lastProject=projectId||state.lastProject;
-    state.lastIntent=planType(text);
+    state.lastIntent=planType(normalizedQuestion);
     state.history.push({role:"user",content:text},{role:"assistant",content:answer});
 
     appendMessage("bot",answer,projectId,[],true,lang,facts,server?"server":"local");
