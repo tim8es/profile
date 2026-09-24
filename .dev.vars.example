@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local Cloudflare Pages development.
+# Never commit .dev.vars or real secrets.
+
+LLM_API_URL=https://api.openai.com/v1/chat/completions
+LLM_API_KEY=replace-with-local-secret
+LLM_MODEL=gpt-4.1-mini
