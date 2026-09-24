@@ -900,7 +900,7 @@
       item.querySelector(".project-main small").textContent=p.kind;
       item.querySelector(".project-reveal p").textContent=p.desc;
       item.querySelectorAll(".project-reveal dl > div").forEach((block,i)=>{if(p.details[i]){block.querySelector("dt").textContent=p.details[i][0];block.querySelector("dd").textContent=p.details[i][1];}});
-      const ask=item.querySelector("[data-ask-project]");if(ask)ask.textContent=p.ask;
+      const ask=item.querySelector("[data-ask-project]");const askLabel=ask?.querySelector("[data-ask-label]");if(askLabel)askLabel.textContent=p.ask.replace(/\s*→\s*$/,"");
     });
     document.querySelectorAll("[data-project-external]").forEach((link)=>{
       const type=link.dataset.projectExternal;
