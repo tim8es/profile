@@ -1,0 +1,13 @@
+{
+  "name": "tim8es-profile",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-portfolio-data.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.8.1"
+  }
+}

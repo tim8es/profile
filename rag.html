@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Timur Dautov — Product Builder</title>
+  <meta name="description" content="AI product builder, automation and product work by Timur Dautov." />
+  <link rel="stylesheet" href="./hybrid.css" />
+  <link rel="stylesheet" href="./rag.css" />
+</head>
+<body>
+  <header class="nav shell">
+    <a class="brand" href="#top">Timur Dautov</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#query">Query</a>
+      <a href="#about">About</a>
+      <a href="https://github.com/tim8es" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">
+        <span data-lang-label>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.75"></circle>
+          <path d="M12 2.25v2.1M12 19.65v2.1M2.25 12h2.1M19.65 12h2.1M5.1 5.1l1.5 1.5M17.4 17.4l1.5 1.5M18.9 5.1l-1.5 1.5M6.6 17.4l-1.5 1.5"></path>
+        </svg>
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 15.2A8.4 8.4 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Product builder / Delivery Driver</p>
+        <h1>Build.<br><span>Automate.</span><br>Simplify.</h1>
+        <p class="hero-lede">I turn vague problems and awkward processes into small working products — with AI, automation and code.</p>
+        <div class="hero-meta">
+          <span>Product → prototype</span>
+          <span>AI-native workflow</span>
+        </div>
+      </div>
+
+      <div class="field-wrap" aria-label="Interactive capability field">
+        <div class="field-head">
+          <span>Capability field</span>
+        </div>
+        <canvas class="field-canvas" data-field-canvas aria-label="Interactive 3D capability map"></canvas>
+      </div>
+    </section>
+
+    <section class="query-section shell" id="query">
+      <div class="section-label">
+        <span>Portfolio Query</span>
+        <span data-ai-status>local composer</span>
+      </div>
+
+      <div class="query-box query-box--compact">
+        <div class="chat-log chat-log--compact" data-chat-log aria-live="polite">
+          <div class="chat-message chat-message--bot">
+            <span class="chat-role">portfolio</span>
+            <div class="chat-bubble">
+              Ask me about Timur, his work, projects, product approach or technical decisions.
+            </div>
+          </div>
+        </div>
+
+        <div class="suggestions" aria-label="Suggested questions">
+          <button type="button" data-suggestion="What projects are in the portfolio?">Projects</button>
+          <button type="button" data-suggestion="What's Timur's background?">Experience</button>
+          <button type="button" data-suggestion="What measurable results does Timur have?">Results</button>
+          <button type="button" data-suggestion="Show me AI and automation work">AI &amp; automation</button>
+          <button type="button" data-suggestion="What skills does Timur have?">Skills</button>
+          <button type="button" data-suggestion="What stack do you use?">Stack</button>
+          <button type="button" data-suggestion="Tell me about Timur's delivery experience">Delivery</button>
+          <button type="button" data-suggestion="Tell me about Timur's product approach">Product approach</button>
+        </div>
+
+        <form class="query-form" data-query-form>
+          <span class="prompt-mark">›</span>
+          <input data-query-input type="text" autocomplete="off" placeholder="Ask the portfolio…" aria-label="Ask portfolio" />
+          <button type="submit">Ask</button>
+        </form>
+        <div class="query-hint">Runs entirely in your browser. It uses a small local knowledge base, fuzzy matching and intent scoring — not an LLM. Press <kbd>/</kbd> to focus.</div>
+      </div>
+    </section>
+
+    <section class="work-section shell" id="work">
+      <div class="section-label">
+        <span>Selected work</span>
+      </div>
+
+      <div class="work-layout work-layout--single">
+        <div class="project-list">
+          <article class="project-item is-active" data-project="audit">
+            <button class="project-trigger" type="button" aria-expanded="true">
+              <span class="project-num">01</span>
+              <span class="project-main"><strong>Audit Process Consulting</strong><small>Process consulting</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>A consulting and process-redesign project for a manual communication-quality audit workflow.</p>
+              <dl>
+                <div><dt>What</dt><dd>Mapped the workflow and moved manual Google Workspace steps into an internal CRM.</dd></div>
+                <div><dt>Why</dt><dd>Reduce fragmented tracking and create a cleaner base for future automation.</dd></div>
+                <div><dt>Detail</dt><dd>Researched external audit-automation solutions and evaluated options for further development of the process.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="audit">Ask deeper about the audit project →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="crm">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">02</span>
+              <span class="project-main"><strong>CRM Product Development</strong><small>B2B product / Delivery</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>Development of a B2B loyalty CRM product spanning web, mobile, backend and external integrations.</p>
+              <dl>
+                <div><dt>What</dt><dd>Requirements, backlog, planning and delivery across a multi-application CRM ecosystem.</dd></div>
+                <div><dt>Why</dt><dd>Give business customers one system for managing loyalty programs and connected workflows.</dd></div>
+                <div><dt>Detail</dt><dd>SaaS and on-premise product with four web apps, two mobile apps, PostgreSQL and integrations.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="crm">Ask deeper about the CRM product →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="bi">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">03</span>
+              <span class="project-main"><strong>Operations &amp; BI Dashboards</strong><small>Analytics / Operations</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>Operational dashboards that turned fragmented process data into a shared view of performance and bottlenecks.</p>
+              <dl>
+                <div><dt>What</dt><dd>Built SQL + BI reporting for operational and product metrics across 20 products.</dd></div>
+                <div><dt>Why</dt><dd>Replace repetitive manual reporting and make deviations visible earlier.</dd></div>
+                <div><dt>Detail</dt><dd>Reduced the time spent preparing regular reporting by about 70%.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="bi">Ask deeper about the dashboards →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="invoice">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">04</span>
+              <span class="project-main"><strong>Invoice Automation</strong><small>Workflow automation</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>An n8n/JavaScript workflow that automates invoice preparation for remote employees.</p>
+              <dl>
+                <div><dt>What</dt><dd>Validated source data and generated ready-to-use invoice documents from a repeatable workflow.</dd></div>
+                <div><dt>Why</dt><dd>Remove repetitive manual preparation and reduce the risk of document errors.</dd></div>
+                <div><dt>Detail</dt><dd>One invoice was generated in under 15 seconds and the workflow was used in real monthly cycles.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="invoice">Ask deeper about Invoice Automation →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="book">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">05</span>
+              <span class="project-main"><strong>Book Translator</strong><small>AI product / Telegram</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>An AI-assisted book-translation system with durable progress and a Telegram interface.</p>
+              <dl>
+                <div><dt>What</dt><dd>Stores translation progress, terminology, style and review state outside a single chat session.</dd></div>
+                <div><dt>Why</dt><dd>Long-form translation needs consistency and the ability to continue across multiple sessions.</dd></div>
+                <div><dt>Detail</dt><dd>The Telegram bot is the user-facing layer of the same translation workflow.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="book">Ask deeper about Book Translator →</button><a href="https://github.com/tim8es/book-translator" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="video">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">06</span>
+              <span class="project-main"><strong>AI Video Pipeline</strong><small>AI automation / Content production</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>An automated pipeline for producing short-form video from research and scripting through rendering and review.</p>
+              <dl>
+                <div><dt>What</dt><dd>Connected n8n, LLM steps, TTS, subtitles and FFmpeg rendering into one workflow.</dd></div>
+                <div><dt>Why</dt><dd>Reduce repetitive handoffs and make content production more repeatable.</dd></div>
+                <div><dt>Detail</dt><dd>Generation is separated from publishing so the final output remains reviewable before release.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="video">Ask deeper about the video pipeline →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="tube">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">07</span>
+              <span class="project-main"><strong>TubeScore</strong><small>Consumer product / Browser extension</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>A Chrome extension that shows movie and series ratings directly in the YouTube viewing context.</p>
+              <dl>
+                <div><dt>What</dt><dd>Identifies the title, matches it deterministically and renders the rating next to video metadata.</dd></div>
+                <div><dt>Why</dt><dd>Remove the extra search step when deciding whether a film or series is worth watching.</dd></div>
+                <div><dt>Detail</dt><dd>Runs without its own backend, LLM or required API key; browser behavior is covered by automated smoke tests.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="tube">Ask deeper about TubeScore →</button><a href="https://github.com/tim8es/TubeScore" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="lightning">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">08</span>
+              <span class="project-main"><strong>HH Lightning</strong><small>AI product / Browser automation</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>A browser product for automating repetitive parts of the job-search workflow on hh.ru.</p>
+              <dl>
+                <div><dt>What</dt><dd>Combines AI-assisted vacancy handling, cover letters, automated responses and resume-performance analytics.</dd></div>
+                <div><dt>Why</dt><dd>Reduce manual job-search work while keeping the process measurable.</dd></div>
+                <div><dt>Detail</dt><dd>The product also has its own backend layer for tariffs, licensing and payments.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="lightning">Ask deeper about HH Lightning →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="market">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">09</span>
+              <span class="project-main"><strong>Job Market Scanner</strong><small>Data product / Market analytics</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>A data product for collecting and comparing labor-market signals across professions.</p>
+              <dl>
+                <div><dt>What</dt><dd>Combines a browser collector, validated snapshots, history and a web interface for analysis.</dd></div>
+                <div><dt>Why</dt><dd>Make profession and competition research reproducible instead of relying on one-off manual checks.</dd></div>
+                <div><dt>Detail</dt><dd>The system flags incomplete or invalid observations and keeps the actual collection date so market results can be compared correctly over time.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="market">Ask deeper about Job Market Scanner →</button></div>
+            </div></div>
+          </article>
+
+          <article class="project-item" data-project="feed">
+            <button class="project-trigger" type="button" aria-expanded="false">
+              <span class="project-num">10</span>
+              <span class="project-main"><strong>FeedPulse</strong><small>Agent utility / Content ingestion</small></span>
+              <span class="project-arrow">↗</span>
+            </button>
+            <div class="project-reveal"><div>
+              <p>A lightweight ingestion utility that turns RSS/Atom sources into predictable content for AI agents.</p>
+              <dl>
+                <div><dt>What</dt><dd>Normalizes inconsistent feed formats into a stable structure for downstream processing.</dd></div>
+                <div><dt>Why</dt><dd>Agents should not need to reimplement feed parsing every time they consume a new source.</dd></div>
+                <div><dt>Detail</dt><dd>Designed to stay small, dependency-light and portable across Windows, macOS and Linux.</dd></div>
+              </dl>
+              <div class="project-actions"><button type="button" data-ask-project="feed">Ask deeper about FeedPulse →</button><a href="https://github.com/tim8es/tim8skills/tree/main/feed-pulse" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+            </div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section shell" id="about">
+      <div class="section-label"><span>About</span></div>
+      <div class="about-grid">
+        <p class="about-statement">I like software that removes friction instead of adding another system people have to manage.</p>
+        <div class="about-copy">
+          <p>My background is in project and process management, so I usually start from the workflow, constraint or user problem — not from the technology.</p>
+          <p>Now I work hands-on: prototypes, AI agents, APIs, browser tools, automation and small products that can be tested quickly.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <span>Timur Dautov © 2026</span>
+  </footer>
+
+  <script src="./portfolio-query-rag.js?v=20260923-3"></script>
+</body>
+</html>

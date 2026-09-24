@@ -1,0 +1,1230 @@
+{
+  "version": 1,
+  "person": {
+    "id": "timur",
+    "name": "Timur Dautov"
+  },
+  "facts": [
+    {
+      "id": "experience.opiniq",
+      "topics": [
+        "experience",
+        "companies",
+        "opiniq",
+        "automation"
+      ],
+      "text": {
+        "ru": "В OpiniQ Тимур работал с автоматизацией процессов, Jira workflow и AI/agentic PoC.",
+        "en": "At OpiniQ, Timur worked on process automation, Jira workflows and AI/agentic proofs of concept."
+      },
+      "source": {
+        "label": "OpiniQ experience"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "experience",
+        "company": "OpiniQ"
+      }
+    },
+    {
+      "id": "experience.skyeng",
+      "topics": [
+        "experience",
+        "companies",
+        "skyeng",
+        "operations"
+      ],
+      "text": {
+        "ru": "В Skyeng Тимур руководил удалённой командой из 23 асессоров и одного тренера и работал с процессами, KPI, аналитикой и улучшением операций.",
+        "en": "At Skyeng, Timur led a remote team of 23 assessors and one trainer and worked with processes, KPIs, analytics and operational improvement."
+      },
+      "source": {
+        "label": "Skyeng experience"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "experience",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "experience.spiks",
+      "topics": [
+        "experience",
+        "companies",
+        "spiks",
+        "product",
+        "crm"
+      ],
+      "text": {
+        "ru": "В SPIKS Тимур управлял развитием B2B Loyalty CRM и delivery сложной web/mobile/backend экосистемы.",
+        "en": "At SPIKS, Timur managed development and delivery of a B2B Loyalty CRM across a complex web/mobile/backend ecosystem."
+      },
+      "source": {
+        "label": "SPIKS experience"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "experience",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "experience.years",
+      "topics": [
+        "experience",
+        "background"
+      ],
+      "text": {
+        "ru": "У Тимура более 10 лет профессионального опыта.",
+        "en": "Timur has more than 10 years of professional experience."
+      },
+      "source": {
+        "label": "Career history"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "experience"
+      }
+    },
+    {
+      "id": "identity.profile",
+      "topics": [
+        "identity",
+        "profile",
+        "product",
+        "process",
+        "automation"
+      ],
+      "text": {
+        "ru": "Тимур Даутов сочетает управление проектами и процессами с hands-on разработкой продуктов, автоматизаций и AI-инструментов.",
+        "en": "Timur Dautov combines project and process management with hands-on product building, automation and AI tooling."
+      },
+      "source": {
+        "label": "Portfolio profile"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "portfolio.projects",
+      "topics": [
+        "projects",
+        "portfolio"
+      ],
+      "text": {
+        "ru": "В портфолио: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner и FeedPulse.",
+        "en": "Selected portfolio projects: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner and FeedPulse."
+      },
+      "source": {
+        "label": "Selected work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "profile"
+      }
+    },
+    {
+      "id": "positioning.fit",
+      "topics": [
+        "fit",
+        "roles",
+        "product",
+        "process",
+        "automation"
+      ],
+      "text": {
+        "ru": "Профиль лучше всего подходит для Product Builder, AI/Automation, Project/Process и technical product задач, где нужно соединять понимание процесса с реализацией.",
+        "en": "The profile fits Product Builder, AI/Automation, Project/Process and technical-product work that combines process understanding with implementation."
+      },
+      "source": {
+        "label": "Portfolio positioning"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "positioning"
+      }
+    },
+    {
+      "id": "project.audit.context",
+      "topics": [
+        "projects",
+        "audit",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "Проект выполнялся в Skyeng.",
+        "en": "The project was done at Skyeng."
+      },
+      "source": {
+        "label": "Skyeng project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "audit",
+        "projectName": "Audit Process Consulting",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.audit.limit",
+      "topics": [
+        "projects",
+        "audit",
+        "limitations",
+        "automation",
+        "research"
+      ],
+      "text": {
+        "ru": "Провёл исследование внешних решений для автоматизации аудита и оценил варианты дальнейшего развития процесса.",
+        "en": "Researched external solutions for audit automation and evaluated options for further development of the process."
+      },
+      "source": {
+        "label": "Audit automation boundary"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "audit",
+        "projectName": "Audit Process Consulting",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.audit.overview",
+      "topics": [
+        "projects",
+        "audit",
+        "process",
+        "consulting",
+        "automation"
+      ],
+      "text": {
+        "ru": "Audit Process Consulting — проект по анализу и переработке ручного процесса контроля качества коммуникаций.",
+        "en": "Audit Process Consulting was a process-analysis and redesign project around a manual communication-quality audit workflow."
+      },
+      "source": {
+        "label": "Audit process case"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "audit",
+        "projectName": "Audit Process Consulting",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.audit.result",
+      "topics": [
+        "projects",
+        "audit",
+        "results",
+        "metrics",
+        "crm"
+      ],
+      "text": {
+        "ru": "Реально внедрённая часть — перенос ручных процессов из Google Workspace во внутреннюю CRM; скорость обработки выросла примерно на 20%, а отслеживание метрик стало прозрачнее.",
+        "en": "The implemented part was moving manual process steps from Google Workspace into the internal CRM; processing speed improved by about 20% and metric tracking became more transparent."
+      },
+      "source": {
+        "label": "Audit process result"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "audit",
+        "projectName": "Audit Process Consulting",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.audit.role",
+      "topics": [
+        "projects",
+        "audit",
+        "role",
+        "process",
+        "crm"
+      ],
+      "text": {
+        "ru": "Тимур работал на стыке operations и IT: разобрал текущий workflow, уточнял требования и участвовал в переносе ручных шагов контроля качества во внутреннюю CRM.",
+        "en": "Timur worked between operations and IT: he mapped the workflow, clarified requirements and helped move manual quality-control steps into the internal CRM."
+      },
+      "source": {
+        "label": "Audit process role"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "audit",
+        "projectName": "Audit Process Consulting",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.bi.context",
+      "topics": [
+        "projects",
+        "bi",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "Operations & BI Dashboards выполнялся в Skyeng.",
+        "en": "Operations & BI Dashboards was done at Skyeng."
+      },
+      "source": {
+        "label": "Skyeng project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "bi",
+        "projectName": "Operations & BI Dashboards",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.bi.overview",
+      "topics": [
+        "projects",
+        "bi",
+        "analytics",
+        "operations",
+        "data"
+      ],
+      "text": {
+        "ru": "Operations & BI Dashboards — система операционной аналитики, которая объединила показатели процессов и продуктов в повторно используемые дашборды.",
+        "en": "Operations & BI Dashboards consolidated process and product metrics into reusable operational dashboards."
+      },
+      "source": {
+        "label": "BI dashboards"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "bi",
+        "projectName": "Operations & BI Dashboards",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.bi.purpose",
+      "topics": [
+        "projects",
+        "bi",
+        "process",
+        "analytics"
+      ],
+      "text": {
+        "ru": "Задача была не только в визуализации: решение заменяло повторяющуюся ручную отчётность и помогало раньше замечать отклонения.",
+        "en": "The goal was not just visualization: the solution replaced repeated manual reporting and made deviations easier to notice."
+      },
+      "source": {
+        "label": "BI purpose"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "bi",
+        "projectName": "Operations & BI Dashboards",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.bi.result",
+      "topics": [
+        "projects",
+        "bi",
+        "results",
+        "metrics",
+        "sql",
+        "datalens"
+      ],
+      "text": {
+        "ru": "Дашборды на SQL + DataLens покрывали 20 продуктов и сократили время на регулярную подготовку отчётности примерно на 70%.",
+        "en": "The SQL + DataLens dashboards covered 20 products and reduced regular reporting preparation time by about 70%."
+      },
+      "source": {
+        "label": "BI result"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "bi",
+        "projectName": "Operations & BI Dashboards",
+        "company": "Skyeng"
+      }
+    },
+    {
+      "id": "project.book.context",
+      "topics": [
+        "projects",
+        "book",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "Book Translator — собственный проект Тимура.",
+        "en": "Book Translator is Timur's own project."
+      },
+      "source": {
+        "label": "Project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "book",
+        "projectName": "Book Translator"
+      }
+    },
+    {
+      "id": "project.book.overview",
+      "topics": [
+        "projects",
+        "book",
+        "ai",
+        "translation",
+        "telegram"
+      ],
+      "text": {
+        "ru": "Book Translator — система AI-перевода длинных книг, объединённая с Telegram-ботом как пользовательским интерфейсом.",
+        "en": "Book Translator is an AI-assisted long-form translation system combined with a Telegram bot as the user-facing layer."
+      },
+      "source": {
+        "label": "Book Translator"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "book",
+        "projectName": "Book Translator"
+      }
+    },
+    {
+      "id": "project.book.state",
+      "topics": [
+        "projects",
+        "book",
+        "agents",
+        "state",
+        "reliability"
+      ],
+      "text": {
+        "ru": "Система хранит прогресс, переведённые блоки, glossary, style guide и review-state вне одной chat-сессии, поэтому перевод можно последовательно продолжать между сессиями.",
+        "en": "The system stores progress, translated units, glossary, style guide and review state outside one chat session so translation can continue consistently across sessions."
+      },
+      "source": {
+        "label": "Book Translator state"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "book",
+        "projectName": "Book Translator"
+      }
+    },
+    {
+      "id": "project.book.telegram",
+      "topics": [
+        "projects",
+        "book",
+        "telegram",
+        "product"
+      ],
+      "text": {
+        "ru": "Telegram-бот и translation workflow рассматриваются как один продукт: бот является пользовательским интерфейсом для работы с переводом.",
+        "en": "The Telegram bot and translation workflow are one product: the bot is the user-facing interface for the translation system."
+      },
+      "source": {
+        "label": "Book Translator Telegram"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "book",
+        "projectName": "Book Translator"
+      }
+    },
+    {
+      "id": "project.crm.context",
+      "topics": [
+        "projects",
+        "crm",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "CRM Product Development выполнялся в SPIKS.",
+        "en": "CRM Product Development was done at SPIKS."
+      },
+      "source": {
+        "label": "SPIKS project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "crm",
+        "projectName": "CRM Product Development",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "project.crm.overview",
+      "topics": [
+        "projects",
+        "crm",
+        "product",
+        "b2b",
+        "delivery"
+      ],
+      "text": {
+        "ru": "CRM Product Development — развитие B2B Loyalty CRM с web-, mobile-, backend-частью и внешними интеграциями.",
+        "en": "CRM Product Development covered a B2B Loyalty CRM across web, mobile, backend and external integrations."
+      },
+      "source": {
+        "label": "CRM product"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "crm",
+        "projectName": "CRM Product Development",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "project.crm.role",
+      "topics": [
+        "projects",
+        "crm",
+        "role",
+        "delivery",
+        "requirements"
+      ],
+      "text": {
+        "ru": "Тимур как IT Project Manager отвечал за требования, backlog, планирование, приоритеты, риски, ресурсы, коммуникацию с клиентом и delivery до релиза.",
+        "en": "As IT Project Manager, Timur handled requirements, backlog, planning, priorities, risks, resources, client communication and delivery to release."
+      },
+      "source": {
+        "label": "CRM role"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "crm",
+        "projectName": "CRM Product Development",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "project.crm.scope",
+      "topics": [
+        "projects",
+        "crm",
+        "scale",
+        "architecture",
+        "product"
+      ],
+      "text": {
+        "ru": "Продукт представлял собой SaaS/on-premise экосистему из четырёх web-приложений, двух mobile-приложений, общего backend, PostgreSQL, платежей и внешних интеграций; бюджет разработки и поддержки превышал 20 млн ₽.",
+        "en": "The product was a SaaS/on-premise ecosystem with four web apps, two mobile apps, a shared backend, PostgreSQL, payments and external integrations; the development/support budget exceeded RUB 20M."
+      },
+      "source": {
+        "label": "CRM scope"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "crm",
+        "projectName": "CRM Product Development",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "project.crm.stack",
+      "topics": [
+        "projects",
+        "crm",
+        "technical",
+        "stack",
+        "integrations"
+      ],
+      "text": {
+        "ru": "В продукт входили web/mobile приложения, backend, PostgreSQL, платежные интеграции, внешние API, monitoring и on-premise deployment.",
+        "en": "The product included web/mobile applications, backend, PostgreSQL, payment integrations, external APIs, monitoring and on-premise deployment."
+      },
+      "source": {
+        "label": "CRM stack"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "crm",
+        "projectName": "CRM Product Development",
+        "company": "SPIKS"
+      }
+    },
+    {
+      "id": "project.feed.context",
+      "topics": [
+        "projects",
+        "feed",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "FeedPulse — собственная open-source утилита Тимура.",
+        "en": "FeedPulse is Timur's own open-source utility."
+      },
+      "source": {
+        "label": "Project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "feed",
+        "projectName": "FeedPulse"
+      }
+    },
+    {
+      "id": "project.feed.design",
+      "topics": [
+        "projects",
+        "feed",
+        "feedpulse",
+        "node",
+        "cross-platform",
+        "technical"
+      ],
+      "text": {
+        "ru": "FeedPulse намеренно сохраняет небольшой dependency surface и рассчитан на Windows, macOS и Linux.",
+        "en": "FeedPulse intentionally keeps a small dependency surface and targets Windows, macOS and Linux."
+      },
+      "source": {
+        "label": "FeedPulse design"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "feed",
+        "projectName": "FeedPulse"
+      }
+    },
+    {
+      "id": "project.feed.overview",
+      "topics": [
+        "projects",
+        "feed",
+        "feedpulse",
+        "agents",
+        "rss",
+        "atom"
+      ],
+      "text": {
+        "ru": "FeedPulse — лёгкая утилита ingestion контента для AI-агентов, которая нормализует RSS/Atom-источники в предсказуемый формат.",
+        "en": "FeedPulse is a lightweight content-ingestion utility for AI agents that normalizes RSS/Atom sources into a predictable format."
+      },
+      "source": {
+        "label": "FeedPulse"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "feed",
+        "projectName": "FeedPulse"
+      }
+    },
+    {
+      "id": "project.invoice.context",
+      "topics": [
+        "projects",
+        "invoice",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "Invoice Automation был реализован в OpiniQ.",
+        "en": "Invoice Automation was implemented at OpiniQ."
+      },
+      "source": {
+        "label": "OpiniQ project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "invoice",
+        "projectName": "Invoice Automation",
+        "company": "OpiniQ"
+      }
+    },
+    {
+      "id": "project.invoice.limit",
+      "topics": [
+        "projects",
+        "invoice",
+        "limitations",
+        "email"
+      ],
+      "text": {
+        "ru": "Email-отправка была технически реализована в разработке, но production-рассылка не запускалась; подтверждённый production-результат — автоматическая генерация инвойсов.",
+        "en": "Email sending was technically implemented during development, but production distribution was not launched; the verified production result is automated invoice generation."
+      },
+      "source": {
+        "label": "Invoice boundary"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "invoice",
+        "projectName": "Invoice Automation",
+        "company": "OpiniQ"
+      }
+    },
+    {
+      "id": "project.invoice.overview",
+      "topics": [
+        "projects",
+        "invoice",
+        "automation",
+        "n8n",
+        "javascript"
+      ],
+      "text": {
+        "ru": "Invoice Automation — n8n/JavaScript workflow для автоматической подготовки инвойсов удалённым сотрудникам.",
+        "en": "Invoice Automation is an n8n/JavaScript workflow for preparing invoices for remote employees."
+      },
+      "source": {
+        "label": "Invoice Automation"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "invoice",
+        "projectName": "Invoice Automation",
+        "company": "OpiniQ"
+      }
+    },
+    {
+      "id": "project.invoice.result",
+      "topics": [
+        "projects",
+        "invoice",
+        "results",
+        "metrics",
+        "automation"
+      ],
+      "text": {
+        "ru": "Один инвойс формировался менее чем за 15 секунд; workflow использовался бухгалтерией в реальных ежемесячных циклах.",
+        "en": "One invoice was generated in under 15 seconds, and the workflow was used by accounting in real monthly cycles."
+      },
+      "source": {
+        "label": "Invoice result"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "invoice",
+        "projectName": "Invoice Automation",
+        "company": "OpiniQ"
+      }
+    },
+    {
+      "id": "project.invoice.role",
+      "topics": [
+        "projects",
+        "invoice",
+        "role",
+        "automation"
+      ],
+      "text": {
+        "ru": "Тимур самостоятельно спроектировал и реализовал workflow: от требований и проверки данных до тестирования, документации и production-use.",
+        "en": "Timur independently designed and implemented the workflow from requirements and data validation through testing, documentation and production use."
+      },
+      "source": {
+        "label": "Invoice role"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "invoice",
+        "projectName": "Invoice Automation",
+        "company": "OpiniQ"
+      }
+    },
+    {
+      "id": "project.lightning.backend",
+      "topics": [
+        "projects",
+        "lightning",
+        "backend",
+        "payments",
+        "licensing",
+        "technical"
+      ],
+      "text": {
+        "ru": "В состав того же продукта входит отдельный backend для тарифов, лицензирования и платежей: Node.js, YooKassa, YDB, JWT и entitlement-логика.",
+        "en": "The same product includes a separate backend for tariffs, licensing and payments using Node.js, YooKassa, YDB, JWT and entitlement logic."
+      },
+      "source": {
+        "label": "HH Lightning backend"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "lightning",
+        "projectName": "HH Lightning"
+      }
+    },
+    {
+      "id": "project.lightning.context",
+      "topics": [
+        "projects",
+        "lightning",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "HH Lightning — собственный проект Тимура.",
+        "en": "HH Lightning is Timur's own project."
+      },
+      "source": {
+        "label": "Project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "lightning",
+        "projectName": "HH Lightning"
+      }
+    },
+    {
+      "id": "project.lightning.features",
+      "topics": [
+        "projects",
+        "lightning",
+        "hh",
+        "ai",
+        "analytics",
+        "automation"
+      ],
+      "text": {
+        "ru": "Расширение объединяет AI-обработку вакансий, генерацию сопроводительных писем, автоотклики и аналитику эффективности резюме.",
+        "en": "The extension combines AI-assisted vacancy handling, cover-letter generation, automated responses and resume-performance analytics."
+      },
+      "source": {
+        "label": "HH Lightning features"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "lightning",
+        "projectName": "HH Lightning"
+      }
+    },
+    {
+      "id": "project.lightning.overview",
+      "topics": [
+        "projects",
+        "lightning",
+        "hh",
+        "ai",
+        "browser",
+        "product"
+      ],
+      "text": {
+        "ru": "HH Lightning — браузерный продукт для автоматизации повторяющихся этапов поиска работы на hh.ru.",
+        "en": "HH Lightning is a browser product for automating repetitive parts of the job-search workflow on hh.ru."
+      },
+      "source": {
+        "label": "HH Lightning"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "lightning",
+        "projectName": "HH Lightning"
+      }
+    },
+    {
+      "id": "project.market.architecture",
+      "topics": [
+        "projects",
+        "market",
+        "architecture",
+        "browser",
+        "nextjs",
+        "data"
+      ],
+      "text": {
+        "ru": "Система объединяет resumable Chrome MV3 collector, versioned data contracts, валидируемые snapshots, историю и Next.js-интерфейс анализа.",
+        "en": "The system combines a resumable Chrome MV3 collector, versioned data contracts, validated snapshots, history and a Next.js analysis interface."
+      },
+      "source": {
+        "label": "Job Market Scanner architecture"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "market",
+        "projectName": "Job Market Scanner"
+      }
+    },
+    {
+      "id": "project.market.context",
+      "topics": [
+        "projects",
+        "market",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "Job Market Scanner — собственный проект Тимура.",
+        "en": "Job Market Scanner is Timur's own project."
+      },
+      "source": {
+        "label": "Project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "market",
+        "projectName": "Job Market Scanner"
+      }
+    },
+    {
+      "id": "project.market.overview",
+      "topics": [
+        "projects",
+        "market",
+        "data",
+        "analytics",
+        "product"
+      ],
+      "text": {
+        "ru": "Job Market Scanner — data product для сбора и сравнения сигналов рынка труда по профессиям.",
+        "en": "Job Market Scanner is a data product for collecting and comparing labor-market signals across professions."
+      },
+      "source": {
+        "label": "Job Market Scanner"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "market",
+        "projectName": "Job Market Scanner"
+      }
+    },
+    {
+      "id": "project.market.quality",
+      "topics": [
+        "projects",
+        "market",
+        "quality",
+        "reliability",
+        "data"
+      ],
+      "text": {
+        "ru": "Система отдельно отмечает неполные или ошибочные данные и хранит фактическую дату сбора, чтобы результаты можно было корректно сравнивать во времени.",
+        "en": "The system flags incomplete or invalid observations and keeps the actual collection date so market results can be compared correctly over time."
+      },
+      "source": {
+        "label": "Job Market Scanner data quality"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "market",
+        "projectName": "Job Market Scanner"
+      }
+    },
+    {
+      "id": "project.tube.architecture",
+      "topics": [
+        "projects",
+        "tube",
+        "tubescore",
+        "architecture",
+        "technical"
+      ],
+      "text": {
+        "ru": "TubeScore использует Manifest V3, content scripts, service worker, детерминированный matching, Wikidata и caching; собственный backend, LLM и обязательный API-ключ не нужны.",
+        "en": "TubeScore uses Manifest V3, content scripts, a service worker, deterministic matching, Wikidata and caching; it requires no own backend, LLM or mandatory API key."
+      },
+      "source": {
+        "label": "TubeScore architecture"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tube",
+        "projectName": "TubeScore"
+      }
+    },
+    {
+      "id": "project.tube.context",
+      "topics": [
+        "projects",
+        "tube",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "TubeScore — собственный проект Тимура.",
+        "en": "TubeScore is Timur's own project."
+      },
+      "source": {
+        "label": "Project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tube",
+        "projectName": "TubeScore"
+      }
+    },
+    {
+      "id": "project.tube.overview",
+      "topics": [
+        "projects",
+        "tube",
+        "tubescore",
+        "browser",
+        "product"
+      ],
+      "text": {
+        "ru": "TubeScore — Chrome/Chromium extension, который определяет фильм или сериал на YouTube и показывает рейтинг прямо в контексте просмотра.",
+        "en": "TubeScore is a Chrome/Chromium extension that identifies a movie or series on YouTube and shows its rating in the viewing context."
+      },
+      "source": {
+        "label": "TubeScore"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tube",
+        "projectName": "TubeScore"
+      }
+    },
+    {
+      "id": "project.tube.testing",
+      "topics": [
+        "projects",
+        "tube",
+        "tubescore",
+        "testing",
+        "playwright"
+      ],
+      "text": {
+        "ru": "Browser-flow TubeScore проверяется автоматизированными Chromium/Playwright smoke-тестами, включая initial rendering и YouTube SPA navigation.",
+        "en": "TubeScore's browser flow is checked with automated Chromium/Playwright smoke tests, including initial rendering and YouTube SPA navigation."
+      },
+      "source": {
+        "label": "TubeScore testing"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "tube",
+        "projectName": "TubeScore"
+      }
+    },
+    {
+      "id": "project.video.boundary",
+      "topics": [
+        "projects",
+        "video",
+        "review",
+        "limitations",
+        "automation"
+      ],
+      "text": {
+        "ru": "Генерация отделена от публикации: система может остановиться на review-ready результате, а публикация остаётся отдельным контролируемым действием.",
+        "en": "Generation is separated from publishing: the system can stop at a review-ready result and publishing remains a separate controlled action."
+      },
+      "source": {
+        "label": "Video pipeline boundary"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "video",
+        "projectName": "AI Video Pipeline"
+      }
+    },
+    {
+      "id": "project.video.context",
+      "topics": [
+        "projects",
+        "video",
+        "companies",
+        "context"
+      ],
+      "text": {
+        "ru": "AI Video Pipeline — собственный проект Тимура.",
+        "en": "AI Video Pipeline is Timur's own project."
+      },
+      "source": {
+        "label": "Project context"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "video",
+        "projectName": "AI Video Pipeline"
+      }
+    },
+    {
+      "id": "project.video.overview",
+      "topics": [
+        "projects",
+        "video",
+        "ai",
+        "automation",
+        "content"
+      ],
+      "text": {
+        "ru": "AI Video Pipeline автоматизирует производство коротких видео от исследования и сценария до озвучки, субтитров, рендера и review.",
+        "en": "AI Video Pipeline automates short-form content production from research and scripting through voice, subtitles, rendering and review."
+      },
+      "source": {
+        "label": "AI Video Pipeline"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "video",
+        "projectName": "AI Video Pipeline"
+      }
+    },
+    {
+      "id": "project.video.stack",
+      "topics": [
+        "projects",
+        "video",
+        "technical",
+        "n8n",
+        "ffmpeg",
+        "llm"
+      ],
+      "text": {
+        "ru": "Pipeline объединяет n8n, локальные LLM, FFmpeg, TTS, субтитры и локальные control-инструменты.",
+        "en": "The pipeline connects n8n, local LLMs, FFmpeg, TTS, subtitles and local control tooling."
+      },
+      "source": {
+        "label": "Video pipeline stack"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "projects",
+        "projectId": "video",
+        "projectName": "AI Video Pipeline"
+      }
+    },
+    {
+      "id": "skills.ai",
+      "topics": [
+        "skills",
+        "ai",
+        "agents",
+        "automation"
+      ],
+      "text": {
+        "ru": "AI используется как часть рабочих систем: workflow automation, content pipeline, translation, vacancy handling и agent utilities.",
+        "en": "AI is used as part of working systems: workflow automation, content pipelines, translation, vacancy handling and agent utilities."
+      },
+      "source": {
+        "label": "AI work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills"
+      }
+    },
+    {
+      "id": "skills.process",
+      "topics": [
+        "skills",
+        "process",
+        "operations",
+        "consulting"
+      ],
+      "text": {
+        "ru": "Сильная сторона — разбор AS-IS процесса, поиск узких мест, проектирование TO-BE и отделение реально внедрённого от исследованных вариантов.",
+        "en": "A strength is mapping AS-IS processes, finding bottlenecks, designing TO-BE flows and separating implemented work from researched options."
+      },
+      "source": {
+        "label": "Process work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills"
+      }
+    },
+    {
+      "id": "skills.product",
+      "topics": [
+        "skills",
+        "product",
+        "mvp",
+        "discovery"
+      ],
+      "text": {
+        "ru": "Тимур умеет переводить размытые задачи в ограниченный проверяемый scope и доводить решение до MVP или рабочего процесса.",
+        "en": "Timur can turn ambiguous problems into bounded testable scope and get to an MVP or working process."
+      },
+      "source": {
+        "label": "Product work"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills"
+      }
+    },
+    {
+      "id": "skills.technical",
+      "topics": [
+        "skills",
+        "technical",
+        "stack"
+      ],
+      "text": {
+        "ru": "Практический стек включает JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, n8n, GitHub, Playwright и BI-инструменты.",
+        "en": "The practical toolkit includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, n8n, GitHub, Playwright and BI tooling."
+      },
+      "source": {
+        "label": "Technical toolkit"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "skills"
+      }
+    },
+    {
+      "id": "strength.cross_functional",
+      "topics": [
+        "strengths",
+        "skills",
+        "product",
+        "process"
+      ],
+      "text": {
+        "ru": "Тимур сочетает операционный и продуктовый опыт с hands-on реализацией и умеет переходить от процесса к рабочему решению.",
+        "en": "Timur combines operational and product experience with hands-on implementation and can move from process understanding to a working solution."
+      },
+      "source": {
+        "label": "Portfolio profile"
+      },
+      "confidence": "verified",
+      "context": {
+        "section": "positioning",
+        "positioningGroup": "strengths"
+      }
+    }
+  ]
+}

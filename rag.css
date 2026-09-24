@@ -1,0 +1,43 @@
+.rag-answer-meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.rag-chip{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:5px 8px;
+  font:9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:var(--muted);
+}
+.rag-sources{
+  margin-top:12px;
+  border-top:1px solid var(--line);
+  padding-top:10px;
+}
+.rag-sources summary{
+  cursor:pointer;
+  font:10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:var(--muted);
+  list-style:none;
+}
+.rag-sources summary::-webkit-details-marker{display:none}
+.rag-source-list{display:grid;gap:7px;margin-top:10px}
+.rag-source{
+  display:grid;
+  grid-template-columns:20px 1fr;
+  gap:8px;
+  font-size:11px;
+  line-height:1.45;
+  color:var(--muted);
+}
+.rag-source b{
+  color:var(--text);
+  font:9px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:500;
+}
+.rag-source a{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
