@@ -622,6 +622,7 @@
       "зачем делался","зачем делали","какую проблему","какую програм","какие предпосыл","какая статистика",
       "какие результаты","результаты проекта","метрики проекта","что нормализует","на разных ос","разных os",
       "за что отвечал","что делал","что сделал","что реализовал","что спроектировал","как проверял","как тестировал","какой результат",
+      "почему именно так","почему ты сделал","какие варианты","какие альтернатив","что рассматривал","самым слож","сложнее всего","production-ready","production ready","что готово","готовность",
       "this project","the project","of the project","in it","how does it","how it works","its stack","its architecture",
       "why was it built","what problem","what prompted","project results","project metrics","technical stats","across operating systems"
     ]);
@@ -648,6 +649,14 @@
       text=p.company;intent="project-company";
     }else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])){
       text=join(p.role,p.result);intent="project-role";
+    }else if(hasAny(q,["почему ты сделал именно так","почему сделал именно так","почему именно так","почему такой подход","почему выбрал","why did you do it this way","why this approach","why did you choose","why was this approach chosen"])){
+      text=p.decision||p.premise||join(p.problem,p.detail);intent="project-decision";
+    }else if(hasAny(q,["какие варианты рассматривал","какие варианты","какие альтернатив","что рассматривал","альтернативы","alternatives","other options","what options","what alternatives"])){
+      text=p.alternatives||p.detail;intent="project-alternatives";
+    }else if(hasAny(q,["что было самым сложным","самым сложным","самым слож","сложнее всего","главная сложност","hardest part","most difficult","biggest challenge","main challenge"])){
+      text=p.challenge||join(p.detail,p.reliability);intent="project-challenge";
+    }else if(hasAny(q,["production-ready","production ready","что уже production","что готово к production","что готово в production","что уже готово","что готово","готовность проекта","production status","ready for production","what is production ready"])){
+      text=p.readiness||join(p.result,p.detail);intent="project-readiness";
     }else if(hasAny(q,["предпосыл","почему появился","с чего начался","откуда идея","what prompted","origin","why start","why did you start"])){
       text=p.premise||join(p.problem,p.overview,p.detail);intent="project-premise";
     }else if(hasAny(q,["какую проблему","какую програм","проблему реш","зачем нужен","зачем делался","зачем делали","для чего","purpose","what problem","why was it built","why build","use case"])){
@@ -806,8 +815,9 @@
 
     if(result?.project&&a.project?.[result.project]){
       const p=a.project[result.project];
-      add(p.overview);add(p.company);add(p.role);add(p.problem);add(p.premise);add(p.workflow);
-      add(p.reliability);add(p.formats);add(p.portability);add(p.result);add(p.stats);add(p.detail);add(p.stack);
+      add(p.overview);add(p.company);add(p.role);add(p.problem);add(p.premise);add(p.decision);add(p.alternatives);
+      add(p.challenge);add(p.readiness);add(p.workflow);add(p.reliability);add(p.formats);add(p.portability);
+      add(p.result);add(p.stats);add(p.detail);add(p.stack);
       add(a.identity);add(a.background);add(a.impact);
     }else{
       [
