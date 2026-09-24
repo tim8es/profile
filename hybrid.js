@@ -813,32 +813,58 @@
   const themeToggle=document.querySelector("[data-theme-toggle]");
   const systemTheme=window.matchMedia("(prefers-color-scheme: light)");
   const savedTheme=localStorage.getItem("portfolio-theme");
+  let themeMode=savedTheme==="light"||savedTheme==="dark"?savedTheme:"system";
 
   function effectiveTheme(){
-    return html.dataset.theme || (systemTheme.matches?"light":"dark");
+    return themeMode==="system"?(systemTheme.matches?"light":"dark"):themeMode;
   }
 
   function updateThemeToggle(){
-    const theme=effectiveTheme();
-    themeToggle?.setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");
+    if(!themeToggle)return;
+    const ru=state.lang==="ru";
+    const labels=ru
+      ?{
+          system:"Тема: системная. Следующая: светлая.",
+          light:"Тема: светлая. Следующая: тёмная.",
+          dark:"Тема: тёмная. Следующая: системная."
+        }
+      :{
+          system:"Theme: system. Next: light.",
+          light:"Theme: light. Next: dark.",
+          dark:"Theme: dark. Next: system."
+        };
+    themeToggle.setAttribute("aria-label",labels[themeMode]);
+    themeToggle.title=labels[themeMode];
+    themeToggle.dataset.themeMode=themeMode;
   }
 
-  if(savedTheme==="light"||savedTheme==="dark") html.dataset.theme=savedTheme;
-  else delete html.dataset.theme;
-  updateThemeToggle();
+  function applyThemeMode(mode,{persist=true}={}){
+    themeMode=["system","light","dark"].includes(mode)?mode:"system";
+    html.dataset.themeMode=themeMode;
+
+    if(themeMode==="system"){
+      delete html.dataset.theme;
+      if(persist)localStorage.removeItem("portfolio-theme");
+    }else{
+      html.dataset.theme=themeMode;
+      if(persist)localStorage.setItem("portfolio-theme",themeMode);
+    }
+
+    updateThemeToggle();
+  }
+
+  applyThemeMode(themeMode,{persist:false});
 
   systemTheme.addEventListener?.("change",()=>{
-    if(!localStorage.getItem("portfolio-theme")){
+    if(themeMode==="system"){
       delete html.dataset.theme;
       updateThemeToggle();
     }
   });
 
   themeToggle?.addEventListener("click",()=>{
-    const next=effectiveTheme()==="dark"?"light":"dark";
-    html.dataset.theme=next;
-    localStorage.setItem("portfolio-theme",next);
-    updateThemeToggle();
+    const next={system:"light",light:"dark",dark:"system"}[themeMode]||"system";
+    applyThemeMode(next);
   });
 
   // Language
@@ -851,6 +877,7 @@
     state.lang=lang;html.lang=lang;localStorage.setItem("portfolio-lang",lang);
     if(langLabel)langLabel.textContent=lang.toUpperCase();
     langToggle?.setAttribute("aria-label",lang==="en"?"Переключить на русский":"Switch to English");
+    updateThemeToggle();
     const t=ui[lang];
 
     setText('.nav-links a[href="#work"]',t.nav.work);
