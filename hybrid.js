@@ -837,6 +837,163 @@
     return "timur";
   }
 
+  const projectPlain={
+    ru:{
+      audit:{
+        overview:"Проект упростил ручную проверку качества работы команды: часть действий перенесли из Google Workspace во внутреннюю CRM.",
+        role:"Тимур разобрал старый процесс, помог определить требования и участвовал в переносе работы в CRM.",
+        problem:"Проверка качества была разбросана по нескольким инструментам, из-за чего работа шла медленнее и её было труднее контролировать.",
+        decision:"Вместо создания ещё одного отдельного сервиса использовали уже знакомую команде CRM. Так можно было быстрее убрать лишние ручные шаги.",
+        alternatives:"Можно было оставить всё как есть или внедрять отдельный специализированный сервис. Второй вариант изучали, но для первого этапа выбрали более простой путь через существующую CRM.",
+        challenge:"Самым сложным было перевести привычный ручной процесс в понятные шаги внутри CRM и при этом не потерять важные показатели.",
+        readiness:"Перенесённый процесс реально использовался в работе и ускорил обработку примерно на 20%. Более глубокая автоматизация осталась идеей для следующих этапов.",
+        workflow:"Сначала Тимур разобрал, как команда работает сейчас, затем вместе с коллегами определил, что можно перенести в CRM, и после этого новый процесс внедрили в работу.",
+        reliability:"Результат проверяли на реальной работе команды: смотрели, стало ли быстрее и проще отслеживать процесс.",
+        result:"После переноса части ручной работы в CRM скорость обработки выросла примерно на 20%, а показатели стало проще отслеживать.",
+        stats:"Главная подтверждённая цифра — около 20% роста скорости обработки.",
+        limitations:"Внешние сервисы автоматизации изучались, но они не были внедрены и не выдаются за готовую часть проекта."
+      },
+      crm:{
+        overview:"Большой B2B-продукт для управления программами лояльности: несколько web- и mobile-приложений, серверная часть и внешние интеграции.",
+        role:"Тимур отвечал за то, чтобы требования превращались в задачи, команды понимали приоритеты, риски не терялись, а изменения доходили до релиза.",
+        problem:"Изменения затрагивали сразу несколько приложений и систем. Без общей координации легко было получить несогласованные сроки и зависимости.",
+        decision:"Проект вели как единый продукт с общим backlog, а не как набор независимых задач для разных команд.",
+        alternatives:"Продукт должен был работать и как облачный сервис, и в инфраструктуре клиента. Поэтому нельзя было оптимизировать решение только под один вариант поставки.",
+        challenge:"Самая сложная часть — синхронизировать web, mobile, backend, интеграции и требования клиента так, чтобы всё сходилось к одному релизу.",
+        readiness:"На момент работы это был действующий продукт, который поставлялся клиентам и поддерживался. Текущий коммерческий статус продукта сайт не утверждает.",
+        workflow:"Требования клиента превращались в backlog, затем задачи планировались с техническими командами, отслеживались зависимости и риски, после чего изменения сопровождались до релиза.",
+        reliability:"Надёжность обеспечивалась управлением зависимостями, рисками, релизами и постоянной синхронизацией с техническими лидерами.",
+        result:"В рамках продукта работали 4 web-приложения, 2 mobile-приложения, общая серверная часть, платежи и внешние интеграции.",
+        stats:"Подтверждённый масштаб: 4 web-приложения, 2 mobile-приложения и бюджет разработки и поддержки более 20 млн ₽.",
+        limitations:"Этот кейс показывает управление продуктом и delivery. Он не означает, что Тимур лично писал весь код системы."
+      },
+      bi:{
+        overview:"Тимур собрал систему дашбордов, чтобы команда меньше времени тратила на ручные отчёты и быстрее видела, что происходит в процессах.",
+        role:"Он определял нужные показатели, работал с данными через SQL и собирал отчёты в Yandex DataLens.",
+        problem:"Регулярные отчёты приходилось собирать вручную, а данные по разным продуктам были разрознены.",
+        decision:"Вместо повторной ручной сборки сделали постоянные дашборды с одними и теми же правилами расчёта показателей.",
+        alternatives:"Главной альтернативой было продолжать готовить отчёты вручную. Сравнение разных BI-платформ в портфолио не зафиксировано.",
+        challenge:"Сложнее всего было договориться о единых показателях для 20 продуктов и собрать их так, чтобы цифры можно было сравнивать.",
+        readiness:"Дашборды использовались в реальной работе. Это внутренний инструмент компании, а не отдельный коммерческий продукт.",
+        workflow:"Сначала определяли, какие показатели нужны команде, затем данные собирались через SQL и выводились в удобные дашборды.",
+        reliability:"Эффект проверялся на практике: команда перестала каждый раз собирать одинаковые отчёты вручную.",
+        result:"Время на подготовку регулярной отчётности сократилось примерно на 70%.",
+        stats:"20 продуктов и около 70% сокращения времени на подготовку отчётов.",
+        limitations:"Польза проекта — в экономии времени и более понятных данных, а не просто в красивых графиках."
+      },
+      invoice:{
+        overview:"Автоматизация, которая сама готовит инвойсы для удалённых сотрудников вместо ручной сборки документов.",
+        role:"Тимур сам спроектировал и собрал процесс: от проверки входных данных до генерации готового документа.",
+        problem:"Инвойсы приходилось готовить вручную, что занимало время и увеличивало риск ошибок.",
+        decision:"Для автоматизации использовали n8n и небольшой JavaScript-код, чтобы не строить отдельное большое приложение.",
+        alternatives:"Можно было оставить ручную работу или сделать полноценный отдельный сервис. Для такой задачи это было бы избыточно.",
+        challenge:"Главная сложность — не просто быстро сформировать документ, а заранее отсеять неверные данные.",
+        readiness:"Генерация инвойсов работала в реальных ежемесячных циклах бухгалтерии. Автоматическая отправка по email в production не запускалась.",
+        workflow:"Система получает данные, проверяет их и автоматически собирает готовый инвойс.",
+        reliability:"Перед созданием документа данные проверяются. Решение использовалось в реальной работе, а не только в тестах.",
+        result:"Один инвойс создавался менее чем за 15 секунд.",
+        stats:"Менее 15 секунд на один инвойс; использование в реальных ежемесячных циклах.",
+        limitations:"Автоматическая email-рассылка была технически сделана, но не запускалась как рабочая production-функция."
+      },
+      book:{
+        overview:"Book Translator помогает AI переводить целую книгу по частям и не терять прогресс, термины и стиль между разными сессиями.",
+        role:"Тимур спроектировал процесс, в котором состояние книги хранится отдельно от истории чата.",
+        problem:"При длинном переводе обычный чат легко теряет контекст: что уже переведено, как переводить имена и термины, какой стиль выбран.",
+        decision:"Прогресс хранится в файлах, а не только в памяти чата. Поэтому работу можно продолжить позже или даже другим совместимым AI-агентом.",
+        alternatives:"Для короткой пробы можно использовать временную AI-сессию. Для серьёзной работы предусмотрены private GitHub или локальная папка. Отдельная постоянная ветка Git на каждую книгу не нужна.",
+        challenge:"Самое сложное — сохранять единый стиль и смысл на протяжении большой книги, даже если работа идёт много дней и в разных сессиях.",
+        readiness:"Основной workflow, сохранение прогресса, проверка исходника и сборка результата уже реализованы. Для PDF и DOCX возможности зависят от среды, в которой работает агент.",
+        workflow:"Книга разбивается на части, для неё сохраняются прогресс, словарь и стилевые решения. Один этап переводит текст, другой отдельно проверяет его по оригиналу.",
+        reliability:"Исходные файлы можно проверять по контрольным суммам, а прогресс хранится на диске или в репозитории, поэтому новая сессия может продолжить работу.",
+        result:"Перевод можно продолжать между сессиями без необходимости заново объяснять AI всю историю работы.",
+        stats:"Автоматически поддерживаются EPUB, HTML/XHTML, Markdown и TXT. В одном рабочем пространстве можно хранить несколько книг.",
+        limitations:"Для надёжного продолжения нужен постоянный workspace. Автоматическая работа с PDF и DOCX зависит от возможностей конкретной среды."
+      },
+      video:{
+        overview:"Система автоматически собирает короткое видео: помогает сделать сценарий, озвучку, субтитры и финальный ролик.",
+        role:"Тимур спроектировал весь процесс и разделил автоматическую генерацию и публикацию.",
+        problem:"Создание коротких видео состоит из множества повторяющихся шагов, которые обычно приходится выполнять вручную.",
+        decision:"Основные инструменты работают локально, чтобы снизить стоимость и сохранить контроль. Публикация специально оставлена отдельным шагом.",
+        alternatives:"Визуальную часть можно позже заменить более сложной генерацией изображений. Также есть отдельная экспериментальная ветка для длинных видео.",
+        challenge:"Самое сложное — связать несколько локальных сервисов и не допустить, чтобы плохой автоматически созданный результат сразу ушёл в публикацию.",
+        readiness:"Рабочая часть уже умеет создать готовый черновик видео с озвучкой и субтитрами. Полностью автоматическая публикация намеренно не включена.",
+        workflow:"Система получает тему, создаёт сценарий, делает озвучку и субтитры, собирает видео и останавливается перед публикацией для проверки человеком.",
+        reliability:"Если система не уверена в содержании отдельного блока, она лучше скроет его, чем покажет выдуманный текст. Перед публикацией остаётся ручная проверка.",
+        result:"На выходе получается готовый к просмотру черновик короткого видео с голосом и субтитрами.",
+        stats:"Выход: вертикальное видео 1080×1920, отдельная аудиодорожка WAV и субтитры SRT.",
+        limitations:"Это не полностью автономная фабрика публикаций: перед публикацией оставлен контроль человеком."
+      },
+      tube:{
+        overview:"TubeScore показывает рейтинги фильма или сериала прямо рядом с YouTube-видео, чтобы не искать их вручную на других сайтах.",
+        role:"Тимур спроектировал и собрал расширение, включая распознавание названия, получение рейтингов и работу интерфейса на YouTube.",
+        problem:"Пользователь смотрит трейлер или обзор и вынужден отдельно искать рейтинги фильма на других сайтах.",
+        decision:"Проект специально сделан без LLM и собственного сервера: обычные правила здесь дешевле, быстрее и предсказуемее.",
+        alternatives:"Рассматривались другие источники данных, включая TMDB и IMDb. В текущей версии используется Wikidata. LLM и компьютерное зрение решили не использовать.",
+        challenge:"Самое сложное — правильно понять, о каком фильме идёт речь в YouTube-видео, и не показать рейтинг другого произведения.",
+        readiness:"Расширение опубликовано в Chrome Web Store и работает как обычное расширение Chrome. Ограничение — у Wikidata есть рейтинги не для всех фильмов.",
+        workflow:"Расширение читает название и другие данные текущего YouTube-видео, ищет подходящий фильм в Wikidata и показывает найденные рейтинги рядом с видео.",
+        reliability:"Если расширение не уверено, что нашло правильный фильм, оно предпочитает ничего не показывать. Это снижает риск уверенной ошибки.",
+        result:"Пользователь видит рейтинги фильма прямо на YouTube без отдельного поиска.",
+        stats:"По умолчанию используются 4 основных источника рейтингов. Расширение не запрашивает доступ к истории браузера, cookies или всем вкладкам.",
+        limitations:"Качество результата зависит от данных Wikidata: для некоторых фильмов рейтингов или точных ссылок может не быть."
+      },
+      lightning:{
+        overview:"HH Lightning помогает автоматизировать рутинные действия при поиске работы на hh.ru: работу с вакансиями, сопроводительными и статистикой резюме.",
+        role:"Тимур развивает само расширение и связанную инфраструктуру: AI-функции, доступ пользователей, тарифы и платежи.",
+        problem:"При активном поиске работы приходится много раз повторять одни и те же действия и вручную отслеживать эффективность резюме.",
+        decision:"Расширение работает прямо внутри hh.ru, чтобы использовать контекст вакансии и резюме без постоянного копирования данных в отдельный сервис.",
+        alternatives:"Можно было сделать отдельного AI-ассистента, но тогда пользователю пришлось бы постоянно переносить данные между hh.ru и другим интерфейсом.",
+        challenge:"Самая сложная часть — поддерживать автоматизацию поверх сайта, который может менять страницы и внутренние механизмы.",
+        readiness:"Расширение опубликовано в Chrome Web Store, и основные функции уже работают. Но изменения hh.ru или AI-провайдера иногда требуют доработок.",
+        workflow:"Расширение работает на страницах hh.ru, использует данные вакансии и резюме, помогает с AI-текстами, откликами и показывает статистику.",
+        reliability:"Критичные проверки доступа выполняются на сервере, но часть работы зависит от hh.ru и внешнего AI-сервиса, поэтому возможны сбои при их изменениях.",
+        result:"В одном расширении объединены AI-помощь по вакансиям, сопроводительные письма, автоматизация откликов и аналитика резюме.",
+        stats:"Расширение опубликовано в Chrome Web Store. Подтверждённых данных о числе пользователей или росте конверсии сайт пока не заявляет.",
+        limitations:"Проект зависит от внешних сервисов: если hh.ru или AI-провайдер меняют поведение, отдельные функции приходится адаптировать."
+      },
+      market:{
+        overview:"Job Market Scanner собирает данные о вакансиях с hh.ru и помогает сравнивать профессии и конкуренцию на рынке труда.",
+        role:"Тимур спроектировал сбор данных, правила проверки и web-интерфейс для просмотра результатов.",
+        problem:"Разовые ручные проверки hh.ru сложно сравнивать во времени, а ошибки сбора можно случайно принять за реальные данные.",
+        decision:"Данные сначала собираются и проверяются, а уже потом показываются на сайте. Это надёжнее, чем каждый раз получать их прямо в момент открытия страницы.",
+        alternatives:"Можно было показывать live-данные напрямую с hh.ru, но тогда ошибки сети или неполный сбор было бы сложнее отличать от настоящего результата.",
+        challenge:"Самое сложное — отличить настоящий ноль вакансий от ситуации, когда сбор данных сломался или завершился не полностью.",
+        readiness:"Сборщик данных, проверка снимков и live web-интерфейс уже работают. Это не real-time сервис: свежесть зависит от даты последнего сбора.",
+        workflow:"Расширение собирает данные с hh.ru, система проверяет их, сохраняет снимок, а сайт показывает уже проверенные результаты и историю.",
+        reliability:"Неполные и ошибочные данные помечаются отдельно и не должны смешиваться с корректными значениями.",
+        result:"Есть работающий сайт с историческими снимками рынка и инструментом их сравнения.",
+        stats:"Есть live web-продукт, версия данных хранится вместе с датой сбора, а сбор можно продолжить после прерывания.",
+        limitations:"Новый deployment сайта не делает данные автоматически свежими — важна именно дата их последнего сбора."
+      },
+      feed:{
+        overview:"FeedPulse помогает AI-агентам читать RSS и Atom-ленты одинаковым способом, не заставляя каждый раз заново разбирать формат ленты.",
+        role:"Тимур вынес всю техническую работу с лентами в отдельную небольшую утилиту, которую можно переиспользовать в разных AI-задачах.",
+        problem:"Без такого слоя каждому агенту приходится заново загружать и разбирать RSS, следить за дублями и помнить, что уже было прочитано.",
+        decision:"Загрузка и разбор лент выполняются обычным кодом, а AI получает уже чистые данные. Это дешевле и надёжнее, чем заставлять модель разбирать XML.",
+        alternatives:"Можно было разбирать RSS прямо внутри каждого AI-агента. Также можно было автоматически открывать все статьи целиком, но это сознательно не делается.",
+        challenge:"Самое сложное — одинаково обрабатывать разные варианты RSS/Atom, ошибки отдельных источников, дубли и записи без даты.",
+        readiness:"Основная утилита готова: есть команды, сохранение настроек, единый JSON-ответ, тесты и проверка на Windows, macOS и Linux.",
+        workflow:"FeedPulse загружает ленты, приводит записи к одному виду, отфильтровывает ненужное и дубли, а затем отдаёт агенту готовый список материалов.",
+        reliability:"Если один источник сломался, FeedPulse сообщает об ошибке отдельно, а не делает вид, что новых материалов просто нет.",
+        result:"AI-агент получает предсказуемый список новых материалов и может сразу анализировать их, не тратя время на технический разбор RSS.",
+        stats:"Одна основная runtime-зависимость; тестирование на Windows, macOS и Linux с тремя версиями Node.js.",
+        limitations:"FeedPulse читает содержимое самой RSS/Atom-ленты, но не открывает автоматически полный текст каждой статьи."
+      }
+    },
+    en:{
+      audit:{overview:"This project simplified a manual quality-review process by moving repeatable work from Google Workspace into the internal CRM.",role:"Timur mapped the old process, clarified requirements and helped move it into the CRM.",problem:"The work was spread across several tools, making it slower and harder to track.",decision:"The team reused the existing CRM instead of building another separate tool, because the main issue was the fragmented process.",alternatives:"The alternatives were to keep the manual process or introduce a dedicated audit product later. External tools were researched, but not presented as implemented.",challenge:"The hardest part was turning a human review process into clear CRM steps without losing important metrics.",readiness:"The new CRM flow was used in real work and improved processing speed by about 20%. Deeper external automation remained research.",workflow:"The current process was mapped, repeatable steps were moved into the CRM, and the new flow was used by the team.",reliability:"The change was checked in real operations by looking at speed and visibility of the process.",result:"Processing became about 20% faster and easier to track.",stats:"The main verified metric is about 20% faster processing.",limitations:"External automation tools were researched but not implemented."},
+      crm:{overview:"A large B2B loyalty product made up of several web and mobile apps, a backend and external integrations.",role:"Timur made sure requirements became prioritized work, dependencies were coordinated and changes reached release.",problem:"Changes affected many parts of the product at once, so teams needed one coordinated plan.",decision:"The work was managed as one product with one backlog instead of separate disconnected projects.",alternatives:"The product had to support both cloud and on-premise delivery, so it could not be optimized for only one setup.",challenge:"The hardest part was coordinating web, mobile, backend, integrations and client requirements toward the same release.",readiness:"At the time of the case, it was an operational product delivered and supported for customers. The portfolio does not claim its current 2026 commercial status.",workflow:"Client needs became backlog items, were planned with technical teams, tracked through dependencies and risks, and followed through release.",reliability:"Delivery relied on explicit dependency, risk and release management with technical leads.",result:"The ecosystem included 4 web apps, 2 mobile apps, a shared backend, payments and external integrations.",stats:"Verified scale: 4 web apps, 2 mobile apps and a development/support budget above RUB 20M.",limitations:"This shows product and delivery ownership; it does not mean Timur personally wrote every component."},
+      bi:{overview:"A dashboard system that reduced manual reporting and made operational performance easier to see.",role:"Timur defined useful metrics, queried data with SQL and built dashboards in Yandex DataLens.",problem:"Reports had to be rebuilt manually and data was spread across products.",decision:"Reusable dashboards replaced repeated manual report preparation.",alternatives:"The main alternative was to continue preparing reports manually. A broader BI-vendor comparison is not documented.",challenge:"The hardest part was aligning metric definitions across 20 products so the numbers stayed comparable.",readiness:"The dashboards were used for regular operational reporting. This was an internal tool, not a standalone commercial product.",workflow:"Operational questions were turned into metrics, data was queried with SQL and displayed in reusable dashboards.",reliability:"The effect was checked through real recurring use and measured reporting-time reduction.",result:"Regular reporting preparation time fell by about 70%.",stats:"20 products and about 70% less reporting preparation time.",limitations:"The value was saved time and clearer decisions, not just prettier charts."},
+      invoice:{overview:"An automation that prepares invoices for remote employees instead of assembling them manually.",role:"Timur designed and implemented the process from input validation to document generation.",problem:"Manual invoice preparation took time and created avoidable error risk.",decision:"n8n handled the workflow and JavaScript handled custom rules, avoiding the need for a separate large application.",alternatives:"The alternatives were manual work or a dedicated application, which would have been excessive for this task.",challenge:"The hardest part was validating inputs so automation would not simply generate wrong documents faster.",readiness:"Invoice generation was used in real monthly accounting cycles. Automated production email delivery was not launched.",workflow:"The system checks source data and automatically creates the invoice document.",reliability:"Data is validated before document generation, and the workflow was used in real operations.",result:"One invoice could be generated in under 15 seconds.",stats:"Under 15 seconds per invoice and recurring real monthly use.",limitations:"Email delivery was implemented technically but not launched in production."},
+      book:{overview:"Book Translator helps AI translate an entire book without losing progress, terminology or style between sessions.",role:"Timur designed the workflow so book state lives outside chat history.",problem:"A long translation becomes inconsistent when progress and terminology exist only inside one chat session.",decision:"Progress is stored in files rather than only in chat memory, so work can continue later or with another compatible agent.",alternatives:"A temporary AI workspace can be used for trials, while private GitHub or a local folder is better for long-running work. A permanent Git branch per book is not the default.",challenge:"The hardest part is keeping style, meaning and source integrity consistent across many sessions.",readiness:"The core workflow, saved progress, source checks and output assembly are implemented. PDF/DOCX automation depends on the environment.",workflow:"The book is split into units, shared terminology and style decisions are saved, one role translates and another reviews against the source.",reliability:"Source files can be verified by hashes and progress is stored outside the chat, allowing reliable resume.",result:"Translation can continue across sessions without re-explaining the entire history.",stats:"Automatic helper support covers EPUB, HTML/XHTML, Markdown and TXT; one workspace can hold multiple books.",limitations:"Reliable resume requires persistent storage, and automatic PDF/DOCX extraction is not guaranteed everywhere."},
+      video:{overview:"A pipeline that automatically turns a topic into a short video with script, voice, subtitles and rendering.",role:"Timur designed the workflow and kept publishing separate from generation.",problem:"Short-video production has many repetitive manual steps.",decision:"Most tools run locally to keep cost and control manageable, while publishing remains a separate human-reviewed step.",alternatives:"The visual generation layer can be upgraded later, and a separate long-form branch exists.",challenge:"The hardest part was coordinating several local services and stopping weak generated content from reaching publication automatically.",readiness:"The local draft-generation path works for script, narration, captions and 1080×1920 rendering. Fully unattended publishing is intentionally not included.",workflow:"The system takes a topic, creates a script, voice and captions, renders the video and stops for review before publishing.",reliability:"Weak or missing generated text can be hidden instead of being shown as fact, and publishing requires review.",result:"The output is a review-ready short video with narration and subtitles.",stats:"Output includes a 1080×1920 H.264 video, WAV narration and SRT captions.",limitations:"It is not a fully autonomous publishing system; human review remains before release."},
+      tube:{overview:"TubeScore shows movie or series ratings directly next to a YouTube video, so the viewer does not need to search elsewhere.",role:"Timur designed and built the extension, including title matching, rating retrieval and YouTube integration.",problem:"A viewer watching a trailer or review has to leave YouTube to look up ratings.",decision:"The project deliberately avoids an LLM and private backend because rule-based matching is cheaper, faster and more predictable here.",alternatives:"TMDB and IMDb paths were explored; the current production path uses Wikidata. LLM and computer-vision recognition were deliberately avoided.",challenge:"The hardest part was identifying the correct movie from noisy YouTube metadata without confidently showing the wrong title.",readiness:"The extension is published in Chrome Web Store and works as a regular Chrome extension. Coverage is limited by the data available in Wikidata.",workflow:"The extension reads the current YouTube video's metadata, finds a likely matching title in Wikidata and shows available ratings beside the video.",reliability:"When the match is uncertain, TubeScore prefers showing nothing rather than a confident wrong answer.",result:"The viewer can see ratings without leaving YouTube.",stats:"Four main rating sources are enabled by default, and the extension does not request browser history, cookies or all-tabs permissions.",limitations:"Some titles have incomplete rating data in Wikidata."},
+      lightning:{overview:"HH Lightning automates repetitive parts of job searching on hh.ru, including vacancy work, cover letters and resume analytics.",role:"Timur develops the browser extension and the supporting AI, access, pricing and payment infrastructure.",problem:"Active job searching repeats the same actions many times and makes it hard to track resume effectiveness manually.",decision:"The tool runs inside hh.ru so it can use vacancy and resume context without constant copy-and-paste into another app.",alternatives:"A separate AI assistant would require more manual copying and would lose direct page context.",challenge:"The hardest part is keeping automation reliable on top of a third-party site that can change its pages and behavior.",readiness:"The extension is published in Chrome Web Store and its core flows exist. Changes in hh.ru or AI providers can still require updates.",workflow:"The extension works on hh.ru pages, uses vacancy and resume context, helps with AI text and response flows, and shows resume analytics.",reliability:"Critical access checks live on the backend, but some behavior still depends on hh.ru and external AI services.",result:"One browser tool combines AI vacancy assistance, cover letters, automated responses and resume analytics.",stats:"The extension is published in Chrome Web Store; no verified user-count or conversion-lift metrics are claimed yet.",limitations:"Upstream changes in hh.ru or AI services can break individual flows and require maintenance."},
+      market:{overview:"Job Market Scanner collects hh.ru vacancy data and helps compare professions and competition over time.",role:"Timur designed data collection, validation rules and the web interface.",problem:"One-off manual checks are hard to compare, and collection failures can be mistaken for real market data.",decision:"Data is collected and validated before it is shown on the site, rather than relying on live scraping every time a page opens.",alternatives:"The site could have queried hh.ru live, but then network or partial-collection errors would be harder to distinguish from real zero values.",challenge:"The hardest part was distinguishing a true zero from a failed or incomplete collection run.",readiness:"The collector, validated snapshots and live web interface are working. It is not real-time; freshness depends on the latest collection date.",workflow:"A browser collector gathers hh.ru data, the system validates and stores snapshots, and the site shows verified results and history.",reliability:"Incomplete or invalid observations are kept separate instead of being mixed with valid market values.",result:"There is a working site for exploring and comparing historical job-market snapshots.",stats:"A live web product exists, snapshots keep collection dates, and collection can resume after interruption.",limitations:"A new site deployment does not make old data fresh; the collection date is what matters."},
+      feed:{overview:"FeedPulse gives AI agents a consistent way to read RSS and Atom feeds without reimplementing feed parsing every time.",role:"Timur moved the technical feed work into a small reusable utility.",problem:"Without it, each agent must repeatedly fetch and parse feeds, remove duplicates and remember what has already been seen.",decision:"Ordinary code handles fetching and parsing, while the AI receives clean structured data. This is cheaper and more reliable than asking the model to parse XML.",alternatives:"Feeds could be parsed inside every agent. Full article crawling was also considered unnecessary for the base tool.",challenge:"The hardest part was handling different RSS/Atom variants, individual source failures, duplicates and missing dates consistently.",readiness:"The core utility is ready with commands, saved configuration, a stable JSON response, tests and CI on Windows, macOS and Linux.",workflow:"FeedPulse downloads feeds, normalizes items, filters and removes duplicates, then returns a clean list to the agent.",reliability:"If one source fails, FeedPulse reports that failure instead of pretending there were simply no new items.",result:"The agent gets a predictable list of new material and can focus on analysis instead of feed plumbing.",stats:"One main runtime dependency and CI across Windows, macOS and Linux with three Node.js versions.",limitations:"FeedPulse reads content provided by the feed but does not automatically open every linked article."}
+    }
+  };
+
   function projectResult(lang,id,q){
     const p=answers[lang].project[id];
     if(!p)return null;
