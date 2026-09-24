@@ -1131,7 +1131,78 @@
     requestAnimationFrame(frame);
   }
 
-  function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang){
+  function appendEvidencePanel(bubble,projectId,lang){
+    const e=projectEvidence[lang]?.[projectId];
+    if(!e)return;
+
+    const panel=document.createElement("section");
+    panel.className="evidence-panel";
+    panel.setAttribute("aria-label",e.title);
+
+    const head=document.createElement("div");
+    head.className="evidence-head";
+    const title=document.createElement("strong");
+    title.textContent=e.title;
+    const marker=document.createElement("span");
+    marker.className="evidence-marker";
+    marker.textContent="verified";
+    head.append(title,marker);
+
+    const note=document.createElement("p");
+    note.className="evidence-note";
+    note.textContent=e.note;
+
+    const flow=document.createElement("div");
+    flow.className="evidence-flow";
+    (e.flow||[]).forEach((step,index)=>{
+      const node=document.createElement("span");
+      node.className="evidence-node";
+      node.textContent=step;
+      flow.appendChild(node);
+      if(index<e.flow.length-1){
+        const arrow=document.createElement("span");
+        arrow.className="evidence-arrow";
+        arrow.setAttribute("aria-hidden","true");
+        arrow.textContent="→";
+        flow.appendChild(arrow);
+      }
+    });
+
+    const facts=document.createElement("div");
+    facts.className="evidence-facts";
+    (e.facts||[]).forEach((fact)=>{
+      const chip=document.createElement("span");
+      chip.textContent=fact;
+      facts.appendChild(chip);
+    });
+
+    const artifacts=document.createElement("div");
+    artifacts.className="evidence-artifacts";
+    (e.artifacts||[]).forEach((artifact)=>{
+      const code=document.createElement("code");
+      code.textContent=artifact;
+      artifacts.appendChild(code);
+    });
+
+    const links=document.createElement("div");
+    links.className="evidence-links";
+    (e.links||[]).forEach((item)=>{
+      const link=document.createElement("a");
+      link.href=item.href;
+      link.target="_blank";
+      link.rel="noreferrer";
+      link.textContent=item.label;
+      links.appendChild(link);
+    });
+
+    panel.append(head,note,flow);
+    if(e.facts?.length)panel.appendChild(facts);
+    if(e.artifacts?.length)panel.appendChild(artifacts);
+    if(e.links?.length)panel.appendChild(links);
+    bubble.appendChild(panel);
+  }
+
+  function appendMessage(role,text,projectId,actions=[],scroll=true,lang=state.lang,evidenceId=null){
     if(!chatLog)return;
     const row=document.createElement("div");
     row.className=`chat-message chat-message--${role}`;
@@ -1151,6 +1222,7 @@
         });
         bubble.appendChild(wrap);
       }
+      if(evidenceId) appendEvidencePanel(bubble,evidenceId,lang);
       if(projectId){
         const br=document.createElement("br");
         const link=document.createElement("button");link.type="button";link.className="chat-project-link";
@@ -1213,7 +1285,7 @@
     if(state.history.length>12)state.history=state.history.slice(-12);
 
     if(thinking) await thinking.finish(reduced?0:340);
-    appendMessage("bot",answer,result.project,[],true,result.lang);
+    appendMessage("bot",answer,result.project,[],true,result.lang,result.evidence||null);
   }
 
   function openProjectQuestions(id){
