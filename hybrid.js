@@ -367,7 +367,7 @@
       if(terms.some(term=>q.includes(norm(term)))) return id;
     }
     if(isMore(q) && selectedProjects.has(state.lastSubject)) return state.lastSubject;
-    const followupIntent=hasAny(q,["где","компан","контекст","роль","отвечал","результат","метрик","эффект","масштаб","стек","технолог","архитект","как устро","нюанс","огранич","почему","where","company","role","responsib","result","impact","metric","scale","stack","technology","architecture","detail","constraint","why","how"]);
+    const followupIntent=hasAny(q,["где","компан","контекст","роль","отвечал","результат","метрик","эффект","масштаб","стек","технолог","архитект","как устро","нюанс","огранич","почему","реально","фактически","качество","плох","ошиб","where","company","role","responsib","result","impact","metric","scale","stack","technology","architecture","detail","constraint","why","how","quality","bad data","freshness"]);
     if(followupIntent && selectedProjects.has(state.lastSubject)) return state.lastSubject;
     return "timur";
   }
@@ -380,7 +380,7 @@
     else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])) text=p.role;
     else if(hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"])) text=p.result;
     else if(hasAny(q,["стек","технолог","архитект","как устро","stack","technology","architecture","how built"])) text=p.stack;
-    else if(hasAny(q,["нюанс","огранич","почему","detail","constraint","why","слож"])) text=p.detail;
+    else if(hasAny(q,["нюанс","огранич","почему","реально","фактически","качество","плох","ошиб","detail","constraint","why","hard","quality","bad data","freshness"])) text=p.detail;
     return {lang,intent:"project",text,subject:id,project:id};
   }
 
