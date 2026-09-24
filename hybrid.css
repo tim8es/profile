@@ -16,19 +16,21 @@
   --font-mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
   color-scheme:dark;
 }
-html[data-theme="light"] {
-  --bg:#f3f1eb;
-  --surface:#faf8f3;
-  --surface-2:#e9e6de;
-  --text:#171717;
-  --muted:#706e68;
-  --line:rgba(23,23,23,.15);
-  --line-strong:rgba(23,23,23,.32);
-  --accent:#4f65ff;
-  --accent-2:#ff643f;
-  --inverse:#f3f1eb;
-  --shadow:rgba(30,28,24,.1);
-  color-scheme:light;
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:#f3f1eb;
+    --surface:#faf8f3;
+    --surface-2:#e9e6de;
+    --text:#171717;
+    --muted:#706e68;
+    --line:rgba(23,23,23,.15);
+    --line-strong:rgba(23,23,23,.32);
+    --accent:#4f65ff;
+    --accent-2:#ff643f;
+    --inverse:#f3f1eb;
+    --shadow:rgba(30,28,24,.1);
+    color-scheme:light;
+  }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -228,9 +230,9 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 .work-layout--single{display:block;padding-top:32px}
 .work-layout--single .project-list{max-width:900px}
 .work-layout--single .project-reveal p{max-width:760px}
-.project-actions{margin:0 0 28px 52px}
-.project-actions button{border-bottom:1px solid var(--line-strong);padding:0 0 4px;cursor:pointer;font-size:11px;color:var(--muted)}
-.project-actions button:hover{color:var(--text)}
+.project-actions{margin:0 0 28px 52px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.project-actions button,.project-actions a{border-bottom:1px solid var(--line-strong);padding:0 0 4px;cursor:pointer;font-size:11px;color:var(--muted)}
+.project-actions button:hover,.project-actions a:hover{color:var(--text)}
 @media(max-width:650px){
   .chat-log--compact .chat-message{grid-template-columns:1fr}
   .project-actions{margin-left:42px}
