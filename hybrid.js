@@ -550,8 +550,8 @@
     const ru=state.lang==="ru";
     const labels={
       checking:ru?"● Проверка…":"● Checking…",
-      llm:"● LLM",
-      local:"● Local",
+      llm:"● LLM composer",
+      local:"● Local composer",
       fallback:"● Local fallback"
     };
     const titles={
