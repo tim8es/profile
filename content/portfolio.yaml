@@ -156,7 +156,16 @@ projects:
         source:
           label: Audit process role
         confidence: verified
+        public: true      - id: project.audit.context
+        topics: [projects, audit, companies, context]
+        text:
+          ru: Проект выполнялся в Skyeng; в публичном списке проектов название компании намеренно не показывается.
+          en: The project was done at Skyeng; the company name is intentionally omitted from the public project list.
+        source:
+          label: Skyeng project context
+        confidence: verified
         public: true
+
   - id: crm
     name: CRM Product Development
     facts:
@@ -195,7 +204,16 @@ projects:
         source:
           label: CRM stack
         confidence: verified
+        public: true      - id: project.crm.context
+        topics: [projects, crm, companies, context]
+        text:
+          ru: CRM Product Development выполнялся в SPIKS.
+          en: CRM Product Development was done at SPIKS.
+        source:
+          label: SPIKS project context
+        confidence: verified
         public: true
+
   - id: bi
     name: Operations & BI Dashboards
     facts:
@@ -225,7 +243,16 @@ projects:
         source:
           label: BI result
         confidence: verified
+        public: true      - id: project.bi.context
+        topics: [projects, bi, companies, context]
+        text:
+          ru: Operations & BI Dashboards выполнялся в Skyeng.
+          en: Operations & BI Dashboards was done at Skyeng.
+        source:
+          label: Skyeng project context
+        confidence: verified
         public: true
+
   - id: invoice
     name: Invoice Automation
     facts:
@@ -264,7 +291,16 @@ projects:
         source:
           label: Invoice role
         confidence: verified
+        public: true      - id: project.invoice.context
+        topics: [projects, invoice, companies, context]
+        text:
+          ru: Invoice Automation был реализован в OpiniQ.
+          en: Invoice Automation was implemented at OpiniQ.
+        source:
+          label: OpiniQ project context
+        confidence: verified
         public: true
+
   - id: book
     name: Book Translator
     facts:
@@ -294,7 +330,16 @@ projects:
         source:
           label: Book Translator Telegram
         confidence: verified
+        public: true      - id: project.book.context
+        topics: [projects, book, companies, context]
+        text:
+          ru: Book Translator — собственный проект Тимура.
+          en: Book Translator is Timur's own project.
+        source:
+          label: Project context
+        confidence: verified
         public: true
+
   - id: video
     name: AI Video Pipeline
     facts:
@@ -324,7 +369,16 @@ projects:
         source:
           label: Video pipeline stack
         confidence: verified
+        public: true      - id: project.video.context
+        topics: [projects, video, companies, context]
+        text:
+          ru: AI Video Pipeline — собственный automation-проект Тимура.
+          en: AI Video Pipeline is Timur's own automation project.
+        source:
+          label: Project context
+        confidence: verified
         public: true
+
   - id: tube
     name: TubeScore
     facts:
@@ -354,7 +408,16 @@ projects:
         source:
           label: TubeScore testing
         confidence: verified
+        public: true      - id: project.tube.context
+        topics: [projects, tube, companies, context]
+        text:
+          ru: TubeScore — собственный продуктовый проект Тимура.
+          en: TubeScore is Timur's own product project.
+        source:
+          label: Project context
+        confidence: verified
         public: true
+
   - id: lightning
     name: HH Lightning
     facts:
@@ -384,7 +447,16 @@ projects:
         source:
           label: HH Lightning
         confidence: verified
+        public: true      - id: project.lightning.context
+        topics: [projects, lightning, companies, context]
+        text:
+          ru: HH Lightning — собственный продукт Тимура.
+          en: HH Lightning is Timur's own product project.
+        source:
+          label: Project context
+        confidence: verified
         public: true
+
   - id: market
     name: Job Market Scanner
     facts:
@@ -414,7 +486,16 @@ projects:
         source:
           label: Job Market Scanner data quality
         confidence: verified
+        public: true      - id: project.market.context
+        topics: [projects, market, companies, context]
+        text:
+          ru: Job Market Scanner — собственный data-product Тимура.
+          en: Job Market Scanner is Timur's own data-product project.
+        source:
+          label: Project context
+        confidence: verified
         public: true
+
   - id: feed
     name: FeedPulse
     facts:
@@ -434,6 +515,15 @@ projects:
           en: FeedPulse is a lightweight content-ingestion utility for AI agents that normalizes RSS/Atom sources into a predictable format.
         source:
           label: FeedPulse
+        confidence: verified
+        public: true
+      - id: project.feed.context
+        topics: [projects, feed, companies, context]
+        text:
+          ru: FeedPulse — собственная open-source утилита Тимура внутри tim8skills.
+          en: FeedPulse is Timur's own open-source utility inside tim8skills.
+        source:
+          label: Project context
         confidence: verified
         public: true
 
