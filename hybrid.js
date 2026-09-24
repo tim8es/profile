@@ -142,169 +142,264 @@
   };
 
   const answers = {
-    en: {
-      greeting:"Hi. You can ask about Timur, what he can do, his projects, technical decisions or how he approaches products.",
-      thanks:"You're welcome. You can keep going — for example, ask what Timur can do, how TubeScore is built, or what kind of problems he likes to automate.",
-      identity:"Timur Dautov is a product and process manager moving increasingly into hands-on product building. He combines product thinking with AI tooling, automation, APIs and lightweight software development.",
-      identityMore:[
-        "His management background matters because he usually starts with the workflow and the user problem rather than with a preferred technology.",
-        "He is strongest at the intersection of product, process and implementation: defining the problem, reducing scope and getting a working version into reality.",
-        "He prefers practical, inspectable systems — small products, browser tools, automations and AI workflows — over technology added only for presentation."
-      ],
-      skills:[
-        "Timur can frame product problems, design and improve processes, build small MVPs, connect APIs and webhooks, automate workflows and work with AI agents and LLM-based tooling.",
-        "On the technical side, he works with JavaScript / Node.js, browser APIs, REST APIs, webhooks, SQL, GitHub, automation tools and testing workflows.",
-        "He is also comfortable taking an unfamiliar existing codebase, tracing how it behaves, making a bounded change and verifying the result."
-      ],
-      background:"His main background is project and process management, including team leadership, metrics, hiring, process design and operational improvement. More recently he has shifted toward hands-on product and automation work.",
-      ai:"He uses LLMs as components inside products and workflows — for reasoning, classification, content processing and tool orchestration. The surrounding system, validation and failure handling matter more to him than the chat interface itself.",
-      automation:"His automation approach starts with repeated decisions and handoffs: define inputs and success criteria, connect tools or APIs, then add validation and observability so the workflow is repeatable.",
-      stack:"The recurring stack includes JavaScript / Node.js, browser APIs, REST APIs, webhooks, SQL, GitHub, automation tools and LLM tooling. The stack is chosen around the problem rather than treated as the product.",
-      product:"His product loop is: understand the problem, cut scope hard, build the smallest useful version, test it against reality, then keep, change or kill the hypothesis based on evidence.",
-      tube:{
-        overview:"TubeScore is a Chrome extension that puts movie ratings directly on YouTube trailers, removing the extra search step.",
-        architecture:"TubeScore uses a Manifest V3 extension architecture with a content-script UI, service-worker orchestration and a separate provider layer for metadata. Matching is deterministic and caching keeps lookups lightweight.",
-        hard:"The hard part was not the visual badge. It was reliably identifying the correct film from messy YouTube context and keeping the overlay working across SPA navigation without relying on an LLM.",
-        testing:"TubeScore is checked with deterministic tests plus an isolated Chromium/Playwright smoke flow covering initial rendering and SPA navigation."
+    en:{
+      greeting:"Hi. Ask about Timur's projects, work experience, roles, results, technical decisions or product approach.",
+      thanks:"You're welcome. You can ask about any project, its context, role, result or technical details.",
+      identity:"Timur Dautov combines project and process management with hands-on product building, automation and AI tooling.",
+      background:"His professional background includes operations and process leadership at Skyeng, B2B CRM product delivery at SPIKS, and process automation work at OpiniQ.",
+      skills:"He works across product discovery, process redesign, delivery, analytics, automation, APIs and lightweight software development.",
+      stack:"His practical toolkit includes JavaScript/Node.js, Python, SQL, REST APIs, webhooks, browser APIs, n8n, GitHub, Playwright and BI tooling.",
+      impact:"Examples include about 70% less reporting time for a BI workflow, invoice generation in under 15 seconds, a B2B CRM ecosystem with a budget above RUB 20M, and process migration into an internal CRM.",
+      ai:"His AI work focuses on practical systems: automation workflows, content pipelines, translation, vacancy handling and agent-facing utilities rather than standalone prompts.",
+      product:"His usual product loop is: understand the workflow, reduce scope, build the smallest useful version, verify the result and iterate from evidence.",
+      projectsOverview:"Selected projects: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner and FeedPulse.",
+      project:{
+        audit:{
+          overview:"Audit Process Consulting was a process-analysis and redesign project around a manual communication-quality audit workflow.",
+          company:"This work was done at Skyeng. The company name is intentionally omitted from the project list, but it can be disclosed here as context.",
+          role:"Timur worked between operations and IT: mapped the current workflow, clarified requirements and helped move manual quality-control steps into the internal CRM.",
+          result:"The implemented part was the migration of manual process steps from Google Workspace into the internal CRM, improving processing speed by about 20% and making metric tracking more transparent.",
+          detail:"External solutions for further audit automation were researched, but a fully automated audit system was not implemented. The project is presented as consulting and automation discovery, not as completed end-to-end audit automation.",
+          stack:"The work involved Google Workspace, the internal CRM, process mapping, requirements analysis and evaluation of external automation approaches."
+        },
+        crm:{
+          overview:"CRM Product Development was the development and delivery of a B2B Loyalty CRM product across web, mobile, backend and integrations.",
+          company:"This project was at SPIKS.",
+          role:"Timur worked as an IT Project Manager with end-to-end responsibility for requirements, backlog, planning, priorities, risks, resources, client communication and delivery to release.",
+          result:"The product was a SaaS/on-premise ecosystem with four web apps, two mobile apps, a shared backend, PostgreSQL, payments and external integrations. The development/support budget exceeded RUB 20M.",
+          detail:"He also coordinated full development packages with CTO, technical leads and clients and worked across product behavior, integrations and release support.",
+          stack:"Web and mobile applications, backend, PostgreSQL, payment integrations, external APIs, monitoring and on-premise deployment."
+        },
+        bi:{
+          overview:"Operations & BI Dashboards was an analytics initiative that consolidated operational and product metrics into reusable dashboards.",
+          company:"This work was done at Skyeng.",
+          role:"Timur designed the reporting approach around operational needs and built the dashboard layer using SQL and DataLens.",
+          result:"The dashboards covered 20 products and reduced the time spent preparing regular reporting by about 70%.",
+          detail:"The goal was not just visualization: it replaced repeated manual reporting and made process deviations easier to notice.",
+          stack:"SQL, Yandex DataLens and operational data sources."
+        },
+        invoice:{
+          overview:"Invoice Automation is an n8n/JavaScript workflow for preparing invoices for remote employees.",
+          company:"This project was implemented at OpiniQ.",
+          role:"Timur independently designed and implemented the workflow from requirements and data validation through testing, documentation and production use.",
+          result:"One invoice was generated in under 15 seconds, and the workflow was used by accounting across real monthly cycles.",
+          detail:"Email sending was technically implemented during development, but production email distribution was not launched; the verified production result is automated invoice generation.",
+          stack:"n8n, JavaScript, data validation, document generation and workflow automation."
+        },
+        book:{
+          overview:"Book Translator is an AI-assisted long-form translation system combined with a Telegram bot as the user-facing layer.",
+          company:"This is Timur's own project.",
+          role:"He designed the workflow so translation state survives individual AI sessions instead of depending on chat history.",
+          result:"The system stores progress, translated units, glossary, style guide and review state so work can continue consistently across sessions.",
+          detail:"The Telegram bot and the translation workflow are treated as one product rather than separate portfolio projects.",
+          stack:"Agent workflow, persistent workspace state, terminology/style management and Telegram interface."
+        },
+        video:{
+          overview:"AI Video Pipeline automates short-form content production from research and scripting through voice, subtitles, rendering and review.",
+          company:"This is Timur's own automation project.",
+          role:"He designed the workflow and control boundaries around the content-production process.",
+          result:"The pipeline connects repeatable generation steps into one flow while keeping publishing as a separate, reviewable action.",
+          detail:"The system intentionally does not treat publishing as an invisible unattended step; generation can stop at review-ready output.",
+          stack:"n8n, local LLMs, FFmpeg, TTS, subtitles and local control tooling."
+        },
+        tube:{
+          overview:"TubeScore is a Chrome/Chromium extension that identifies a movie or series on YouTube and shows its rating in the viewing context.",
+          company:"This is Timur's own product project.",
+          role:"He designed and built the MVP with deterministic matching and a zero-secret production runtime.",
+          result:"The extension works without its own backend, LLM or required API key and has automated browser checks for rendering and YouTube SPA navigation.",
+          detail:"The main engineering challenge was reliable title matching and lifecycle behavior on YouTube, not the visual rating badge.",
+          stack:"Manifest V3, JavaScript/TypeScript, content scripts, service worker, Wikidata, caching and Playwright/Chromium smoke tests."
+        },
+        lightning:{
+          overview:"HH Lightning is a browser product for automating repetitive parts of the job-search workflow on hh.ru.",
+          company:"This is Timur's own product project.",
+          role:"He develops both the Chrome extension and the product infrastructure around access, tariffs and payments.",
+          result:"The extension combines AI-assisted vacancy handling, cover-letter generation, automated responses and resume analytics.",
+          detail:"The same product includes a separate license/payment backend with tariffs, entitlement logic and payment handling.",
+          stack:"Chrome Manifest V3, JavaScript, browser APIs, AI integration, Node.js backend, YooKassa, YDB, JWT and licensing logic."
+        },
+        market:{
+          overview:"Job Market Scanner is a data product for collecting and comparing labor-market signals across professions.",
+          company:"This is Timur's own product project.",
+          role:"He designed the collection, data-contract and web-application flow with an emphasis on reliable market snapshots.",
+          result:"The system combines a resumable browser collector, validated snapshots, history and a Next.js interface for analysis.",
+          detail:"A real zero is kept distinct from selector failure, blocking or unknown data, and data freshness follows the actual collection timestamp rather than deployment time.",
+          stack:"Chrome Manifest V3, versioned data contracts, file-backed persistence, Next.js, deterministic fixtures and production-build verification."
+        },
+        feed:{
+          overview:"FeedPulse is a lightweight content-ingestion utility for AI agents.",
+          company:"This is Timur's own open-source utility inside tim8skills.",
+          role:"He designed it as a small reusable layer rather than making every agent reimplement feed parsing.",
+          result:"It normalizes RSS/Atom-style sources into predictable bounded content for downstream processing.",
+          detail:"The implementation intentionally keeps the dependency surface small and targets Windows, macOS and Linux.",
+          stack:"Node.js, XML/feed parsing and cross-platform CLI-style workflow."
+        }
       },
-      feed:{
-        overview:"FeedPulse is a lightweight ingestion utility for AI agents. It reads RSS/Atom sources and normalizes them into predictable structured content.",
-        architecture:"FeedPulse intentionally uses a small Node.js implementation with a focused XML parser instead of a heavy framework. The goal is portability and a narrow dependency surface.",
-        hard:"The main problem is inconsistency between feeds: namespaces, content fields, dates and embedded markup vary even when the formats look similar.",
-        testing:"The important verification target is deterministic parsing across representative feed variants and consistent normalized output on Windows, macOS and Linux."
-      },
-      unknown:"I don't have a reliable answer to that in the portfolio knowledge base yet. Try asking about Timur, his skills, background, TubeScore, FeedPulse, AI, automation, product thinking or technical stack."
+      unknown:"I don't have a reliable local answer to that. Try asking about a named project, company/context, role, result, stack or Timur's background."
     },
-    ru: {
-      greeting:"Привет. Можно спросить о Тимуре, его навыках, проектах, технических решениях или о том, как он подходит к продуктам.",
-      thanks:"Пожалуйста. Можно продолжить — например, спросить, что умеет Тимур, как устроен TubeScore или какие процессы он автоматизирует.",
-      identity:"Тимур Даутов — менеджер проектов и процессов, который всё больше работает как hands-on product builder. Он сочетает продуктовое мышление с AI-инструментами, автоматизацией, API и разработкой небольших программных продуктов.",
-      identityMore:[
-        "Его управленческий бэкграунд влияет на подход к разработке: обычно он начинает с рабочего процесса и проблемы пользователя, а не с любимой технологии.",
-        "Сильнее всего он работает на стыке продукта, процессов и реализации: формулирует проблему, сокращает scope и доводит идею до работающей версии.",
-        "Ему ближе небольшие понятные системы — браузерные инструменты, автоматизации и AI-workflow — чем технологии, добавленные только ради эффекта."
-      ],
-      skills:[
-        "Тимур умеет формулировать продуктовые задачи, проектировать и улучшать процессы, собирать небольшие MVP, соединять API и webhooks, автоматизировать workflow и работать с AI-агентами и LLM-инструментами.",
-        "Из технического: JavaScript / Node.js, browser API, REST API, webhooks, SQL, GitHub, инструменты автоматизации и тестирования.",
-        "Он также умеет разбираться в чужой кодовой базе: проследить текущее поведение, локализовать проблему, внести ограниченное изменение и проверить результат."
-      ],
-      background:"Основной бэкграунд Тимура — управление проектами и процессами: команды, метрики, найм, проектирование процессов и операционные улучшения. В последние годы он всё больше смещается в hands-on разработку продуктов и автоматизаций.",
-      ai:"LLM он использует как компонент продукта или процесса: для reasoning, классификации, обработки контента и оркестрации инструментов. При этом система вокруг модели — входы, проверки и обработка ошибок — для него важнее самого чат-интерфейса.",
-      automation:"Подход к автоматизации начинается с повторяющихся решений и handoff'ов: определить входы и критерии успеха, связать инструменты или API, а затем добавить валидацию и наблюдаемость.",
-      stack:"Регулярный стек: JavaScript / Node.js, browser API, REST API, webhooks, SQL, GitHub, инструменты автоматизации и LLM-tooling. Стек выбирается под задачу, а не становится самоцелью.",
-      product:"Продуктовый цикл для него выглядит так: понять проблему, жёстко сократить scope, собрать минимальную полезную версию, проверить её в реальности и затем оставить, изменить или закрыть гипотезу по фактам.",
-      tube:{
-        overview:"TubeScore — Chrome-расширение, которое показывает рейтинги фильмов прямо на YouTube-трейлерах и убирает лишний поиск на другом сайте.",
-        architecture:"TubeScore построен как Manifest V3 extension: интерфейс через content script, оркестрация через service worker, метаданные — через отдельный provider-слой. Матчинг детерминированный, а кеширование уменьшает число запросов.",
-        hard:"Самая сложная часть — не нарисовать бейдж, а надёжно определить нужный фильм из неоднозначного контекста YouTube и сохранить корректную работу overlay при SPA-навигации без LLM.",
-        testing:"TubeScore проверяется детерминированными тестами и изолированным Chromium/Playwright smoke-flow, который покрывает первоначальный рендер и SPA-навигацию."
+    ru:{
+      greeting:"Привет. Можно спросить про проекты Тимура, опыт, роль, результат, технические решения или продуктовый подход.",
+      thanks:"Пожалуйста. Можно спросить подробнее про любой проект: контекст, компанию, роль, результат или технологии.",
+      identity:"Тимур Даутов сочетает управление проектами и процессами с hands-on разработкой продуктов, автоматизаций и AI-инструментов.",
+      background:"Профессиональный опыт включает управление операционными процессами в Skyeng, развитие B2B CRM в SPIKS и автоматизацию процессов в OpiniQ.",
+      skills:"Он работает на стыке product discovery, process redesign, delivery, аналитики, автоматизации, API и lightweight-разработки.",
+      stack:"Практический стек: JavaScript/Node.js, Python, SQL, REST API, webhooks, browser API, n8n, GitHub, Playwright и BI-инструменты.",
+      impact:"Примеры результата: около −70% времени на регулярную отчётность, генерация инвойса менее чем за 15 секунд, B2B CRM с бюджетом более 20 млн ₽ и перенос ручных процессов во внутреннюю CRM.",
+      ai:"AI используется как часть рабочих систем: automation workflow, content pipeline, перевод, обработка вакансий и инструменты для агентов, а не только как отдельный чат.",
+      product:"Обычный цикл работы: понять реальный workflow, сократить scope, собрать минимально полезную версию, проверить результат и дальше двигаться по фактам.",
+      projectsOverview:"В портфолио: Audit Process Consulting, CRM Product Development, Operations & BI Dashboards, Invoice Automation, Book Translator, AI Video Pipeline, TubeScore, HH Lightning, Job Market Scanner и FeedPulse.",
+      project:{
+        audit:{
+          overview:"Audit Process Consulting — анализ и переработка ручного процесса контроля качества коммуникаций.",
+          company:"Этот проект выполнялся в Skyeng. В списке проектов компания намеренно не указана, но в подробном контексте её можно раскрывать.",
+          role:"Тимур работал на стыке operations и IT: разобрал текущий workflow, уточнял требования и участвовал в переносе ручных шагов контроля качества во внутреннюю CRM.",
+          result:"Реально внедрённая часть — перенос ручных процессов из Google Workspace во внутреннюю CRM. Это повысило скорость обработки примерно на 20% и сделало отслеживание метрик прозрачнее.",
+          detail:"Внешние решения для дальнейшей автоматизации аудита были исследованы, но полноценная автоматизированная система аудита внедрена не была. Поэтому кейс описывается как консалтинг и automation discovery.",
+          stack:"Google Workspace, внутренняя CRM, process mapping, требования и исследование решений автоматизации."
+        },
+        crm:{
+          overview:"CRM Product Development — развитие B2B Loyalty CRM с web-, mobile-, backend-частью и внешними интеграциями.",
+          company:"Проект выполнялся в SPIKS.",
+          role:"Тимур работал IT Project Manager и отвечал за требования, backlog, планирование, приоритеты, риски, ресурсы, коммуникацию с клиентом и delivery до релиза.",
+          result:"Продукт представлял собой SaaS/on-premise экосистему из четырёх web-приложений, двух mobile-приложений, общего backend, PostgreSQL, платежей и внешних интеграций. Бюджет разработки и поддержки превышал 20 млн ₽.",
+          detail:"Также Тимур координировал полные пакеты разработки вместе с CTO, tech leads и клиентами и сопровождал изменения до релиза.",
+          stack:"Web/mobile приложения, backend, PostgreSQL, платежные интеграции, внешние API, monitoring и on-premise."
+        },
+        bi:{
+          overview:"Operations & BI Dashboards — система операционной аналитики, которая объединила показатели процессов и продуктов в повторно используемые дашборды.",
+          company:"Этот проект выполнялся в Skyeng.",
+          role:"Тимур спроектировал подход к отчётности под операционные задачи и собрал dashboard-слой на SQL + DataLens.",
+          result:"Дашборды покрывали 20 продуктов и сократили время на регулярную подготовку отчётности примерно на 70%.",
+          detail:"Задача была не только в визуализации: решение заменяло повторяющуюся ручную отчётность и помогало раньше замечать отклонения.",
+          stack:"SQL, Yandex DataLens и операционные источники данных."
+        },
+        invoice:{
+          overview:"Invoice Automation — n8n/JavaScript workflow для автоматической подготовки инвойсов удалённым сотрудникам.",
+          company:"Проект был реализован в OpiniQ.",
+          role:"Тимур самостоятельно спроектировал и реализовал workflow: от требований и проверки данных до тестирования, документации и production-use.",
+          result:"Один инвойс формировался менее чем за 15 секунд; workflow использовался бухгалтерией в реальных ежемесячных циклах.",
+          detail:"Email-отправка была технически реализована в разработке, но production-рассылка не запускалась. Подтверждённый production-результат — автоматическая генерация инвойсов.",
+          stack:"n8n, JavaScript, проверка данных, генерация документов и workflow automation."
+        },
+        book:{
+          overview:"Book Translator — система AI-перевода длинных книг, объединённая с Telegram-ботом как пользовательским интерфейсом.",
+          company:"Это собственный проект Тимура.",
+          role:"Workflow спроектирован так, чтобы состояние перевода сохранялось между AI-сессиями и не зависело только от истории чата.",
+          result:"Система хранит прогресс, переведённые блоки, glossary, style guide и review-state, поэтому работу можно продолжать последовательно между сессиями.",
+          detail:"Telegram-бот и translation workflow рассматриваются как один продукт, а не как два отдельных проекта.",
+          stack:"Agent workflow, persistent workspace state, terminology/style management и Telegram interface."
+        },
+        video:{
+          overview:"AI Video Pipeline автоматизирует производство коротких видео от исследования и сценария до озвучки, субтитров, рендера и review.",
+          company:"Это собственный automation-проект Тимура.",
+          role:"Тимур спроектировал workflow и контрольные границы процесса производства контента.",
+          result:"Повторяющиеся этапы объединены в один pipeline, при этом публикация остаётся отдельным проверяемым действием.",
+          detail:"Система намеренно может остановиться на review-ready результате и не превращает публикацию в невидимый полностью unattended шаг.",
+          stack:"n8n, локальные LLM, FFmpeg, TTS, субтитры и локальные control-инструменты."
+        },
+        tube:{
+          overview:"TubeScore — Chrome/Chromium extension, который определяет фильм или сериал на YouTube и показывает рейтинг прямо в контексте просмотра.",
+          company:"Это собственный продуктовый проект Тимура.",
+          role:"Тимур спроектировал и собрал MVP с детерминированным matching и production runtime без секретов.",
+          result:"Расширение работает без собственного backend, LLM и обязательного API-ключа; browser-flow проверяется автоматизированными smoke-тестами.",
+          detail:"Основная инженерная сложность — корректный matching названия и lifecycle на YouTube SPA, а не сама визуальная карточка рейтинга.",
+          stack:"Manifest V3, JavaScript/TypeScript, content scripts, service worker, Wikidata, caching и Playwright/Chromium smoke tests."
+        },
+        lightning:{
+          overview:"HH Lightning — браузерный продукт для автоматизации повторяющихся этапов поиска работы на hh.ru.",
+          company:"Это собственный продукт Тимура.",
+          role:"Он развивает Chrome extension и инфраструктуру продукта вокруг доступа, тарифов и платежей.",
+          result:"Расширение объединяет AI-обработку вакансий, генерацию сопроводительных писем, автоотклики и аналитику эффективности резюме.",
+          detail:"В состав того же продукта входит отдельный license/payment backend с тарифами, entitlement-логикой и обработкой платежей.",
+          stack:"Chrome Manifest V3, JavaScript, browser API, AI integration, Node.js backend, YooKassa, YDB, JWT и licensing logic."
+        },
+        market:{
+          overview:"Job Market Scanner — data product для сбора и сравнения сигналов рынка труда по профессиям.",
+          company:"Это собственный продукт Тимура.",
+          role:"Тимур спроектировал сбор данных, data contracts и web-приложение с акцентом на надёжные market snapshots.",
+          result:"Система объединяет resumable browser collector, валидируемые snapshots, историю и Next.js-интерфейс анализа.",
+          detail:"Настоящий ноль отделён от selector failure, блокировки и неизвестного значения; freshness определяется временем фактического сбора данных, а не временем деплоя.",
+          stack:"Chrome Manifest V3, versioned data contracts, file-backed persistence, Next.js, deterministic fixtures и production-build verification."
+        },
+        feed:{
+          overview:"FeedPulse — лёгкая утилита ingestion контента для AI-агентов.",
+          company:"Это собственная open-source утилита Тимура внутри tim8skills.",
+          role:"Она спроектирована как небольшой переиспользуемый слой, чтобы агентам не приходилось заново реализовывать feed parsing.",
+          result:"FeedPulse нормализует RSS/Atom-источники в предсказуемый bounded content для последующей обработки.",
+          detail:"Реализация намеренно сохраняет небольшой dependency surface и рассчитана на Windows, macOS и Linux.",
+          stack:"Node.js, XML/feed parsing и cross-platform workflow."
+        }
       },
-      feed:{
-        overview:"FeedPulse — лёгкая утилита для AI-агентов, которая читает RSS/Atom и приводит материалы к предсказуемой структуре.",
-        architecture:"FeedPulse намеренно сделан как небольшая Node.js-утилита с узкоспециализированным XML-парсером вместо тяжёлого фреймворка. Цель — переносимость и минимум зависимостей.",
-        hard:"Главная сложность — неоднородность фидов: namespaces, поля контента, даты и встроенная разметка различаются даже в формально похожих источниках.",
-        testing:"Главная проверка — детерминированный парсинг разных вариантов фидов и одинаковый нормализованный результат на Windows, macOS и Linux."
-      },
-      unknown:"В локальной базе портфолио пока нет надёжного ответа на этот вопрос. Можно спросить о Тимуре, его навыках, опыте, TubeScore, FeedPulse, ИИ, автоматизации, продуктовом подходе или техническом стеке."
+      unknown:"В локальной базе нет надёжного ответа на этот вопрос. Можно спросить про конкретный проект, компанию/контекст, роль, результат, стек или опыт Тимура."
     }
   };
 
-  function qlang(text) {
+  function qlang(text){
     const c=(text.match(/[А-Яа-яЁё]/g)||[]).length;
     const l=(text.match(/[A-Za-zА-Яа-яЁё]/g)||[]).length;
-    return l && c/l>.25 ? "ru" : state.lang;
+    return l&&c/l>.25?"ru":state.lang;
   }
-  function norm(v){return String(v||"").toLowerCase().replace(/ё/g,"е").replace(/[^a-zа-я0-9\s-]/gi," ").replace(/\s+/g," ").trim();}
-  function hasAny(q,arr){return arr.some((x)=>q.includes(x));}
-  function startsWithPhrase(q, phrases){return phrases.some((p)=>q===p||q.startsWith(p+" "));}
+  function norm(v){return String(v||"").toLowerCase().replace(/ё/g,"е").replace(/[^a-zа-я0-9\s.&/-]/gi," ").replace(/\s+/g," ").trim();}
+  function hasAny(q,arr){return arr.some(x=>q.includes(norm(x)));}
+  function startsWithPhrase(q,phrases){return phrases.some(p=>q===norm(p)||q.startsWith(norm(p)+" "));}
   function looksLikeGreeting(q){return startsWithPhrase(q,["привет","здравствуй","здравствуйте","добрый день","добрый вечер","hello","hi","hey"]);}
   function looksLikeThanks(q){return startsWithPhrase(q,["спасибо","благодарю","thanks","thank you"]);}
-  function hasTimur(q){return hasAny(q,["тимур","даутов","timur","dautov"]);}
-  function hasTube(q){return q.includes("tubescore")||q.includes("tube score");}
-  function hasFeed(q){return q.includes("feedpulse")||q.includes("feed pulse");}
-  function isPronounFollowup(q){return hasAny(q,["он ","его ","о нем","о нём","ему ","he ","him ","his "]) || /^(он|его|ему|he|him)$/.test(q);}
-  function isMore(q){return hasAny(q,["что еще","что ещё","расскажи еще","расскажи ещё","а еще","а ещё","что еще можешь","what else","tell me more","anything else","more about"]);}
+  function isMore(q){return hasAny(q,["что еще","что ещё","расскажи еще","расскажи ещё","а еще","а ещё","what else","tell me more","anything else"]);}
 
-  function rotate(key,values){
-    const idx=state.moreCursor[key]||0;
-    state.moreCursor[key]=(idx+1)%values.length;
-    return values[idx];
-  }
+  const projectTerms={
+    audit:["audit process","audit consulting","аудит процесс","аудит процессов","контроль качества"],
+    crm:["crm product","crm product development","loyalty crm","crm система","crm-система"],
+    bi:["operations & bi","bi dashboards","дашборд","datalens","операционная аналитика"],
+    invoice:["invoice automation","invoice","инвойс","инвойсов"],
+    book:["book translator","перевод книг","переводчик книг"],
+    video:["ai video pipeline","video pipeline","youtube shorts","shorts pipeline","видео pipeline"],
+    tube:["tubescore","tube score"],
+    lightning:["hh lightning","headhunter lightning"],
+    market:["job market scanner","market scanner","professions statistics","сканер рынка"],
+    feed:["feedpulse","feed pulse"]
+  };
+  const selectedProjects=new Set(Object.keys(projectTerms));
 
   function resolveSubject(q){
-    if(hasTube(q))return "tube";
-    if(hasFeed(q))return "feed";
-    if(hasTimur(q))return "timur";
-    if(isPronounFollowup(q)||isMore(q))return state.lastSubject||"timur";
-    return state.lastSubject||"timur";
+    for(const [id,terms] of Object.entries(projectTerms)){
+      if(terms.some(term=>q.includes(norm(term)))) return id;
+    }
+    if(isMore(q) && selectedProjects.has(state.lastSubject)) return state.lastSubject;
+    return "timur";
+  }
+
+  function projectResult(lang,id,q){
+    const p=answers[lang].project[id];
+    if(!p)return null;
+    let text=p.overview;
+    if(hasAny(q,["где","компан","контекст","where","company","employer"])) text=p.company;
+    else if(hasAny(q,["роль","отвечал","responsib","role","what did timur do"])) text=p.role;
+    else if(hasAny(q,["результат","метрик","цифр","эффект","result","impact","metric","scale","масштаб"])) text=p.result;
+    else if(hasAny(q,["стек","технолог","архитект","как устро","stack","technology","architecture","how built"])) text=p.stack;
+    else if(hasAny(q,["нюанс","огранич","почему","detail","constraint","why","слож"])) text=p.detail;
+    return {lang,intent:"project",text,subject:id,project:id};
   }
 
   function classify(raw){
-    const q=norm(raw);
-    const lang=qlang(raw);
-    const a=answers[lang];
+    const q=norm(raw), lang=qlang(raw), a=answers[lang];
     if(!q)return{lang,intent:"empty",text:"",subject:state.lastSubject};
     if(looksLikeGreeting(q))return{lang,intent:"greeting",text:a.greeting,subject:"timur"};
     if(looksLikeThanks(q))return{lang,intent:"thanks",text:a.thanks,subject:state.lastSubject};
 
     const subject=resolveSubject(q);
+    if(subject!=="timur") return projectResult(lang,subject,q);
 
-    if(isMore(q)){
-      if(subject==="timur"){
-        if(state.lastIntent==="skills") return{lang,intent:"skills",text:rotate("skills",a.skills),subject};
-        return{lang,intent:"identity-more",text:rotate("timur",a.identityMore),subject};
-      }
-      if(subject==="tube") return{lang,intent:"project-more",text:rotate("tube",[a.tube.architecture,a.tube.hard,a.tube.testing]),subject,project:"tube"};
-      if(subject==="feed") return{lang,intent:"project-more",text:rotate("feed",[a.feed.architecture,a.feed.hard,a.feed.testing]),subject,project:"feed"};
-    }
-
-    const skillsQ=hasAny(q,["что умеет","что он умеет","навык","навыки","компетенц","skills","what can","can timur","capabilities","умеешь"]);
-    if(skillsQ) return{lang,intent:"skills",text:rotate("skills",a.skills),subject:"timur"};
-
-    const identityQ=hasAny(q,["кто такой","кто тимур","who is","tell me about timur","расскажи про тимура"]);
-    if(identityQ) return{lang,intent:"identity",text:a.identity,subject:"timur"};
-
-    const backgroundQ=hasAny(q,["опыт","карьер","background","experience","career","где работал"]);
-    if(backgroundQ) return{lang,intent:"background",text:a.background,subject:"timur"};
-
-    const stackQ=hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","sql","api","webhook"]);
-    if(stackQ && subject==="timur") return{lang,intent:"stack",text:a.stack,subject:"timur"};
-
-    const aiQ=hasAny(q,["ии","нейросет","llm"," ai ","ai ","агент","agent"]);
-    if(aiQ && subject==="timur") return{lang,intent:"ai",text:a.ai,subject:"timur"};
-
-    const automationQ=hasAny(q,["автоматиз","автоматизац","automation","automate","workflow","процесс"]);
-    if(automationQ && subject==="timur") return{lang,intent:"automation",text:a.automation,subject:"timur"};
-
-    const productQ=hasAny(q,["продукт","mvp","гипотез","product","prototype","прототип"]);
-    if(productQ && subject==="timur") return{lang,intent:"product",text:a.product,subject:"timur"};
-
-    const hardQ=hasAny(q,["самым слож","что было слож","сложност","hardest","difficult","challenge"]);
-    const archQ=hasAny(q,["как устро","архитект","как сделан","architecture","how is","how built","built"]);
-    const testQ=hasAny(q,["как тест","тестир","провер","testing","tested","verify"]);
-    if(subject==="tube"){
-      if(hardQ)return{lang,intent:"project-hard",text:a.tube.hard,subject,project:"tube"};
-      if(testQ)return{lang,intent:"project-testing",text:a.tube.testing,subject,project:"tube"};
-      if(archQ)return{lang,intent:"project-architecture",text:a.tube.architecture,subject,project:"tube"};
-      return{lang,intent:"project-overview",text:a.tube.overview,subject,project:"tube"};
-    }
-    if(subject==="feed"){
-      if(hardQ)return{lang,intent:"project-hard",text:a.feed.hard,subject,project:"feed"};
-      if(testQ)return{lang,intent:"project-testing",text:a.feed.testing,subject,project:"feed"};
-      if(archQ||q.includes("node"))return{lang,intent:"project-architecture",text:a.feed.architecture,subject,project:"feed"};
-      return{lang,intent:"project-overview",text:a.feed.overview,subject,project:"feed"};
-    }
-
-    if(hasAny(q,["что дела","что стро","какие проект","what do you build","what have you built","projects","portfolio"])) {
-      return{lang,intent:"overview",text:lang==="ru"?"Тимур делает небольшие продукты и автоматизации на стыке product thinking, AI и разработки. Сейчас в выбранных работах — TubeScore и FeedPulse; список проектов ещё будет расширяться.":"Timur builds small products and automations at the intersection of product thinking, AI and software. The current selected work includes TubeScore and FeedPulse; the project list is still being curated.",subject:"timur"};
-    }
-
-    if(isPronounFollowup(q)&&subject==="timur"){
-      return{lang,intent:"identity-more",text:rotate("timur",a.identityMore),subject};
-    }
-
-    return{lang,intent:"unknown",text:a.unknown,subject};
+    if(isMore(q) && selectedProjects.has(state.lastSubject)) return projectResult(lang,state.lastSubject,q);
+    if(hasAny(q,["все проекты","все работы","какие проекты","projects","portfolio","what did he build"]))return{lang,intent:"projects",text:a.projectsOverview,subject:"timur"};
+    if(hasAny(q,["результат","метрик","цифр","эффект","impact","results","metrics"]))return{lang,intent:"impact",text:a.impact,subject:"timur"};
+    if(hasAny(q,["где работал","компан","опыт","career","experience","background","where worked"]))return{lang,intent:"background",text:a.background,subject:"timur"};
+    if(hasAny(q,["стек","технолог","tools","stack","technology","javascript","node","python","sql","api","webhook"]))return{lang,intent:"stack",text:a.stack,subject:"timur"};
+    if(hasAny(q,["ии","ai","llm","агент","agent"]))return{lang,intent:"ai",text:a.ai,subject:"timur"};
+    if(hasAny(q,["автоматиз","automation","workflow","процесс"]))return{lang,intent:"automation",text:a.product,subject:"timur"};
+    if(hasAny(q,["продукт","product","mvp","prototype"]))return{lang,intent:"product",text:a.product,subject:"timur"};
+    if(hasAny(q,["кто","тимур","who is","tell me about timur"]))return{lang,intent:"identity",text:a.identity,subject:"timur"};
+    if(hasAny(q,["умеет","навык","skills","capabil"]))return{lang,intent:"skills",text:a.skills,subject:"timur"};
+    return{lang,intent:"unknown",text:a.unknown,subject:"timur"};
   }
 
   const chatLog=document.querySelector("[data-chat-log]");
