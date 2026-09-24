@@ -124,8 +124,8 @@ projects:
       - id: project.audit.limit
         topics: [projects, audit, limitations, automation, research]
         text:
-          ru: Внешние решения для дальнейшей автоматизации аудита были исследованы, но полноценная автоматизированная система аудита внедрена не была.
-          en: External solutions for further audit automation were researched, but a fully automated audit system was not implemented.
+          ru: Провёл исследование внешних решений для автоматизации аудита и оценил варианты дальнейшего развития процесса.
+          en: Researched external solutions for audit automation and evaluated options for further development of the process.
         source:
           label: Audit automation boundary
         confidence: verified
@@ -156,11 +156,12 @@ projects:
         source:
           label: Audit process role
         confidence: verified
-        public: true      - id: project.audit.context
+        public: true
+      - id: project.audit.context
         topics: [projects, audit, companies, context]
         text:
-          ru: Проект выполнялся в Skyeng; в публичном списке проектов название компании намеренно не показывается.
-          en: The project was done at Skyeng; the company name is intentionally omitted from the public project list.
+          ru: Проект выполнялся в Skyeng.
+          en: The project was done at Skyeng.
         source:
           label: Skyeng project context
         confidence: verified
@@ -204,7 +205,8 @@ projects:
         source:
           label: CRM stack
         confidence: verified
-        public: true      - id: project.crm.context
+        public: true
+      - id: project.crm.context
         topics: [projects, crm, companies, context]
         text:
           ru: CRM Product Development выполнялся в SPIKS.
@@ -243,7 +245,8 @@ projects:
         source:
           label: BI result
         confidence: verified
-        public: true      - id: project.bi.context
+        public: true
+      - id: project.bi.context
         topics: [projects, bi, companies, context]
         text:
           ru: Operations & BI Dashboards выполнялся в Skyeng.
@@ -291,7 +294,8 @@ projects:
         source:
           label: Invoice role
         confidence: verified
-        public: true      - id: project.invoice.context
+        public: true
+      - id: project.invoice.context
         topics: [projects, invoice, companies, context]
         text:
           ru: Invoice Automation был реализован в OpiniQ.
@@ -330,7 +334,8 @@ projects:
         source:
           label: Book Translator Telegram
         confidence: verified
-        public: true      - id: project.book.context
+        public: true
+      - id: project.book.context
         topics: [projects, book, companies, context]
         text:
           ru: Book Translator — собственный проект Тимура.
@@ -369,7 +374,8 @@ projects:
         source:
           label: Video pipeline stack
         confidence: verified
-        public: true      - id: project.video.context
+        public: true
+      - id: project.video.context
         topics: [projects, video, companies, context]
         text:
           ru: AI Video Pipeline — собственный automation-проект Тимура.
@@ -408,7 +414,8 @@ projects:
         source:
           label: TubeScore testing
         confidence: verified
-        public: true      - id: project.tube.context
+        public: true
+      - id: project.tube.context
         topics: [projects, tube, companies, context]
         text:
           ru: TubeScore — собственный продуктовый проект Тимура.
@@ -447,7 +454,8 @@ projects:
         source:
           label: HH Lightning
         confidence: verified
-        public: true      - id: project.lightning.context
+        public: true
+      - id: project.lightning.context
         topics: [projects, lightning, companies, context]
         text:
           ru: HH Lightning — собственный продукт Тимура.
@@ -481,12 +489,13 @@ projects:
       - id: project.market.quality
         topics: [projects, market, quality, reliability, data]
         text:
-          ru: Настоящий ноль отделён от selector failure, блокировки и неизвестного значения; freshness определяется временем фактического сбора данных, а не временем деплоя.
-          en: A real zero is kept distinct from selector failure, blocking and unknown values; freshness is based on actual collection time rather than deployment time.
+          ru: Система отдельно отмечает неполные или ошибочные данные и хранит фактическую дату сбора, чтобы результаты можно было корректно сравнивать во времени.
+          en: The system flags incomplete or invalid observations and keeps the actual collection date so market results can be compared correctly over time.
         source:
           label: Job Market Scanner data quality
         confidence: verified
-        public: true      - id: project.market.context
+        public: true
+      - id: project.market.context
         topics: [projects, market, companies, context]
         text:
           ru: Job Market Scanner — собственный data-product Тимура.
