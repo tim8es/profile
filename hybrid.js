@@ -551,8 +551,8 @@
     for(const [id,terms] of Object.entries(projectTerms)){
       if(terms.some(term=>q.includes(norm(term)))) return id;
     }
-    if(mentionsGlobalPerson(q)) return "timur";
     if(selectedProjects.has(state.lastSubject) && (isMore(q)||projectFollowup(q))) return state.lastSubject;
+    if(mentionsGlobalPerson(q)) return "timur";
     return "timur";
   }
 
