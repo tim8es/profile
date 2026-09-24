@@ -352,6 +352,44 @@
     bubble.append(details);
   }
 
+  function showThinkingMessage(lang){
+    if(!chatLog)return null;
+    const row=document.createElement("div");
+    row.className="chat-message chat-message--bot chat-message--thinking";
+    const roleEl=document.createElement("span");
+    roleEl.className="chat-role";
+    roleEl.textContent=lang==="ru"?"портфолио":"portfolio";
+    const bubble=document.createElement("div");
+    bubble.className="chat-bubble chat-bubble--thinking";
+    const label=document.createElement("span");
+    label.className="thinking-label";
+    label.textContent=lang==="ru"?"Собираю контекст":"Gathering context";
+    const dots=document.createElement("span");
+    dots.className="thinking-dots";
+    dots.setAttribute("aria-hidden","true");
+    dots.textContent="…";
+    bubble.append(label,dots);
+    row.append(roleEl,bubble);
+    chatLog.appendChild(row);
+    chatLog.scrollTo({top:chatLog.scrollHeight,behavior:reduced?"auto":"smooth"});
+
+    const started=performance.now();
+    const swap=window.setTimeout(()=>{
+      if(row.isConnected) label.textContent=lang==="ru"?"Формирую ответ":"Composing answer";
+    },850);
+
+    return {
+      row,
+      started,
+      async finish(minimum=340){
+        const elapsed=performance.now()-started;
+        if(elapsed<minimum) await new Promise(resolve=>window.setTimeout(resolve,minimum-elapsed));
+        window.clearTimeout(swap);
+        row.remove();
+      }
+    };
+  }
+
   function typeBotText(bubble,text,scroll,onDone){
     const value=String(text||"");
     if(reduced||!scroll||value.length<2){
@@ -470,9 +508,11 @@
     if(!text)return;
     const lang=qlang(text);
     appendMessage("user",text,null,[],true,lang);
+    const thinking=showThinkingMessage(lang);
 
     if(!kb) await kbReady;
     if(!kb?.facts?.length){
+      if(thinking) await thinking.finish(reduced?0:340);
       appendMessage(
         "bot",
         lang==="ru"
@@ -514,6 +554,7 @@
     state.lastIntent=planType(normalizedQuestion);
     state.history.push({role:"user",content:text},{role:"assistant",content:answer});
 
+    if(thinking) await thinking.finish(reduced?0:340);
     appendMessage("bot",answer,projectId,[],true,lang,facts,server?"server":"local");
   }
 
