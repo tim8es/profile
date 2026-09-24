@@ -207,6 +207,12 @@
     if(!found.length && /^(что еще|что ещё|а еще|а ещё|what else|tell me more)/.test(q)){
       return [...new Set(state.lastFacts.flatMap(id=>kb?.facts?.find(f=>f.id===id)?.topics||[]))];
     }
+    const projectTopics=["audit","crm","bi","invoice","book","video","tube","lightning","market","feed"];
+    const hasProject=found.some(topic=>projectTopics.includes(topic));
+    const followupTopics=["companies","role","results","technical","architecture","testing","limitations"];
+    if(!hasProject && projectTopics.includes(state.lastSubject) && found.some(topic=>followupTopics.includes(topic))){
+      found.push(state.lastSubject);
+    }
     return [...new Set(found)];
   }
 
