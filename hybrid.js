@@ -20,7 +20,7 @@
         lede:"I turn vague problems and awkward processes into small working products — with AI, automation and code.",
         meta:["Product → prototype","AI-native workflow"]
       },
-      field: { title:"Capability field", hint:"drag / move / click", buttons:["AI","Automation","Product","Projects","Process","Analytics / BI","APIs & Integrations","Delivery","Browser tools"] },
+      field: { title:"Capability field", hint:"drag / move / click" },
       query: {
         title:"Portfolio Query",
         status:"local composer",
@@ -84,7 +84,7 @@
         lede:"Превращаю размытые задачи и неудобные процессы в небольшие работающие продукты — с помощью AI, автоматизации и кода.",
         meta:["От задачи → к прототипу","AI-native подход"]
       },
-      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай", buttons:["ИИ","Автоматизация","Продукт","Проекты","Процессы","Аналитика / BI","API и интеграции","Delivery","Browser tools"] },
+      field: { title:"Карта компетенций", hint:"двигай / тяни / нажимай" },
       query: {
         title:"Portfolio Query",
         status:"local composer",
@@ -599,7 +599,6 @@
     setText(".hero-lede",t.hero.lede);
     document.querySelectorAll(".hero-meta span").forEach((el,i)=>{if(t.hero.meta[i])el.textContent=t.hero.meta[i];});
     const fh=document.querySelectorAll(".field-head span");if(fh[0])fh[0].textContent=t.field.title;if(fh[1])fh[1].textContent=t.field.hint;
-    document.querySelectorAll(".field-fallback button").forEach((el,i)=>{if(t.field.buttons[i])el.textContent=t.field.buttons[i];});
 
     const qLabels=document.querySelectorAll("#query > .section-label span");if(qLabels[0])qLabels[0].textContent=t.query.title;if(qLabels[1])qLabels[1].textContent=t.query.status;
     document.querySelectorAll(".suggestions button").forEach((button,i)=>{const pair=t.query.suggestions[i];if(pair){button.textContent=pair[0];button.dataset.suggestion=pair[1];}});
@@ -641,24 +640,6 @@
 
   // Capability field
   const canvas=document.querySelector("[data-field-canvas]");
-  const fieldButtons=[...document.querySelectorAll("[data-field-query]")];
-  fieldButtons.forEach((button)=>button.addEventListener("click",()=>{
-    const map={
-      AI:{en:"Show me AI and automation work",ru:"Покажи работу с AI и автоматизацией"},
-      automation:{en:"How do you automate processes?",ru:"Как ты автоматизируешь процессы?"},
-      product:{en:"Tell me about CRM Product Development",ru:"Расскажи про CRM Product Development"},
-      projects:{en:"What projects are in the portfolio?",ru:"Какие проекты в портфолио?"},
-      process:{en:"Tell me about Audit Process Consulting",ru:"Расскажи про Audit Process Consulting"},
-      analytics:{en:"Tell me about Operations & BI Dashboards",ru:"Расскажи про Operations & BI Dashboards"},
-      integrations:{en:"What stack do you use?",ru:"Какой стек ты используешь?"},
-      delivery:{en:"What was Timur responsible for in CRM Product Development?",ru:"За что Тимур отвечал в CRM Product Development?"},
-      browser:{en:"Tell me about HH Lightning",ru:"Расскажи про HH Lightning"},
-      agents:{en:"Tell me about AI agents",ru:"Расскажи про AI-агентов"}
-    };
-    askPortfolio(map[button.dataset.fieldQuery]?.[state.lang]||button.dataset.fieldQuery);
-    document.getElementById("query")?.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
-  }));
-
   const labels={en:["AI","Automation","Product","Projects","Process","Analytics / BI","APIs","Delivery","Browser","Agents","SQL / Data","JS / Node","n8n"],ru:["ИИ","Автоматизация","Продукт","Проекты","Процессы","Аналитика / BI","API","Delivery","Browser","Агенты","SQL / Данные","JS / Node","n8n"]};
   if(canvas){
     const ctx=canvas.getContext("2d");
@@ -687,7 +668,7 @@
       function hAt(x,y){const base=baseH(x,y);if(!pointer.inside)return base;const s=project(x,y,base),dist=Math.hypot(s.x-pointer.x,s.y-pointer.y),radius=Math.max(95,Math.min(width,height)*.28),d=dist/radius;if(d>1.35)return base;return base+Math.sin(d*9-time*3.2)*Math.exp(-d*2.9)*.22;}
       function draw(){const c=colors();ctx.clearRect(0,0,width,height);rotX+=(targetRotX-rotX)*.07;rotZ+=(targetRotZ-rotZ)*.07;if(!pointer.down&&!reduced)targetRotZ+=.0012;time+=reduced?0:.016;const n=18;ctx.lineWidth=1;
         for(let axis=0;axis<2;axis++)for(let i=0;i<n;i++){ctx.beginPath();for(let k=0;k<n;k++){const a=-1+(2*i)/(n-1),b=-1+(2*k)/(n-1),x=axis===0?a:b,y=axis===0?b:a,p=project(x,y,hAt(x,y));if(k===0)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y);}ctx.strokeStyle=c.line;ctx.globalAlpha=.42;ctx.stroke();}
-        ctx.globalAlpha=1;nodeScreens=caps.map((cap,index)=>{const p=project(cap.x,cap.y,hAt(cap.x,cap.y)+.03),active=index===hover;ctx.beginPath();ctx.arc(p.x,p.y,active?5.5:3.5,0,Math.PI*2);ctx.fillStyle=active?c.accent:c.text;ctx.fill();ctx.font=`${active?600:500} 10px ui-monospace, SFMono-Regular, Menlo, monospace`;ctx.fillStyle=active?c.accent:c.muted;ctx.fillText(labels[state.lang][index],p.x+9,p.y+3);return{x:p.x,y:p.y};});requestAnimationFrame(draw);}
+        ctx.globalAlpha=1;nodeScreens=caps.map((cap,index)=>{const p=project(cap.x,cap.y,hAt(cap.x,cap.y)+.03),active=index===hover;ctx.beginPath();if(active){const r=7;ctx.moveTo(p.x-r*.48,p.y-r);ctx.lineTo(p.x+r,p.y);ctx.lineTo(p.x-r*.48,p.y+r);ctx.closePath();}else{ctx.arc(p.x,p.y,3.5,0,Math.PI*2);}ctx.fillStyle=active?c.accent:c.text;ctx.fill();ctx.font=`${active?600:500} 10px ui-monospace, SFMono-Regular, Menlo, monospace`;ctx.fillStyle=active?c.accent:c.muted;ctx.fillText(labels[state.lang][index],p.x+(active?13:9),p.y+3);return{x:p.x,y:p.y};});requestAnimationFrame(draw);}
       function update(e){const r=canvas.getBoundingClientRect();pointer.x=e.clientX-r.left;pointer.y=e.clientY-r.top;let best=-1,dist=30;nodeScreens.forEach((n,i)=>{const d=Math.hypot(pointer.x-n.x,pointer.y-n.y);if(d<dist){dist=d;best=i;}});hover=best;canvas.style.cursor=best>=0?"pointer":(pointer.down?"grabbing":"grab");}
       canvas.addEventListener("pointerenter",e=>{pointer.inside=true;update(e);});
       canvas.addEventListener("pointerleave",()=>{pointer.inside=false;pointer.down=false;hover=-1;});
