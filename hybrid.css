@@ -255,7 +255,7 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 .chat-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
 .chat-actions button{border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:10px;cursor:pointer}
 .chat-actions button:hover{color:var(--text);border-color:var(--line-strong)}
-.work-layout--single{display:block;padding-top:32px}
+.work-layout--single{display:block;padding-top:0}
 .work-layout--single .project-list{max-width:900px}
 .work-layout--single .project-reveal p{max-width:760px}
 .project-actions{margin:0 0 28px 52px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
