@@ -246,8 +246,10 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 @media(max-width:650px){
   .shell,.demo-bar{width:min(calc(100% - 28px),var(--max))}
   .demo-bar{font-size:9px}
-  .nav{align-items:flex-start;padding:17px 0}
-  .nav-links{justify-content:flex-end;gap:11px}
+  .nav{align-items:center;padding:17px 0}
+  .brand{display:flex;align-items:center;height:34px;line-height:1}
+  .nav-links{align-items:center;justify-content:flex-end;gap:11px}
+  .nav-links>a{display:flex;align-items:center;height:34px;line-height:1}
   .nav-links>a:nth-child(1),.nav-links>a:nth-child(3){display:none}
   .hero{padding:36px 0 72px}
   .hero h1{font-size:clamp(54px,16vw,66px)}
@@ -290,7 +292,7 @@ html[data-theme="light"] .video-frame{background:radial-gradient(circle at 65% 3
 /* Hybrid v2 refinements */
 .query-section{padding-bottom:94px}
 .query-box--compact{max-width:900px;margin-top:0}
-.chat-log--compact{min-height:86px;max-height:260px;padding:16px 20px;gap:12px}
+.chat-log--compact{min-height:118px;max-height:300px;padding:16px 20px;gap:12px}
 .chat-log--compact .chat-message{grid-template-columns:64px minmax(0,1fr)}
 .chat-log--compact .chat-bubble{padding:5px 0;font-size:14px;line-height:1.5}
 .query-box--compact .suggestions{padding:0 20px 12px}
